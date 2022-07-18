@@ -2,22 +2,52 @@
 \usepackage[UTF8]{ctex}
 \usepackage{indentfirst}
 \usepackage{bm}
+\usepackage{float}
 \usepackage{amsmath}
-\setlength{\parindent}{0em}
-
+\setlength{\parindent}{2em}
 \begin{document}
 \chapter{特征值和特征向量}
 \section{基础知识}
 \subsection{特征值和特征向量}
+\subsubsection{定义}
+设$ \bm{A} $为$ n $阶矩阵, $ \lambda $是一个数, 若存在一个非零的$ n $维向量$ \bm{\xi} $, 使得$ \bm{A}\bm{\xi}=\lambda \bm{\xi} $, 则称$ \bm{\xi} $为$ \bm{A} $的特征向量, $ \lambda $为$ \bm{A} $的特征值. 
+\par 上式可以化简成$ \left| \lambda \bm{E}-\bm{A}\right|\bm{\xi}=\bm{0} $, $ \left| \lambda \bm{E}-\bm{A}\right| $被称为特征多项式, $ \lambda \bm{E}-\bm{A} $称为特征矩阵.
 \subsubsection{性质}
 \begin{enumerate}
 	\item 特征值的性质
+	\begin{enumerate}
+		\item $ \sum_{i=1}^{n}\lambda_{i}=\sum_{i=1}^{n}a_{ii}=tr(\bm{A}) $
+		\item $ \prod_{i=1}^{n}\lambda_{i}=\left| \bm{A}\right| $
+		\end{enumerate}
 	\item 特征向量的性质
 	\begin{enumerate}
 		\item $ k $重特征值$ \Lambda $至多只有$ k $个线性无关的向量
 		\item 若$ \bm{\xi_1} $, $ \bm{\xi_2} $是$ \bm{A} $的属于不同特征值的特征的特征向量, 则$ \bm{\xi_1}, \bm{\xi_2} $线性无关
 		\item 若$ \bm{\xi_1}, \bm{\xi_2} $是$ \bm{A} $的属于同一特征值$ \lambda $的特征向量, 则$ k_1\bm{\xi_1} + k_1\bm{\xi_2} $仍然是$ \bm{A} $的属于特征值$ \lambda $的特征向量
 	\end{enumerate}
+\end{enumerate}
+\subsection{矩阵的相似}
+\subsubsection{定义}
+设$ \bm{A} $和$ \bm{B} $为两个$ n $阶方阵, 若存在$ n $阶可逆矩阵$ \bm{P} $, 使得$ \bm{P}^{-1}\bm{A}\bm{P}=\bm{B} $成立, 则称$ \bm{A} $相似于$ \bm{B} $, 记成$ \bm{A}\sim \bm{B} $.
+\subsubsection{性质}
+\begin{enumerate}
+	\item \begin{itemize}
+		\item \textbf{反身性}: $ \bm{A}\sim \bm{A} $
+		\item \textbf{对称性}: $ \bm{A}\sim \bm{B}\Rightarrow \bm{B}\sim \bm{A} $
+		\item \textbf{传递性}: $ \bm{A}\sim \bm{B}, \bm{B}\sim \bm{C}\Rightarrow \bm{A}\sim \bm{C} $
+	\end{itemize}
+    \item 若$ \bm{A}\sim \bm{B} $, 则有\begin{itemize}
+    	\item $ r(\bm{A})=r(\bm{B}) $
+    	\item $ \left|\bm{A}\right|=\left|\bm{B}\right| $
+    	\item $ \bm{A}, \bm{B} $具有相同的特征值
+    	\item $ \bm{A}, \bm{B} $特征多项式的值相同
+    \end{itemize}
+    \item 若$ \bm{A}\sim \bm{B} $, 则有\begin{itemize}
+    	\item $ f(\bm{A})\sim f(\bm{B}) $
+    	\item $ \bm{A}^{T}\sim \bm{B}^{T} $
+    	\item $ \bm{A} $可逆, $ \bm{A}^{*}\sim \bm{B}^{*} $
+    	\item $ \bm{A} $可逆, $ \bm{A}^{-1}\sim \bm{B}^{-1} $
+    \end{itemize}
 \end{enumerate}
 \subsection{矩阵的相似对角化}
 \subsubsection{定义}
@@ -46,6 +76,24 @@
 	\item 实对称矩阵$ \bm{A} $必相似于对角矩阵, 且存在正交矩阵$ \bm{Q} $, 使得$ \bm{Q}^{-1}\bm{A}\bm{Q}=\bm{Q}^{T}\bm{A}\bm{Q}=\bm{\Lambda}$,  
 \end{enumerate}
 \section{习题}
+\subsection{特征值和特征向量}
+\subsubsection{求具体型矩阵的特征值和特征向量}
+\begin{enumerate}
+	\item 用特征方程$ \left|\lambda \bm{E}-\bm{A}\right|=0 $求出$ \lambda $, 可以使用试根法对$ \lambda $的高次方程进行求解
+	\item 用求得的$ \lambda $解齐次线性方程组$ (\lambda \bm{E}-\bm{A})\bm{\xi}=\bm{0} $, 求出特征向量
+\end{enumerate}
+\subsubsection{求解抽象型矩阵的特征值和特征向量}
+\begin{table}[H]
+ 	\centering
+ 	\begin{tabular}{|c|ccccccc|}
+ 		\hline
+ 		\textbf{矩阵} & $ \bm{A} $ & $ k\bm{A} $ & $ \bm{A}^{k} $ & $ f(\bm{A}) $ & $ \bm{A}^{-1} $ & $ \bm{A}^{*} $ & $ \bm{P}^{-1}\bm{A}\bm{P} $ \\ \hline
+ 		\textbf{特征值} & $ \lambda $ & $ k\lambda $ & $ \lambda^{k} $ & $ f(\lambda) $ & $ \lambda^{-1} $ & $ \frac{\left|\bm{A}\right|}{\lambda} $ & $ \lambda $\\ \hline
+ 		\textbf{特征向量} & $ \bm{\xi} $ & $ \bm{\xi} $ & $ \bm{\xi} $ & $ \bm{\xi} $ & $ \bm{\xi} $ & $ \bm{\xi} $ & $ \bm{P}^{-1}\bm{\xi} $\\ 
+ 		\hline
+ 	\end{tabular}
+\end{table}\par
+$ f(x) $为多项式, 若矩阵$ \bm{A} $满足$ f(\bm{A})=\bm{0}\Rightarrow f(\lambda)=0 $.
 \subsection{实对称矩阵}
 \subsubsection{求正交矩阵Q}
 \begin{enumerate}
@@ -70,11 +118,11 @@
 	\end{enumerate}
     \item 实对称矩阵$ \bm{A} $
     \begin{enumerate}
-    	\item $ \lambda_{1}\neq \lambda_{2}\Rightarrow \xi_{1}\perp \xi_{2}$, $\xi_{1}, \xi_{2}$无关
+    	\item $ \lambda_{1}\neq \lambda_{2}\Rightarrow \xi_{1}\perp \xi_{2}$\quad $\xi_{1}, \xi_{2}$无关
     	\item $ \lambda_{1}= \lambda_{2}\Rightarrow$ 
     	\begin{enumerate}
-    		\item $\xi_{1}\perp \xi_{2}$, $\xi_{1}, \xi_{2}$无关
-    		\item $\xi_{1}$不垂直于$\xi_{2}$, $\xi_{1}, \xi_{2}$无关
+    		\item $\xi_{1}\perp \xi_{2}$\quad $\xi_{1}, \xi_{2}$无关
+    		\item $\xi_{1}$不垂直于$\xi_{2}$\quad $\xi_{1}, \xi_{2}$无关
     	\end{enumerate}
     \end{enumerate}
 \end{enumerate}
