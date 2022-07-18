@@ -1,0 +1,47 @@
+\documentclass[oneside, onecolumn]{book}
+\usepackage[UTF8]{ctex}
+\usepackage{indentfirst}
+\usepackage{bm}
+\usepackage{amsmath}
+\setlength{\parindent}{0em}
+\begin{document}
+\chapter{特征值和特征向量}
+\section{基础知识}
+\subsection{特征值和特征向量}
+\subsubsection{性质}
+\begin{enumerate}
+	\item 特征值的性质
+	\item 特征向量的性质
+	\begin{enumerate}
+		\item $ k $重特征值$ \Lambda $至多只有$ k $个线性无关的向量
+		\item 若$ \bm{\xi_1} $, $ \bm{\xi_2} $是$ \bm{A} $的属于不同特征值的特征的特征向量, 则$ \bm{\xi_1}, \bm{\xi_2} $线性无关
+		\item 若$ \bm{\xi_1}, \bm{\xi_2} $是$ \bm{A} $的属于同一特征值$ \lambda $的特征向量, 则$ k_1\bm{\xi_1} + k_1\bm{\xi_2} $仍然是$ \bm{A} $的属于特征值$ \lambda $的特征向量
+	\end{enumerate}
+\end{enumerate}
+\subsection{矩阵的相似对角化}
+\subsubsection{定义}
+设$ n $阶矩阵$ \bm{A} $, 存在$ n $阶可逆矩阵$ \bm{P} $, 使得$ \bm{P}^{-1}\bm{A}\bm{P}=\bm{\Lambda} $, 则$ \bm{A}\sim \bm{\Lambda} $, $ \bm{\Lambda} $是$ \bm{A} $的相似标准形.\par 
+\[ \bm{P}=\left[\bm{\xi_1}, \bm{\xi_2},... \bm{\xi_n}\right], \bm{\Lambda} =\begin{bmatrix}
+	\lambda_1 &  &  &  \\
+	& \lambda_2 &  &  \\
+	&  & \ddots &  \\
+	&  &  & \lambda_n 
+\end{bmatrix}
+ \]
+\subsubsection{条件}
+\begin{enumerate}
+	\item $ n $阶矩阵$ \bm{A} $可以相似对角化$ \Leftrightarrow $$ \bm{A} $有$ n $个线性无关的特征向量($ \left| \bm{P}\right| = 0$)
+	\item $ n $阶矩阵$ \bm{A} $可以相似对角化$ \Leftrightarrow $$ \bm{A} $对应于每个$ k_i $重特征值都有$ k_i $个线性无关的特征向量($ n $重特征值对应的解空间是$ n $维)
+	\item $ n $阶矩阵$ \bm{A} $有$ n $个不同特征值$ \Rightarrow $$ \bm{A} $可以相似对角化(由特征向量的性质3可以推出)
+	\item $ n $阶矩阵$ \bm{A} $为实对称矩阵$ \Rightarrow $$ \bm{A} $可以相似对角化
+\end{enumerate}\par
+上述总共两个充要条件, 两个充分条件.
+\subsection{实对称矩阵}
+\subsubsection{定义}
+若$ \bm{A}^T = \bm{A} $, 则$ \bm{A} $为是对称矩阵, 如果在此基础上$ \bm{A} $的元素都是实数, 则$ \bm{A} $是实对称矩阵.
+\subsubsection{性质}
+\begin{enumerate}
+	\item 实对称矩阵$ \bm{A} $的属于不同特征值的特征向量相互正交
+	\item 实对称矩阵$ \bm{A} $必相似于对角矩阵
+\end{enumerate}
+\end{document} 
