@@ -32,9 +32,9 @@
 \subsubsection{性质}
 \begin{enumerate}
 	\item \begin{itemize}
-		\item \textbf{反身性}: $ \bm{A}\sim \bm{A} $
-		\item \textbf{对称性}: $ \bm{A}\sim \bm{B}\Rightarrow \bm{B}\sim \bm{A} $
-		\item \textbf{传递性}: $ \bm{A}\sim \bm{B}, \bm{B}\sim \bm{C}\Rightarrow \bm{A}\sim \bm{C} $
+		\item 反身性: $ \bm{A}\sim \bm{A} $
+		\item 对称性: $ \bm{A}\sim \bm{B}\Rightarrow \bm{B}\sim \bm{A} $
+		\item 传递性: $ \bm{A}\sim \bm{B}, \bm{B}\sim \bm{C}\Rightarrow \bm{A}\sim \bm{C} $
 	\end{itemize}
     \item 若$ \bm{A}\sim \bm{B} $, 则有\begin{itemize}
     	\item $ r(\bm{A})=r(\bm{B}) $
@@ -71,9 +71,9 @@
 \subsubsection{定义}
 若$ \bm{A}^T = \bm{A} $, 则$ \bm{A} $为是对称矩阵, 如果在此基础上$ \bm{A} $的元素都是实数, 则$ \bm{A} $是实对称矩阵.
 \subsubsection{性质}
-\begin{enumerate}
+\begin{enumerate}\label{ref:实对称矩阵}
 	\item 实对称矩阵$ \bm{A} $的属于不同特征值的特征向量相互正交
-	\item 实对称矩阵$ \bm{A} $必相似于对角矩阵, 且存在正交矩阵$ \bm{Q} $, 使得$ \bm{Q}^{-1}\bm{A}\bm{Q}=\bm{Q}^{T}\bm{A}\bm{Q}=\bm{\Lambda}$,  
+	\item 实对称矩阵$ \bm{A} $必相似于对角矩阵, 必有可逆矩阵$ \bm{P}=\left[ \bm{\xi_{1}}, \bm{\xi_{2}},... ,\bm{\xi_{n}}\right] $, 使得$ \bm{P}^{-1}\bm{A}\bm{P}=\bm{\Lambda} $. 且存在正交矩阵$ \bm{Q} $, 使得$ \bm{Q}^{-1}\bm{A}\bm{Q}=\bm{Q}^{T}\bm{A}\bm{Q}=\bm{\Lambda}$,  
 \end{enumerate}
 \section{习题}
 \subsection{特征值和特征向量}
@@ -149,8 +149,115 @@ $ n $元变量$ x_{1}, x_{2},... ,x_{n} $的二次齐次多项式称为$ n $元�
 则二次型可以表示为:
 \begin{equation*}
 	f(\bm{x})=\bm{x}^{T}\bm{A}\bm{x}
-\end{equation*}
-
+\end{equation*}\par
+必须强调的是, 这里的$ \bm{A} $是一个对称矩阵.
+\subsection{线性变换}
+对于$ n $元二次型$ f(x_{1}, x_{2},... ,x_{n}) $, 若令
+\begin{equation*}
+	\left\{
+	\begin{aligned}
+		& x_{1} = c_{11}y_{1}+c_{12}y_{2}+\dots +c_{1n}y_{n}, \\ 
+		& x_{2} = c_{21}y_{1}+c_{22}y_{2}+\dots +c_{2n}y_{n}, \\
+		& \dots \\
+		& x_{n} = c_{n1}y_{1}+c_{n2}y_{2}+\dots +c_{nn}y_{n},
+	\end{aligned}
+	\right.
+\end{equation*}\par
+记$ \bm{x}=\begin{bmatrix}
+	x_1 \\
+	x_2 \\
+	\vdots \\
+	x_n 
+\end{bmatrix}, \bm{C}=\begin{bmatrix}
+c_{11} & c_{12} & \dots & c_{1n} \\
+c_{21} & c_{22} & \dots & c_{2n} \\
+\vdots & \vdots &  & \vdots \\
+c_{n1} & c_{n2} & \dots & c_{nn} 
+\end{bmatrix}, \bm{y}=\begin{bmatrix}
+y_1 \\
+y_2 \\
+\vdots \\
+y_n 
+\end{bmatrix}$\par \vspace{1em}
+则上式可以写为$ \bm{x}=\bm{C}\bm{y} $. 上式成为从$ y_{1}, y_{2},... ,y_{n} $到$ x_{1}, x_{2},... ,x_{n} $的线性变换. 如果$ \bm{C} $可逆, 则称为可逆线性变换.\par
+如果$ f(\bm{x})=\bm{x}^{T}\bm{A}\bm{x} $, 令$ \bm{x}=\bm{C}\bm{y} $, 则有$ f(\bm{x})=(\bm{C}\bm{y})^{T}\bm{A}(\bm{C}\bm{y})=\bm{y}^{T}(\bm{C}^{T}\bm{A}\bm{C})\bm{y}. $\par
+记$ \bm{B}=\bm{C}^{T}\bm{A}\bm{C} $, 则有$ f(\bm{x})=\bm{y}^{T}\bm{B}\bm{y})=g(\bm{y}) $. 至此我们通过线性变换得到了一个新的二次型.
+\subsection{矩阵合同}
+\subsubsection{定义}
+设$ \bm{A}, \bm{B} $为$ n $阶矩阵, 若存在可逆矩阵$ \bm{C} $, 使得:
+\begin{equation*}
+	\bm{C}^{T}\bm{A}\bm{C}=\bm{B}
+\end{equation*}\par
+则称$ \bm{A} $和$ \bm{B} $合同, 记作$ \bm{A}\simeq \bm{B} $. 此时称$ f(\bm{x}) $与$ g(\bm{x}) $为合同二次型.\par
+所谓合同, 就是指同一个二次型在可逆线性变换下的两个不同状态的联系.
+\subsubsection{性质}
+\begin{enumerate}
+	\item 反身性: $ \bm{A}\simeq \bm{A} $
+	\item 对称性: $ \bm{A}\simeq \bm{B}\Rightarrow \bm{B}\simeq \bm{A} $
+	\item 传递性: $ \bm{A}\simeq \bm{B}, \bm{B}\simeq \bm{C}\Rightarrow \bm{A}\simeq \bm{C} $
+\end{enumerate}
+\subsection{标准形/规范形}
+\subsubsection{定义}
+若二次型中只含有平方项, 没有交叉项, 形如
+\begin{equation*}
+	d_{1}x_{1}^{2}+d_{2}x_{2}^{2}+... +d_{n}x_{n}^{2}
+\end{equation*}\par
+的二次型称为标准形.\par
+若标准形中, 系数$ d_{i} $仅为$ 1, -1, 0 $的二次型称为规范形.
+\subsubsection{求法}
+我们的目标是使得$ \bm{B} $矩阵是一个对角矩阵, 即只有主对角线有元素, 才可以得到标准型. 有两种方法:
+\begin{enumerate}
+	\item 任何二次型可以通过配方法(作可逆线性变换)化为标准形和规范形, 它求得的对角矩阵(标准形)形式如下(不一定是特征值$ \lambda $):
+	\begin{equation*}
+		\bm{\Lambda}=\begin{bmatrix}
+			d_1 &  &  &  \\
+			& d_2 &  &  \\
+			&  & \ddots &  \\
+			&  &  & d_n 
+		\end{bmatrix}
+	\end{equation*}\par
+    此外, 它还可以转化成规范形:
+    \begin{equation*}
+    	\bm{\Lambda}=\begin{bmatrix}
+    		1 &  &  &  &  &  &  &  &  \\
+    		& \ddots &  &  &  &  &  &  &  \\
+    		&  & 1 &  &  &  &  &  &  \\
+    		&  &  & -1 &  &  &  &  &  \\
+    		&  &  &  & \ddots &  &  &  &  \\
+    		&  &  &  &  & -1 &  &  &  \\
+    		&  &  &  &  &  & 0 &  &  \\
+    		&  &  &  &  &  &  & \ddots &  \\
+    		&  &  &  &  &  &  &  & 0 
+    	\end{bmatrix}
+    \end{equation*}
+	\item 任何二次型可以通过正交变换化成标准形(见\ref{ref:求标准形}), 它求得的对角矩阵(标准形)形式如下(特征值不一定是$ 0, 1, -1 $):
+	\begin{equation*}
+		\bm{\Lambda}=\begin{bmatrix}
+			\lambda_1 &  &  &  \\
+			& \lambda_2 &  &  \\
+			&  & \ddots &  \\
+			&  &  & \lambda_n
+		\end{bmatrix}
+	\end{equation*}
+\end{enumerate}
+\subsection{惯性定理}
+\subsubsection{定义}
+无论选取什么样的线性变换(配方还是正交合同变换), 将二次型化为标准形或者规范形, 其正项系数个数$ p $, 负项个数$ q $都是不变的, $ p $称为正惯性指数, $ q $称为负惯性指数.
+\subsubsection{性质}
+\begin{enumerate}
+	\item 若二次型的秩为$ r $, 则$ r=p+q $, 可逆线性变换不改变正/负惯性指数
+	\item 两个二次型(或者实对称矩阵)合同的条件是有相同的正/负惯性指数
+\end{enumerate}
+\section{习题}
+\subsection{标准形/规范形}
+\subsubsection{用正交变换法化二次型为标准形}
+\begin{enumerate}\label{ref:求标准形}
+	\item 写出二次型矩阵$ \bm{A} $
+	\item 求$ \bm{A} $的特征值$ \lambda $和特征向量$ \bm{\xi} $
+	\item 将$ \bm{\xi_{1}},..., \bm{\xi_{n}} $通过正交化/单位化成正交矩阵$ \bm{Q}=(\bm{\eta_{1}},..., \bm{\eta_{n}}) $
+	\item 令$ \bm{x}=\bm{Q}\bm{y}\Rightarrow f(\bm{x})=\bm{x}^{T}\bm{A}\bm{x}=(\bm{Q}\bm{y})^{T}\bm{A}\bm{Q}\bm{y}=\bm{y}^{T}\bm{Q}^{-1}\bm{A}\bm{Q}\bm{y}=\bm{y}^{T}\bm{\lambda}\bm{y}\Rightarrow f(y_{1},..., y_{n})=\lambda_{1}y_{1}^{2}+... +\lambda_{n}y_{n}^{2} $ 
+\end{enumerate}
+\paragraph{注意} 正交变换只能化二次型为标准形, 不能化为规范形(除非特征值都是$ 0, 1, -1 $)
 
 
 
