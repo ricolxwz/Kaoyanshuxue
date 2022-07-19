@@ -126,9 +126,30 @@ $ f(x) $为多项式, 若矩阵$ \bm{A} $满足$ f(\bm{A})=\bm{0}\Rightarrow f(\
     	\end{enumerate}
     \end{enumerate}
 \end{enumerate}
-
-
-
+\chapter{二次型}
+\section{基础知识}
+\subsection{二次型}
+\subsubsection{定义}
+$ n $元变量$ x_{1}, x_{2},... ,x_{n} $的二次齐次多项式称为$ n $元二次型, 简称二次型.\par
+二次型可以表示为$ \sum_{i=1}^{n}\sum_{j=1}^{n}a_{ij}x_{i}x_{j} $, 由此可以得出二次型的矩阵表达式, 令:
+\begin{equation*}
+	\bm{A}=\begin{bmatrix}
+		a_{11} & a_{12} & \dots & a_{1n} \\
+		a_{21} & a_{22} & \dots & a_{2n} \\
+		\vdots & \vdots &  & \vdots \\
+		a_{n1} & a_{n2} & \dots & a_{nn} 
+	\end{bmatrix},
+    \bm{x}=\begin{bmatrix}
+    	x_1 \\
+    	x_2 \\
+    	\vdots \\
+    	x_n 
+    \end{bmatrix}
+\end{equation*}\par
+则二次型可以表示为:
+\begin{equation*}
+	f(\bm{x})=\bm{x}^{T}\bm{A}\bm{x}
+\end{equation*}
 
 
 
