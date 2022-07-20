@@ -1,15 +1,3 @@
-\documentclass[oneside, onecolumn]{ctexbook}
-\usepackage[UTF8]{ctex}
-\usepackage{indentfirst}
-\usepackage{bm}
-\usepackage{float}
-\usepackage{amsmath}
-\usepackage{graphicx}
-\usepackage{xcolor}
-\setlength{\parindent}{2em}
-\title{线性代数}
-\begin{document}
-\include{titlepage.tex}
 \tableofcontents
 \chapter{特征值和特征向量}
 \section{基础知识}
@@ -23,7 +11,7 @@
 	\begin{enumerate}
 		\item $ \sum_{i=1}^{n}\lambda_{i}=\sum_{i=1}^{n}a_{ii}=tr(\bm{A}) $
 		\item $ \prod_{i=1}^{n}\lambda_{i}=\left| \bm{A}\right| $
-		\end{enumerate}
+	\end{enumerate}
 	\item 特征向量的性质
 	\begin{enumerate}
 		\item $ k $重特征值$ \Lambda $至多只有$ k $个线性无关的向量
@@ -41,18 +29,18 @@
 		\item 对称性: $ \bm{A}\sim \bm{B}\Rightarrow \bm{B}\sim \bm{A} $
 		\item 传递性: $ \bm{A}\sim \bm{B}, \bm{B}\sim \bm{C}\Rightarrow \bm{A}\sim \bm{C} $
 	\end{itemize}
-    \item 若$ \bm{A}\sim \bm{B} $, 则有\begin{itemize}
-    	\item $ r(\bm{A})=r(\bm{B}) $
-    	\item $ \left|\bm{A}\right|=\left|\bm{B}\right| $
-    	\item $ \bm{A}, \bm{B} $具有相同的特征值
-    	\item $ \bm{A}, \bm{B} $特征多项式的值相同
-    \end{itemize}
-    \item 若$ \bm{A}\sim \bm{B} $, 则有\begin{itemize}
-    	\item $ f(\bm{A})\sim f(\bm{B}) $
-    	\item $ \bm{A}^{T}\sim \bm{B}^{T} $
-    	\item $ \bm{A} $可逆, $ \bm{A}^{*}\sim \bm{B}^{*} $
-    	\item $ \bm{A} $可逆, $ \bm{A}^{-1}\sim \bm{B}^{-1} $
-    \end{itemize}
+	\item 若$ \bm{A}\sim \bm{B} $, 则有\begin{itemize}
+		\item $ r(\bm{A})=r(\bm{B}) $
+		\item $ \left|\bm{A}\right|=\left|\bm{B}\right| $
+		\item $ \bm{A}, \bm{B} $具有相同的特征值
+		\item $ \bm{A}, \bm{B} $特征多项式的值相同
+	\end{itemize}
+	\item 若$ \bm{A}\sim \bm{B} $, 则有\begin{itemize}
+		\item $ f(\bm{A})\sim f(\bm{B}) $
+		\item $ \bm{A}^{T}\sim \bm{B}^{T} $
+		\item $ \bm{A} $可逆, $ \bm{A}^{*}\sim \bm{B}^{*} $
+		\item $ \bm{A} $可逆, $ \bm{A}^{-1}\sim \bm{B}^{-1} $
+	\end{itemize}
 \end{enumerate}
 \subsection{矩阵的相似对角化}
 \subsubsection{定义}
@@ -63,7 +51,7 @@
 	&  & \ddots &  \\
 	&  &  & \lambda_n 
 \end{bmatrix}
- \]
+\]
 \subsubsection{条件}
 \begin{enumerate}
 	\item $ n $阶矩阵$ \bm{A} $可以相似对角化$ \Leftrightarrow $$ \bm{A} $有$ n $个线性无关的特征向量($ \left| \bm{P}\right| = 0$)
@@ -89,14 +77,14 @@
 \end{enumerate}
 \subsubsection{求解抽象型矩阵的特征值和特征向量}
 \begin{table}[H]
- 	\centering
- 	\begin{tabular}{|c|ccccccc|}
- 		\hline
- 		\textbf{矩阵} & $ \bm{A} $ & $ k\bm{A} $ & $ \bm{A}^{k} $ & $ f(\bm{A}) $ & $ \bm{A}^{-1} $ & $ \bm{A}^{*} $ & $ \bm{P}^{-1}\bm{A}\bm{P} $ \\ \hline
- 		\textbf{特征值} & $ \lambda $ & $ k\lambda $ & $ \lambda^{k} $ & $ f(\lambda) $ & $ \lambda^{-1} $ & $ \frac{\left|\bm{A}\right|}{\lambda} $ & $ \lambda $\\ \hline
- 		\textbf{特征向量} & $ \bm{\xi} $ & $ \bm{\xi} $ & $ \bm{\xi} $ & $ \bm{\xi} $ & $ \bm{\xi} $ & $ \bm{\xi} $ & $ \bm{P}^{-1}\bm{\xi} $\\ 
- 		\hline
- 	\end{tabular}
+	\centering
+	\begin{tabular}{|c|ccccccc|}
+		\hline
+		\textbf{矩阵} & $ \bm{A} $ & $ k\bm{A} $ & $ \bm{A}^{k} $ & $ f(\bm{A}) $ & $ \bm{A}^{-1} $ & $ \bm{A}^{*} $ & $ \bm{P}^{-1}\bm{A}\bm{P} $ \\ \hline
+		\textbf{特征值} & $ \lambda $ & $ k\lambda $ & $ \lambda^{k} $ & $ f(\lambda) $ & $ \lambda^{-1} $ & $ \frac{\left|\bm{A}\right|}{\lambda} $ & $ \lambda $\\ \hline
+		\textbf{特征向量} & $ \bm{\xi} $ & $ \bm{\xi} $ & $ \bm{\xi} $ & $ \bm{\xi} $ & $ \bm{\xi} $ & $ \bm{\xi} $ & $ \bm{P}^{-1}\bm{\xi} $\\ 
+		\hline
+	\end{tabular}
 \end{table}\par
 $ f(x) $为多项式, 若矩阵$ \bm{A} $满足$ f(\bm{A})=\bm{0}\Rightarrow f(\lambda)=0 $.
 \subsection{实对称矩阵}
@@ -121,15 +109,15 @@ $ f(x) $为多项式, 若矩阵$ \bm{A} $满足$ f(\bm{A})=\bm{0}\Rightarrow f(\
 			\item $\xi_{1}, \xi_{2}$相关
 		\end{enumerate}
 	\end{enumerate}
-    \item 实对称矩阵$ \bm{A} $
-    \begin{enumerate}
-    	\item $ \lambda_{1}\neq \lambda_{2}\Rightarrow \xi_{1}\perp \xi_{2}$\quad $\xi_{1}, \xi_{2}$无关
-    	\item $ \lambda_{1}= \lambda_{2}\Rightarrow$ 
-    	\begin{enumerate}
-    		\item $\xi_{1}\perp \xi_{2}$\quad $\xi_{1}, \xi_{2}$无关
-    		\item $\xi_{1}$不垂直于$\xi_{2}$\quad $\xi_{1}, \xi_{2}$无关
-    	\end{enumerate}
-    \end{enumerate}
+	\item 实对称矩阵$ \bm{A} $
+	\begin{enumerate}
+		\item $ \lambda_{1}\neq \lambda_{2}\Rightarrow \xi_{1}\perp \xi_{2}$\quad $\xi_{1}, \xi_{2}$无关
+		\item $ \lambda_{1}= \lambda_{2}\Rightarrow$ 
+		\begin{enumerate}
+			\item $\xi_{1}\perp \xi_{2}$\quad $\xi_{1}, \xi_{2}$无关
+			\item $\xi_{1}$不垂直于$\xi_{2}$\quad $\xi_{1}, \xi_{2}$无关
+		\end{enumerate}
+	\end{enumerate}
 \end{enumerate}
 \chapter{二次型}
 \section{基础知识}
@@ -144,12 +132,12 @@ $ n $元变量$ x_{1}, x_{2},... ,x_{n} $的二次齐次多项式称为$ n $元�
 		\vdots & \vdots &  & \vdots \\
 		a_{n1} & a_{n2} & \dots & a_{nn} 
 	\end{bmatrix},
-    \bm{x}=\begin{bmatrix}
-    	x_1 \\
-    	x_2 \\
-    	\vdots \\
-    	x_n 
-    \end{bmatrix}
+	\bm{x}=\begin{bmatrix}
+		x_1 \\
+		x_2 \\
+		\vdots \\
+		x_n 
+	\end{bmatrix}
 \end{equation*}\par
 则二次型可以表示为:
 \begin{equation*}
@@ -174,15 +162,15 @@ $ n $元变量$ x_{1}, x_{2},... ,x_{n} $的二次齐次多项式称为$ n $元�
 	\vdots \\
 	x_n 
 \end{bmatrix}, \bm{C}=\begin{bmatrix}
-c_{11} & c_{12} & \dots & c_{1n} \\
-c_{21} & c_{22} & \dots & c_{2n} \\
-\vdots & \vdots &  & \vdots \\
-c_{n1} & c_{n2} & \dots & c_{nn} 
+	c_{11} & c_{12} & \dots & c_{1n} \\
+	c_{21} & c_{22} & \dots & c_{2n} \\
+	\vdots & \vdots &  & \vdots \\
+	c_{n1} & c_{n2} & \dots & c_{nn} 
 \end{bmatrix}, \bm{y}=\begin{bmatrix}
-y_1 \\
-y_2 \\
-\vdots \\
-y_n 
+	y_1 \\
+	y_2 \\
+	\vdots \\
+	y_n 
 \end{bmatrix}$\par \vspace{1em}
 则上式可以写为$ \bm{x}=\bm{C}\bm{y} $. 上式成为从$ y_{1}, y_{2},... ,y_{n} $到$ x_{1}, x_{2},... ,x_{n} $的线性变换. 如果$ \bm{C} $可逆, 则称为可逆线性变换.\par
 如果$ f(\bm{x})=\bm{x}^{T}\bm{A}\bm{x} $, 令$ \bm{x}=\bm{C}\bm{y} $, 则有$ f(\bm{x})=(\bm{C}\bm{y})^{T}\bm{A}(\bm{C}\bm{y})=\bm{y}^{T}(\bm{C}^{T}\bm{A}\bm{C})\bm{y}. $\par
@@ -221,20 +209,20 @@ y_n
 			&  &  & d_n 
 		\end{bmatrix}
 	\end{equation*}\par
-    此外, 它还可以转化成规范形:
-    \begin{equation*}
-    	\bm{\Lambda}=\begin{bmatrix}
-    		1 &  &  &  &  &  &  &  &  \\
-    		& \ddots &  &  &  &  &  &  &  \\
-    		&  & 1 &  &  &  &  &  &  \\
-    		&  &  & -1 &  &  &  &  &  \\
-    		&  &  &  & \ddots &  &  &  &  \\
-    		&  &  &  &  & -1 &  &  &  \\
-    		&  &  &  &  &  & 0 &  &  \\
-    		&  &  &  &  &  &  & \ddots &  \\
-    		&  &  &  &  &  &  &  & 0 
-    	\end{bmatrix}
-    \end{equation*}
+	此外, 它还可以转化成规范形:
+	\begin{equation*}
+		\bm{\Lambda}=\begin{bmatrix}
+			1 &  &  &  &  &  &  &  &  \\
+			& \ddots &  &  &  &  &  &  &  \\
+			&  & 1 &  &  &  &  &  &  \\
+			&  &  & -1 &  &  &  &  &  \\
+			&  &  &  & \ddots &  &  &  &  \\
+			&  &  &  &  & -1 &  &  &  \\
+			&  &  &  &  &  & 0 &  &  \\
+			&  &  &  &  &  &  & \ddots &  \\
+			&  &  &  &  &  &  &  & 0 
+		\end{bmatrix}
+	\end{equation*}
 	\item 任何二次型可以通过正交变换化成标准形(见\ref{ref:求标准形}), 它求得的对角矩阵(标准形)形式如下(特征值不一定是$ 0, 1, -1 $):
 	\begin{equation*}
 		\bm{\Lambda}=\begin{bmatrix}
@@ -266,12 +254,11 @@ $ n $元二次型$ f(x_{1}, x_{2},... ,x_{n})=\bm{x}^{T}\bm{A}\bm{x} $, 若对�
 		& \Leftrightarrow \bm{A}\text{的特征值} \lambda_{i}>0(i=1, 2,... ,n) \\
 		& \Leftrightarrow \bm{A}\text{的全部顺序主子式均大于0}
 	\end{aligned} $
-    \item 必要条件: \par $ \begin{aligned}
-    	n\text{元二次型正定} & \Leftarrow a_{ii}>0(i=1, 2,... ,n) \\
-    	& \Leftarrow \left|\bm{A}\right|>0 
-    \end{aligned} $
+	\item 必要条件: \par $ \begin{aligned}
+		n\text{元二次型正定} & \Leftarrow a_{ii}>0(i=1, 2,... ,n) \\
+		& \Leftarrow \left|\bm{A}\right|>0 
+	\end{aligned} $
 \end{enumerate}
-
 \section{习题}
 \subsection{标准形/规范形}
 \subsubsection{用正交变换法化二次型为标准形}
@@ -282,4 +269,3 @@ $ n $元二次型$ f(x_{1}, x_{2},... ,x_{n})=\bm{x}^{T}\bm{A}\bm{x} $, 若对�
 	\item 令$ \bm{x}=\bm{Q}\bm{y}\Rightarrow f(\bm{x})=\bm{x}^{T}\bm{A}\bm{x}=(\bm{Q}\bm{y})^{T}\bm{A}\bm{Q}\bm{y}=\bm{y}^{T}\bm{Q}^{-1}\bm{A}\bm{Q}\bm{y}=\bm{y}^{T}\bm{\lambda}\bm{y}\Rightarrow f(y_{1},..., y_{n})=\lambda_{1}y_{1}^{2}+... +\lambda_{n}y_{n}^{2} $ 
 \end{enumerate}
 \paragraph{注意} 正交变换只能化二次型为标准形, 不能化为规范形(除非特征值都是$ 0, 1, -1 $)
-\end{document} 
