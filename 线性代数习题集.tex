@@ -4,8 +4,13 @@
 \usepackage{bm}
 \usepackage{float}
 \usepackage{amsmath}
+\usepackage{graphicx}
+\usepackage{xcolor}
 \setlength{\parindent}{2em}
+\title{线性代数}
 \begin{document}
+\include{titlepage.tex}
+\tableofcontents
 \chapter{特征值和特征向量}
 \section{基础知识}
 \subsection{特征值和特征向量}
@@ -248,6 +253,25 @@ y_n
 	\item 若二次型的秩为$ r $, 则$ r=p+q $, 可逆线性变换不改变正/负惯性指数
 	\item 两个二次型(或者实对称矩阵)合同的条件是有相同的正/负惯性指数
 \end{enumerate}
+\subsection{正定二次型及其判别}
+\subsubsection{定义}
+$ n $元二次型$ f(x_{1}, x_{2},... ,x_{n})=\bm{x}^{T}\bm{A}\bm{x} $, 若对于任意的$ \bm{x}=[x_{1},x_{2},... ,x_{n}]^{T}\neq \bm{0} $均有二次型大于0, 即$ \bm{x}^{T}\bm{A}\bm{x}>0 $, 则称$ f $为正定二次型, $ \bm{A} $为正定矩阵.
+\subsubsection{条件}
+\begin{enumerate}
+	\item 充要条件: \par $ \begin{aligned}
+		n\text{元二次型正定} & \Leftrightarrow \text{对于任意}\bm{x}\neq \bm{0}, \text{有}\bm{x}^{T}\bm{A}\bm{x}>0 \\
+		& \Leftrightarrow f\text{的正惯性指数} p=n \\
+		& \Leftrightarrow \text{存在可逆矩阵} \bm{D}, \text{使} \bm{A}=\bm{D}^{T}\bm{D} \\
+		& \Leftrightarrow \bm{A}\simeq \bm{E} \\
+		& \Leftrightarrow \bm{A}\text{的特征值} \lambda_{i}>0(i=1, 2,... ,n) \\
+		& \Leftrightarrow \bm{A}\text{的全部顺序主子式均大于0}
+	\end{aligned} $
+    \item 必要条件: \par $ \begin{aligned}
+    	n\text{元二次型正定} & \Leftarrow a_{ii}>0(i=1, 2,... ,n) \\
+    	& \Leftarrow \left|\bm{A}\right|>0 
+    \end{aligned} $
+\end{enumerate}
+
 \section{习题}
 \subsection{标准形/规范形}
 \subsubsection{用正交变换法化二次型为标准形}
@@ -258,16 +282,4 @@ y_n
 	\item 令$ \bm{x}=\bm{Q}\bm{y}\Rightarrow f(\bm{x})=\bm{x}^{T}\bm{A}\bm{x}=(\bm{Q}\bm{y})^{T}\bm{A}\bm{Q}\bm{y}=\bm{y}^{T}\bm{Q}^{-1}\bm{A}\bm{Q}\bm{y}=\bm{y}^{T}\bm{\lambda}\bm{y}\Rightarrow f(y_{1},..., y_{n})=\lambda_{1}y_{1}^{2}+... +\lambda_{n}y_{n}^{2} $ 
 \end{enumerate}
 \paragraph{注意} 正交变换只能化二次型为标准形, 不能化为规范形(除非特征值都是$ 0, 1, -1 $)
-
-
-
-
-
-
-
-
-
-
-
-
 \end{document} 
