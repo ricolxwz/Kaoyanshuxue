@@ -1,3 +1,87 @@
+\chapter{行列式}
+\section{基础知识}
+\subsection{行列式}
+\subsubsection{定义}
+\begin{enumerate}
+	\item 几何定义\par $ n $阶行列式为$ n $个$ n $维向量组成的$ n $维图形的体积.
+	\item 逆序数法定义
+	\begin{equation*}
+		\begin{vmatrix}
+			a_{11}	&a_{12}  &\dots  &a_{1n}  \\
+			a_{21}	&a_{22}  &\dots  &a_{2n}  \\
+			\vdots	&\vdots  &\ddots  &\vdots  \\
+			a_{n1}	&a_{n2}  &\dots  &a_{nn}  
+		\end{vmatrix}  = \sum_{j_{1},j_{2}...j_{n}}(-1)^{r(j_{1}j_{2}...j_{n})}a_{1j_{1}}a_{2j_{2}}...a_{nj_{n}}
+	\end{equation*}
+    \item 展开定义\par 代数余子式: $ \bm{A}_{ij}=(-1)^{i+j}\bm{M}_{ij} $\par 按第$ i $行展开: $ a_{i1}\bm{A}_{i1}+a_{i2}\bm{A}_{i2}+...+a_{in}\bm{A}_{in} $\par 注意, 行列式的某行(列)元素分别乘另一行(列)的元素的代数余子式后再求和为$ 0 $
+\end{enumerate}
+\subsubsection{性质}
+\begin{enumerate}
+	\item $ |\bm{A}^{T}|=\bm{A} $
+	\item 若行列式中某行(列)全部元素为$ 0 $, 行列式为$ 0 $
+	\item 若行列式中某行(列)元素有公因子$ k $($ k\neq 0 $), $ k $可以提到行列式外面
+	\item 行列式某行(列)元素均是两个元素只和, 可以拆成两个行列式只和
+	\item 两行(列)互换, 值取反
+	\item 两行(列)元素对应成比例, 行列式为$ 0 $
+	\item 行列式中某行(列)$ k $倍加到另一行(列), 值不变
+\end{enumerate}
+\subsubsection{重要行列式}
+\begin{enumerate}
+	\item 主对角线行列式(上/下三角形行列式): $ |\bm{A}|=\prod_{i=1}^{n}a_{ii} $
+	\item 副对角线行列式: $ |\bm{A}|=(-1)^{\frac{n(n-1)}{2}}a_{1n}a_{2,n-1}...a_{n1} $
+	\item 拉普拉斯展开式
+	\subitem 主对角线:
+	$ \begin{vmatrix}
+		\bm{A} & \bm{0} \\
+		\bm{0} & \bm{B}
+	\end{vmatrix} = \begin{vmatrix}
+	\bm{A} & \bm{C} \\
+	\bm{0} & \bm{B}
+    \end{vmatrix} = \begin{vmatrix}
+    \bm{A} & \bm{0} \\
+    \bm{C} & \bm{B}
+    \end{vmatrix} = |\bm{A}||\bm{B}|$
+    \subitem 副对角线: 
+    $ \begin{vmatrix}
+    	\bm{0} & \bm{A} \\
+    	\bm{B} & \bm{0}
+    \end{vmatrix} = \begin{vmatrix}
+    	\bm{C} & \bm{A} \\
+    	\bm{B} & \bm{0}
+    \end{vmatrix} = \begin{vmatrix}
+    	\bm{0} & \bm{A} \\
+    	\bm{B} & \bm{C}
+    \end{vmatrix} = (-1)^{mn}|\bm{A}||\bm{B}|$
+    \item 范特蒙德行列式
+    \begin{equation*}
+    	\begin{vmatrix}
+    		1 & 1 & \dots & 1 \\
+    		x_1 & x_2 & \dots & x_n \\
+    		x_1^2 & x_2^2 & \dots & x_n^2 \\
+    		\vdots & \vdots  & \vdots & \vdots \\
+    		x_{1}^{n-1} & x_{2}^{n-1} & \dots & x_{n}^{n-1} 
+    	\end{vmatrix} = \sum_{1\le i<j\le n}(x_{j}-x_{i})
+    \end{equation*}
+\end{enumerate} 
+\section{习题}
+\subsection{行列式的计算}
+\subsubsection{具体型行列式}
+\begin{enumerate}
+	\item 化基本形法
+	\begin{enumerate}
+		\item 直接展开: 适用于含$ 0 $较多的行(列)
+		\item 爪型: 斜爪消平爪
+		\item 异爪型: 将平爪含$ 0 $较多行(列)展开
+		\item 行(列)和相等: 将行(列)全部加到第一行(列)提取公因子, 再化成三角形行列式
+		\item 消零化基本形: 
+		\item 拉普拉斯行列式: 一般为``X字形''
+		\item 范特蒙德行列式: 化为范式行列式, 看第二行写结果
+	\end{enumerate}
+	\item 递推法
+	\item 行列式表示的函数和方程
+\end{enumerate}
+\subsubsection{抽象型行列式}
+\subsection{余子式和代数余子式的线性组合的计算}
 \chapter{特征值和特征向量}
 \section{基础知识}
 \subsection{特征值和特征向量}
