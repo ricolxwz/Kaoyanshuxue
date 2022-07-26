@@ -30,6 +30,7 @@
 	\item 主对角线行列式(上/下三角形行列式): $ |\bm{A}|=\prod_{i=1}^{n}a_{ii} $
 	\item 副对角线行列式: $ |\bm{A}|=(-1)^{\frac{n(n-1)}{2}}a_{1n}a_{2,n-1}...a_{n1} $
 	\item 拉普拉斯展开式
+	\subitem $ \bm{A} $为$ m $阶矩阵, $ \bm{B} $为$ n $阶矩阵
 	\subitem 主对角线:
 	$ \begin{vmatrix}
 		\bm{A} & \bm{0} \\
@@ -82,6 +83,52 @@
 \end{enumerate}
 \subsubsection{抽象型行列式}
 \subsection{余子式和代数余子式的线性组合的计算}
+\chapter{矩阵}
+\section{基础知识}
+\subsection{矩阵}
+\subsubsection{本质}
+矩阵的本质是表达系统信息.
+\subsubsection{定义}
+由$ m\times n $个数排成的$ m $行$ n $列的矩形表格. 当$ m=n $的时候称$ \bm{A} $为$ n $阶方阵.\par 有两个矩阵, 如果$ m,n $相同, 称为同型矩阵.
+\subsubsection{运算}
+\begin{enumerate}
+	\item 相等: 同型矩阵且对应元素相等
+	\item 加法: 同型矩阵对应元素相加
+	\item 数乘矩阵(重要, 与行列式不同)\par 
+	\begin{equation*}
+		k\bm{A} = \bm{A}k = k \begin{bmatrix}
+		a_{11}	& a_{12}  & \dots & a_{1n} \\
+		a_{21}	& a_{22} & \dots & a_{2n} \\
+		\vdots	& \vdots & \ddots & \vdots \\
+		a_{m1}	& a_{m2} & \dots & a_{mn} 
+		\end{bmatrix} = 
+	    \begin{bmatrix}
+	    ka_{11}	& ka_{12}  & \dots & ka_{1n} \\
+	    ka_{21}	& ka_{22} & \dots & ka_{2n} \\
+	    \vdots	& \vdots & \ddots & \vdots \\
+	    ka_{m1}	& ka_{m2} & \dots & ka_{mn} 
+	    \end{bmatrix}
+	\end{equation*}
+    加法运算和数乘运算统称为矩阵的线性运算, 满足以下运算规律:
+    \begin{enumerate}
+	\item 交换律: $ \bm{A}+\bm{B}=\bm{B}+\bm{A} $
+	\item 结合律: $ (\bm{A}+\bm{B})+\bm{C}=\bm{A}+(\bm{B}+\bm{C}) $
+	\item 分配律: $ k(\bm{A}+\bm{B})=k\bm{A}+k\bm{B}, (k+l)\bm{A}=k\bm{A}+l\bm{B} $
+	\item 数和矩阵相乘的结合律: $ k(l\bm{A})=(kl)\bm{A}=l(k\bm{A}) $
+    \end{enumerate}
+    \item 乘法: $ \bm{A} $为$ m\times s $矩阵, $ \bm{B} $为$ s\times n $矩阵, 设$ \bm{C}=\bm{A}\bm{B}=(c_{ij})_{m\times n} $
+    \begin{equation*}
+    	c_{ij}=\sum_{k=1}^{s}a_{ik}b_{kj}=a_{i1}b_{1j}+a_{i2}b_{2j}+...+a_{is}b_{sj}(i=1,2,...,m;j=1,2,...,n)
+    \end{equation*}
+    乘法满足下列运算规律:
+    \begin{enumerate}
+    	\item 
+    \end{enumerate}
+\end{enumerate}
+\section{习题}
+\chapter{向量组}
+\chapter{线性方程组}
+
 \chapter{特征值和特征向量}
 \section{基础知识}
 \subsection{特征值和特征向量}
