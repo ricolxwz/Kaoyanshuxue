@@ -122,9 +122,83 @@
     \end{equation*}
     乘法满足下列运算规律:
     \begin{enumerate}
-    	\item 
+    	\item 结合律: $ (\bm{A}\bm{B})\bm{C}=\bm{A}(\bm{B}\bm{C}) $
+    	\item 分配律: $ \bm{A}(\bm{B}+\bm{C})=\bm{A}\bm{B}+\bm{A}\bm{C} $
+    	\item 数乘与矩阵乘积的结合律: $ (k\bm{A})\bm{B}=\bm{A}(k\bm{B}) $
     \end{enumerate}
+    \item 转置矩阵: 行列互换
+    \item 向量的内积和正交
+    \begin{enumerate}
+    	\item 内积: $ \bm{\alpha} = [\alpha_{1},...,\alpha_{n}]^{T}, \bm{\beta} = [\beta_{1},...,\beta_{n}]^{T} $, 内积为
+    	\begin{equation*}
+    		\bm{\alpha}^{T}\bm{\beta}=\sum_{i=1}^{n}a_{i}b_{i}=a_{1}b_{1}+...+a_{n}b_{n}
+    	\end{equation*}
+        记为$ (\bm{\alpha},\bm{\beta}) $
+    	\item 正交: 内积为$ 0 $
+    	\item 模: 向量的长度, 记作$ ||\bm{\alpha}|| $
+    \end{enumerate}
+    \item 标准正交向量组: 所有成员两两正交且模都为$ 1 $, 即:
+    \begin{equation*}
+    	\begin{aligned}
+    		 &\bm{\alpha}_{i}^{T}\bm{\alpha}_{j}=0\ (i\neq j)\\&\bm{\alpha}_{i}^{T}\bm{\alpha}_{j}=1\ (i=j)
+    	\end{aligned}
+    \end{equation*}
+    称$ \bm{\alpha_{1}},...,\bm{\alpha_{n}} $为单位正交向量组.
+    \item 施密特正交化(正交规范化)\par
+    \begin{equation*}
+    	\begin{aligned}
+    		&\bm{\beta_{1}}=\bm{\alpha_{1}}\\&\bm{\beta_{2}}=\bm{\alpha_{2}}-\frac{(\bm{\alpha_{2}},\bm{\beta_{1}})}{(\bm{\beta_{1}},\bm{\beta_{1}})}\bm{\beta_{1}}
+    	\end{aligned}
+    \end{equation*}
+    上式得到的是正交向量组, 再进行单位化:\par
+    \begin{equation*}
+    	\bm{\eta_{1}}=\frac{\bm{\beta_{1}}}{||\bm{\beta_{1}}||}, \bm{\eta_{2}}=\frac{\bm{\beta_{2}}}{||\bm{\beta_{2}}||}
+    \end{equation*}\par
+    得到标准正交向量组.
+    \item 幂: $ \bm{A} $为一个$ n $阶方阵, 则$ \bm{A}^{n}=\bm{A}\bm{A}...\bm{A}\bm{A}(\text{共}n\text{个}\bm{A}) $
+    \item 方阵乘积的行列式
+    \begin{equation*}
+    	|\bm{A}\bm{B}|=|\bm{A}||\bm{B}|
+    \end{equation*}
 \end{enumerate}
+\subsubsection{重要矩阵}
+\begin{enumerate}
+	\item 零矩阵
+	\item 单位矩阵
+	\item 数量矩阵: 数$ k $和单位矩阵的乘积
+	\item 对角矩阵: 非主对角线元素均为$ 0 $的矩阵
+	\item 上(下)三角矩阵
+	\item 对称矩阵: $ \bm{A}^{T}=\bm{A} $
+	\item 反对称矩阵: $ \bm{A}^{T}=-\bm{A} $
+	\item 正交矩阵: $ \bm{A}^{T}\bm{A}=\bm{E} $, 即行(列)向量的组合是标准正交向量组
+	\item 分块矩阵\par
+	分块矩阵的加法和数乘与行列式不同:
+	\begin{enumerate}
+		\item 加法
+		\begin{equation*}
+			\begin{bmatrix}
+				\bm{A_{1}} & \bm{A_{2}} \\ \bm{A_{3}} & \bm{A_{4}}
+			\end{bmatrix} + 
+		    \begin{bmatrix}
+			    \bm{B_{1}} & \bm{B_{2}} \\ \bm{B_{3}} & \bm{B_{4}}
+		    \end{bmatrix} = 
+	        \begin{bmatrix}
+	        	\bm{A_{1}}+\bm{B_{1}} & \bm{A_{2}}+\bm{B_{2}} \\ \bm{A_{3}}+\bm{B_{3}} & \bm{A_{4}}+\bm{B_{4}}
+	        \end{bmatrix}
+		\end{equation*}
+	    \item 数乘
+	    \begin{equation*}
+	    	k\begin{bmatrix}
+	    		\bm{A} & \bm{B} \\ \bm{C} & \bm{D}
+	    	\end{bmatrix} = 
+    	    \begin{bmatrix}
+    	    	k\bm{A} & k\bm{B} \\ k\bm{C} & k\bm{D}
+    	    \end{bmatrix}
+	    \end{equation*}
+        \item 乘法: 与矩阵乘法相同
+	\end{enumerate}
+\end{enumerate}
+\subsection{矩阵的逆}  吗    
 \section{习题}
 \chapter{向量组}
 \chapter{线性方程组}
