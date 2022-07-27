@@ -198,7 +198,121 @@
         \item 乘法: 与矩阵乘法相同
 	\end{enumerate}
 \end{enumerate}
-\subsection{矩阵的逆}  吗    
+\subsection{矩阵的逆}
+\subsubsection{定义}
+若$ \bm{A}\bm{B}=\bm{B}\bm{A}=\bm{E} $, 则矩阵$ \bm{A} $可逆, $ \bm{B} $为$ \bm{A} $的逆矩阵.
+\subsubsection{性质}
+设$ \bm{A}, \bm{B} $为同阶可逆矩阵
+\begin{enumerate}
+	\item $ (\bm{A}^{-1})^{-1}=\bm{A} $
+	\item $ (k\bm{A})^{-1}=\frac{1}{k}\bm{A}^{-1}\ (k\neq 0) $
+	\item $ (\bm{A}\bm{B})^{-1}=\bm{B}^{-1}\bm{A}^{-1}\ (\bm{A}\bm{B}\text{也可逆}) $
+	\item $ (\bm{A}^{T})^{-1}=(\bm{A}^{-1})^{T}\ (\bm{A}^{T}\text{也可逆}) $
+	\item $ |\bm{A}^{-1}|=|\bm{A}|^{-1} $
+	\item $ (\bm{A}+\bm{B})^{-1}\neq \bm{A}^{-1}+\bm{B}^{-1} $
+\end{enumerate}
+\subsection{伴随矩阵}
+\subsubsection{定义}
+矩阵$ \bm{A} $的伴随矩阵为:
+\begin{equation*}
+	\bm{A}^{*}=
+	\begin{bmatrix}
+	A_{11}	& A_{21} & \dots & A_{n1} \\
+	A_{12}	& A_{22} & \dots & A_{n2} \\
+	\vdots	& \vdots & \ddots & \vdots \\
+	A_{1n}	& A_{2n} & \dots & A_{nn}
+	\end{bmatrix}
+\end{equation*}\par
+其中$ \bm{A} $为对应元素的代数余子式.
+\subsubsection{性质}
+\begin{enumerate}
+	\item $ \bm{A}\bm{A}^{*}=\bm{A}^{*}\bm{A}=|\bm{A}|\bm{E} $
+	\item $ |\bm{A}^{*}|=|\bm{A}|^{n-1} $
+	\item $ (\bm{A}^{*})^{*}=|\bm{A}|^{n-2}\bm{A} $
+	\item $ (\bm{A})^{-1}=\frac{\bm{A}^{*}}{|\bm{A}|} $
+\end{enumerate}
+\subsection{初等矩阵}
+\subsubsection{定义}
+单位矩阵经过一次初等变换后得到的矩阵称为初等矩阵, 有三种:
+\begin{enumerate}
+	\item 倍乘初等矩阵
+	\begin{equation*}
+		\bm{E}_{2}(k)=
+		\begin{bmatrix}
+			1 & 0 & 0 \\
+			0 & k & 0 \\
+			0 & 0 & 1
+		\end{bmatrix}
+	\end{equation*}
+	\item 互换初等矩阵
+	\begin{equation*}
+		\bm{E}_{12}=
+		\begin{bmatrix}
+			0 & 1 & 0 \\
+			1 & 0 & 0 \\
+			0 & 0 & 1
+		\end{bmatrix}
+	\end{equation*}
+	\item 倍加初等矩阵
+	\begin{equation*}
+		\bm{E}_{31}(k)=
+		\begin{bmatrix}
+			1 & 0 & 0 \\
+			0 & 1 & 0 \\
+			k & 0 & 1
+		\end{bmatrix}
+	\end{equation*}\par 注意是第一行的$ k $倍加到第三行或者是第三列的$ k $倍加到第一列(别搞错顺序).
+\end{enumerate}
+\subsubsection{性质}
+\begin{enumerate}
+	\item $ [\bm{E}_{ij}]^{T}=\bm{E}_{ij}, [\bm{E}_{i}(k)]^{T}=\bm{E}_{i}(k), [\bm{E}_{ij}(k)]^{T}=\bm{E}_{ji}(k) $
+	\item $ [\bm{E}_{ij}]^{-1}=\bm{E}_{ij}, [\bm{E}_{i}(k)]^{-1}=\bm{E}_{i}(\frac{1}{k}), [\bm{E}_{ij}(k)]^{-1}=\bm{E}_{ij}(-k) $
+	\item 左行右列定理
+	\item 若$ \bm{A} $为可逆矩阵, 则可以表示为有限个可逆矩阵的乘积
+\end{enumerate}
+\subsection{等价矩阵}
+若$ \bm{A}, \bm{B} $均为$ m\times n $矩阵, 且$ r(\bm{A})=r(\bm{B}) $, 则$ \bm{A}, \bm{B} $为等价矩阵, 记作$ \bm{A}\cong\bm{B} $.
+\subsection{矩阵的秩}
+\subsubsection{定义}
+设$ \bm{A} $为$ m\times n $矩阵, $ \bm{A} $中最高阶非零子式的阶数为矩阵$ \bm{A} $的秩.
+如果$ \bm{A} $为$ n\times n $矩阵, 则$ r(\bm{A})=n\ (\text{满秩})\Leftrightarrow |\bm{A}|\neq 0\Leftrightarrow \bm{A}\text{可逆} $.
+\subsubsection{初等变换不改变矩阵的秩}
+$ r(\bm{A})=r(\bm{PA})=r(\bm{AQ})=r(\bm{PAQ}) $
+\subsubsection{重要式子}
+设$ \bm{A} $为$ m\times n $矩阵, $ \bm{B} $为满足有关矩阵运算要求的矩阵, 则
+\begin{enumerate}
+	\item $ 0\le r(\bm{A})\le \text{min}\{m,n\} $
+	\item $ r(k\bm{A})=r(\bm{A}) $
+	\item $ r(\bm{A}\bm{B})\le \text{min}\{r(\bm{A}),r(\bm{B})\} $
+	\item $ r(\bm{A}+\bm{B})\le r(\bm{A})+r(\bm{B}) $
+	\item $ r(\bm{A}^{*})=\left\{\begin{aligned}
+			& n\quad r(\bm{A})=n \\
+			& 1\quad r(\bm{A})=n-1 \\
+			& 0\quad r(\bm{A})<n-1
+		\end{aligned}\right.$ 其中$ \bm{A} $为$ n $阶方阵
+\end{enumerate}
+\subsection{常见运算汇总}
+\begin{enumerate}
+	\item 
+	\subitem $ |k\bm{A}|=k^{n}\bm{A} $
+	\subitem $ (k\bm{A})^{T}=k\bm{A}^{T} $
+	\subitem $ (k\bm{A})^{-1}=\frac{1}{k}\bm{A}^{-1} $
+	\subitem $ (k\bm{A})^{*}=k^{n-1}\bm{A}^{*} $
+	\item 
+	\subitem $ |\bm{A}+\bm{B}|\neq |\bm{A}|+|\bm{B}| $
+	\subitem $ (\bm{A}+\bm{B})^{T}=\bm{A}^{T}+\bm{B}^{T} $
+	\subitem $ (\bm{A}+\bm{B})^{-1}\neq \bm{A}^{-1}+\bm{B}^{-1} $
+	\subitem $ (\bm{A}+\bm{B})^{*}\neq \bm{A}^{*}+\bm{B}^{*} $
+    \item 
+    \subitem $ |\bm{A}\bm{B}|=|\bm{A}||\bm{B}| $
+    \subitem $ (\bm{A}\bm{B})^{T}=\bm{B}^{T}\bm{A}^{T} $
+    \subitem $ (\bm{A}\bm{B})^{-1}=\bm{B}^{-1}\bm{A}^{-1} $
+    \subitem $ (\bm{A}\bm{B})^{*}=\bm{B}^{*}\bm{A}^{*} $
+    \item 
+    \subitem $ (\bm{A}^{-1})^{*}=(\bm{A}^{*})^{-1} $
+    \subitem $ (\bm{A}^{-1})^{T}=(\bm{A}^{T})^{-1} $
+    \subitem $ (\bm{A}^{T})^{*}=(\bm{A}^{*})^{T} $
+\end{enumerate}
 \section{习题}
 \chapter{向量组}
 \chapter{线性方程组}
