@@ -44,24 +44,24 @@ $ \begin{vmatrix}
 \end{vmatrix} = |\bm{A}||\bm{B}|$
 \subitem 副对角线: 
 $ \begin{vmatrix}
-	\bm{0} & \bm{A} \\
-	\bm{B} & \bm{0}
+\bm{0} & \bm{A} \\
+\bm{B} & \bm{0}
 \end{vmatrix} = \begin{vmatrix}
-	\bm{C} & \bm{A} \\
-	\bm{B} & \bm{0}
+\bm{C} & \bm{A} \\
+\bm{B} & \bm{0}
 \end{vmatrix} = \begin{vmatrix}
-	\bm{0} & \bm{A} \\
-	\bm{B} & \bm{C}
+\bm{0} & \bm{A} \\
+\bm{B} & \bm{C}
 \end{vmatrix} = (-1)^{mn}|\bm{A}||\bm{B}|$
 \item 范特蒙德行列式
 \begin{equation*}
-	\begin{vmatrix}
-		1 & 1 & \dots & 1 \\
-		x_1 & x_2 & \dots & x_n \\
-		x_1^2 & x_2^2 & \dots & x_n^2 \\
-		\vdots & \vdots  & \vdots & \vdots \\
-		x_{1}^{n-1} & x_{2}^{n-1} & \dots & x_{n}^{n-1} 
-	\end{vmatrix} = \sum_{1\le i<j\le n}(x_{j}-x_{i})
+\begin{vmatrix}
+1 & 1 & \dots & 1 \\
+x_1 & x_2 & \dots & x_n \\
+x_1^2 & x_2^2 & \dots & x_n^2 \\
+\vdots & \vdots  & \vdots & \vdots \\
+x_{1}^{n-1} & x_{2}^{n-1} & \dots & x_{n}^{n-1} 
+\end{vmatrix} = \sum_{1\le i<j\le n}(x_{j}-x_{i})
 \end{equation*}
 \end{enumerate} 
 \section{习题}
@@ -79,17 +79,17 @@ $ \begin{vmatrix}
 \item 加边法: 例如矩阵
 \begin{equation*}
 \begin{bmatrix}
-	a_{1}-b & a_{2} & \dots & a_{n} \\
-	a_{1} & a_{2}-b & \dots & a_{n} \\
-	\vdots & \vdots & \ddots & \vdots \\
-	a_{1} & a_{2} & \dots & a_{n}-b
+a_{1}-b & a_{2} & \dots & a_{n} \\
+a_{1} & a_{2}-b & \dots & a_{n} \\
+\vdots & \vdots & \ddots & \vdots \\
+a_{1} & a_{2} & \dots & a_{n}-b
 \end{bmatrix}=
 \begin{bmatrix}
-   	1 & a_{1} & a_{2} & \dots & a_{n} \\
-   	0 & a_{1}-b & a_{2} & \dots & a_{n} \\
-   	0 & a_{1} & a_{2}-b & \dots & a_{n} \\
-   	0 & \vdots & \vdots & \ddots & \vdots \\
-   	0 & a_{1} & a_{2} & \dots & a_{n}-b
+1 & a_{1} & a_{2} & \dots & a_{n} \\
+0 & a_{1}-b & a_{2} & \dots & a_{n} \\
+0 & a_{1} & a_{2}-b & \dots & a_{n} \\
+0 & \vdots & \vdots & \ddots & \vdots \\
+0 & a_{1} & a_{2} & \dots & a_{n}-b
 \end{bmatrix}
 \end{equation*}加边后矩阵的值不变, 可以将第$ 1 $行的$ -1 $倍加到其他行, 再用其他行的$ (-1/b) $倍加到第一列.
 \item 化爪形行列式
@@ -138,47 +138,47 @@ ka_{m1}	& ka_{m2} & \dots & ka_{mn}
 \end{enumerate}
 \item 乘法: $ \bm{A} $为$ m\times s $矩阵, $ \bm{B} $为$ s\times n $矩阵, 设$ \bm{C}=\bm{A}\bm{B}=(c_{ij})_{m\times n} $
 \begin{equation*}
-	c_{ij}=\sum_{k=1}^{s}a_{ik}b_{kj}=a_{i1}b_{1j}+a_{i2}b_{2j}+...+a_{is}b_{sj}(i=1,2,...,m;j=1,2,...,n)
+c_{ij}=\sum_{k=1}^{s}a_{ik}b_{kj}=a_{i1}b_{1j}+a_{i2}b_{2j}+...+a_{is}b_{sj}(i=1,2,...,m;j=1,2,...,n)
 \end{equation*}
 乘法满足下列运算规律:
 \begin{enumerate}
-	\item 结合律: $ (\bm{A}\bm{B})\bm{C}=\bm{A}(\bm{B}\bm{C}) $
-	\item 分配律: $ \bm{A}(\bm{B}+\bm{C})=\bm{A}\bm{B}+\bm{A}\bm{C} $
-	\item 数乘与矩阵乘积的结合律: $ (k\bm{A})\bm{B}=\bm{A}(k\bm{B}) $
+\item 结合律: $ (\bm{A}\bm{B})\bm{C}=\bm{A}(\bm{B}\bm{C}) $
+\item 分配律: $ \bm{A}(\bm{B}+\bm{C})=\bm{A}\bm{B}+\bm{A}\bm{C} $
+\item 数乘与矩阵乘积的结合律: $ (k\bm{A})\bm{B}=\bm{A}(k\bm{B}) $
 \end{enumerate}
 \item 转置矩阵: 行列互换
 \item 向量的内积和正交
 \begin{enumerate}
-	\item 内积: $ \bm{\alpha} = [\alpha_{1},...,\alpha_{n}]^{T}, \bm{\beta} = [\beta_{1},...,\beta_{n}]^{T} $, 内积为
-	\begin{equation*}
-		\bm{\alpha}^{T}\bm{\beta}=\sum_{i=1}^{n}a_{i}b_{i}=a_{1}b_{1}+...+a_{n}b_{n}
-	\end{equation*}
+\item 内积: $ \bm{\alpha} = [\alpha_{1},...,\alpha_{n}]^{T}, \bm{\beta} = [\beta_{1},...,\beta_{n}]^{T} $, 内积为
+\begin{equation*}
+\bm{\alpha}^{T}\bm{\beta}=\sum_{i=1}^{n}a_{i}b_{i}=a_{1}b_{1}+...+a_{n}b_{n}
+\end{equation*}
 记为$ (\bm{\alpha},\bm{\beta}) $
-	\item 正交: 内积为$ 0 $
-	\item 模: 向量的长度, 记作$ ||\bm{\alpha}|| $
+\item 正交: 内积为$ 0 $
+\item 模: 向量的长度, 记作$ ||\bm{\alpha}|| $
 \end{enumerate}
 \item 标准正交向量组: 所有成员两两正交且模都为$ 1 $, 即:
 \begin{equation*}
-	\begin{aligned}
+\begin{aligned}
 &\bm{\alpha}_{i}^{T}\bm{\alpha}_{j}=0\ (i\neq j)\\&\bm{\alpha}_{i}^{T}\bm{\alpha}_{j}=1\ (i=j)
-	\end{aligned}
+\end{aligned}
 \end{equation*}
 称$ \bm{\alpha_{1}},...,\bm{\alpha_{n}} $为单位正交向量组.
 \item 施密特正交化(正交规范化)\par
 \begin{equation*}
-	\begin{aligned}
-		&\bm{\beta_{1}}=\bm{\alpha_{1}}\\&\bm{\beta_{2}}=\bm{\alpha_{2}}-\frac{(\bm{\alpha_{2}},\bm{\beta_{1}})}{(\bm{\beta_{1}},\bm{\beta_{1}})}\bm{\beta_{1}}
-	\end{aligned}
+\begin{aligned}
+&\bm{\beta_{1}}=\bm{\alpha_{1}}\\&\bm{\beta_{2}}=\bm{\alpha_{2}}-\frac{(\bm{\alpha_{2}},\bm{\beta_{1}})}{(\bm{\beta_{1}},\bm{\beta_{1}})}\bm{\beta_{1}}
+\end{aligned}
 \end{equation*}
 上式得到的是正交向量组, 再进行单位化:\par
 \begin{equation*}
-	\bm{\eta_{1}}=\frac{\bm{\beta_{1}}}{||\bm{\beta_{1}}||}, \bm{\eta_{2}}=\frac{\bm{\beta_{2}}}{||\bm{\beta_{2}}||}
+\bm{\eta_{1}}=\frac{\bm{\beta_{1}}}{||\bm{\beta_{1}}||}, \bm{\eta_{2}}=\frac{\bm{\beta_{2}}}{||\bm{\beta_{2}}||}
 \end{equation*}\par
 得到标准正交向量组.
 \item 幂: $ \bm{A} $为一个$ n $阶方阵, 则$ \bm{A}^{n}=\bm{A}\bm{A}...\bm{A}\bm{A}(\text{共}n\text{个}\bm{A}) $
 \item 方阵乘积的行列式
 \begin{equation*}
-	|\bm{A}\bm{B}|=|\bm{A}||\bm{B}|
+|\bm{A}\bm{B}|=|\bm{A}||\bm{B}|
 \end{equation*}
 \end{enumerate}
 \subsubsection{重要矩阵}
@@ -203,16 +203,16 @@ ka_{m1}	& ka_{m2} & \dots & ka_{mn}
 \bm{B_{1}} & \bm{B_{2}} \\ \bm{B_{3}} & \bm{B_{4}}
 \end{bmatrix} = 
 \begin{bmatrix}
-     	\bm{A_{1}}+\bm{B_{1}} & \bm{A_{2}}+\bm{B_{2}} \\ \bm{A_{3}}+\bm{B_{3}} & \bm{A_{4}}+\bm{B_{4}}
+\bm{A_{1}}+\bm{B_{1}} & \bm{A_{2}}+\bm{B_{2}} \\ \bm{A_{3}}+\bm{B_{3}} & \bm{A_{4}}+\bm{B_{4}}
 \end{bmatrix}
 \end{equation*}
 \item 数乘
 \begin{equation*}
- 	k\begin{bmatrix}
- 		\bm{A} & \bm{B} \\ \bm{C} & \bm{D}
- 	\end{bmatrix} = 
+k\begin{bmatrix}
+\bm{A} & \bm{B} \\ \bm{C} & \bm{D}
+\end{bmatrix} = 
 \begin{bmatrix}
-	    	k\bm{A} & k\bm{B} \\ k\bm{C} & k\bm{D}
+k\bm{A} & k\bm{B} \\ k\bm{C} & k\bm{D}
 \end{bmatrix}
 \end{equation*}
 \item 乘法: 与矩阵乘法相同
@@ -351,17 +351,17 @@ k_{1}\bm{\alpha_{1}}+k_{2}\bm{\alpha_{2}}+...+k_{m}\bm{\alpha_{m}}=\bm{0}
 \end{equation*}\par
 上式可以进一步写为$ x_{1}\bm{\alpha_{1}}+x_{2}\bm{\alpha_{2}}+...+x_{m}\bm{\alpha_{m}}=\bm{0} $, 这个式子有三种形式:
 \begin{equation*}
-	\bm{A}=\begin{bmatrix}
-		a_{11} & a_{12} & \dots & a_{1m} \\
-		a_{21} & a_{22} & \dots & a_{2m} \\
-		\vdots & \vdots & \ddots & \vdots \\
-		a_{n1} & a_{n2} & \dots & a_{nm}
-	\end{bmatrix}
+\bm{A}=\begin{bmatrix}
+a_{11} & a_{12} & \dots & a_{1m} \\
+a_{21} & a_{22} & \dots & a_{2m} \\
+\vdots & \vdots & \ddots & \vdots \\
+a_{n1} & a_{n2} & \dots & a_{nm}
+\end{bmatrix}
 \begin{bmatrix}
-	x_{1} \\
-	x_{2} \\
-	\vdots \\
-	x_{m}
+x_{1} \\
+x_{2} \\
+\vdots \\
+x_{m}
 \end{bmatrix}=
 \begin{bmatrix}
 0 \\
@@ -373,22 +373,22 @@ k_{1}\bm{\alpha_{1}}+k_{2}\bm{\alpha_{2}}+...+k_{m}\bm{\alpha_{m}}=\bm{0}
 或者
 \begin{equation*}
 \bm{A}=x_{1}\begin{bmatrix}
-	a_{11} \\
-	a_{21} \\
-	\vdots \\
-	a_{n1}
+a_{11} \\
+a_{21} \\
+\vdots \\
+a_{n1}
 \end{bmatrix}+
 x_{2}\begin{bmatrix}
-	a_{12} \\
-	a_{22} \\
-	\vdots \\
-	a_{n2}
+a_{12} \\
+a_{22} \\
+\vdots \\
+a_{n2}
 \end{bmatrix}+...+
 x_{m}\begin{bmatrix}
-	a_{1m} \\
-	a_{2m} \\
-	\vdots \\
-	a_{nm}
+a_{1m} \\
+a_{2m} \\
+\vdots \\
+a_{nm}
 \end{bmatrix}=
 \begin{bmatrix}
 0 \\
