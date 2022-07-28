@@ -73,7 +73,27 @@
 		\item 直接展开: 适用于含$ 0 $较多的行(列)
 		\item 爪型: 斜爪消平爪
 		\item 异爪型: 将平爪含$ 0 $较多行(列)展开
-		\item 行(列)和相等: 将行(列)全部加到第一行(列)提取公因子, 再化成三角形行列式
+		\item 行(列)和相等: 三种方法
+		\begin{enumerate}
+			\item 提取公因子: 将其余行全都加到第一行上去, 提取公因子
+			\item 加边法: 例如矩阵
+			\begin{equation*}
+				\begin{bmatrix}
+					a_{1}-b & a_{2} & \dots & a_{n} \\
+					a_{1} & a_{2}-b & \dots & a_{n} \\
+					\vdots & \vdots & \ddots & \vdots \\
+					a_{1} & a_{2} & \dots & a_{n}-b
+				\end{bmatrix}=
+			    \begin{bmatrix}
+			    	1 & a_{1} & a_{2} & \dots & a_{n} \\
+			    	0 & a_{1}-b & a_{2} & \dots & a_{n} \\
+			    	0 & a_{1} & a_{2}-b & \dots & a_{n} \\
+			    	0 & \vdots & \vdots & \ddots & \vdots \\
+			    	0 & a_{1} & a_{2} & \dots & a_{n}-b
+			    \end{bmatrix}
+			\end{equation*}加边后矩阵的值不变, 可以将第$ 1 $行的$ -1 $倍加到其他行, 再用其他行的$ (-1/b) $倍加到第一列.
+		    \item 化爪形行列式
+		\end{enumerate}
 		\item 消零化基本形: 
 		\item 拉普拉斯行列式: 一般为``X字形''
 		\item 范特蒙德行列式: 化为范式行列式, 看第二行写结果
@@ -315,6 +335,88 @@ $ r(\bm{A})=r(\bm{PA})=r(\bm{AQ})=r(\bm{PAQ}) $
 \end{enumerate}
 \section{习题}
 \chapter{向量组}
+\section{基础知识}
+\section{习题}
+\subsection{向量}
+\subsubsection{定义}
+$ n $个数构成的一个有序数组$ [a_{1},a_{2},...,a_{n}] $称为一个$ n $维向量, 记为$ \bm{\alpha} = [a_{1},a_{2},...,a_{n}] $, 并称$ \bm{\alpha} $为$ n $维行向量, $ \bm{\alpha}^{T} $为$ n $维列向量. 其中$ a_{i} $称为向量$ \bm{\alpha} $或者$ \bm{\alpha}^{T} $的第$ i $个分量.
+\subsection{线性组合和线性相关}
+\subsubsection{定义}
+\begin{enumerate}
+	\item 线性组合: 设有$ m $个$ n $维向量$ \bm{\alpha_{1}},\bm{\alpha_{2}},...,\bm{\alpha_{m}} $和$ m $个数$ k_{1},k_{2},...,k_{m} $. 则向量$ k_{1}\bm{\alpha_{1}}+k_{2}\bm{\alpha_{2}}+...+k_{m}\bm{\alpha_{m}} $为向量组$ \bm{\alpha_{1}},\bm{\alpha_{2}},...,\bm{\alpha_{m}} $的线性组合
+	\item 线性表出: 若向量$ \bm{\beta} $能表示成向量组$ \bm{\alpha_{1}},\bm{\alpha_{2}},...,\bm{\alpha_{m}} $的线性组合, 即$ \bm{\beta}=k_{1}\bm{\alpha_{1}}+k_{2}\bm{\alpha_{2}}+...+k_{m}\bm{\alpha_{m}} $, 则称$ \bm{\beta} $能够被向量组线性表出
+	\item 线性相关: 存在一组不全为$ 0 $的数$ k_{1},k_{2},...,k_{m} $, 使得下式成立:
+	\begin{equation*}
+		k_{1}\bm{\alpha_{1}}+k_{2}\bm{\alpha_{2}}+...+k_{m}\bm{\alpha_{m}}=\bm{0}
+	\end{equation*}\par
+    上式可以进一步写为$ x_{1}\bm{\alpha_{1}}+x_{2}\bm{\alpha_{2}}+...+x_{m}\bm{\alpha_{m}}=\bm{0} $, 这个式子有三种形式:
+    \begin{equation*}
+    	\bm{A}=\begin{bmatrix}
+    		a_{11} & a_{12} & \dots & a_{1m} \\
+    		a_{21} & a_{22} & \dots & a_{2m} \\
+    		\vdots & \vdots & \ddots & \vdots \\
+    		a_{n1} & a_{n2} & \dots & a_{nm}
+    	\end{bmatrix}
+    \begin{bmatrix}
+    	x_{1} \\
+    	x_{2} \\
+    	\vdots \\
+    	x_{m}
+    \end{bmatrix}=
+\begin{bmatrix}
+	0 \\
+	0 \\
+	\vdots \\
+	0
+\end{bmatrix}
+\end{equation*}
+或者
+\begin{equation*}
+    \bm{A}=x_{1}\begin{bmatrix}
+    	a_{11} \\
+    	a_{21} \\
+    	\vdots \\
+    	a_{n1}
+    \end{bmatrix}+
+    x_{2}\begin{bmatrix}
+    	a_{12} \\
+    	a_{22} \\
+    	\vdots \\
+    	a_{n2}
+    \end{bmatrix}+...+
+    x_{m}\begin{bmatrix}
+    	a_{1m} \\
+    	a_{2m} \\
+    	\vdots \\
+    	a_{nm}
+    \end{bmatrix}=
+\begin{bmatrix}
+	0 \\
+	0 \\
+	\vdots \\
+	0
+\end{bmatrix}
+    \end{equation*}
+或者
+\begin{equation*}
+	\left\{\begin{aligned}
+		& x_{1}a_{11}+x_{2}a_{12}+...+x_{m}a_{1m}=0 \\
+		& x_{1}a_{21}+x_{2}a_{22}+...+x_{m}a_{2m}=0 \\
+		& \dots \\
+		& x_{1}a_{n1}+x_{2}a_{n2}+...+x_{m}a_{nm}=0
+	\end{aligned}
+    \right.
+\end{equation*}
+    \item 线性无关: 只有当$ k_{1},k_{2},...,k_{m} $全为$ 0 $的时候, 才能使上式成立
+\end{enumerate}
+\subsubsection{判别相关性定理}
+\begin{enumerate}
+	\item 充要条件: 向量组中至少有一个向量能被其余的$ n-1 $的向量线性表出
+	\item 若向量组$ \bm{\alpha_{1}},\bm{\alpha_{2}},...,\bm{\alpha_{m}} $线性无关, 而向量组$ \bm{\beta}, \bm{\alpha_{1}},\bm{\alpha_{2}},...,\bm{\alpha_{m}} $线性相关, 则$ \bm{\beta} $可由向量组$ \bm{\alpha_{1}},\bm{\alpha_{2}},...,\bm{\alpha_{m}} $线性表出, 且表示方法唯一
+	\item 
+\end{enumerate}
+
+
 \chapter{线性方程组}
 
 \chapter{特征值和特征向量}
