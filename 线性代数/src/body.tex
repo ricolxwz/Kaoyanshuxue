@@ -349,7 +349,11 @@ $ n $个数构成的一个有序数组$ [a_{1},a_{2},...,a_{n}] $称为一个$ n
 \begin{equation*}
 k_{1}\bm{\alpha_{1}}+k_{2}\bm{\alpha_{2}}+...+k_{m}\bm{\alpha_{m}}=\bm{0}
 \end{equation*}\par
-上式可以进一步写为$ x_{1}\bm{\alpha_{1}}+x_{2}\bm{\alpha_{2}}+...+x_{m}\bm{\alpha_{m}}=\bm{0} $, 这个式子有三种形式:
+上式可以进一步写为$ x_{1}\bm{\alpha_{1}}+x_{2}\bm{\alpha_{2}}+...+x_{m}\bm{\alpha_{m}}=\bm{0} $, 这个式子有四种形式:
+\begin{equation*}
+\bm{A}\bm{x}=\bm{0}
+\end{equation*}
+或者
 \begin{equation*}
 \bm{A}=\begin{bmatrix}
 a_{11} & a_{12} & \dots & a_{1m} \\
@@ -411,11 +415,46 @@ a_{nm}
 \end{enumerate}
 \subsubsection{判别相关性定理}
 \begin{enumerate}
-\item 充要条件: 向量组中至少有一个向量能被其余的$ n-1 $的向量线性表出
+\item 相关充要条件: 向量组中至少有一个向量能被其余的$ n-1 $的向量线性表出
+\item 相关充要条件: 方程$ \bm{A}\bm{x}=\bm{0} $有非$ \bm{0} $解
 \item 若向量组$ \bm{\alpha_{1}},\bm{\alpha_{2}},...,\bm{\alpha_{m}} $线性无关, 而向量组$ \bm{\beta}, \bm{\alpha_{1}},\bm{\alpha_{2}},...,\bm{\alpha_{m}} $线性相关, 则$ \bm{\beta} $可由向量组$ \bm{\alpha_{1}},\bm{\alpha_{2}},...,\bm{\alpha_{m}} $线性表出, 且表示方法唯一
+\item 如果向量$ \bm{\beta} $能够由向量组$ \bm{\alpha_{1}},\bm{\alpha_{2}},...,\bm{\alpha_{m}} $线性表出, 则$ r([\bm{\alpha_{1}},\bm{\alpha_{2}},...,\bm{\alpha_{m}}])=r([\bm{\beta},\bm{\alpha_{1}},\bm{\alpha_{2}},...,\bm{\alpha_{m}}]) $
+\item 以少表多, 多的相关: 如果向量组$ \bm{\beta_{1}},\bm{\beta_{2}},...,\bm{\beta_{t}} $能够由向量组$ \bm{\alpha_{1}},\bm{\alpha_{2}},...,\bm{\alpha_{s}} $线性表示, 且$ t>s $, 则$ \bm{\beta_{1}},\bm{\beta_{2}},...,\bm{\beta_{t}} $线性相关
+\item 向量组的部分与整体: 如果向量组$ \bm{\alpha_{1}},\bm{\alpha_{2}},...,\bm{\alpha_{m}} $中有一部分向量线性相关, 则整体也线性相关;\par 如果向量组$ \bm{\alpha_{1}},\bm{\alpha_{2}},...,\bm{\alpha_{m}} $线性无关, 则其任一部分线性无关
+\item 向量的部分与整体: 如果向量组$ \bm{\alpha_{1}},\bm{\alpha_{2}},...,\bm{\alpha_{m}} $线性无关, 则将所有向量扩展到$ s $维得到的向量组$ \bm{\alpha_{1}}^{*},\bm{\alpha_{2}}^{*},...,\bm{\alpha_{m}}^{*} $也是线性无关的;\par 如果向量组$ \bm{\alpha_{1}},\bm{\alpha_{2}},...,\bm{\alpha_{m}} $线性相关, 则将所有向量缩减到$ k $维得到的向量组$ \bm{\alpha_{1}}^{*},\bm{\alpha_{2}}^{*},...,\bm{\alpha_{m}}^{*} $也是线性相关的
+\end{enumerate}
+\subsection{极大线性无关组和等价向量组}
+\subsubsection{定义}
+在向量组$ \bm{\alpha_{1}},\bm{\alpha_{2}},...,\bm{\alpha_{m}} $中, 存在向量组$ \bm{\alpha_{i_{1}}},\bm{\alpha_{i_{2}}},...,\bm{\alpha_{i_{s}}} $, 满足以下条件:
+\begin{enumerate}
+\item $ \bm{\alpha_{i_{1}}},\bm{\alpha_{i_{2}}},...,\bm{\alpha_{i_{s}}} $线性无关
+\item 向量组$ \bm{\alpha_{1}},\bm{\alpha_{2}},...,\bm{\alpha_{m}} $中的任一向量能够由向量组$ \bm{\alpha_{i_{1}}},\bm{\alpha_{i_{2}}},...,\bm{\alpha_{i_{s}}} $线性表示
+\end{enumerate}\par
+则称向量组$ \bm{\alpha_{i_{1}}},\bm{\alpha_{i_{2}}},...,\bm{\alpha_{i_{s}}} $为原向量组的极大线性无关组.
+\subsection{等价向量组}
+\subsubsection{定义}
+若有两个向量组$ (1)\ \bm{\alpha_{1}},\bm{\alpha_{2}},...,\bm{\alpha_{s}} $和$ (2)\ \bm{\beta_{1}},\bm{\beta_{2}},...,\bm{\beta_{t}} $, 这两个向量组中的任一元素都可以由另一向量组线性表出, 则称这两个向量组为等价向量组.
+\subsubsection{性质}
+\begin{enumerate}
+\item 反身性: $ (1)\simeq (1) $
+\item 对称性: $ (1)\simeq (2) \Leftrightarrow (2)\simeq (1) $
+\item 传递性: $ (1)\simeq (2), (2)\simeq (3) \Rightarrow (1)\simeq (3) $
+\item 向量组和它的极大线性无关组是等价向量组
+\item 等价向量组有相等的秩
+\end{enumerate}
+\subsection{向量组的秩}
+\subsubsection{定义}
+向量组的秩是极大线性无关组成员的个数, 是线性无关向量的个数, 是向量空间的维数, 是最简化的向量数.
+\subsubsection{性质}
+\begin{enumerate}
+\item 三秩相等: $ r(\bm{A}) $矩阵的秩=$ \bm{A} $的行秩=$ \bm{A} $的列秩
+\item 若$ \bm{A}\xrightarrow{\text{初等行变换}}\bm{B}$, 则
+\begin{enumerate}
+\item $ \bm{A} $的行向量组和$ \bm{B} $的行向量组是等价向量组
+\item $ \bm{A} $和$ \bm{B} $的任何相应部分列向量具有相同的线性相关性
+\end{enumerate}
 \item 
 \end{enumerate}
-
 
 \chapter{线性方程组}
 
