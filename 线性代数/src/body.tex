@@ -3,103 +3,103 @@
 \subsection{行列式}
 \subsubsection{定义}
 \begin{enumerate}
-	\item 几何定义\par $ n $阶行列式为$ n $个$ n $维向量组成的$ n $维图形的体积.
-	\item 逆序数法定义
-	\begin{equation*}
-		\begin{vmatrix}
-			a_{11}	&a_{12}  &\dots  &a_{1n}  \\
-			a_{21}	&a_{22}  &\dots  &a_{2n}  \\
-			\vdots	&\vdots  &\ddots  &\vdots  \\
-			a_{n1}	&a_{n2}  &\dots  &a_{nn}  
-		\end{vmatrix}  = \sum_{j_{1},j_{2}...j_{n}}(-1)^{r(j_{1}j_{2}...j_{n})}a_{1j_{1}}a_{2j_{2}}...a_{nj_{n}}
-	\end{equation*}
-    \item 展开定义\par 代数余子式: $ \bm{A}_{ij}=(-1)^{i+j}\bm{M}_{ij} $\par 按第$ i $行展开: $ a_{i1}\bm{A}_{i1}+a_{i2}\bm{A}_{i2}+...+a_{in}\bm{A}_{in} $\par 注意, 行列式的某行(列)元素分别乘另一行(列)的元素的代数余子式后再求和为$ 0 $
+\item 几何定义\par $ n $阶行列式为$ n $个$ n $维向量组成的$ n $维图形的体积.
+\item 逆序数法定义
+\begin{equation*}
+\begin{vmatrix}
+a_{11}	&a_{12}  &\dots  &a_{1n}  \\
+a_{21}	&a_{22}  &\dots  &a_{2n}  \\
+\vdots	&\vdots  &\ddots  &\vdots  \\
+a_{n1}	&a_{n2}  &\dots  &a_{nn}  
+\end{vmatrix}  = \sum_{j_{1},j_{2}...j_{n}}(-1)^{r(j_{1}j_{2}...j_{n})}a_{1j_{1}}a_{2j_{2}}...a_{nj_{n}}
+\end{equation*}
+\item 展开定义\par 代数余子式: $ \bm{A}_{ij}=(-1)^{i+j}\bm{M}_{ij} $\par 按第$ i $行展开: $ a_{i1}\bm{A}_{i1}+a_{i2}\bm{A}_{i2}+...+a_{in}\bm{A}_{in} $\par 注意, 行列式的某行(列)元素分别乘另一行(列)的元素的代数余子式后再求和为$ 0 $
 \end{enumerate}
 \subsubsection{性质}
 \begin{enumerate}
-	\item $ |\bm{A}^{T}|=\bm{A} $
-	\item 若行列式中某行(列)全部元素为$ 0 $, 行列式为$ 0 $
-	\item 若行列式中某行(列)元素有公因子$ k $($ k\neq 0 $), $ k $可以提到行列式外面
-	\item 行列式某行(列)元素均是两个元素只和, 可以拆成两个行列式只和
-	\item 两行(列)互换, 值取反
-	\item 两行(列)元素对应成比例, 行列式为$ 0 $
-	\item 行列式中某行(列)$ k $倍加到另一行(列), 值不变
+\item $ |\bm{A}^{T}|=\bm{A} $
+\item 若行列式中某行(列)全部元素为$ 0 $, 行列式为$ 0 $
+\item 若行列式中某行(列)元素有公因子$ k $($ k\neq 0 $), $ k $可以提到行列式外面
+\item 行列式某行(列)元素均是两个元素只和, 可以拆成两个行列式只和
+\item 两行(列)互换, 值取反
+\item 两行(列)元素对应成比例, 行列式为$ 0 $
+\item 行列式中某行(列)$ k $倍加到另一行(列), 值不变
 \end{enumerate}
 \subsubsection{重要行列式}
 \begin{enumerate}
-	\item 主对角线行列式(上/下三角形行列式): $ |\bm{A}|=\prod_{i=1}^{n}a_{ii} $
-	\item 副对角线行列式: $ |\bm{A}|=(-1)^{\frac{n(n-1)}{2}}a_{1n}a_{2,n-1}...a_{n1} $
-	\item 拉普拉斯展开式
-	\subitem $ \bm{A} $为$ m $阶矩阵, $ \bm{B} $为$ n $阶矩阵
-	\subitem 主对角线:
-	$ \begin{vmatrix}
-		\bm{A} & \bm{0} \\
-		\bm{0} & \bm{B}
-	\end{vmatrix} = \begin{vmatrix}
-	\bm{A} & \bm{C} \\
-	\bm{0} & \bm{B}
-    \end{vmatrix} = \begin{vmatrix}
-    \bm{A} & \bm{0} \\
-    \bm{C} & \bm{B}
-    \end{vmatrix} = |\bm{A}||\bm{B}|$
-    \subitem 副对角线: 
-    $ \begin{vmatrix}
-    	\bm{0} & \bm{A} \\
-    	\bm{B} & \bm{0}
-    \end{vmatrix} = \begin{vmatrix}
-    	\bm{C} & \bm{A} \\
-    	\bm{B} & \bm{0}
-    \end{vmatrix} = \begin{vmatrix}
-    	\bm{0} & \bm{A} \\
-    	\bm{B} & \bm{C}
-    \end{vmatrix} = (-1)^{mn}|\bm{A}||\bm{B}|$
-    \item 范特蒙德行列式
-    \begin{equation*}
-    	\begin{vmatrix}
-    		1 & 1 & \dots & 1 \\
-    		x_1 & x_2 & \dots & x_n \\
-    		x_1^2 & x_2^2 & \dots & x_n^2 \\
-    		\vdots & \vdots  & \vdots & \vdots \\
-    		x_{1}^{n-1} & x_{2}^{n-1} & \dots & x_{n}^{n-1} 
-    	\end{vmatrix} = \sum_{1\le i<j\le n}(x_{j}-x_{i})
-    \end{equation*}
+\item 主对角线行列式(上/下三角形行列式): $ |\bm{A}|=\prod_{i=1}^{n}a_{ii} $
+\item 副对角线行列式: $ |\bm{A}|=(-1)^{\frac{n(n-1)}{2}}a_{1n}a_{2,n-1}...a_{n1} $
+\item 拉普拉斯展开式
+\subitem $ \bm{A} $为$ m $阶矩阵, $ \bm{B} $为$ n $阶矩阵
+\subitem 主对角线:
+$ \begin{vmatrix}
+\bm{A} & \bm{0} \\
+\bm{0} & \bm{B}
+\end{vmatrix} = \begin{vmatrix}
+\bm{A} & \bm{C} \\
+\bm{0} & \bm{B}
+\end{vmatrix} = \begin{vmatrix}
+\bm{A} & \bm{0} \\
+\bm{C} & \bm{B}
+\end{vmatrix} = |\bm{A}||\bm{B}|$
+\subitem 副对角线: 
+$ \begin{vmatrix}
+	\bm{0} & \bm{A} \\
+	\bm{B} & \bm{0}
+\end{vmatrix} = \begin{vmatrix}
+	\bm{C} & \bm{A} \\
+	\bm{B} & \bm{0}
+\end{vmatrix} = \begin{vmatrix}
+	\bm{0} & \bm{A} \\
+	\bm{B} & \bm{C}
+\end{vmatrix} = (-1)^{mn}|\bm{A}||\bm{B}|$
+\item 范特蒙德行列式
+\begin{equation*}
+	\begin{vmatrix}
+		1 & 1 & \dots & 1 \\
+		x_1 & x_2 & \dots & x_n \\
+		x_1^2 & x_2^2 & \dots & x_n^2 \\
+		\vdots & \vdots  & \vdots & \vdots \\
+		x_{1}^{n-1} & x_{2}^{n-1} & \dots & x_{n}^{n-1} 
+	\end{vmatrix} = \sum_{1\le i<j\le n}(x_{j}-x_{i})
+\end{equation*}
 \end{enumerate} 
 \section{习题}
 \subsection{行列式的计算}
 \subsubsection{具体型行列式}
 \begin{enumerate}
-	\item 化基本形法
-	\begin{enumerate}
-		\item 直接展开: 适用于含$ 0 $较多的行(列)
-		\item 爪型: 斜爪消平爪
-		\item 异爪型: 将平爪含$ 0 $较多行(列)展开
-		\item 行(列)和相等: 三种方法
-		\begin{enumerate}
-			\item 提取公因子: 将其余行全都加到第一行上去, 提取公因子
-			\item 加边法: 例如矩阵
-			\begin{equation*}
-				\begin{bmatrix}
-					a_{1}-b & a_{2} & \dots & a_{n} \\
-					a_{1} & a_{2}-b & \dots & a_{n} \\
-					\vdots & \vdots & \ddots & \vdots \\
-					a_{1} & a_{2} & \dots & a_{n}-b
-				\end{bmatrix}=
-			    \begin{bmatrix}
-			    	1 & a_{1} & a_{2} & \dots & a_{n} \\
-			    	0 & a_{1}-b & a_{2} & \dots & a_{n} \\
-			    	0 & a_{1} & a_{2}-b & \dots & a_{n} \\
-			    	0 & \vdots & \vdots & \ddots & \vdots \\
-			    	0 & a_{1} & a_{2} & \dots & a_{n}-b
-			    \end{bmatrix}
-			\end{equation*}加边后矩阵的值不变, 可以将第$ 1 $行的$ -1 $倍加到其他行, 再用其他行的$ (-1/b) $倍加到第一列.
-		    \item 化爪形行列式
-		\end{enumerate}
-		\item 消零化基本形: 
-		\item 拉普拉斯行列式: 一般为``X字形''
-		\item 范特蒙德行列式: 化为范式行列式, 看第二行写结果
-	\end{enumerate}
-	\item 递推法
-	\item 行列式表示的函数和方程
+\item 化基本形法
+\begin{enumerate}
+\item 直接展开: 适用于含$ 0 $较多的行(列)
+\item 爪型: 斜爪消平爪
+\item 异爪型: 将平爪含$ 0 $较多行(列)展开
+\item 行(列)和相等: 三种方法
+\begin{enumerate}
+\item 提取公因子: 将其余行全都加到第一行上去, 提取公因子
+\item 加边法: 例如矩阵
+\begin{equation*}
+\begin{bmatrix}
+	a_{1}-b & a_{2} & \dots & a_{n} \\
+	a_{1} & a_{2}-b & \dots & a_{n} \\
+	\vdots & \vdots & \ddots & \vdots \\
+	a_{1} & a_{2} & \dots & a_{n}-b
+\end{bmatrix}=
+\begin{bmatrix}
+   	1 & a_{1} & a_{2} & \dots & a_{n} \\
+   	0 & a_{1}-b & a_{2} & \dots & a_{n} \\
+   	0 & a_{1} & a_{2}-b & \dots & a_{n} \\
+   	0 & \vdots & \vdots & \ddots & \vdots \\
+   	0 & a_{1} & a_{2} & \dots & a_{n}-b
+\end{bmatrix}
+\end{equation*}加边后矩阵的值不变, 可以将第$ 1 $行的$ -1 $倍加到其他行, 再用其他行的$ (-1/b) $倍加到第一列.
+\item 化爪形行列式
+\end{enumerate}
+\item 消零化基本形: 
+\item 拉普拉斯行列式: 一般为``X字形''
+\item 范特蒙德行列式: 化为范式行列式, 看第二行写结果
+\end{enumerate}
+\item 递推法
+\item 行列式表示的函数和方程
 \end{enumerate}
 \subsubsection{抽象型行列式}
 \subsection{余子式和代数余子式的线性组合的计算}
@@ -112,111 +112,111 @@
 由$ m\times n $个数排成的$ m $行$ n $列的矩形表格. 当$ m=n $的时候称$ \bm{A} $为$ n $阶方阵.\par 有两个矩阵, 如果$ m,n $相同, 称为同型矩阵.
 \subsubsection{运算}
 \begin{enumerate}
-	\item 相等: 同型矩阵且对应元素相等
-	\item 加法: 同型矩阵对应元素相加
-	\item 数乘矩阵(重要, 与行列式不同)\par 
+\item 相等: 同型矩阵且对应元素相等
+\item 加法: 同型矩阵对应元素相加
+\item 数乘矩阵(重要, 与行列式不同)\par 
+\begin{equation*}
+k\bm{A} = \bm{A}k = k \begin{bmatrix}
+a_{11}	& a_{12}  & \dots & a_{1n} \\
+a_{21}	& a_{22} & \dots & a_{2n} \\
+\vdots	& \vdots & \ddots & \vdots \\
+a_{m1}	& a_{m2} & \dots & a_{mn} 
+\end{bmatrix} = 
+\begin{bmatrix}
+ka_{11}	& ka_{12}  & \dots & ka_{1n} \\
+ka_{21}	& ka_{22} & \dots & ka_{2n} \\
+\vdots	& \vdots & \ddots & \vdots \\
+ka_{m1}	& ka_{m2} & \dots & ka_{mn} 
+\end{bmatrix}
+\end{equation*}
+加法运算和数乘运算统称为矩阵的线性运算, 满足以下运算规律:
+\begin{enumerate}
+\item 交换律: $ \bm{A}+\bm{B}=\bm{B}+\bm{A} $
+\item 结合律: $ (\bm{A}+\bm{B})+\bm{C}=\bm{A}+(\bm{B}+\bm{C}) $
+\item 分配律: $ k(\bm{A}+\bm{B})=k\bm{A}+k\bm{B}, (k+l)\bm{A}=k\bm{A}+l\bm{B} $
+\item 数和矩阵相乘的结合律: $ k(l\bm{A})=(kl)\bm{A}=l(k\bm{A}) $
+\end{enumerate}
+\item 乘法: $ \bm{A} $为$ m\times s $矩阵, $ \bm{B} $为$ s\times n $矩阵, 设$ \bm{C}=\bm{A}\bm{B}=(c_{ij})_{m\times n} $
+\begin{equation*}
+	c_{ij}=\sum_{k=1}^{s}a_{ik}b_{kj}=a_{i1}b_{1j}+a_{i2}b_{2j}+...+a_{is}b_{sj}(i=1,2,...,m;j=1,2,...,n)
+\end{equation*}
+乘法满足下列运算规律:
+\begin{enumerate}
+	\item 结合律: $ (\bm{A}\bm{B})\bm{C}=\bm{A}(\bm{B}\bm{C}) $
+	\item 分配律: $ \bm{A}(\bm{B}+\bm{C})=\bm{A}\bm{B}+\bm{A}\bm{C} $
+	\item 数乘与矩阵乘积的结合律: $ (k\bm{A})\bm{B}=\bm{A}(k\bm{B}) $
+\end{enumerate}
+\item 转置矩阵: 行列互换
+\item 向量的内积和正交
+\begin{enumerate}
+	\item 内积: $ \bm{\alpha} = [\alpha_{1},...,\alpha_{n}]^{T}, \bm{\beta} = [\beta_{1},...,\beta_{n}]^{T} $, 内积为
 	\begin{equation*}
-		k\bm{A} = \bm{A}k = k \begin{bmatrix}
-		a_{11}	& a_{12}  & \dots & a_{1n} \\
-		a_{21}	& a_{22} & \dots & a_{2n} \\
-		\vdots	& \vdots & \ddots & \vdots \\
-		a_{m1}	& a_{m2} & \dots & a_{mn} 
-		\end{bmatrix} = 
-	    \begin{bmatrix}
-	    ka_{11}	& ka_{12}  & \dots & ka_{1n} \\
-	    ka_{21}	& ka_{22} & \dots & ka_{2n} \\
-	    \vdots	& \vdots & \ddots & \vdots \\
-	    ka_{m1}	& ka_{m2} & \dots & ka_{mn} 
-	    \end{bmatrix}
+		\bm{\alpha}^{T}\bm{\beta}=\sum_{i=1}^{n}a_{i}b_{i}=a_{1}b_{1}+...+a_{n}b_{n}
 	\end{equation*}
-    加法运算和数乘运算统称为矩阵的线性运算, 满足以下运算规律:
-    \begin{enumerate}
-	\item 交换律: $ \bm{A}+\bm{B}=\bm{B}+\bm{A} $
-	\item 结合律: $ (\bm{A}+\bm{B})+\bm{C}=\bm{A}+(\bm{B}+\bm{C}) $
-	\item 分配律: $ k(\bm{A}+\bm{B})=k\bm{A}+k\bm{B}, (k+l)\bm{A}=k\bm{A}+l\bm{B} $
-	\item 数和矩阵相乘的结合律: $ k(l\bm{A})=(kl)\bm{A}=l(k\bm{A}) $
-    \end{enumerate}
-    \item 乘法: $ \bm{A} $为$ m\times s $矩阵, $ \bm{B} $为$ s\times n $矩阵, 设$ \bm{C}=\bm{A}\bm{B}=(c_{ij})_{m\times n} $
-    \begin{equation*}
-    	c_{ij}=\sum_{k=1}^{s}a_{ik}b_{kj}=a_{i1}b_{1j}+a_{i2}b_{2j}+...+a_{is}b_{sj}(i=1,2,...,m;j=1,2,...,n)
-    \end{equation*}
-    乘法满足下列运算规律:
-    \begin{enumerate}
-    	\item 结合律: $ (\bm{A}\bm{B})\bm{C}=\bm{A}(\bm{B}\bm{C}) $
-    	\item 分配律: $ \bm{A}(\bm{B}+\bm{C})=\bm{A}\bm{B}+\bm{A}\bm{C} $
-    	\item 数乘与矩阵乘积的结合律: $ (k\bm{A})\bm{B}=\bm{A}(k\bm{B}) $
-    \end{enumerate}
-    \item 转置矩阵: 行列互换
-    \item 向量的内积和正交
-    \begin{enumerate}
-    	\item 内积: $ \bm{\alpha} = [\alpha_{1},...,\alpha_{n}]^{T}, \bm{\beta} = [\beta_{1},...,\beta_{n}]^{T} $, 内积为
-    	\begin{equation*}
-    		\bm{\alpha}^{T}\bm{\beta}=\sum_{i=1}^{n}a_{i}b_{i}=a_{1}b_{1}+...+a_{n}b_{n}
-    	\end{equation*}
-        记为$ (\bm{\alpha},\bm{\beta}) $
-    	\item 正交: 内积为$ 0 $
-    	\item 模: 向量的长度, 记作$ ||\bm{\alpha}|| $
-    \end{enumerate}
-    \item 标准正交向量组: 所有成员两两正交且模都为$ 1 $, 即:
-    \begin{equation*}
-    	\begin{aligned}
-    		 &\bm{\alpha}_{i}^{T}\bm{\alpha}_{j}=0\ (i\neq j)\\&\bm{\alpha}_{i}^{T}\bm{\alpha}_{j}=1\ (i=j)
-    	\end{aligned}
-    \end{equation*}
-    称$ \bm{\alpha_{1}},...,\bm{\alpha_{n}} $为单位正交向量组.
-    \item 施密特正交化(正交规范化)\par
-    \begin{equation*}
-    	\begin{aligned}
-    		&\bm{\beta_{1}}=\bm{\alpha_{1}}\\&\bm{\beta_{2}}=\bm{\alpha_{2}}-\frac{(\bm{\alpha_{2}},\bm{\beta_{1}})}{(\bm{\beta_{1}},\bm{\beta_{1}})}\bm{\beta_{1}}
-    	\end{aligned}
-    \end{equation*}
-    上式得到的是正交向量组, 再进行单位化:\par
-    \begin{equation*}
-    	\bm{\eta_{1}}=\frac{\bm{\beta_{1}}}{||\bm{\beta_{1}}||}, \bm{\eta_{2}}=\frac{\bm{\beta_{2}}}{||\bm{\beta_{2}}||}
-    \end{equation*}\par
-    得到标准正交向量组.
-    \item 幂: $ \bm{A} $为一个$ n $阶方阵, 则$ \bm{A}^{n}=\bm{A}\bm{A}...\bm{A}\bm{A}(\text{共}n\text{个}\bm{A}) $
-    \item 方阵乘积的行列式
-    \begin{equation*}
-    	|\bm{A}\bm{B}|=|\bm{A}||\bm{B}|
-    \end{equation*}
+记为$ (\bm{\alpha},\bm{\beta}) $
+	\item 正交: 内积为$ 0 $
+	\item 模: 向量的长度, 记作$ ||\bm{\alpha}|| $
+\end{enumerate}
+\item 标准正交向量组: 所有成员两两正交且模都为$ 1 $, 即:
+\begin{equation*}
+	\begin{aligned}
+&\bm{\alpha}_{i}^{T}\bm{\alpha}_{j}=0\ (i\neq j)\\&\bm{\alpha}_{i}^{T}\bm{\alpha}_{j}=1\ (i=j)
+	\end{aligned}
+\end{equation*}
+称$ \bm{\alpha_{1}},...,\bm{\alpha_{n}} $为单位正交向量组.
+\item 施密特正交化(正交规范化)\par
+\begin{equation*}
+	\begin{aligned}
+		&\bm{\beta_{1}}=\bm{\alpha_{1}}\\&\bm{\beta_{2}}=\bm{\alpha_{2}}-\frac{(\bm{\alpha_{2}},\bm{\beta_{1}})}{(\bm{\beta_{1}},\bm{\beta_{1}})}\bm{\beta_{1}}
+	\end{aligned}
+\end{equation*}
+上式得到的是正交向量组, 再进行单位化:\par
+\begin{equation*}
+	\bm{\eta_{1}}=\frac{\bm{\beta_{1}}}{||\bm{\beta_{1}}||}, \bm{\eta_{2}}=\frac{\bm{\beta_{2}}}{||\bm{\beta_{2}}||}
+\end{equation*}\par
+得到标准正交向量组.
+\item 幂: $ \bm{A} $为一个$ n $阶方阵, 则$ \bm{A}^{n}=\bm{A}\bm{A}...\bm{A}\bm{A}(\text{共}n\text{个}\bm{A}) $
+\item 方阵乘积的行列式
+\begin{equation*}
+	|\bm{A}\bm{B}|=|\bm{A}||\bm{B}|
+\end{equation*}
 \end{enumerate}
 \subsubsection{重要矩阵}
 \begin{enumerate}
-	\item 零矩阵
-	\item 单位矩阵
-	\item 数量矩阵: 数$ k $和单位矩阵的乘积
-	\item 对角矩阵: 非主对角线元素均为$ 0 $的矩阵
-	\item 上(下)三角矩阵
-	\item 对称矩阵: $ \bm{A}^{T}=\bm{A} $
-	\item 反对称矩阵: $ \bm{A}^{T}=-\bm{A} $
-	\item 正交矩阵: $ \bm{A}^{T}\bm{A}=\bm{E} $, 即行(列)向量的组合是标准正交向量组
-	\item 分块矩阵\par
-	分块矩阵的加法和数乘与行列式不同:
-	\begin{enumerate}
-		\item 加法
-		\begin{equation*}
-			\begin{bmatrix}
-				\bm{A_{1}} & \bm{A_{2}} \\ \bm{A_{3}} & \bm{A_{4}}
-			\end{bmatrix} + 
-		    \begin{bmatrix}
-			    \bm{B_{1}} & \bm{B_{2}} \\ \bm{B_{3}} & \bm{B_{4}}
-		    \end{bmatrix} = 
-	        \begin{bmatrix}
-	        	\bm{A_{1}}+\bm{B_{1}} & \bm{A_{2}}+\bm{B_{2}} \\ \bm{A_{3}}+\bm{B_{3}} & \bm{A_{4}}+\bm{B_{4}}
-	        \end{bmatrix}
-		\end{equation*}
-	    \item 数乘
-	    \begin{equation*}
-	    	k\begin{bmatrix}
-	    		\bm{A} & \bm{B} \\ \bm{C} & \bm{D}
-	    	\end{bmatrix} = 
-    	    \begin{bmatrix}
-    	    	k\bm{A} & k\bm{B} \\ k\bm{C} & k\bm{D}
-    	    \end{bmatrix}
-	    \end{equation*}
-        \item 乘法: 与矩阵乘法相同
-	\end{enumerate}
+\item 零矩阵
+\item 单位矩阵
+\item 数量矩阵: 数$ k $和单位矩阵的乘积
+\item 对角矩阵: 非主对角线元素均为$ 0 $的矩阵
+\item 上(下)三角矩阵
+\item 对称矩阵: $ \bm{A}^{T}=\bm{A} $
+\item 反对称矩阵: $ \bm{A}^{T}=-\bm{A} $
+\item 正交矩阵: $ \bm{A}^{T}\bm{A}=\bm{E} $, 即行(列)向量的组合是标准正交向量组
+\item 分块矩阵\par
+分块矩阵的加法和数乘与行列式不同:
+\begin{enumerate}
+\item 加法
+\begin{equation*}
+\begin{bmatrix}
+\bm{A_{1}} & \bm{A_{2}} \\ \bm{A_{3}} & \bm{A_{4}}
+\end{bmatrix} + 
+\begin{bmatrix}
+\bm{B_{1}} & \bm{B_{2}} \\ \bm{B_{3}} & \bm{B_{4}}
+\end{bmatrix} = 
+\begin{bmatrix}
+     	\bm{A_{1}}+\bm{B_{1}} & \bm{A_{2}}+\bm{B_{2}} \\ \bm{A_{3}}+\bm{B_{3}} & \bm{A_{4}}+\bm{B_{4}}
+\end{bmatrix}
+\end{equation*}
+\item 数乘
+\begin{equation*}
+ 	k\begin{bmatrix}
+ 		\bm{A} & \bm{B} \\ \bm{C} & \bm{D}
+ 	\end{bmatrix} = 
+\begin{bmatrix}
+	    	k\bm{A} & k\bm{B} \\ k\bm{C} & k\bm{D}
+\end{bmatrix}
+\end{equation*}
+\item 乘法: 与矩阵乘法相同
+\end{enumerate}
 \end{enumerate}
 \subsection{矩阵的逆}
 \subsubsection{定义}
@@ -224,71 +224,71 @@
 \subsubsection{性质}
 设$ \bm{A}, \bm{B} $为同阶可逆矩阵
 \begin{enumerate}
-	\item $ (\bm{A}^{-1})^{-1}=\bm{A} $
-	\item $ (k\bm{A})^{-1}=\frac{1}{k}\bm{A}^{-1}\ (k\neq 0) $
-	\item $ (\bm{A}\bm{B})^{-1}=\bm{B}^{-1}\bm{A}^{-1}\ (\bm{A}\bm{B}\text{也可逆}) $
-	\item $ (\bm{A}^{T})^{-1}=(\bm{A}^{-1})^{T}\ (\bm{A}^{T}\text{也可逆}) $
-	\item $ |\bm{A}^{-1}|=|\bm{A}|^{-1} $
-	\item $ (\bm{A}+\bm{B})^{-1}\neq \bm{A}^{-1}+\bm{B}^{-1} $
+\item $ (\bm{A}^{-1})^{-1}=\bm{A} $
+\item $ (k\bm{A})^{-1}=\frac{1}{k}\bm{A}^{-1}\ (k\neq 0) $
+\item $ (\bm{A}\bm{B})^{-1}=\bm{B}^{-1}\bm{A}^{-1}\ (\bm{A}\bm{B}\text{也可逆}) $
+\item $ (\bm{A}^{T})^{-1}=(\bm{A}^{-1})^{T}\ (\bm{A}^{T}\text{也可逆}) $
+\item $ |\bm{A}^{-1}|=|\bm{A}|^{-1} $
+\item $ (\bm{A}+\bm{B})^{-1}\neq \bm{A}^{-1}+\bm{B}^{-1} $
 \end{enumerate}
 \subsection{伴随矩阵}
 \subsubsection{定义}
 矩阵$ \bm{A} $的伴随矩阵为:
 \begin{equation*}
-	\bm{A}^{*}=
-	\begin{bmatrix}
-	A_{11}	& A_{21} & \dots & A_{n1} \\
-	A_{12}	& A_{22} & \dots & A_{n2} \\
-	\vdots	& \vdots & \ddots & \vdots \\
-	A_{1n}	& A_{2n} & \dots & A_{nn}
-	\end{bmatrix}
+\bm{A}^{*}=
+\begin{bmatrix}
+A_{11}	& A_{21} & \dots & A_{n1} \\
+A_{12}	& A_{22} & \dots & A_{n2} \\
+\vdots	& \vdots & \ddots & \vdots \\
+A_{1n}	& A_{2n} & \dots & A_{nn}
+\end{bmatrix}
 \end{equation*}\par
 其中$ \bm{A} $为对应元素的代数余子式.
 \subsubsection{性质}
 \begin{enumerate}
-	\item $ \bm{A}\bm{A}^{*}=\bm{A}^{*}\bm{A}=|\bm{A}|\bm{E} $
-	\item $ |\bm{A}^{*}|=|\bm{A}|^{n-1} $
-	\item $ (\bm{A}^{*})^{*}=|\bm{A}|^{n-2}\bm{A} $
-	\item $ (\bm{A})^{-1}=\frac{\bm{A}^{*}}{|\bm{A}|} $
+\item $ \bm{A}\bm{A}^{*}=\bm{A}^{*}\bm{A}=|\bm{A}|\bm{E} $
+\item $ |\bm{A}^{*}|=|\bm{A}|^{n-1} $
+\item $ (\bm{A}^{*})^{*}=|\bm{A}|^{n-2}\bm{A} $
+\item $ (\bm{A})^{-1}=\frac{\bm{A}^{*}}{|\bm{A}|} $
 \end{enumerate}
 \subsection{初等矩阵}
 \subsubsection{定义}
 单位矩阵经过一次初等变换后得到的矩阵称为初等矩阵, 有三种:
 \begin{enumerate}
-	\item 倍乘初等矩阵
-	\begin{equation*}
-		\bm{E}_{2}(k)=
-		\begin{bmatrix}
-			1 & 0 & 0 \\
-			0 & k & 0 \\
-			0 & 0 & 1
-		\end{bmatrix}
-	\end{equation*}
-	\item 互换初等矩阵
-	\begin{equation*}
-		\bm{E}_{12}=
-		\begin{bmatrix}
-			0 & 1 & 0 \\
-			1 & 0 & 0 \\
-			0 & 0 & 1
-		\end{bmatrix}
-	\end{equation*}
-	\item 倍加初等矩阵
-	\begin{equation*}
-		\bm{E}_{31}(k)=
-		\begin{bmatrix}
-			1 & 0 & 0 \\
-			0 & 1 & 0 \\
-			k & 0 & 1
-		\end{bmatrix}
-	\end{equation*}\par 注意是第一行的$ k $倍加到第三行或者是第三列的$ k $倍加到第一列(别搞错顺序).
+\item 倍乘初等矩阵
+\begin{equation*}
+\bm{E}_{2}(k)=
+\begin{bmatrix}
+1 & 0 & 0 \\
+0 & k & 0 \\
+0 & 0 & 1
+\end{bmatrix}
+\end{equation*}
+\item 互换初等矩阵
+\begin{equation*}
+\bm{E}_{12}=
+\begin{bmatrix}
+0 & 1 & 0 \\
+1 & 0 & 0 \\
+0 & 0 & 1
+\end{bmatrix}
+\end{equation*}
+\item 倍加初等矩阵
+\begin{equation*}
+\bm{E}_{31}(k)=
+\begin{bmatrix}
+1 & 0 & 0 \\
+0 & 1 & 0 \\
+k & 0 & 1
+\end{bmatrix}
+\end{equation*}\par 注意是第一行的$ k $倍加到第三行或者是第三列的$ k $倍加到第一列(别搞错顺序).
 \end{enumerate}
 \subsubsection{性质}
 \begin{enumerate}
-	\item $ [\bm{E}_{ij}]^{T}=\bm{E}_{ij}, [\bm{E}_{i}(k)]^{T}=\bm{E}_{i}(k), [\bm{E}_{ij}(k)]^{T}=\bm{E}_{ji}(k) $
-	\item $ [\bm{E}_{ij}]^{-1}=\bm{E}_{ij}, [\bm{E}_{i}(k)]^{-1}=\bm{E}_{i}(\frac{1}{k}), [\bm{E}_{ij}(k)]^{-1}=\bm{E}_{ij}(-k) $
-	\item 左行右列定理
-	\item 若$ \bm{A} $为可逆矩阵, 则可以表示为有限个可逆矩阵的乘积
+\item $ [\bm{E}_{ij}]^{T}=\bm{E}_{ij}, [\bm{E}_{i}(k)]^{T}=\bm{E}_{i}(k), [\bm{E}_{ij}(k)]^{T}=\bm{E}_{ji}(k) $
+\item $ [\bm{E}_{ij}]^{-1}=\bm{E}_{ij}, [\bm{E}_{i}(k)]^{-1}=\bm{E}_{i}(\frac{1}{k}), [\bm{E}_{ij}(k)]^{-1}=\bm{E}_{ij}(-k) $
+\item 左行右列定理
+\item 若$ \bm{A} $为可逆矩阵, 则可以表示为有限个可逆矩阵的乘积
 \end{enumerate}
 \subsection{等价矩阵}
 若$ \bm{A}, \bm{B} $均为$ m\times n $矩阵, 且$ r(\bm{A})=r(\bm{B}) $, 则$ \bm{A}, \bm{B} $为等价矩阵, 记作$ \bm{A}\cong\bm{B} $.
@@ -301,37 +301,37 @@ $ r(\bm{A})=r(\bm{PA})=r(\bm{AQ})=r(\bm{PAQ}) $
 \subsubsection{重要式子}
 设$ \bm{A} $为$ m\times n $矩阵, $ \bm{B} $为满足有关矩阵运算要求的矩阵, 则
 \begin{enumerate}
-	\item $ 0\le r(\bm{A})\le \text{min}\{m,n\} $
-	\item $ r(k\bm{A})=r(\bm{A}) $
-	\item $ r(\bm{A}\bm{B})\le \text{min}\{r(\bm{A}),r(\bm{B})\} $
-	\item $ r(\bm{A}+\bm{B})\le r(\bm{A})+r(\bm{B}) $
-	\item $ r(\bm{A}^{*})=\left\{\begin{aligned}
-			& n\quad r(\bm{A})=n \\
-			& 1\quad r(\bm{A})=n-1 \\
-			& 0\quad r(\bm{A})<n-1
-		\end{aligned}\right.$ 其中$ \bm{A} $为$ n $阶方阵
+\item $ 0\le r(\bm{A})\le \text{min}\{m,n\} $
+\item $ r(k\bm{A})=r(\bm{A}) $
+\item $ r(\bm{A}\bm{B})\le \text{min}\{r(\bm{A}),r(\bm{B})\} $
+\item $ r(\bm{A}+\bm{B})\le r(\bm{A})+r(\bm{B}) $
+\item $ r(\bm{A}^{*})=\left\{\begin{aligned}
+& n\quad r(\bm{A})=n \\
+& 1\quad r(\bm{A})=n-1 \\
+& 0\quad r(\bm{A})<n-1
+\end{aligned}\right.$ 其中$ \bm{A} $为$ n $阶方阵
 \end{enumerate}
 \subsection{常见运算汇总}
 \begin{enumerate}
-	\item 
-	\subitem $ |k\bm{A}|=k^{n}\bm{A} $
-	\subitem $ (k\bm{A})^{T}=k\bm{A}^{T} $
-	\subitem $ (k\bm{A})^{-1}=\frac{1}{k}\bm{A}^{-1} $
-	\subitem $ (k\bm{A})^{*}=k^{n-1}\bm{A}^{*} $
-	\item 
-	\subitem $ |\bm{A}+\bm{B}|\neq |\bm{A}|+|\bm{B}| $
-	\subitem $ (\bm{A}+\bm{B})^{T}=\bm{A}^{T}+\bm{B}^{T} $
-	\subitem $ (\bm{A}+\bm{B})^{-1}\neq \bm{A}^{-1}+\bm{B}^{-1} $
-	\subitem $ (\bm{A}+\bm{B})^{*}\neq \bm{A}^{*}+\bm{B}^{*} $
-    \item 
-    \subitem $ |\bm{A}\bm{B}|=|\bm{A}||\bm{B}| $
-    \subitem $ (\bm{A}\bm{B})^{T}=\bm{B}^{T}\bm{A}^{T} $
-    \subitem $ (\bm{A}\bm{B})^{-1}=\bm{B}^{-1}\bm{A}^{-1} $
-    \subitem $ (\bm{A}\bm{B})^{*}=\bm{B}^{*}\bm{A}^{*} $
-    \item 
-    \subitem $ (\bm{A}^{-1})^{*}=(\bm{A}^{*})^{-1} $
-    \subitem $ (\bm{A}^{-1})^{T}=(\bm{A}^{T})^{-1} $
-    \subitem $ (\bm{A}^{T})^{*}=(\bm{A}^{*})^{T} $
+\item 
+\subitem $ |k\bm{A}|=k^{n}\bm{A} $
+\subitem $ (k\bm{A})^{T}=k\bm{A}^{T} $
+\subitem $ (k\bm{A})^{-1}=\frac{1}{k}\bm{A}^{-1} $
+\subitem $ (k\bm{A})^{*}=k^{n-1}\bm{A}^{*} $
+\item 
+\subitem $ |\bm{A}+\bm{B}|\neq |\bm{A}|+|\bm{B}| $
+\subitem $ (\bm{A}+\bm{B})^{T}=\bm{A}^{T}+\bm{B}^{T} $
+\subitem $ (\bm{A}+\bm{B})^{-1}\neq \bm{A}^{-1}+\bm{B}^{-1} $
+\subitem $ (\bm{A}+\bm{B})^{*}\neq \bm{A}^{*}+\bm{B}^{*} $
+\item 
+\subitem $ |\bm{A}\bm{B}|=|\bm{A}||\bm{B}| $
+\subitem $ (\bm{A}\bm{B})^{T}=\bm{B}^{T}\bm{A}^{T} $
+\subitem $ (\bm{A}\bm{B})^{-1}=\bm{B}^{-1}\bm{A}^{-1} $
+\subitem $ (\bm{A}\bm{B})^{*}=\bm{B}^{*}\bm{A}^{*} $
+\item 
+\subitem $ (\bm{A}^{-1})^{*}=(\bm{A}^{*})^{-1} $
+\subitem $ (\bm{A}^{-1})^{T}=(\bm{A}^{T})^{-1} $
+\subitem $ (\bm{A}^{T})^{*}=(\bm{A}^{*})^{T} $
 \end{enumerate}
 \section{习题}
 \chapter{向量组}
@@ -343,77 +343,77 @@ $ n $个数构成的一个有序数组$ [a_{1},a_{2},...,a_{n}] $称为一个$ n
 \subsection{线性组合和线性相关}
 \subsubsection{定义}
 \begin{enumerate}
-	\item 线性组合: 设有$ m $个$ n $维向量$ \bm{\alpha_{1}},\bm{\alpha_{2}},...,\bm{\alpha_{m}} $和$ m $个数$ k_{1},k_{2},...,k_{m} $. 则向量$ k_{1}\bm{\alpha_{1}}+k_{2}\bm{\alpha_{2}}+...+k_{m}\bm{\alpha_{m}} $为向量组$ \bm{\alpha_{1}},\bm{\alpha_{2}},...,\bm{\alpha_{m}} $的线性组合
-	\item 线性表出: 若向量$ \bm{\beta} $能表示成向量组$ \bm{\alpha_{1}},\bm{\alpha_{2}},...,\bm{\alpha_{m}} $的线性组合, 即$ \bm{\beta}=k_{1}\bm{\alpha_{1}}+k_{2}\bm{\alpha_{2}}+...+k_{m}\bm{\alpha_{m}} $, 则称$ \bm{\beta} $能够被向量组线性表出
-	\item 线性相关: 存在一组不全为$ 0 $的数$ k_{1},k_{2},...,k_{m} $, 使得下式成立:
-	\begin{equation*}
-		k_{1}\bm{\alpha_{1}}+k_{2}\bm{\alpha_{2}}+...+k_{m}\bm{\alpha_{m}}=\bm{0}
-	\end{equation*}\par
-    上式可以进一步写为$ x_{1}\bm{\alpha_{1}}+x_{2}\bm{\alpha_{2}}+...+x_{m}\bm{\alpha_{m}}=\bm{0} $, 这个式子有三种形式:
-    \begin{equation*}
-    	\bm{A}=\begin{bmatrix}
-    		a_{11} & a_{12} & \dots & a_{1m} \\
-    		a_{21} & a_{22} & \dots & a_{2m} \\
-    		\vdots & \vdots & \ddots & \vdots \\
-    		a_{n1} & a_{n2} & \dots & a_{nm}
-    	\end{bmatrix}
-    \begin{bmatrix}
-    	x_{1} \\
-    	x_{2} \\
-    	\vdots \\
-    	x_{m}
-    \end{bmatrix}=
+\item 线性组合: 设有$ m $个$ n $维向量$ \bm{\alpha_{1}},\bm{\alpha_{2}},...,\bm{\alpha_{m}} $和$ m $个数$ k_{1},k_{2},...,k_{m} $. 则向量$ k_{1}\bm{\alpha_{1}}+k_{2}\bm{\alpha_{2}}+...+k_{m}\bm{\alpha_{m}} $为向量组$ \bm{\alpha_{1}},\bm{\alpha_{2}},...,\bm{\alpha_{m}} $的线性组合
+\item 线性表出: 若向量$ \bm{\beta} $能表示成向量组$ \bm{\alpha_{1}},\bm{\alpha_{2}},...,\bm{\alpha_{m}} $的线性组合, 即$ \bm{\beta}=k_{1}\bm{\alpha_{1}}+k_{2}\bm{\alpha_{2}}+...+k_{m}\bm{\alpha_{m}} $, 则称$ \bm{\beta} $能够被向量组线性表出
+\item 线性相关: 存在一组不全为$ 0 $的数$ k_{1},k_{2},...,k_{m} $, 使得下式成立:
+\begin{equation*}
+k_{1}\bm{\alpha_{1}}+k_{2}\bm{\alpha_{2}}+...+k_{m}\bm{\alpha_{m}}=\bm{0}
+\end{equation*}\par
+上式可以进一步写为$ x_{1}\bm{\alpha_{1}}+x_{2}\bm{\alpha_{2}}+...+x_{m}\bm{\alpha_{m}}=\bm{0} $, 这个式子有三种形式:
+\begin{equation*}
+	\bm{A}=\begin{bmatrix}
+		a_{11} & a_{12} & \dots & a_{1m} \\
+		a_{21} & a_{22} & \dots & a_{2m} \\
+		\vdots & \vdots & \ddots & \vdots \\
+		a_{n1} & a_{n2} & \dots & a_{nm}
+	\end{bmatrix}
 \begin{bmatrix}
-	0 \\
-	0 \\
+	x_{1} \\
+	x_{2} \\
 	\vdots \\
-	0
+	x_{m}
+\end{bmatrix}=
+\begin{bmatrix}
+0 \\
+0 \\
+\vdots \\
+0
 \end{bmatrix}
 \end{equation*}
 或者
 \begin{equation*}
-    \bm{A}=x_{1}\begin{bmatrix}
-    	a_{11} \\
-    	a_{21} \\
-    	\vdots \\
-    	a_{n1}
-    \end{bmatrix}+
-    x_{2}\begin{bmatrix}
-    	a_{12} \\
-    	a_{22} \\
-    	\vdots \\
-    	a_{n2}
-    \end{bmatrix}+...+
-    x_{m}\begin{bmatrix}
-    	a_{1m} \\
-    	a_{2m} \\
-    	\vdots \\
-    	a_{nm}
-    \end{bmatrix}=
-\begin{bmatrix}
-	0 \\
-	0 \\
+\bm{A}=x_{1}\begin{bmatrix}
+	a_{11} \\
+	a_{21} \\
 	\vdots \\
-	0
+	a_{n1}
+\end{bmatrix}+
+x_{2}\begin{bmatrix}
+	a_{12} \\
+	a_{22} \\
+	\vdots \\
+	a_{n2}
+\end{bmatrix}+...+
+x_{m}\begin{bmatrix}
+	a_{1m} \\
+	a_{2m} \\
+	\vdots \\
+	a_{nm}
+\end{bmatrix}=
+\begin{bmatrix}
+0 \\
+0 \\
+\vdots \\
+0
 \end{bmatrix}
-    \end{equation*}
+\end{equation*}
 或者
 \begin{equation*}
-	\left\{\begin{aligned}
-		& x_{1}a_{11}+x_{2}a_{12}+...+x_{m}a_{1m}=0 \\
-		& x_{1}a_{21}+x_{2}a_{22}+...+x_{m}a_{2m}=0 \\
-		& \dots \\
-		& x_{1}a_{n1}+x_{2}a_{n2}+...+x_{m}a_{nm}=0
-	\end{aligned}
-    \right.
+\left\{\begin{aligned}
+& x_{1}a_{11}+x_{2}a_{12}+...+x_{m}a_{1m}=0 \\
+& x_{1}a_{21}+x_{2}a_{22}+...+x_{m}a_{2m}=0 \\
+& \dots \\
+& x_{1}a_{n1}+x_{2}a_{n2}+...+x_{m}a_{nm}=0
+\end{aligned}
+\right.
 \end{equation*}
-    \item 线性无关: 只有当$ k_{1},k_{2},...,k_{m} $全为$ 0 $的时候, 才能使上式成立
+\item 线性无关: 只有当$ k_{1},k_{2},...,k_{m} $全为$ 0 $的时候, 才能使上式成立
 \end{enumerate}
 \subsubsection{判别相关性定理}
 \begin{enumerate}
-	\item 充要条件: 向量组中至少有一个向量能被其余的$ n-1 $的向量线性表出
-	\item 若向量组$ \bm{\alpha_{1}},\bm{\alpha_{2}},...,\bm{\alpha_{m}} $线性无关, 而向量组$ \bm{\beta}, \bm{\alpha_{1}},\bm{\alpha_{2}},...,\bm{\alpha_{m}} $线性相关, 则$ \bm{\beta} $可由向量组$ \bm{\alpha_{1}},\bm{\alpha_{2}},...,\bm{\alpha_{m}} $线性表出, 且表示方法唯一
-	\item 
+\item 充要条件: 向量组中至少有一个向量能被其余的$ n-1 $的向量线性表出
+\item 若向量组$ \bm{\alpha_{1}},\bm{\alpha_{2}},...,\bm{\alpha_{m}} $线性无关, 而向量组$ \bm{\beta}, \bm{\alpha_{1}},\bm{\alpha_{2}},...,\bm{\alpha_{m}} $线性相关, 则$ \bm{\beta} $可由向量组$ \bm{\alpha_{1}},\bm{\alpha_{2}},...,\bm{\alpha_{m}} $线性表出, 且表示方法唯一
+\item 
 \end{enumerate}
 
 
@@ -427,57 +427,57 @@ $ n $个数构成的一个有序数组$ [a_{1},a_{2},...,a_{n}] $称为一个$ n
 \par 上式可以化简成$ \left| \lambda \bm{E}-\bm{A}\right|\bm{\xi}=\bm{0} $, $ \left| \lambda \bm{E}-\bm{A}\right| $被称为特征多项式, $ \lambda \bm{E}-\bm{A} $称为特征矩阵.
 \subsubsection{性质}
 \begin{enumerate}
-	\item 特征值的性质
-	\begin{enumerate}
-		\item $ \sum_{i=1}^{n}\lambda_{i}=\sum_{i=1}^{n}a_{ii}=tr(\bm{A}) $
-		\item $ \prod_{i=1}^{n}\lambda_{i}=\left| \bm{A}\right| $
-	\end{enumerate}
-	\item 特征向量的性质
-	\begin{enumerate}
-		\item $ k $重特征值$ \Lambda $至多只有$ k $个线性无关的向量
-		\item 若$ \bm{\xi_1} $, $ \bm{\xi_2} $是$ \bm{A} $的属于不同特征值的特征的特征向量, 则$ \bm{\xi_1}, \bm{\xi_2} $线性无关
-		\item 若$ \bm{\xi_1}, \bm{\xi_2} $是$ \bm{A} $的属于同一特征值$ \lambda $的特征向量, 则$ k_1\bm{\xi_1} + k_1\bm{\xi_2} $仍然是$ \bm{A} $的属于特征值$ \lambda $的特征向量
-	\end{enumerate}
+\item 特征值的性质
+\begin{enumerate}
+\item $ \sum_{i=1}^{n}\lambda_{i}=\sum_{i=1}^{n}a_{ii}=tr(\bm{A}) $
+\item $ \prod_{i=1}^{n}\lambda_{i}=\left| \bm{A}\right| $
+\end{enumerate}
+\item 特征向量的性质
+\begin{enumerate}
+\item $ k $重特征值$ \Lambda $至多只有$ k $个线性无关的向量
+\item 若$ \bm{\xi_1} $, $ \bm{\xi_2} $是$ \bm{A} $的属于不同特征值的特征的特征向量, 则$ \bm{\xi_1}, \bm{\xi_2} $线性无关
+\item 若$ \bm{\xi_1}, \bm{\xi_2} $是$ \bm{A} $的属于同一特征值$ \lambda $的特征向量, 则$ k_1\bm{\xi_1} + k_1\bm{\xi_2} $仍然是$ \bm{A} $的属于特征值$ \lambda $的特征向量
+\end{enumerate}
 \end{enumerate}
 \subsection{矩阵的相似}
 \subsubsection{定义}
 设$ \bm{A} $和$ \bm{B} $为两个$ n $阶方阵, 若存在$ n $阶可逆矩阵$ \bm{P} $, 使得$ \bm{P}^{-1}\bm{A}\bm{P}=\bm{B} $成立, 则称$ \bm{A} $相似于$ \bm{B} $, 记成$ \bm{A}\sim \bm{B} $.
 \subsubsection{性质}
 \begin{enumerate}
-	\item \begin{itemize}
-		\item 反身性: $ \bm{A}\sim \bm{A} $
-		\item 对称性: $ \bm{A}\sim \bm{B}\Rightarrow \bm{B}\sim \bm{A} $
-		\item 传递性: $ \bm{A}\sim \bm{B}, \bm{B}\sim \bm{C}\Rightarrow \bm{A}\sim \bm{C} $
-	\end{itemize}
-	\item 若$ \bm{A}\sim \bm{B} $, 则有\begin{itemize}
-		\item $ r(\bm{A})=r(\bm{B}) $
-		\item $ \left|\bm{A}\right|=\left|\bm{B}\right| $
-		\item $ \bm{A}, \bm{B} $具有相同的特征值
-		\item $ \bm{A}, \bm{B} $特征多项式的值相同
-	\end{itemize}
-	\item 若$ \bm{A}\sim \bm{B} $, 则有\begin{itemize}
-		\item $ f(\bm{A})\sim f(\bm{B}) $
-		\item $ \bm{A}^{T}\sim \bm{B}^{T} $
-		\item $ \bm{A} $可逆, $ \bm{A}^{*}\sim \bm{B}^{*} $
-		\item $ \bm{A} $可逆, $ \bm{A}^{-1}\sim \bm{B}^{-1} $
-	\end{itemize}
+\item \begin{itemize}
+\item 反身性: $ \bm{A}\sim \bm{A} $
+\item 对称性: $ \bm{A}\sim \bm{B}\Rightarrow \bm{B}\sim \bm{A} $
+\item 传递性: $ \bm{A}\sim \bm{B}, \bm{B}\sim \bm{C}\Rightarrow \bm{A}\sim \bm{C} $
+\end{itemize}
+\item 若$ \bm{A}\sim \bm{B} $, 则有\begin{itemize}
+\item $ r(\bm{A})=r(\bm{B}) $
+\item $ \left|\bm{A}\right|=\left|\bm{B}\right| $
+\item $ \bm{A}, \bm{B} $具有相同的特征值
+\item $ \bm{A}, \bm{B} $特征多项式的值相同
+\end{itemize}
+\item 若$ \bm{A}\sim \bm{B} $, 则有\begin{itemize}
+\item $ f(\bm{A})\sim f(\bm{B}) $
+\item $ \bm{A}^{T}\sim \bm{B}^{T} $
+\item $ \bm{A} $可逆, $ \bm{A}^{*}\sim \bm{B}^{*} $
+\item $ \bm{A} $可逆, $ \bm{A}^{-1}\sim \bm{B}^{-1} $
+\end{itemize}
 \end{enumerate}
 \subsection{矩阵的相似对角化}
 \subsubsection{定义}
 设$ n $阶矩阵$ \bm{A} $, 存在$ n $阶可逆矩阵$ \bm{P} $, 使得$ \bm{P}^{-1}\bm{A}\bm{P}=\bm{\Lambda} $, 则$ \bm{A}\sim \bm{\Lambda} $, $ \bm{\Lambda} $是$ \bm{A} $的相似标准形.\par 
 \[ \bm{P}=\left[\bm{\xi_1}, \bm{\xi_2},... \bm{\xi_n}\right], \bm{\Lambda} =\begin{bmatrix}
-	\lambda_1 &  &  &  \\
-	& \lambda_2 &  &  \\
-	&  & \ddots &  \\
-	&  &  & \lambda_n 
+\lambda_1 &  &  &  \\
+& \lambda_2 &  &  \\
+&  & \ddots &  \\
+&  &  & \lambda_n 
 \end{bmatrix}
 \]
 \subsubsection{条件}
 \begin{enumerate}
-	\item $ n $阶矩阵$ \bm{A} $可以相似对角化$ \Leftrightarrow $$ \bm{A} $有$ n $个线性无关的特征向量($ \left| \bm{P}\right| = 0$)
-	\item $ n $阶矩阵$ \bm{A} $可以相似对角化$ \Leftrightarrow $$ \bm{A} $对应于每个$ k_i $重特征值都有$ k_i $个线性无关的特征向量($ n $重特征值对应的解空间是$ n $维)
-	\item $ n $阶矩阵$ \bm{A} $有$ n $个不同特征值$ \Rightarrow $$ \bm{A} $可以相似对角化(由特征向量的性质3可以推出)
-	\item $ n $阶矩阵$ \bm{A} $为实对称矩阵$ \Rightarrow $$ \bm{A} $可以相似对角化
+\item $ n $阶矩阵$ \bm{A} $可以相似对角化$ \Leftrightarrow $$ \bm{A} $有$ n $个线性无关的特征向量($ \left| \bm{P}\right| = 0$)
+\item $ n $阶矩阵$ \bm{A} $可以相似对角化$ \Leftrightarrow $$ \bm{A} $对应于每个$ k_i $重特征值都有$ k_i $个线性无关的特征向量($ n $重特征值对应的解空间是$ n $维)
+\item $ n $阶矩阵$ \bm{A} $有$ n $个不同特征值$ \Rightarrow $$ \bm{A} $可以相似对角化(由特征向量的性质3可以推出)
+\item $ n $阶矩阵$ \bm{A} $为实对称矩阵$ \Rightarrow $$ \bm{A} $可以相似对角化
 \end{enumerate}\par
 上述总共两个充要条件, 两个充分条件.
 \subsection{实对称矩阵}
@@ -485,34 +485,34 @@ $ n $个数构成的一个有序数组$ [a_{1},a_{2},...,a_{n}] $称为一个$ n
 若$ \bm{A}^T = \bm{A} $, 则$ \bm{A} $为是对称矩阵, 如果在此基础上$ \bm{A} $的元素都是实数, 则$ \bm{A} $是实对称矩阵.
 \subsubsection{性质}
 \begin{enumerate}\label{ref:实对称矩阵}
-	\item 实对称矩阵$ \bm{A} $的属于不同特征值的特征向量相互正交
-	\item 实对称矩阵$ \bm{A} $必相似于对角矩阵, 必有可逆矩阵$ \bm{P}=\left[ \bm{\xi_{1}}, \bm{\xi_{2}},... ,\bm{\xi_{n}}\right] $, 使得$ \bm{P}^{-1}\bm{A}\bm{P}=\bm{\Lambda} $. 且存在正交矩阵$ \bm{Q} $, 使得$ \bm{Q}^{-1}\bm{A}\bm{Q}=\bm{Q}^{T}\bm{A}\bm{Q}=\bm{\Lambda}$,  
+\item 实对称矩阵$ \bm{A} $的属于不同特征值的特征向量相互正交
+\item 实对称矩阵$ \bm{A} $必相似于对角矩阵, 必有可逆矩阵$ \bm{P}=\left[ \bm{\xi_{1}}, \bm{\xi_{2}},... ,\bm{\xi_{n}}\right] $, 使得$ \bm{P}^{-1}\bm{A}\bm{P}=\bm{\Lambda} $. 且存在正交矩阵$ \bm{Q} $, 使得$ \bm{Q}^{-1}\bm{A}\bm{Q}=\bm{Q}^{T}\bm{A}\bm{Q}=\bm{\Lambda}$,  
 \end{enumerate}
 \section{习题}
 \subsection{特征值和特征向量}
 \subsubsection{求具体型矩阵的特征值和特征向量}
 \begin{enumerate}
-	\item 用特征方程$ \left|\lambda \bm{E}-\bm{A}\right|=0 $求出$ \lambda $, 可以使用试根法对$ \lambda $的高次方程进行求解
-	\item 用求得的$ \lambda $解齐次线性方程组$ (\lambda \bm{E}-\bm{A})\bm{\xi}=\bm{0} $, 求出特征向量
+\item 用特征方程$ \left|\lambda \bm{E}-\bm{A}\right|=0 $求出$ \lambda $, 可以使用试根法对$ \lambda $的高次方程进行求解
+\item 用求得的$ \lambda $解齐次线性方程组$ (\lambda \bm{E}-\bm{A})\bm{\xi}=\bm{0} $, 求出特征向量
 \end{enumerate}
 \subsubsection{求解抽象型矩阵的特征值和特征向量}
 \begin{table}[H]
-	\centering
-	\begin{tabular}{|c|ccccccc|}
-		\hline
-		\textbf{矩阵} & $ \bm{A} $ & $ k\bm{A} $ & $ \bm{A}^{k} $ & $ f(\bm{A}) $ & $ \bm{A}^{-1} $ & $ \bm{A}^{*} $ & $ \bm{P}^{-1}\bm{A}\bm{P} $ \\ \hline
-		\textbf{特征值} & $ \lambda $ & $ k\lambda $ & $ \lambda^{k} $ & $ f(\lambda) $ & $ \lambda^{-1} $ & $ \frac{\left|\bm{A}\right|}{\lambda} $ & $ \lambda $\\ \hline
-		\textbf{特征向量} & $ \bm{\xi} $ & $ \bm{\xi} $ & $ \bm{\xi} $ & $ \bm{\xi} $ & $ \bm{\xi} $ & $ \bm{\xi} $ & $ \bm{P}^{-1}\bm{\xi} $\\ 
-		\hline
-	\end{tabular}
+\centering
+\begin{tabular}{|c|ccccccc|}
+\hline
+\textbf{矩阵} & $ \bm{A} $ & $ k\bm{A} $ & $ \bm{A}^{k} $ & $ f(\bm{A}) $ & $ \bm{A}^{-1} $ & $ \bm{A}^{*} $ & $ \bm{P}^{-1}\bm{A}\bm{P} $ \\ \hline
+\textbf{特征值} & $ \lambda $ & $ k\lambda $ & $ \lambda^{k} $ & $ f(\lambda) $ & $ \lambda^{-1} $ & $ \frac{\left|\bm{A}\right|}{\lambda} $ & $ \lambda $\\ \hline
+\textbf{特征向量} & $ \bm{\xi} $ & $ \bm{\xi} $ & $ \bm{\xi} $ & $ \bm{\xi} $ & $ \bm{\xi} $ & $ \bm{\xi} $ & $ \bm{P}^{-1}\bm{\xi} $\\ 
+\hline
+\end{tabular}
 \end{table}\par
 $ f(x) $为多项式, 若矩阵$ \bm{A} $满足$ f(\bm{A})=\bm{0}\Rightarrow f(\lambda)=0 $.
 \subsection{实对称矩阵}
 \subsubsection{求正交矩阵Q}
 \begin{enumerate}
-	\item 求$ \bm{A} $的$ \lambda $与$ \bm{\xi} $
-	\item $ \bm{\xi_1}, \bm{\xi_{2}},... ,\bm{\xi_{n}} $施密特正交化, 单位化至$ \bm{\eta_{1}}, \bm{\eta_{2}},... ,\bm{\eta_{n}} $
-	\item 令$ Q=(\bm{\eta_1}, \bm{\eta_2},... ,\bm{\eta_{n}}) $
+\item 求$ \bm{A} $的$ \lambda $与$ \bm{\xi} $
+\item $ \bm{\xi_1}, \bm{\xi_{2}},... ,\bm{\xi_{n}} $施密特正交化, 单位化至$ \bm{\eta_{1}}, \bm{\eta_{2}},... ,\bm{\eta_{n}} $
+\item 令$ Q=(\bm{\eta_1}, \bm{\eta_2},... ,\bm{\eta_{n}}) $
 \end{enumerate}
 \par 不同的特征值$ \lambda_{i} $对应的特征矩阵$ \bm{\xi_{i}} $之间是正交的.
 \par 施密特正交化:$ \beta_{1}=\alpha_{1}, 
@@ -520,24 +520,24 @@ $ f(x) $为多项式, 若矩阵$ \bm{A} $满足$ f(\bm{A})=\bm{0}\Rightarrow f(\
 \par 单位化: $ \eta_{1}=\frac{\beta_{1}}{||\beta_{1}||} $.
 \paragraph{总结} 
 \begin{enumerate}
-	\item 普通矩阵$ \bm{A} $
-	\begin{enumerate}
-		\item $ \lambda_{1}\neq \lambda_{2}\Rightarrow \xi_{1}, \xi_{2}$无关
-		\item $ \lambda_{1}= \lambda_{2}\Rightarrow \xi_{1}, \xi_{2}$
-		\begin{enumerate}
-			\item $\xi_{1}, \xi_{2}$无关
-			\item $\xi_{1}, \xi_{2}$相关
-		\end{enumerate}
-	\end{enumerate}
-	\item 实对称矩阵$ \bm{A} $
-	\begin{enumerate}
-		\item $ \lambda_{1}\neq \lambda_{2}\Rightarrow \xi_{1}\perp \xi_{2}$\quad $\xi_{1}, \xi_{2}$无关
-		\item $ \lambda_{1}= \lambda_{2}\Rightarrow$ 
-		\begin{enumerate}
-			\item $\xi_{1}\perp \xi_{2}$\quad $\xi_{1}, \xi_{2}$无关
-			\item $\xi_{1}$不垂直于$\xi_{2}$\quad $\xi_{1}, \xi_{2}$无关
-		\end{enumerate}
-	\end{enumerate}
+\item 普通矩阵$ \bm{A} $
+\begin{enumerate}
+\item $ \lambda_{1}\neq \lambda_{2}\Rightarrow \xi_{1}, \xi_{2}$无关
+\item $ \lambda_{1}= \lambda_{2}\Rightarrow \xi_{1}, \xi_{2}$
+\begin{enumerate}
+\item $\xi_{1}, \xi_{2}$无关
+\item $\xi_{1}, \xi_{2}$相关
+\end{enumerate}
+\end{enumerate}
+\item 实对称矩阵$ \bm{A} $
+\begin{enumerate}
+\item $ \lambda_{1}\neq \lambda_{2}\Rightarrow \xi_{1}\perp \xi_{2}$\quad $\xi_{1}, \xi_{2}$无关
+\item $ \lambda_{1}= \lambda_{2}\Rightarrow$ 
+\begin{enumerate}
+\item $\xi_{1}\perp \xi_{2}$\quad $\xi_{1}, \xi_{2}$无关
+\item $\xi_{1}$不垂直于$\xi_{2}$\quad $\xi_{1}, \xi_{2}$无关
+\end{enumerate}
+\end{enumerate}
 \end{enumerate}
 \chapter{二次型}
 \section{基础知识}
@@ -546,51 +546,51 @@ $ f(x) $为多项式, 若矩阵$ \bm{A} $满足$ f(\bm{A})=\bm{0}\Rightarrow f(\
 $ n $元变量$ x_{1}, x_{2},... ,x_{n} $的二次齐次多项式称为$ n $元二次型, 简称二次型.\par
 二次型可以表示为$ \sum_{i=1}^{n}\sum_{j=1}^{n}a_{ij}x_{i}x_{j} $, 由此可以得出二次型的矩阵表达式, 令:
 \begin{equation*}
-	\bm{A}=\begin{bmatrix}
-		a_{11} & a_{12} & \dots & a_{1n} \\
-		a_{21} & a_{22} & \dots & a_{2n} \\
-		\vdots & \vdots &  & \vdots \\
-		a_{n1} & a_{n2} & \dots & a_{nn} 
-	\end{bmatrix},
-	\bm{x}=\begin{bmatrix}
-		x_1 \\
-		x_2 \\
-		\vdots \\
-		x_n 
-	\end{bmatrix}
+\bm{A}=\begin{bmatrix}
+a_{11} & a_{12} & \dots & a_{1n} \\
+a_{21} & a_{22} & \dots & a_{2n} \\
+\vdots & \vdots &  & \vdots \\
+a_{n1} & a_{n2} & \dots & a_{nn} 
+\end{bmatrix},
+\bm{x}=\begin{bmatrix}
+x_1 \\
+x_2 \\
+\vdots \\
+x_n 
+\end{bmatrix}
 \end{equation*}\par
 则二次型可以表示为:
 \begin{equation*}
-	f(\bm{x})=\bm{x}^{T}\bm{A}\bm{x}
+f(\bm{x})=\bm{x}^{T}\bm{A}\bm{x}
 \end{equation*}\par
 必须强调的是, 这里的$ \bm{A} $是一个对称矩阵.
 \subsection{线性变换}
 对于$ n $元二次型$ f(x_{1}, x_{2},... ,x_{n}) $, 若令
 \begin{equation*}
-	\left\{
-	\begin{aligned}
-		& x_{1} = c_{11}y_{1}+c_{12}y_{2}+\dots +c_{1n}y_{n}, \\ 
-		& x_{2} = c_{21}y_{1}+c_{22}y_{2}+\dots +c_{2n}y_{n}, \\
-		& \dots \\
-		& x_{n} = c_{n1}y_{1}+c_{n2}y_{2}+\dots +c_{nn}y_{n},
-	\end{aligned}
-	\right.
+\left\{
+\begin{aligned}
+& x_{1} = c_{11}y_{1}+c_{12}y_{2}+\dots +c_{1n}y_{n}, \\ 
+& x_{2} = c_{21}y_{1}+c_{22}y_{2}+\dots +c_{2n}y_{n}, \\
+& \dots \\
+& x_{n} = c_{n1}y_{1}+c_{n2}y_{2}+\dots +c_{nn}y_{n},
+\end{aligned}
+\right.
 \end{equation*}\par
 记$ \bm{x}=\begin{bmatrix}
-	x_1 \\
-	x_2 \\
-	\vdots \\
-	x_n 
+x_1 \\
+x_2 \\
+\vdots \\
+x_n 
 \end{bmatrix}, \bm{C}=\begin{bmatrix}
-	c_{11} & c_{12} & \dots & c_{1n} \\
-	c_{21} & c_{22} & \dots & c_{2n} \\
-	\vdots & \vdots &  & \vdots \\
-	c_{n1} & c_{n2} & \dots & c_{nn} 
+c_{11} & c_{12} & \dots & c_{1n} \\
+c_{21} & c_{22} & \dots & c_{2n} \\
+\vdots & \vdots &  & \vdots \\
+c_{n1} & c_{n2} & \dots & c_{nn} 
 \end{bmatrix}, \bm{y}=\begin{bmatrix}
-	y_1 \\
-	y_2 \\
-	\vdots \\
-	y_n 
+y_1 \\
+y_2 \\
+\vdots \\
+y_n 
 \end{bmatrix}$\par \vspace{1em}
 则上式可以写为$ \bm{x}=\bm{C}\bm{y} $. 上式成为从$ y_{1}, y_{2},... ,y_{n} $到$ x_{1}, x_{2},... ,x_{n} $的线性变换. 如果$ \bm{C} $可逆, 则称为可逆线性变换.\par
 如果$ f(\bm{x})=\bm{x}^{T}\bm{A}\bm{x} $, 令$ \bm{x}=\bm{C}\bm{y} $, 则有$ f(\bm{x})=(\bm{C}\bm{y})^{T}\bm{A}(\bm{C}\bm{y})=\bm{y}^{T}(\bm{C}^{T}\bm{A}\bm{C})\bm{y}. $\par
@@ -599,93 +599,93 @@ $ n $元变量$ x_{1}, x_{2},... ,x_{n} $的二次齐次多项式称为$ n $元�
 \subsubsection{定义}
 设$ \bm{A}, \bm{B} $为$ n $阶矩阵, 若存在可逆矩阵$ \bm{C} $, 使得:
 \begin{equation*}
-	\bm{C}^{T}\bm{A}\bm{C}=\bm{B}
+\bm{C}^{T}\bm{A}\bm{C}=\bm{B}
 \end{equation*}\par
 则称$ \bm{A} $和$ \bm{B} $合同, 记作$ \bm{A}\simeq \bm{B} $. 此时称$ f(\bm{x}) $与$ g(\bm{x}) $为合同二次型.\par
 所谓合同, 就是指同一个二次型在可逆线性变换下的两个不同状态的联系.
 \subsubsection{性质}
 \begin{enumerate}
-	\item 反身性: $ \bm{A}\simeq \bm{A} $
-	\item 对称性: $ \bm{A}\simeq \bm{B}\Rightarrow \bm{B}\simeq \bm{A} $
-	\item 传递性: $ \bm{A}\simeq \bm{B}, \bm{B}\simeq \bm{C}\Rightarrow \bm{A}\simeq \bm{C} $
+\item 反身性: $ \bm{A}\simeq \bm{A} $
+\item 对称性: $ \bm{A}\simeq \bm{B}\Rightarrow \bm{B}\simeq \bm{A} $
+\item 传递性: $ \bm{A}\simeq \bm{B}, \bm{B}\simeq \bm{C}\Rightarrow \bm{A}\simeq \bm{C} $
 \end{enumerate}
 \subsection{标准形/规范形}
 \subsubsection{定义}
 若二次型中只含有平方项, 没有交叉项, 形如
 \begin{equation*}
-	d_{1}x_{1}^{2}+d_{2}x_{2}^{2}+... +d_{n}x_{n}^{2}
+d_{1}x_{1}^{2}+d_{2}x_{2}^{2}+... +d_{n}x_{n}^{2}
 \end{equation*}\par
 的二次型称为标准形.\par
 若标准形中, 系数$ d_{i} $仅为$ 1, -1, 0 $的二次型称为规范形.
 \subsubsection{求法}
 我们的目标是使得$ \bm{B} $矩阵是一个对角矩阵, 即只有主对角线有元素, 才可以得到标准型. 有两种方法:
 \begin{enumerate}
-	\item 任何二次型可以通过配方法(作可逆线性变换)化为标准形和规范形, 它求得的对角矩阵(标准形)形式如下(不一定是特征值$ \lambda $):
-	\begin{equation*}
-		\bm{\Lambda}=\begin{bmatrix}
-			d_1 &  &  &  \\
-			& d_2 &  &  \\
-			&  & \ddots &  \\
-			&  &  & d_n 
-		\end{bmatrix}
-	\end{equation*}\par
-	此外, 它还可以转化成规范形:
-	\begin{equation*}
-		\bm{\Lambda}=\begin{bmatrix}
-			1 &  &  &  &  &  &  &  &  \\
-			& \ddots &  &  &  &  &  &  &  \\
-			&  & 1 &  &  &  &  &  &  \\
-			&  &  & -1 &  &  &  &  &  \\
-			&  &  &  & \ddots &  &  &  &  \\
-			&  &  &  &  & -1 &  &  &  \\
-			&  &  &  &  &  & 0 &  &  \\
-			&  &  &  &  &  &  & \ddots &  \\
-			&  &  &  &  &  &  &  & 0 
-		\end{bmatrix}
-	\end{equation*}
-	\item 任何二次型可以通过正交变换化成标准形(见\ref{ref:求标准形}), 它求得的对角矩阵(标准形)形式如下(特征值不一定是$ 0, 1, -1 $):
-	\begin{equation*}
-		\bm{\Lambda}=\begin{bmatrix}
-			\lambda_1 &  &  &  \\
-			& \lambda_2 &  &  \\
-			&  & \ddots &  \\
-			&  &  & \lambda_n
-		\end{bmatrix}
-	\end{equation*}
+\item 任何二次型可以通过配方法(作可逆线性变换)化为标准形和规范形, 它求得的对角矩阵(标准形)形式如下(不一定是特征值$ \lambda $):
+\begin{equation*}
+\bm{\Lambda}=\begin{bmatrix}
+d_1 &  &  &  \\
+& d_2 &  &  \\
+&  & \ddots &  \\
+&  &  & d_n 
+\end{bmatrix}
+\end{equation*}\par
+此外, 它还可以转化成规范形:
+\begin{equation*}
+\bm{\Lambda}=\begin{bmatrix}
+1 &  &  &  &  &  &  &  &  \\
+& \ddots &  &  &  &  &  &  &  \\
+&  & 1 &  &  &  &  &  &  \\
+&  &  & -1 &  &  &  &  &  \\
+&  &  &  & \ddots &  &  &  &  \\
+&  &  &  &  & -1 &  &  &  \\
+&  &  &  &  &  & 0 &  &  \\
+&  &  &  &  &  &  & \ddots &  \\
+&  &  &  &  &  &  &  & 0 
+\end{bmatrix}
+\end{equation*}
+\item 任何二次型可以通过正交变换化成标准形(见\ref{ref:求标准形}), 它求得的对角矩阵(标准形)形式如下(特征值不一定是$ 0, 1, -1 $):
+\begin{equation*}
+\bm{\Lambda}=\begin{bmatrix}
+\lambda_1 &  &  &  \\
+& \lambda_2 &  &  \\
+&  & \ddots &  \\
+&  &  & \lambda_n
+\end{bmatrix}
+\end{equation*}
 \end{enumerate}
 \subsection{惯性定理}
 \subsubsection{定义}
 无论选取什么样的线性变换(配方还是正交合同变换), 将二次型化为标准形或者规范形, 其正项系数个数$ p $, 负项个数$ q $都是不变的, $ p $称为正惯性指数, $ q $称为负惯性指数.
 \subsubsection{性质}
 \begin{enumerate}
-	\item 若二次型的秩为$ r $, 则$ r=p+q $, 可逆线性变换不改变正/负惯性指数
-	\item 两个二次型(或者实对称矩阵)合同的条件是有相同的正/负惯性指数
+\item 若二次型的秩为$ r $, 则$ r=p+q $, 可逆线性变换不改变正/负惯性指数
+\item 两个二次型(或者实对称矩阵)合同的条件是有相同的正/负惯性指数
 \end{enumerate}
 \subsection{正定二次型及其判别}
 \subsubsection{定义}
 $ n $元二次型$ f(x_{1}, x_{2},... ,x_{n})=\bm{x}^{T}\bm{A}\bm{x} $, 若对于任意的$ \bm{x}=[x_{1},x_{2},... ,x_{n}]^{T}\neq \bm{0} $均有二次型大于0, 即$ \bm{x}^{T}\bm{A}\bm{x}>0 $, 则称$ f $为正定二次型, $ \bm{A} $为正定矩阵.
 \subsubsection{条件}
 \begin{enumerate}
-	\item 充要条件: \par $ \begin{aligned}
-		n\text{元二次型正定} & \Leftrightarrow \text{对于任意}\bm{x}\neq \bm{0}, \text{有}\bm{x}^{T}\bm{A}\bm{x}>0 \\
-		& \Leftrightarrow f\text{的正惯性指数} p=n\text{(所有的系数全正)} \\
-		& \Leftrightarrow \text{存在可逆矩阵} \bm{D}, \text{使} \bm{A}=\bm{D}^{T}\bm{D} \\
-		& \Leftrightarrow \bm{A}\simeq \bm{E} \\
-		& \Leftrightarrow \bm{A}\text{的特征值} \lambda_{i}>0(i=1, 2,... ,n) \\
-		& \Leftrightarrow \bm{A}\text{的全部顺序主子式均大于0(左上角行列式)}
-	\end{aligned} $
-	\item 必要条件: \par $ \begin{aligned}
-		n\text{元二次型正定} & \Leftarrow a_{ii}>0(i=1, 2,... ,n) \\
-		& \Leftarrow \left|\bm{A}\right|>0 
-	\end{aligned} $
+\item 充要条件: \par $ \begin{aligned}
+n\text{元二次型正定} & \Leftrightarrow \text{对于任意}\bm{x}\neq \bm{0}, \text{有}\bm{x}^{T}\bm{A}\bm{x}>0 \\
+& \Leftrightarrow f\text{的正惯性指数} p=n\text{(所有的系数全正)} \\
+& \Leftrightarrow \text{存在可逆矩阵} \bm{D}, \text{使} \bm{A}=\bm{D}^{T}\bm{D} \\
+& \Leftrightarrow \bm{A}\simeq \bm{E} \\
+& \Leftrightarrow \bm{A}\text{的特征值} \lambda_{i}>0(i=1, 2,... ,n) \\
+& \Leftrightarrow \bm{A}\text{的全部顺序主子式均大于0(左上角行列式)}
+\end{aligned} $
+\item 必要条件: \par $ \begin{aligned}
+n\text{元二次型正定} & \Leftarrow a_{ii}>0(i=1, 2,... ,n) \\
+& \Leftarrow \left|\bm{A}\right|>0 
+\end{aligned} $
 \end{enumerate}
 \section{习题}
 \subsection{标准形/规范形}
 \subsubsection{用正交变换法化二次型为标准形}
 \begin{enumerate}\label{ref:求标准形}
-	\item 写出二次型矩阵$ \bm{A} $
-	\item 求$ \bm{A} $的特征值$ \lambda $和特征向量$ \bm{\xi} $
-	\item 将$ \bm{\xi_{1}},..., \bm{\xi_{n}} $通过正交化/单位化成正交矩阵$ \bm{Q}=(\bm{\eta_{1}},..., \bm{\eta_{n}}) $
-	\item 令$ \bm{x}=\bm{Q}\bm{y}\Rightarrow f(\bm{x})=\bm{x}^{T}\bm{A}\bm{x}=(\bm{Q}\bm{y})^{T}\bm{A}\bm{Q}\bm{y}=\bm{y}^{T}\bm{Q}^{-1}\bm{A}\bm{Q}\bm{y}=\bm{y}^{T}\bm{\lambda}\bm{y}\Rightarrow f(y_{1},..., y_{n})=\lambda_{1}y_{1}^{2}+... +\lambda_{n}y_{n}^{2} $ 
+\item 写出二次型矩阵$ \bm{A} $
+\item 求$ \bm{A} $的特征值$ \lambda $和特征向量$ \bm{\xi} $
+\item 将$ \bm{\xi_{1}},..., \bm{\xi_{n}} $通过正交化/单位化成正交矩阵$ \bm{Q}=(\bm{\eta_{1}},..., \bm{\eta_{n}}) $
+\item 令$ \bm{x}=\bm{Q}\bm{y}\Rightarrow f(\bm{x})=\bm{x}^{T}\bm{A}\bm{x}=(\bm{Q}\bm{y})^{T}\bm{A}\bm{Q}\bm{y}=\bm{y}^{T}\bm{Q}^{-1}\bm{A}\bm{Q}\bm{y}=\bm{y}^{T}\bm{\lambda}\bm{y}\Rightarrow f(y_{1},..., y_{n})=\lambda_{1}y_{1}^{2}+... +\lambda_{n}y_{n}^{2} $ 
 \end{enumerate}
 \paragraph{注意} 正交变换只能化二次型为标准形, 不能化为规范形(除非特征值都是$ 0, 1, -1 $)
