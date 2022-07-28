@@ -336,7 +336,6 @@ $ r(\bm{A})=r(\bm{PA})=r(\bm{AQ})=r(\bm{PAQ}) $
 \section{习题}
 \chapter{向量组}
 \section{基础知识}
-\section{习题}
 \subsection{向量}
 \subsubsection{定义}
 $ n $个数构成的一个有序数组$ [a_{1},a_{2},...,a_{n}] $称为一个$ n $维向量, 记为$ \bm{\alpha} = [a_{1},a_{2},...,a_{n}] $, 并称$ \bm{\alpha} $为$ n $维行向量, $ \bm{\alpha}^{T} $为$ n $维列向量. 其中$ a_{i} $称为向量$ \bm{\alpha} $或者$ \bm{\alpha}^{T} $的第$ i $个分量.
@@ -353,9 +352,9 @@ k_{1}\bm{\alpha_{1}}+k_{2}\bm{\alpha_{2}}+...+k_{m}\bm{\alpha_{m}}=\bm{0}
 \begin{equation*}
 \bm{A}\bm{x}=\bm{0}
 \end{equation*}
-或者
+或者矩阵形式:
 \begin{equation*}
-\bm{A}=\begin{bmatrix}
+\bm{A}\bm{x}=\begin{bmatrix}
 a_{11} & a_{12} & \dots & a_{1m} \\
 a_{21} & a_{22} & \dots & a_{2m} \\
 \vdots & \vdots & \ddots & \vdots \\
@@ -374,9 +373,9 @@ x_{m}
 0
 \end{bmatrix}
 \end{equation*}
-或者
+或者向量形式:
 \begin{equation*}
-\bm{A}=x_{1}\begin{bmatrix}
+\bm{A}\bm{x}=x_{1}\begin{bmatrix}
 a_{11} \\
 a_{21} \\
 \vdots \\
@@ -401,7 +400,7 @@ a_{nm}
 0
 \end{bmatrix}
 \end{equation*}
-或者
+或者线性方程组形式:
 \begin{equation*}
 \left\{\begin{aligned}
 & x_{1}a_{11}+x_{2}a_{12}+...+x_{m}a_{1m}=0 \\
@@ -453,11 +452,83 @@ a_{nm}
 \item $ \bm{A} $的行向量组和$ \bm{B} $的行向量组是等价向量组
 \item $ \bm{A} $和$ \bm{B} $的任何相应部分列向量具有相同的线性相关性
 \end{enumerate}
-\item 
+\item 设向量组$ (1)\ \bm{\alpha_{1}},\bm{\alpha_{2}},...,\bm{\alpha_{s}} $和$ (2)\ \bm{\beta_{1}},\bm{\beta_{2}},...,\bm{\beta_{t}} $, 若$ \bm{\beta}_{i} $均可由$ \bm{\alpha_{1}},\bm{\alpha_{2}},...,\bm{\alpha_{s}} $线性表出, 则$ r(\bm{\beta_{1}},\bm{\beta_{2}},...,\bm{\beta_{t}})\le r(\bm{\alpha_{1}},\bm{\alpha_{2}},...,\bm{\alpha_{s}}) $
 \end{enumerate}
-
+\section{习题}
 \chapter{线性方程组}
-
+\section{基础知识}
+\subsection{齐次线性方程组}
+设有一齐次线性方程组:
+\begin{equation*}
+\left\{\begin{aligned}
+& x_{1}a_{11}+x_{2}a_{12}+...+x_{m}a_{1m}=0 \\
+& x_{1}a_{21}+x_{2}a_{22}+...+x_{m}a_{2m}=0 \\
+& \dots \\
+& x_{1}a_{n1}+x_{2}a_{n2}+...+x_{m}a_{nm}=0
+\end{aligned}
+\right.
+\end{equation*}\par
+其向量形式为:
+\begin{equation*}
+\bm{A}\bm{x}=\begin{bmatrix}
+a_{11} & a_{12} & \dots & a_{1m} \\
+a_{21} & a_{22} & \dots & a_{2m} \\
+\vdots & \vdots & \ddots & \vdots \\
+a_{n1} & a_{n2} & \dots & a_{nm}
+\end{bmatrix}
+\begin{bmatrix}
+x_{1} \\
+x_{2} \\
+\vdots \\
+x_{m}
+\end{bmatrix}=
+\begin{bmatrix}
+0 \\
+0 \\
+\vdots \\
+0
+\end{bmatrix}
+\end{equation*}
+\subsubsection{有解的条件}
+由上矩阵可以得到, 未知数的个数为$ m $, 方程的个数为$ n $.
+\begin{enumerate}
+\item 若$ m>n $, 则必有非零解
+\item 若$ m=n $, 用秩判断:
+\begin{enumerate}
+\item 若$ r(\bm{A})=m $(向量组线性无关), 则仅有零解
+\item 若$ r(\bm{A})=r<m $(向量组线性相关), 则必有非零解, 且有$ m-r $个线性无关解
+\end{enumerate}
+上述判定基于三秩相等给出, 矩阵的秩等于列向量(向量组)的秩.
+\item 若$ m<n $, 
+\end{enumerate}
+\subsubsection{解的性质}
+若$ \bm{A}\bm{\xi_{1}}=\bm{0} $, $ \bm{A}\bm{\xi_{2}}=\bm{0} $, 则$ k_{1}\bm{\xi_{1}}+k_{2}\bm{\xi_{2}}=0 $, 其中$ k_{1},k_{2} $为任意常数.
+\subsubsection{基础解系和解的结构}
+\begin{enumerate}
+\item 基础解系\par
+设$ \bm{\xi_{1}},\bm{\xi_{2}},...,\bm{\xi_{m-r}} $满足:
+\begin{enumerate}
+\item 是方程组$ \bm{A}\bm{x}=\bm{0} $的解
+\item 线性无关
+\item 方程组$ \bm{A}\bm{x}=\bm{0} $的任一解均可由$ \bm{\xi_{1}},\bm{\xi_{2}},...,\bm{\xi_{m-r}} $线性表出, 则称$ \bm{\xi_{1}},\bm{\xi_{2}},...,\bm{\xi_{m-r}} $ 是方程组$ \bm{A}\bm{x}=\bm{0} $的基础解系
+\end{enumerate}
+\item 通解\par
+设$ \bm{\xi_{1}},\bm{\xi_{2}},...,\bm{\xi_{m-r}} $是方程$ \bm{A}\bm{x}=\bm{0} $的基础解系, 则$ k_{1}\bm{\xi_{1}}+k_{2}\bm{\xi_{2}}+...+k_{m-r}\bm{\xi_{m-r}} $是其通解.
+\end{enumerate}
+\subsubsection{求解方法}
+\begin{enumerate}
+\item $ \bm{A}\xrightarrow{\text{初等行变换}}\bm{B} $, 其中$ \bm{B} $为行阶梯形矩阵, $ r(\bm{A})=r $\par
+高斯消元法: \par
+\ding{172} 保证最靠左的非全$ 0 $列的最上方为非$ 0 $元素, 如果不是, 通过``互换''初等行变换使最靠左非全$ 0 $列的最上方为非$ 0 $元素\par
+\ding{173} 通过``倍加''初等行变换使这个非$ 0 $元素所在列的下方元素全为$ 0 $\par
+\ding{174} 遮住矩阵的最上面一行不看, 将其余行看作一个新矩阵, 重复\ding{172}\ding{173}, 直至矩阵化为阶梯形\par
+高斯-若当消元法:\par
+\ding{172} 由高斯消元法得到阶梯形矩阵\par
+\ding{173} 对于每一个非全$ 0 $行, 通过``倍乘''初等行变换使得这一行的非$ 0 $首位为$ 1 $\par
+\ding{174} 对于每一个非全$ 0 $行, 通过``倍加''初等行变换使得这一行的非$ 0 $首项所在列的上方元素全为$ 0 $, 直至得到简化行阶梯型矩阵
+\item 按列找出一个秩为$ r $的子矩阵, 剩余列位置对应的未知数设为自由变量
+\item 算出共有$ m-r $个线性无关解, 求出$ \bm{\xi_{1}},\bm{\xi_{2}},...,\bm{\xi_{m-r}} $, 写出通解
+\end{enumerate}
 \chapter{特征值和特征向量}
 \section{基础知识}
 \subsection{特征值和特征向量}
