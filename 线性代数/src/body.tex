@@ -416,7 +416,7 @@ a_{nm}
 \begin{enumerate}
 \item 相关充要条件: 向量组中至少有一个向量能被其余的$ n-1 $的向量线性表出
 \item 相关充要条件: 方程$ \bm{A}\bm{x}=\bm{0} $有非$ \bm{0} $解
-\item 若向量组$ \bm{\alpha_{1}},\bm{\alpha_{2}},...,\bm{\alpha_{m}} $线性无关, 而向量组$ \bm{\beta}, \bm{\alpha_{1}},\bm{\alpha_{2}},...,\bm{\alpha_{m}} $线性相关, 则$ \bm{\beta} $可由向量组$ \bm{\alpha_{1}},\bm{\alpha_{2}},...,\bm{\alpha_{m}} $线性表出, 且表示方法唯一
+\item 若向量组$ \bm{\alpha_{1}},\bm{\alpha_{2}},...,\bm{\alpha_{m}} $线性无关, 而向量组$ \bm{\beta}, \bm{\alpha_{1}},\bm{\alpha_{2}},...,\bm{\alpha_{m}} $线性相关, 则$ \bm{\beta} $可由向量组$ \bm{\alpha_{1}},\bm{\alpha_{2}},...,\bm{\alpha_{m}} $线性表出, 且表示方法唯一\label{ref:判别相关性}
 \item 如果向量$ \bm{\beta} $能够由向量组$ \bm{\alpha_{1}},\bm{\alpha_{2}},...,\bm{\alpha_{m}} $线性表出, 则$ r([\bm{\alpha_{1}},\bm{\alpha_{2}},...,\bm{\alpha_{m}}])=r([\bm{\beta},\bm{\alpha_{1}},\bm{\alpha_{2}},...,\bm{\alpha_{m}}]) $
 \item 以少表多, 多的相关: 如果向量组$ \bm{\beta_{1}},\bm{\beta_{2}},...,\bm{\beta_{t}} $能够由向量组$ \bm{\alpha_{1}},\bm{\alpha_{2}},...,\bm{\alpha_{s}} $线性表示, 且$ t>s $, 则$ \bm{\beta_{1}},\bm{\beta_{2}},...,\bm{\beta_{t}} $线性相关
 \item 向量组的部分与整体: 如果向量组$ \bm{\alpha_{1}},\bm{\alpha_{2}},...,\bm{\alpha_{m}} $中有一部分向量线性相关, 则整体也线性相关;\par 如果向量组$ \bm{\alpha_{1}},\bm{\alpha_{2}},...,\bm{\alpha_{m}} $线性无关, 则其任一部分线性无关
@@ -468,7 +468,7 @@ a_{nm}
 \end{aligned}
 \right.
 \end{equation*}\par
-其向量形式为:
+其矩阵形式为:
 \begin{equation*}
 \bm{A}\bm{x}=\begin{bmatrix}
 a_{11} & a_{12} & \dots & a_{1m} \\
@@ -528,6 +528,65 @@ x_{m}
 \ding{174} 对于每一个非全$ 0 $行, 通过``倍加''初等行变换使得这一行的非$ 0 $首项所在列的上方元素全为$ 0 $, 直至得到简化行阶梯型矩阵
 \item 按列找出一个秩为$ r $的子矩阵, 剩余列位置对应的未知数设为自由变量
 \item 算出共有$ m-r $个线性无关解, 求出$ \bm{\xi_{1}},\bm{\xi_{2}},...,\bm{\xi_{m-r}} $, 写出通解
+\end{enumerate}
+\subsection{非齐次线性方程组}
+设有一非齐次线性方程组:
+\begin{equation*}
+\left\{\begin{aligned}
+& x_{1}a_{11}+x_{2}a_{12}+...+x_{m}a_{1m}=b_{1} \\
+& x_{1}a_{21}+x_{2}a_{22}+...+x_{m}a_{2m}=b_{2} \\
+& \dots \\
+& x_{1}a_{n1}+x_{2}a_{n2}+...+x_{m}a_{nm}=b_{n}
+\end{aligned}
+\right.
+\end{equation*}\par
+其矩阵形式为:
+\begin{equation*}
+\bm{A}\bm{x}=\begin{bmatrix}
+a_{11} & a_{12} & \dots & a_{1m} \\
+a_{21} & a_{22} & \dots & a_{2m} \\
+\vdots & \vdots & \ddots & \vdots \\
+a_{n1} & a_{n2} & \dots & a_{nm}
+\end{bmatrix}
+\begin{bmatrix}
+x_{1} \\
+x_{2} \\
+\vdots \\
+x_{m}
+\end{bmatrix}=
+\begin{bmatrix}
+b_{1} \\
+b_{2} \\
+\vdots \\
+b_{n}
+\end{bmatrix}
+\end{equation*}\par
+特殊的有矩阵$ \bm{A} $的增广矩阵:
+\begin{equation*}
+[\bm{A},\bm{b}]=\begin{bmatrix}
+a_{11} & a_{12} & \dots & a_{1m} & b_{1} \\
+a_{21} & a_{22} & \dots & a_{2m} & b_{2} \\
+\vdots & \vdots & \ddots & \vdots & \vdots \\
+a_{n1} & a_{n2} & \dots & a_{nm} & b_{n}
+\end{bmatrix}
+\end{equation*}
+\subsubsection{有解的条件}
+\begin{enumerate}
+\item 若$ r(\bm{A})\neq r([\bm{A},\bm{b}]) $($ \bm{b} $不能由$ \bm{\alpha_{1}},\bm{\alpha_{2}},...,\bm{\alpha_{m}} $线性表出), 方程组无解
+\item 若$ r(\bm{A})=r([\bm{A},\bm{b}])=n $($ \bm{\alpha_{1}},\bm{\alpha_{2}},...,\bm{\alpha_{m}} $线性无关, $ \bm{\alpha_{1}},\bm{\alpha_{2}},...,\bm{\alpha_{m}},\bm{b} $线性相关), 方程组有唯一解\ref{ref:判别相关性}
+\item 若$ r(\bm{A})=r([\bm{A},\bm{b}])=r<m $, 方程组有无穷多解
+\end{enumerate}
+\subsubsection{解的性质}
+设$ \bm{\eta_{1}},\bm{\eta_{2}},\bm{\eta} $是非齐次线性方程组$ \bm{A}\bm{x}=\bm{b} $的解, $ \bm{\xi} $是对应齐次线性方程组$ \bm{A}\bm{x}=\bm{0} $的解, 则:
+\begin{enumerate}
+\item $ \bm{\eta_{1}},\bm{\eta_{2}} $是$ \bm{A}\bm{x}=\bm{0} $的解
+\item $ k\bm{\xi}+\bm{\eta} $是$ \bm{A}\bm{x}=\bm{b} $的解
+\end{enumerate}
+\subsubsection{求解方法}
+\begin{enumerate}
+\item 写出$ \bm{A}\bm{x}=\bm{b} $的导出方程组$ \bm{A}\bm{x}=\bm{0} $, 并求出其通解$ k_{1}\bm{\xi_{1}}+k_{2}\bm{\xi_{2}}+...+k_{m-r}\bm{\xi_{m-r}} $
+\item 求出$ \bm{A}\bm{x}=\bm{b} $的一个特解$ \bm{\eta} $
+\item $ \bm{A}\bm{x}=\bm{b} $的通解为$ k_{1}\bm{\xi_{1}}+k_{2}\bm{\xi_{2}}+...+k_{m-r}\bm{\xi_{m-r}}+\bm{\eta} $
 \end{enumerate}
 \chapter{特征值和特征向量}
 \section{基础知识}
