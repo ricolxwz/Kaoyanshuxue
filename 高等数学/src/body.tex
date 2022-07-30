@@ -76,45 +76,274 @@ $ y=log_{a}x $\ ($ a>0,a\neq 1 $)
 正弦函数$ y=\sin x $, 余弦函数$ y=\cos x $.
 \item 正切函数和余切函数\par
 正切函数$ y=\tan x $, 余切函数$ y=\cot x $.\par
-
 \begin{figure}[htp]
 \centering
+\begin{subfigure}{.475\linewidth}
+\centering
 \begin{tikzpicture}[
->=stealth
 ]
-\draw[->] (-1,0)--(4,0)node[right]{$ x $};
-\draw[->] (0,-1)--(0,4)node[right]{$ y $};
-\node at (-.2,-.2){$ 0 $};
-\draw[] (1,0)node[below]{$ 1 $}--(1,.1);
-\foreach \x in {1,2,3,...,6}{
-\draw[] (0,\x*0.5)node[left]{$ \x $}--(.1,\x*0.5);
-\node at (.2,.2){$ 0 $};
-}
+\begin{axis}[
+width=\linewidth,
+axis lines=middle,
+xmin=-4.3,
+xmax=4.3,
+ymin=-4.5,
+ymax=4.5,
+xlabel=$ x $,
+ylabel=$ y $,
+xlabel=$ x $,
+xlabel style={below},
+ylabel=$ y $,
+ylabel style={left},
+xtick={-pi/2,pi/2},
+xticklabels={$ -\frac{\pi}{2} $,$ \frac{\pi}{2} $},
+xticklabel style={left,yshift=-0.5em},
+ytick={1},
+yticklabels={$ 1 $},
+extra y ticks={-1},
+extra y tick labels={$ -1 $},
+extra y tick style={tick label style={right,yshift=-1em}},
+]
+\addplot [black,samples=1000]{tan(deg(x))};
+\end{axis}
 \end{tikzpicture}
+\caption{正切函数图像}
+\end{subfigure}
+\hspace{.1em}
+\begin{subfigure}{.475\linewidth}
+\centering
+\begin{tikzpicture}[
+]
+\begin{axis}[
+width=\linewidth,
+axis lines=middle,
+xmin=-4.3,
+xmax=4.3,
+ymin=-4.5,
+ymax=4.5,
+xlabel=$ x $,
+xlabel style={below},
+ylabel=$ y $,
+ylabel style={left},
+xtick={-pi/2,pi/2},
+xticklabels={$ -\frac{\pi}{2} $,$ \frac{\pi}{2} $},
+xticklabel style={left,yshift=-0.5em},
+ytick={1},
+yticklabels={$ 1 $},
+extra y ticks={-1},
+extra y tick labels={$ -1 $},
+extra y tick style={tick label style={right,yshift=-1em}},
+]
+\addplot [black,samples=1000]{1/tan(deg(x))};
+\end{axis}
+\end{tikzpicture}
+\caption{余切函数图像}
+\end{subfigure}
 \end{figure}
+\item 正割函数和余割函数\par
+正割函数$ y=\sec x $, 余割函数$ y=\csc x $.
 \begin{figure}[htp]
-\begin{tikzpicture}[
->=stealth,
-scale=.5,
-]
-\draw[->] (-5,0)to(5,0)node[right]{$ x $};
-\draw[->] (0,-4)to(0,4)node[right]{$ x $};
-\draw[fill=magenta] (-4,0)node[above]{$ C $}to(0,3)node[right]{$ B $}to(4,0)node[above]{$ A $}to(0,-3)node[right]{$ D $}to(-4,0);
-\end{tikzpicture}
-\end{figure}
-\begin{figure}
+\centering
+\begin{subfigure}{.475\linewidth}
+\centering
 \begin{tikzpicture}[
 ]
-\draw[] content;
+\begin{axis}[
+width=\linewidth,
+axis lines=middle,
+xmin=-4.3,
+xmax=4.3,
+ymin=-4.5,
+ymax=4.5,
+xlabel=$ x $,
+ylabel=$ y $,
+xtick={-pi/2,pi/2},
+xticklabels={$ -\frac{\pi}{2} $,$ \frac{\pi}{2} $},
+xticklabel style={left,yshift=-0.5em},
+ytick={-1,1},
+yticklabels={$ -1 $,$ 1 $},
+yticklabel style={below,xshift=-1em,yshift=0.4em},
+]
+\addplot [black,samples=1000]{1/cos(deg(x))};
+\end{axis}
 \end{tikzpicture}
+\caption{正割函数图像}
+\end{subfigure}
+\begin{subfigure}{.475\linewidth}
+\begin{tikzpicture}[
+]
+\begin{axis}[
+width=\linewidth,
+axis lines=middle,
+xmin=-4.3,
+xmax=4.3,
+ymin=-4.5,
+ymax=4.5,
+xlabel=$ x $,
+ylabel=$ y $,
+ylabel style={left},
+xtick={pi/2},
+xticklabels={$ \frac{\pi}{2} $},
+extra x ticks={-pi/2},
+extra x tick labels={$ -\frac{\pi}{2} $},
+extra x tick style={tick label style={above}},
+ytick={1},
+yticklabels={$ 1 $},
+extra y ticks={-1},
+extra y tick labels={$ -1 $},
+extra y tick style={tick label style={right,yshift=-0.5em}},
+]
+\addplot [black,samples=1000]{1/sin(deg(x))};
+\end{axis}
+\end{tikzpicture}
+\caption{余割函数图像}
+\end{subfigure}
 \end{figure}
 \end{enumerate}
+\item 反三角函数
+\begin{enumerate}
+\item 反正弦函数和反余弦函数\par
+反正弦函数$ y=\arcsin x $, 反余弦函数$ y=\arccos x $.
+\begin{figure}[htp]
+\centering
+\begin{subfigure}{.475\linewidth}
+\centering
+\begin{tikzpicture}[
+]
+\begin{axis}[
+width=\linewidth,
+axis lines=middle,
+domain=-1:1,
+xmin=-2,
+xmax=2,
+ymin=-2,
+ymax=2,
+xlabel=$ x $,
+ylabel=$ y $,
+xtick={-1,1},
+ytick={-pi/2,pi/2},
+yticklabels={$ -\frac{\pi}{2} $, $ \frac{\pi}{2} $},
+]
+\addplot [black,samples=1000]{asin(x)/180*pi};
+\end{axis}
+\end{tikzpicture}
+\caption{反正弦函数图像}
+\end{subfigure}
+\begin{subfigure}{.475\linewidth}
+\begin{tikzpicture}[
+]
+\begin{axis}[
+width=\linewidth,
+axis lines=middle,
+domain=-1:1,
+xmin=-2,
+xmax=2,
+ymin=-0.5,
+ymax=4,
+xlabel=$ x $,
+ylabel=$ y $,
+ytick={pi/2,pi},
+yticklabels={$ \frac{\pi}{2} $, $ \pi $},
+xtick={-1,1},
+xticklabels={$ -1 $,$ 1 $},
+]
+\addplot [black,samples=1000]{acos(x)/180*pi};
+\end{axis}
+\end{tikzpicture}
+\caption{反余弦函数图像}
+\end{subfigure}
+\end{figure}
+\item 反正切函数和反余切函数\par
+反正切函数$ y=\arctan x $, 反余切函数$ y=\arccot x $
+\begin{figure}[htp]
+\centering
+\begin{subfigure}{.475\linewidth}
+\centering
+\begin{tikzpicture}[
+]
+\begin{axis}[
+width=\linewidth,
+axis lines=middle,
+xmin=-2,
+xmax=2,
+ymin=-2,
+ymax=2,
+xlabel=$ x $,
+ylabel=$ y $,
+xtick={\empty},
+ytick={-pi/2,pi/2},
+yticklabels={$ -\frac{\pi}{2} $, $ \frac{\pi}{2} $},
+]
+\addplot [black,samples=1000]{atan(x)/180*pi};
+\end{axis}
+\end{tikzpicture}
+\caption{反正切函数图像}
+\end{subfigure}
+\begin{subfigure}{.475\linewidth}
+\begin{tikzpicture}[
+]
+\begin{axis}[
+width=\linewidth,
+axis lines=middle,
+xmin=-2,
+xmax=2,
+ymin=-0.5,
+ymax=4,
+xlabel=$ x $,
+ylabel=$ y $,
+ytick={pi/2,pi},
+yticklabels={$ \frac{\pi}{2} $, $ \pi $},
+xtick={\empty},
+]
+\addplot [black,samples=1000]{(pi/2)-(atan(x))/180*pi};
+\end{axis}
+\end{tikzpicture}
+\caption{反余切函数图像}
+\end{subfigure}
+\end{figure}
+\end{enumerate}
+\item 初等函数\par
+由基本初等函数经过有限次的四则运算, 以及有限次的复合所构成的可以用一个式子表示的函数称为初等函数.
+\end{enumerate}
+\item 分段函数\par
+在自变量的不同范围中, 对应法则不同式子来表示的函数称为分段函数. 一般来说它不是初等函数.
+\begin{enumerate}
+\item 绝对值函数\par
+\begin{equation*}
+y=|x|=
+\scaleleftright[6pt]{\biggl\{}{
+\begin{aligned}
+& x,\ x\ge 0 \\
+& -x,\ x<0
+\end{aligned}
+}{.}
+\end{equation*}
+\item 符号函数\par
+\begin{equation*}
+y=\text{sgn}\ x=
+\scaleleftright[6pt]{\biggl\{}{
+\begin{aligned}
+& 1,\ x>0 \\
+& 0,\ x=0 \\
+& -1,\ x<0
+\end{aligned}
+}{.}
+\end{equation*}
+\item 取整函数\par
+$ y=[x] $, 设$ x $为任一实数, 不超过$ x $的最大整数称为$ x $的整数部分, 记作$ [x] $.
 \end{enumerate}
 \end{enumerate}
+\item 图像变换
+\begin{enumerate}
+\item 平移变换
+\begin{enumerate}
+\item 将函数$ y=f(x) $沿$ x $轴向左平移$ x_{0}\ (x_{0}>0) $个单位长度, 得到函数$ f(x+x_{0}) $的图像; 将函数$ y=f(x) $沿$ x $轴向右平移$ x_{0}\ (x_{0}>0) $个单位长度, 得到函数$ f(x-x_{0}) $的图像
+\item 将函数$ y=f(x) $沿$ y $轴向上平移$ y_{0}\ (y_{0}>0) $个单位长度, 得到函数$ f(x)+y_{0} $的图像; 将函数$ y=f(x) $沿$ y $轴向下平移$ y_{0}\ (y_{0}>0) $个单位长度, 得到函数$ f(x)-y_{0} $的图像
 \end{enumerate}
+\item 对称变换
 
-
-
+\end{enumerate}
+\end{enumerate}
 
 
 
