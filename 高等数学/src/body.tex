@@ -341,20 +341,109 @@ $ y=[x] $, 设$ x $为任一实数, 不超过$ x $的最大整数称为$ x $的�
 \item 将函数$ y=f(x) $沿$ y $轴向上平移$ y_{0}\ (y_{0}>0) $个单位长度, 得到函数$ f(x)+y_{0} $的图像; 将函数$ y=f(x) $沿$ y $轴向下平移$ y_{0}\ (y_{0}>0) $个单位长度, 得到函数$ f(x)-y_{0} $的图像
 \end{enumerate}
 \item 对称变换
-
+\begin{enumerate}
+\item 将函数$ y=f(x) $的图像关于$ x $轴对称, 得到函数$ y=-f(x) $的图像
+\item 将函数$ y=f(x) $的图像关于$ y $轴对称, 得到函数$ y=f(-x) $的图像
+\item 将函数$ y=f(x) $的图像关于原点对称, 得到函数$ y=-f(-x) $的图像
+\item 将函数$ y=f(x) $的图像关于直线$ y=x $对称, 得到函数$ y=f^{-1}(x) $的图像
+\item 保留函数$ y=f(x) $在$ x $轴及$ x $轴上方的部分, 把$ x $轴下方的部分关于$ x $轴对称到$ x $轴上方并去掉原来下方的部分, 得到函数$ y=|f(x)| $的图像
+\item 保留函数$ y=f(x) $在$ y $轴及$ y $轴右侧的部分, 去掉$ y $轴左侧的部分, 再将$ y $轴右侧图像对称到$ y $轴左侧, 得到函数$ y=f(|x|) $的图像
+\end{enumerate}
+\item 伸缩变换
+\begin{enumerate}
+\item 水平伸缩: $ y=f(kx)(k>1) $的图像, 可由$ y=f(x) $的图像上每点的横坐标缩短到原来的$ \frac{1}{k} $倍且纵坐标不变得到. $ y=f(kx)(0<k<1) $的图像, 可由$ y=f(x) $的图像上每点的横坐标伸长到原来的$ \frac{1}{k} $倍且纵坐标不变得到
+\item 垂直伸缩: $ y=kf(x)(k>1) $的图像, 可由$ y=f(x) $的图像上每点的纵坐标伸长到原来的$ k $倍且横坐标不变得到; $ y=kf(x)(0<k<1) $的图像, 可由$ y=f(x) $的图像上每点的纵坐标缩短到原来的$ k $倍且横坐标不变得到
 \end{enumerate}
 \end{enumerate}
-
-
-
-
-
-
-
-
-
-
-
+\end{enumerate}
+\subsubsection{极坐标系}
+\begin{enumerate}
+\item 用描点法画常见图像\par
+\begin{enumerate}
+\item 心形线\par
+$ r=a(1-\cos \theta)(a>0) $
+\begin{figure}[htp]
+\centering
+\begin{tikzpicture}[
+>=stealth,
+]
+\draw[->] (0,0)node[left]{$ 0 $} to (1,0)node[right]{$ x $};
+\draw[domain=0:360,samples=1000,scale=.7] plot (\x:{2*(1-cos(\x))});
+\end{tikzpicture}
+\caption{心形线}
+\end{figure}
+\item 玫瑰线\par
+$ r=a\sin 3\theta (a>0) $
+\begin{figure}[htp]
+\centering
+\begin{tikzpicture}[
+>=stealth,
+]
+\draw[->] (-2,0) to (2,0)node[below]{$ x $};
+\draw[->] (0,-2.5) to (0,2)node[left]{$ y $};
+\draw[domain=0:360,samples=1000,scale=1] plot (\x:{2*sin(3*\x)});
+\end{tikzpicture}
+\caption{玫瑰线}
+\end{figure}
+\item 阿基米德螺线\par
+$ r=a\theta (a>0,\theta \ge 0) $
+\begin{figure}[htp]
+\centering
+\begin{tikzpicture}[
+>=stealth,
+]
+\draw[->] (0,0)node[left]{$ 0 $} to (3,0)node[below]{$ x $};
+\draw[domain=0:360,samples=1000,scale=.2] plot (\x:{2*(\x/180*pi)});
+\end{tikzpicture}
+\caption{阿基米德螺线}
+\end{figure}
+\newpage
+\item 伯努利双纽线\par
+$ r^{2}=a^{2}\cos 2\theta(a>0) $或$ r^{2}=a^{2}\sin 2\theta(a>0) $.
+\begin{figure}[htp]
+\centering
+\begin{subfigure}{.475\linewidth}
+\centering
+\begin{tikzpicture}
+\draw[->] (0,0) to (3,0)node[below]{$ x $};
+\node at (-.2,-.5){$ 0 $};
+\draw[dashed] (0,-1) to (0,1);
+\draw[dashed] (-2,0) to (0,0);
+\draw[domain=0:45,samples=1000] plot (\x:{sqrt(4*cos(2*\x))});
+\draw[domain=135:225,samples=1000] plot (\x:{sqrt(4*cos(2*\x))});
+\draw[domain=315:360,samples=1000] plot (\x:{sqrt(4*cos(2*\x))});
+\end{tikzpicture}
+\caption{$ r^{2}=a^{2}\cos 2\theta $}
+\end{subfigure}
+\hfill
+\begin{subfigure}{.475\linewidth}
+\centering
+\begin{tikzpicture}
+\draw[->] (0,0) to (2,0)node[below]{$ x $};
+\node at (.2,-.2){$ 0 $};
+\draw[domain=0:90,samples=1000,] plot (\x:{sqrt(4*sin(2*\x))});
+\draw[domain=180:270,samples=1000,] plot (\x:{sqrt(4*sin(2*\x))});
+\draw[dashed] (0,0) to (45:2.5);
+\draw[dashed] (0,0) to (225:2.5);
+\end{tikzpicture}
+\caption{$ r^{2}=a^{2}\sin 2\theta $}
+\end{subfigure}
+\caption{伯努利双纽线}
+\end{figure}
+\end{enumerate}
+\end{enumerate}
+\subsubsection{参数方程}
+\begin{enumerate}
+\item 摆线
+\begin{equation*}
+\scaleleftright[6pt]{\biggl\{}{
+\begin{aligned}
+& x=r(t-\sin t) \\
+& y=r(1-\cos t)
+\end{aligned}
+}{.}
+\end{equation*}
+\end{enumerate}
 
 
 

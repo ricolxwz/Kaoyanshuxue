@@ -20,3 +20,11 @@
 \pgfplotsset{compat=newest}
 \DeclareMathOperator{\arccot}{arccot}
 \usepackage{scalerel}
+\usetikzlibrary{arrows.meta}
+\usetikzlibrary{external}
+\tikzset{
+    external/system call={%
+    xelatex \tikzexternalcheckshellescape
+    -halt-on-error -interaction=batchmode --shell-escape
+    -jobname "\image" "\texsource"}}
+\tikzexternalize
