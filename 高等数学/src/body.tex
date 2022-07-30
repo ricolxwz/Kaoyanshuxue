@@ -434,7 +434,7 @@ $ r^{2}=a^{2}\cos 2\theta(a>0) $或$ r^{2}=a^{2}\sin 2\theta(a>0) $.
 \end{enumerate}
 \subsubsection{参数方程}
 \begin{enumerate}
-\item 摆线
+\item 摆线\par
 \begin{equation*}
 \scaleleftright[6pt]{\biggl\{}{
 \begin{aligned}
@@ -443,11 +443,42 @@ $ r^{2}=a^{2}\cos 2\theta(a>0) $或$ r^{2}=a^{2}\sin 2\theta(a>0) $.
 \end{aligned}
 }{.}
 \end{equation*}
+\begin{figure}[H]
+\centering
+\begin{tikzpicture}[
+>=stealth,
+scale=2,
+]
+\draw[->] (-1,0) to (1,0)node[below]{$ x $};
+\draw[->] (0,-.1) to (0,1)node[right]{$ y $};
+\node at (.12,-.12){$ 0 $};
+\draw[domain=-540:540][samples=1000] plot({(\x/180*pi-sin(\x))*0.1},{(1-cos(\x))*0.1});
+\end{tikzpicture}
+\caption{摆线}
+\end{figure}
+\item 星形线\par
+\begin{equation*}
+\scaleleftright[6pt]{\biggl\{}{
+\begin{aligned}
+& x=r\cos^{3}t \\
+& y=r\sin^{3}t
+\end{aligned}
+}{.}
+\end{equation*}
+\begin{figure}[htp]
+\centering
+\begin{tikzpicture}[
+>=stealth,
+scale=2,
+]
+\draw[->] (-1,0) to (1.2,0)node[below]{$ x $};
+\draw[->] (0,-1) to (0,1.2)node[right]{$ y $};
+\node at (.12,-.12){$ 0 $};
+\draw[domain=0:360][samples=1000] plot({(cos(\x))^3},{(sin(\x))^3});
+\end{tikzpicture}
+\caption{星形线}
+\end{figure}
 \end{enumerate}
-
-
-
-
 
 
 
