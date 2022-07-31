@@ -479,5 +479,141 @@ scale=2,
 \caption{星形线}
 \end{figure}
 \end{enumerate}
+\subsection{常用基础知识}
+\subsubsection{数列}
+\begin{enumerate}
+\item 等差数列\par
+首项为$ a_{1} $，公差为$ d(d\neq 0) $的数列$ a_{1},a_{1}+d,a_{1}+2d,...,a_{1}+(n-1)d,... $.
+\begin{enumerate}
+\item 通项公式: $ a_{n}=a_{1}+(n-1)d $
+\item 前$ n $项的和: $ S_{n}=\frac{n}{2}(a_{1}+a_{n})=\frac{n}{2}[2a_{1}+(n-1)d] $
+\end{enumerate}
+\item 等比数列\par
+首项为$ a_{1} $, 公比为$ r(r\neq 0) $的数列$ a_{1},a_{1}r,...,a_{1}r^{n-1},... $.
+\begin{enumerate}
+\item 通项公式: $ a_{n}=a_{1}r^{n-1} $
+\item 前$ n $项的和$ S_{n}=\scaleleftright[6pt]{\biggl\{}{\begin{aligned}
+& na_{1}\ & r=1 \\
+& \frac{a_{1}(1-r^{n})}{1-r} & r\neq 1
+\end{aligned}}{.} $
+\item 一些常见数列前$ n $项的和\par
+\begin{enumerate}
+\item $ \sum_{k=1}^{n}k=1+2+3+...+n=\frac{n(1+n)}{2} $
+\item $ \sum_{k=1}^{n}k^{2}=1^{2}+2^{2}+...+n^{2}=\frac{n(n+1)(2n+1)}{6} $
+\item $ \sum_{k=1}^{n}\frac{1}{k(k+1)}=\frac{1}{1\times 2}+\frac{1}{2\times 3}+...+\frac{1}{n(n+1)}=\frac{n}{n+1} $
+\end{enumerate}
+\end{enumerate}
+\end{enumerate}
+\subsubsection{三角函数}
+\begin{enumerate}
+\item 三角函数的基本关系
+\[ \begin{split}&\csc \alpha=\frac{1}{\sin \alpha},\ \sec \alpha=\frac{1}{\cos \alpha},\ \cot \alpha=\frac{1}{\tan \alpha}\\& \sin^{2}\alpha +\cos^{2}\alpha =1,\ 1+\tan^{2}\alpha = \sec^{2}\alpha,\ 1+\cot^{2}\alpha =\csc^{2}\alpha\\ &\tan \alpha=\frac{\sin \alpha}{\cos \alpha},\ \cot \alpha=\frac{\cos \alpha}{\sin \alpha}\end{split}\]
+\item 重要公式
+\item 倍角公式
+\[ \begin{split}
+& \sin 2\alpha=2\sin \alpha \cos \alpha,\ \cos 2\alpha =\cos^{2}\alpha -\sin^{2}\alpha =1-2\sin^{2}\alpha\\&=2\cos^{2}\alpha -1,\ \tan 2\alpha =\frac{2\tan \alpha}{1-\tan^{2}\alpha}
+\end{split} \]
+\item 半角公式
+\[ \begin{split}
+& \sin^{2}\frac{\alpha}{2}=\frac{1}{2}(1-\cos \alpha),\ \cos^{2}\frac{\alpha}{2}=\frac{1}{2}(1+\cos \alpha) \\
+& \tan \frac{\alpha}{2}=\frac{1-\cos \alpha}{\sin \alpha}=\frac{\sin \alpha}{1+\cos \alpha}=\pm \sqrt{\frac{1-\cos \alpha}{1+\cos \alpha}}
+\end{split} \]
+\item 和差公式
+\[ \begin{split}
+& \sin(\alpha \pm \beta)=\sin\alpha\cos\beta \pm \cos\alpha\sin\beta \\
+& \cos(\alpha \pm \beta)=\cos\alpha\cos\beta \mp \sin\alpha\sin\beta \\
+& \tan(\alpha \pm \beta)=\frac{\tan\alpha \pm \tan\beta}{1 \mp \tan\alpha\tan\beta}
+\end{split} \]
+\item 积化和差公式
+\[ \begin{split}
+& \sin\alpha\cos\beta = \frac{1}{2}[\sin(\alpha + \beta) + \sin(\alpha - \beta)] \\
+& \cos\alpha\sin\beta = \frac{1}{2}[\sin(\alpha + \beta) - \sin(\alpha - \beta)] \\
+& \cos\alpha\cos\beta = \frac{1}{2}[\cos(\alpha + \beta) + \cos(\alpha - \beta)] \\
+& \sin\alpha\sin\beta = -\frac{1}{2}[\cos(\alpha + \beta) - \cos(\alpha - \beta)] \\
+\end{split} \]
+\item 和差化积公式
+\[ \begin{split}
+& \sin\alpha + \sin\beta = 2\sin\frac{\alpha+\beta}{2}\cos\frac{\alpha - \beta}{2} \\
+& \sin\alpha - \sin\beta = 2\cos\frac{\alpha+\beta}{2}\sin\frac{\alpha - \beta}{2} \\
+& \cos\alpha + \cos\beta = 2\cos\frac{\alpha+\beta}{2}\cos\frac{\alpha - \beta}{2} \\
+& \cos\alpha - \cos\beta = -2\sin\frac{\alpha+\beta}{2}\sin\frac{\alpha - \beta}{2} \\
+\end{split} \]
+\item 万能公式\par
+若$ u=\tan \frac{x}{2}(-\pi<x<\pi) $, 则$ \sin x=\frac{2u}{1+u^{2}} $, $ \cos x=\frac{1-u^{2}}{1+u^{2}} $.
+\end{enumerate}
+\subsubsection{指数运算法则}
+\vspace*{-2em}
+\[ \begin{split}
+& a^{\alpha}\cdot a^{\beta}=a^{\alpha + \beta},\  \frac{a^{\alpha}}{a^{\beta}}=a^{\alpha-\beta} \\
+& (a^{\alpha})^{\beta}=a^{\alpha \beta},\ (ab)^{\alpha}=a^{\alpha}b^{\alpha},\ (\frac{a}{b})^{\alpha}=\frac{a^{\alpha}}{b^{\alpha}}
+\end{split} \]
+\subsubsection{对数运算法则}
+\begin{enumerate}
+\item $ \log_{a}(MN)=\log_{a}M+\log_{a}N  $
+\item $ \log_{a}\frac{M}{N}=\log_{a}M-\log_{a}N $
+\item $ \log_{a}^{n}=n\log_{a}M $
+\item $ \log_{a}\sqrt[n]{M}=\frac{1}{n}\log_{a}M $
+\end{enumerate}
+\subsubsection{一元二次方程基础}
+\begin{enumerate}
+\item 一元二次方程: $ ax^{2}+bx+c=0(a\neq 0) $
+\item 根的公式: $ x_{1,2}=\frac{-b\pm \sqrt{b^{2}-4ac}}{2a} $
+\item 根和系数的关系: $ x_{1}+x_{2}=-\frac{b}{a},\ x_{1}x_{2}=\frac{c}{a} $
+\item 判别式: $ \Delta=b^{2}-4ac $
+\item 抛物线定点坐标: $ (-\frac{b}{2a},c-\frac{b^{2}}{4a}) $
+\end{enumerate}
+\subsubsection{因式分解公式}
+\begin{enumerate}
+\item $ (a+b)^{2}=a^{2}+b^{2}+2ab $
+\item $ (a-b)^{2}=a^{2}+b^{2}-2ab $
+\item $ (a+b)^{3}=a^{3}+3a^{2}b+3b^{2}a+b^{3} $
+\item $ (a-b)^{3}=a^{3}-3a^{2}b+3b^{2}a-b^{3} $
+\item $ a^{3}+b^{3}=(a+b)(a^{2}-ab+b^{2}) $
+\item $ a^{3}-b^{3}=(a-b)(a^{2}+ab+b^{2}) $
+\item $ a^{2}-b^{2}=(a+b)(a-b) $
+\item 二项式定理: $ (a+b)^{n}=\sum_{k=0}^{n}C_{n}^{k}a^{n-k}b^{k} $
+\end{enumerate}
+\subsubsection{阶乘和双阶乘}
+\begin{enumerate}
+\item $ n!=1\cdot 2\cdot 3\cdot ... \cdot n $, 规定$ 0!=1 $
+\item $ (2n)!!=2\cdot 4\cdot 6\cdot ... \cdot (2n)=2^{n}n! $
+\item $ 2(n-1)!!=1\cdot 3\cdot 5\cdot ... \cdot (2n-1) $
+\end{enumerate}
+\subsubsection{常用不等式}
+\begin{enumerate}
+\item 设$ a,b $为实数, 则有:
+\begin{enumerate}
+\item $ |a\pm b|\le |a|+|b| $
+\item $ ||a|-|b||\le |a-b| $
+\end{enumerate}
+\item $ \sqrt{ab}\le \frac{a+b}{2}\le \sqrt{\frac{a^{2}+b^{2}}{2}}(a,b>0) $
+\item 设$ a>b>0 $, 则$ \scaleleftright[6pt]{\biggl\{}{\begin{aligned}
+& \text{当}n>0\text{时}, a^{n}>b^{n} \\
+& \text{当}n<0\text{时}, a^{n}<b^{n}
+\end{aligned}}{.} $
+\item 若$ 0<a<x<b,0<c<y<d $, 则$ \frac{c}{b}<\frac{y}{x}<\frac{d}{a} $
+\item $ \sin x<x<\tan x(0<x<\frac{\pi}{2}) $
+\item $ \sin x<x(x>0) $
+\item $ \arctan x\le x\le \arcsin x(0\le x\le 1)$
+\item $ e^{x}\ge x+1(\forall x) $
+\item $ x-1\ge \ln x(x>0) $
+\item $ \frac{1}{1+x}<\ln (1+\frac{1}{x})<\frac{1}{x}(x>0) $
+\end{enumerate}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
