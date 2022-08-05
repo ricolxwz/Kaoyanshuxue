@@ -12,12 +12,13 @@ a_{21}	&a_{22}  &\dots  &a_{2n}  \\
 \vdots	&\vdots  &\ddots  &\vdots  \\
 a_{n1}	&a_{n2}  &\dots  &a_{nn}  
 \end{vmatrix}  = \sum_{j_{1},j_{2}...j_{n}}(-1)^{r(j_{1}j_{2}...j_{n})}a_{1j_{1}}a_{2j_{2}}...a_{nj_{n}}
-\end{equation*}
+\end{equation*}\par
+总共有$ n! $个项.
 \item 展开定义\par 代数余子式: $ \bm{A}_{ij}=(-1)^{i+j}\bm{M}_{ij} $\par 按第$ i $行展开: $ a_{i1}\bm{A}_{i1}+a_{i2}\bm{A}_{i2}+...+a_{in}\bm{A}_{in} $\par 注意, 行列式的某行(列)元素分别乘另一行(列)的元素的代数余子式后再求和为$ 0 $
 \end{enumerate}
 \subsubsection{性质}
 \begin{enumerate}
-\item $ |\bm{A}^{T}|=\bm{A} $
+\item $ |\bm{A}^{T}|=|\bm{A}| $, 若$ \bm{A} = \bm{A}^{T} $, 则矩阵$ \bm{A} $为对称矩阵, 若$ \bm{A} \times \bm{A}^{T} = \bm{E} $, 则矩阵$ \bm{A} $为正交矩阵
 \item 若行列式中某行(列)全部元素为$ 0 $, 行列式为$ 0 $
 \item 若行列式中某行(列)元素有公因子$ k $($ k\neq 0 $), $ k $可以提到行列式外面
 \item 行列式某行(列)元素均是两个元素只和, 可以拆成两个行列式只和
@@ -62,8 +63,9 @@ x_1^2 & x_2^2 & \dots & x_n^2 \\
 \vdots & \vdots  & \vdots & \vdots \\
 x_{1}^{n-1} & x_{2}^{n-1} & \dots & x_{n}^{n-1} 
 \end{vmatrix} = \sum_{1\le i<j\le n}(x_{j}-x_{i})
-\end{equation*}
-\end{enumerate} 
+\end{equation*}\par
+ 注意, 范氏行列式中全$1$行一定在上方.
+\end{enumerate}
 \section{习题}
 \subsection{行列式的计算}
 \subsubsection{具体型行列式}
@@ -72,7 +74,18 @@ x_{1}^{n-1} & x_{2}^{n-1} & \dots & x_{n}^{n-1}
 \begin{enumerate}
 \item 直接展开: 适用于含$ 0 $较多的行(列)
 \item 爪型: 斜爪消平爪
-\item 异爪型: 将平爪含$ 0 $较多行(列)展开
+\item 异爪型
+\begin{enumerate}
+\item 阶数不高, 直接展开
+\item 阶数高, 用递推(尤其适用于一横形行列式)\par
+\paragraph{例题} 一横形行列式
+$\begin{bmatrix}
+1-x & x & 0 \\
+-1 & 1-x & x \\
+0 & -1 & 1-x
+\end{bmatrix}$=(\qquad)
+\paragraph{解} 将其按第行展开, 得到一个相似的行列式, 可以得到一个递推公式.
+\end{enumerate}
 \item 行(列)和相等: 三种方法
 \begin{enumerate}
 \item 提取公因子: 将其余行全都加到第一行上去, 提取公因子
@@ -88,7 +101,7 @@ a_{1} & a_{2} & \dots & a_{n}-b
 1 & a_{1} & a_{2} & \dots & a_{n} \\
 0 & a_{1}-b & a_{2} & \dots & a_{n} \\
 0 & a_{1} & a_{2}-b & \dots & a_{n} \\
-0 & \vdots & \vdots & \ddots & \vdots \\
+0 & \vdots & \vdots & \ddots & \vdots \\«
 0 & a_{1} & a_{2} & \dots & a_{n}-b
 \end{bmatrix}
 \end{equation*}加边后矩阵的值不变, 可以将第$ 1 $行的$ -1 $倍加到其他行, 再用其他行的$ (-1/b) $倍加到第一列.
@@ -102,7 +115,55 @@ a_{1} & a_{2} & \dots & a_{n}-b
 \item 行列式表示的函数和方程
 \end{enumerate}
 \subsubsection{抽象型行列式}
+\begin{enumerate}
+\item 目标行列式和矩阵的相互转换: $|\bm{A}\bm{B}|=|\bm{A}||\bm{B}|$
+\paragraph{例题} 设$\bm{\alpha_{1}},\bm{\alpha_{2}},...,\bm{\alpha_{n}}$是$n$维向量, $\bm{A}=[\bm{\alpha_{1}},\bm{\alpha_{2}},...,\bm{\alpha_{n}}],\bm{B}=[\bm{\alpha_{n}},\bm{\alpha_{1}},\bm{\alpha_{2}},...,\bm{\alpha_{n-1}}]$. 若$|\bm{A}|=1$, 则$|\bm{A}-\bm{B}|=(\quad)$\par
+\item 与特征方程相结合
+\paragraph{例题} 设$\bm{A}$是$ 3 $阶方阵, 满足$ |3 \bm{A}+2 \bm{E}|=0, |\bm{A} - \bm{E}|=0, |3 \bm{E}-2 \bm{A}|=0 $, 则$ |\bm{A}|=(\qquad) $
+\paragraph{解} 特征方程$ |\lambda \bm{E}-\bm{A}|=0 $, 可以根据上面的几个等式求出矩阵$ \bm{A} $的特征值, 根据特征值的性质可以知道矩阵的季和矩阵对应行列式的值
+\end{enumerate}
 \subsection{余子式和代数余子式的线性组合的计算}
+根据行列式的展开定义, 有:
+\begin{equation*}
+a_{i1}A_{i1}+a_{i2}A_{i2}+...+a_{in}A_{in}=
+\begin{bmatrix}
+ &  & \dots &  & \\
+a_{i1} & a_{i2} & \dots & \dots & a_{in} \\
+ &  & \dots &  & \\
+\end{bmatrix}
+\end{equation*}\par
+则有:
+\begin{equation*}
+k_{1}A_{i1}+k_{2}A_{i2}+...+k_{i1}A_{in}=
+\begin{bmatrix}
+&  & \dots &  & \\
+k_{i1} & k_{i2} & \dots & \dots & k_{in} \\
+&  & \dots &  & \\
+\end{bmatrix}
+\end{equation*}\par
+\paragraph{例题} 设$\bm{|A|}=
+\begin{bmatrix}
+2 & -1 & 2 & 3 \\
+0 & -1 & -1 & 0 \\
+2 & 3 & 4 & 5 \\
+1 & 1 & 1 & 1
+\end{bmatrix}
+$, 则$A_{31}+A_{32}+A_{33}+M_{34}=
+\begin{bmatrix}
+2 & -1 & 2 & 3 \\
+0 & -1 & -1 & 0 \\
+1 & 1 & 1 & -1 \\
+1 & 1 & 1 & 1
+\end{bmatrix}
+$
+\section{总结}
+\subsection{重点}
+\begin{enumerate}
+\item 一横形行列式的计算
+\item 行(列)和相等行列式的计算
+\item 余子式和代数余子式的计算
+\item 结合特征方程
+\end{enumerate}
 \chapter{矩阵}
 \section{基础知识}
 \subsection{矩阵}
@@ -495,11 +556,12 @@ x_{m}
 \item 若$ m>n $, 则必有非零解
 \item 若$ m=n $, 用秩判断:
 \begin{enumerate}
-\item 若$ r(\bm{A})=m $(向量组线性无关), 则仅有零解
-\item 若$ r(\bm{A})=r<m $(向量组线性相关), 则必有非零解, 且有$ m-r $个线性无关解
+\item 若$ r(\bm{A})=m $(向量组线性无关, $ |\bm{A}|\neq 0 $), 则仅有零解 \par
+说明: 由于行秩=列秩, 所以列秩为$ m $, 说明独立方程组个数为$ m $.
+\item 若$ r(\bm{A})=r<m $(向量组线性相关, $ |\bm{A}| = 0 $), 则必有非零解, 且有$ m-r $个线性无关解 \par
+说明: 由于行秩=列秩, 所以列秩为$ r $, 说明独立方程组个数为$ r $.
 \end{enumerate}
-上述判定基于三秩相等给出, 矩阵的秩等于列向量(向量组)的秩.
-\item 若$ m<n $, 
+\item 若$ m<n $,
 \end{enumerate}
 \subsubsection{解的性质}
 若$ \bm{A}\bm{\xi_{1}}=\bm{0} $, $ \bm{A}\bm{\xi_{2}}=\bm{0} $, 则$ k_{1}\bm{\xi_{1}}+k_{2}\bm{\xi_{2}}=0 $, 其中$ k_{1},k_{2} $为任意常数.
@@ -572,14 +634,15 @@ a_{n1} & a_{n2} & \dots & a_{nm} & b_{n}
 \end{equation*}
 \subsubsection{有解的条件}
 \begin{enumerate}
-\item 若$ r(\bm{A})\neq r([\bm{A},\bm{b}]) $($ \bm{b} $不能由$ \bm{\alpha_{1}},\bm{\alpha_{2}},...,\bm{\alpha_{m}} $线性表出), 方程组无解
-\item 若$ r(\bm{A})=r([\bm{A},\bm{b}])=n $($ \bm{\alpha_{1}},\bm{\alpha_{2}},...,\bm{\alpha_{m}} $线性无关, $ \bm{\alpha_{1}},\bm{\alpha_{2}},...,\bm{\alpha_{m}},\bm{b} $线性相关), 方程组有唯一解\ref{ref:判别相关性}
+\item 若$ r(\bm{A})\neq r([\bm{A},\bm{b}]) $($ \bm{b} $不能由$ \bm{\alpha_{1}},\bm{\alpha_{2}},...,\bm{\alpha_{m}} $线性表出), 方程组无解 \par
+实际上, $ r([\bm{A},\bm{b}]) = r(\bm{A}) + 1 $.
+\item 若$ r(\bm{A})=r([\bm{A},\bm{b}])=m $($ \bm{\alpha_{1}},\bm{\alpha_{2}},...,\bm{\alpha_{m}} $线性无关, $ \bm{\alpha_{1}},\bm{\alpha_{2}},...,\bm{\alpha_{m}},\bm{b} $线性相关), 方程组有唯一解\ref{ref:判别相关性}
 \item 若$ r(\bm{A})=r([\bm{A},\bm{b}])=r<m $, 方程组有无穷多解
 \end{enumerate}
 \subsubsection{解的性质}
 设$ \bm{\eta_{1}},\bm{\eta_{2}},\bm{\eta} $是非齐次线性方程组$ \bm{A}\bm{x}=\bm{b} $的解, $ \bm{\xi} $是对应齐次线性方程组$ \bm{A}\bm{x}=\bm{0} $的解, 则:
 \begin{enumerate}
-\item $ \bm{\eta_{1}},\bm{\eta_{2}} $是$ \bm{A}\bm{x}=\bm{0} $的解
+\item $ \bm{\eta_{1}}-\bm{\eta_{2}} $是$ \bm{A}\bm{x}=\bm{0} $的解
 \item $ k\bm{\xi}+\bm{\eta} $是$ \bm{A}\bm{x}=\bm{b} $的解
 \end{enumerate}
 \subsubsection{求解方法}
@@ -593,7 +656,8 @@ a_{n1} & a_{n2} & \dots & a_{nm} & b_{n}
 \subsection{特征值和特征向量}
 \subsubsection{定义}
 设$ \bm{A} $为$ n $阶矩阵, $ \lambda $是一个数, 若存在一个非零的$ n $维向量$ \bm{\xi} $, 使得$ \bm{A}\bm{\xi}=\lambda \bm{\xi} $, 则称$ \bm{\xi} $为$ \bm{A} $的特征向量, $ \lambda $为$ \bm{A} $的特征值. 
-\par 上式可以化简成$ \left| \lambda \bm{E}-\bm{A}\right|\bm{\xi}=\bm{0} $, $ \left| \lambda \bm{E}-\bm{A}\right| $被称为特征多项式, $ \lambda \bm{E}-\bm{A} $称为特征矩阵.
+\par 上式可以化简成$ \left| \lambda \bm{E}-\bm{A}\right|=\bm{0} $, $ \left| \lambda \bm{E}-\bm{A}\right| $被称为特征多项式, $ \lambda \bm{E}-\bm{A} $称为特征矩阵. \par
+推导: 由于$ (\lambda \bm{E} - \bm{A}) \bm{\xi} = \bm{0} $, 且$ \bm{\xi} \neq \bm{0} $, 说明方程$ (\lambda \bm{E} - \bm{A}) \bm{\xi} = \bm{0} $有非零解, 故$ r(\lambda \bm{E} - \bm{A}) < m $, 即$ |\lambda \bm{E} - \bm{A}| = 0 $.
 \subsubsection{性质}
 \begin{enumerate}
 \item 特征值的性质
