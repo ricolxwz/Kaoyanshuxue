@@ -1,0 +1,79 @@
+\chapter{行列式}
+\begin{enumerate}
+\item $k \times
+\begin{vmatrix}
+a_{11} & a_{12} & \dots & a_{1n} \\
+a_{21} & a_{22} & \dots & a_{2n} \\
+\vdots & \vdots & \ddots & \vdots \\
+a_{n1} & a_{n2} & \dots & a_{nn}
+\end{vmatrix} =
+\begin{vmatrix}
+ka_{11} & ka_{12} & \dots & ka_{1n} \\
+a_{21} & a_{22} & \dots & a_{2n} \\
+\vdots & \vdots & \ddots & \vdots \\
+a_{n1} & a_{n2} & \dots & a_{nn}
+\end{vmatrix} $
+与矩阵不同, 牢记!
+\end{enumerate}
+\chapter{矩阵}
+\begin{enumerate}
+\item $|\bm{A}^{-1}|=|\bm{A}|^{-1}$
+\item $\bm{E}_{31}(k)$的含义是第$1$行的$k$倍加到第$3$行, 或者是第$3$列的$k$倍加到第$1$列
+\item $|k \bm{A}|=k^{n}|\bm{A}|$
+\item $(k \bm{A})^{*}=k^{n-2} \bm{A}^{*}$
+\item $|\bm{A}|\neq 0\Leftrightarrow$满秩$\Leftrightarrow \bm{A}$可逆
+\end{enumerate}
+\chapter{向量}
+\begin{enumerate}
+\item 判别线性相关性的七大定理:
+\begin{enumerate}
+\item 充分必要条件(两个):
+\begin{enumerate}
+\item $\bm{A}\bm{x}=\bm{0}$, $\bm{x}$有非零解
+\item 向量组中至少有一个向量能够被其他的向量线性表出
+\end{enumerate}
+\item 与解线性方程组有关的定理(两个):
+\begin{enumerate}
+\item $\Rightarrow$: 如果向量组$\bm{{\alpha_{1}}},\bm{{\alpha_{2}}},...,\bm{{\alpha_{n}}}$线性无关, 而向量组$\bm{{\alpha_{1}}},\bm{{\alpha_{2}}},...,\bm{{\alpha_{n}},\bm{\beta}}$线性相关, 则$\bm{\beta}$能由向量组$\bm{{\alpha_{1}}},\bm{{\alpha_{2}}},...,\bm{{\alpha_{n}}}$线性表示
+\item $\Leftarrow$: 如果$\bm{\beta}$能由向量组$\bm{{\alpha_{1}}},\bm{{\alpha_{2}}},...,\bm{{\alpha_{n}}}$线性表示, 则非齐次线性方程组$\bm{A}\bm{x}=\bm{\beta}$有解, 且$r([\bm{{\alpha_{1}}},\bm{{\alpha_{2}}},...,\bm{{\alpha_{n}}}])=r([\bm{{\alpha_{1}}},\bm{{\alpha_{2}}},...,\bm{{\alpha_{n}}},\bm{\beta}])$
+\end{enumerate}
+\item 整体性和局部性(两个):
+\begin{enumerate}
+\item 向量 \par
+如果低维是无关的, 则增加维数必无关\par
+如果高维是相关的, 则减少维数必相关
+\item 向量组 \par
+如果整体是无关的, 则部分必无关 \par
+如果部分是相关的, 则整体必相关
+\end{enumerate}
+\item 以少表多, 多的相关 \par
+如果向量组$\bm{\alpha_{1}},\bm{\alpha_{2}},...\bm{\alpha_{s}}$能被向量组$\bm{\beta_{1}},\bm{\beta_{2}},...\bm{\beta_{t}}$线性表示, 且$t<s$, 则向量组$\bm{\alpha_{1}},\bm{\alpha_{2}},...\bm{\alpha_{s}}$线性相关
+\end{enumerate}
+\item 设有向量组$\bm{\alpha_{1}},\bm{\alpha_{2}},...\bm{\alpha_{s}}$和向量组$\bm{\beta_{1}},\bm{\beta_{2}},...\bm{\beta_{t}}$, 若后者的所有元素都能被前者线性表出, 则:
+\begin{equation*}
+r([\bm{\beta_{1}},\bm{\beta_{2}},...\bm{\beta_{t}}])\le r([\bm{\alpha_{1}},\bm{\alpha_{2}},...\bm{\alpha_{s}}])
+\end{equation*}
+\item $\bm{A}$经过初等变换得到了$\bm{B}$, 则:
+\begin{enumerate}
+\item $\bm{A}$和$\bm{B}$的相应部分的列向量具有相同的线性相关性(这条性质为后面解线性方程打下基础)
+\item $\bm{A}$的行向量组和$\bm{B}$的行向量组是等价向量组(可以互相线性表示)
+\end{enumerate}
+\end{enumerate}
+\chapter{线性方程组}
+\begin{enumerate}
+\item 齐次线性方程组:
+\begin{enumerate}
+\item $m>n\Rightarrow $有非零解
+\item $m=n$:
+\begin{enumerate}
+\item $r(\bm{A})=m\Rightarrow$满秩$\Rightarrow |\bm{A}|\neq 0 \Rightarrow$线性无关$\Rightarrow$唯一零解
+\item $r(\bm{A})=r<m\Rightarrow$不满秩$\Rightarrow |\bm{A}=0\Rightarrow$线性相关$\Rightarrow$有非零解, 且有$m-r$个线性无关解(也可以换一种解释: 由于$r(\bm{A})=r<m\Rightarrow$独立方程组的个数为$r$, 由于$r<m$, 所以有非零解
+\end{enumerate}
+\end{enumerate}
+\item 非齐次线性方程组:
+\begin{enumerate}
+\item $r(\bm{A})\neq r([\bm{A},\bm{b}])\Rightarrow$无解
+\item $r(\bm{A})=r([\bm{A},\bm{b}])=m\Rightarrow$唯一解
+\item $r(\bm{A})=r([\bm{A},\bm{b}])=r<m\Rightarrow$无解
+\end{enumerate}
+\end{enumerate}

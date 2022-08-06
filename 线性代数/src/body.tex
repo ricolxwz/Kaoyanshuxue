@@ -225,6 +225,7 @@ c_{ij}=\sum_{k=1}^{s}a_{ik}b_{kj}=a_{i1}b_{1j}+a_{i2}b_{2j}+...+a_{is}b_{sj}(i=1
 \end{aligned}
 \end{equation*}
 称$ \bm{\alpha_{1}},...,\bm{\alpha_{n}} $为单位正交向量组.
+\item 标准正交矩阵: 由标准正交向量组组成的矩阵
 \item 施密特正交化(正交规范化)\par
 \begin{equation*}
 \begin{aligned}
@@ -251,7 +252,7 @@ c_{ij}=\sum_{k=1}^{s}a_{ik}b_{kj}=a_{i1}b_{1j}+a_{i2}b_{2j}+...+a_{is}b_{sj}(i=1
 \item 上(下)三角矩阵
 \item 对称矩阵: $ \bm{A}^{T}=\bm{A} $
 \item 反对称矩阵: $ \bm{A}^{T}=-\bm{A} $
-\item 正交矩阵: $ \bm{A}^{T}\bm{A}=\bm{E} $, 即行(列)向量的组合是标准正交向量组
+\item 标准正交矩阵: $ \bm{A}^{T}\bm{A}=\bm{E} $, 即行(列)向量的组合是标准正交向量组
 \item 分块矩阵\par
 分块矩阵的加法和数乘与行列式不同:
 \begin{enumerate}
@@ -285,12 +286,13 @@ k\bm{A} & k\bm{B} \\ k\bm{C} & k\bm{D}
 \subsubsection{性质}
 设$ \bm{A}, \bm{B} $为同阶可逆矩阵
 \begin{enumerate}
-\item $ (\bm{A}^{-1})^{-1}=\bm{A} $
 \item $ (k\bm{A})^{-1}=\frac{1}{k}\bm{A}^{-1}\ (k\neq 0) $
 \item $ (\bm{A}\bm{B})^{-1}=\bm{B}^{-1}\bm{A}^{-1}\ (\bm{A}\bm{B}\text{也可逆}) $
 \item $ (\bm{A}^{T})^{-1}=(\bm{A}^{-1})^{T}\ (\bm{A}^{T}\text{也可逆}) $
-\item $ |\bm{A}^{-1}|=|\bm{A}|^{-1} $
 \item $ (\bm{A}+\bm{B})^{-1}\neq \bm{A}^{-1}+\bm{B}^{-1} $
+\item $ (\bm{A}^{-1})^{-1}=\bm{A} $
+\item $ |\bm{A}^{-1}|=|\bm{A}|^{-1} $ \par
+推导: $|\bm{A}^{-1}\bm{A}|=|\bm{A}^{-1}||\bm{A}|=1$
 \end{enumerate}
 \subsection{伴随矩阵}
 \subsubsection{定义}
@@ -363,7 +365,7 @@ $ r(\bm{A})=r(\bm{PA})=r(\bm{AQ})=r(\bm{PAQ}) $
 设$ \bm{A} $为$ m\times n $矩阵, $ \bm{B} $为满足有关矩阵运算要求的矩阵, 则
 \begin{enumerate}
 \item $ 0\le r(\bm{A})\le \text{min}\{m,n\} $
-\item $ r(k\bm{A})=r(\bm{A}) $
+\item 数乘: $ r(k\bm{A})=r(\bm{A}) $
 \item $ r(\bm{A}\bm{B})\le \text{min}\{r(\bm{A}),r(\bm{B})\} $
 \item $ r(\bm{A}+\bm{B})\le r(\bm{A})+r(\bm{B}) $
 \item $ r(\bm{A}^{*})=\left\{\begin{aligned}
@@ -480,8 +482,12 @@ a_{nm}
 \item 若向量组$ \bm{\alpha_{1}},\bm{\alpha_{2}},...,\bm{\alpha_{m}} $线性无关, 而向量组$ \bm{\beta}, \bm{\alpha_{1}},\bm{\alpha_{2}},...,\bm{\alpha_{m}} $线性相关, 则$ \bm{\beta} $可由向量组$ \bm{\alpha_{1}},\bm{\alpha_{2}},...,\bm{\alpha_{m}} $线性表出, 且表示方法唯一\label{ref:判别相关性}
 \item 如果向量$ \bm{\beta} $能够由向量组$ \bm{\alpha_{1}},\bm{\alpha_{2}},...,\bm{\alpha_{m}} $线性表出, 则$ r([\bm{\alpha_{1}},\bm{\alpha_{2}},...,\bm{\alpha_{m}}])=r([\bm{\beta},\bm{\alpha_{1}},\bm{\alpha_{2}},...,\bm{\alpha_{m}}]) $
 \item 以少表多, 多的相关: 如果向量组$ \bm{\beta_{1}},\bm{\beta_{2}},...,\bm{\beta_{t}} $能够由向量组$ \bm{\alpha_{1}},\bm{\alpha_{2}},...,\bm{\alpha_{s}} $线性表示, 且$ t>s $, 则$ \bm{\beta_{1}},\bm{\beta_{2}},...,\bm{\beta_{t}} $线性相关
-\item 向量组的部分与整体: 如果向量组$ \bm{\alpha_{1}},\bm{\alpha_{2}},...,\bm{\alpha_{m}} $中有一部分向量线性相关, 则整体也线性相关;\par 如果向量组$ \bm{\alpha_{1}},\bm{\alpha_{2}},...,\bm{\alpha_{m}} $线性无关, 则其任一部分线性无关
-\item 向量的部分与整体: 如果向量组$ \bm{\alpha_{1}},\bm{\alpha_{2}},...,\bm{\alpha_{m}} $线性无关, 则将所有向量扩展到$ s $维得到的向量组$ \bm{\alpha_{1}}^{*},\bm{\alpha_{2}}^{*},...,\bm{\alpha_{m}}^{*} $也是线性无关的;\par 如果向量组$ \bm{\alpha_{1}},\bm{\alpha_{2}},...,\bm{\alpha_{m}} $线性相关, 则将所有向量缩减到$ k $维得到的向量组$ \bm{\alpha_{1}}^{*},\bm{\alpha_{2}}^{*},...,\bm{\alpha_{m}}^{*} $也是线性相关的
+\item 向量组的部分与整体:
+\subitem 如果向量组$ \bm{\alpha_{1}},\bm{\alpha_{2}},...,\bm{\alpha_{m}} $中有一部分向量线性相关, 则整体也线性相关;
+\subitem 如果向量组$ \bm{\alpha_{1}},\bm{\alpha_{2}},...,\bm{\alpha_{m}} $线性无关, 则其任一部分线性无关
+\item 向量的部分与整体:
+\subitem 如果向量组$ \bm{\alpha_{1}},\bm{\alpha_{2}},...,\bm{\alpha_{m}} $线性无关, 则将所有向量扩展到$ s $维得到的向量组$ \bm{\alpha_{1}}^{*},\bm{\alpha_{2}}^{*},...,\bm{\alpha_{m}}^{*} $也是线性无关的;
+\subitem 如果向量组$ \bm{\alpha_{1}},\bm{\alpha_{2}},...,\bm{\alpha_{m}} $线性相关, 则将所有向量缩减到$ k $维得到的向量组$ \bm{\alpha_{1}}^{*},\bm{\alpha_{2}}^{*},...,\bm{\alpha_{m}}^{*} $也是线性相关的
 \end{enumerate}
 \subsection{极大线性无关组和等价向量组}
 \subsubsection{定义}
@@ -513,7 +519,8 @@ a_{nm}
 \item $ \bm{A} $的行向量组和$ \bm{B} $的行向量组是等价向量组
 \item $ \bm{A} $和$ \bm{B} $的任何相应部分列向量具有相同的线性相关性
 \end{enumerate}
-\item 设向量组$ (1)\ \bm{\alpha_{1}},\bm{\alpha_{2}},...,\bm{\alpha_{s}} $和$ (2)\ \bm{\beta_{1}},\bm{\beta_{2}},...,\bm{\beta_{t}} $, 若$ \bm{\beta}_{i} $均可由$ \bm{\alpha_{1}},\bm{\alpha_{2}},...,\bm{\alpha_{s}} $线性表出, 则$ r(\bm{\beta_{1}},\bm{\beta_{2}},...,\bm{\beta_{t}})\le r(\bm{\alpha_{1}},\bm{\alpha_{2}},...,\bm{\alpha_{s}}) $
+\item 设向量组$ (1)\ \bm{\alpha_{1}},\bm{\alpha_{2}},...,\bm{\alpha_{s}} $和$ (2)\ \bm{\beta_{1}},\bm{\beta_{2}},...,\bm{\beta_{t}} $, 若$ \bm{\beta}_{i} $均可由$ \bm{\alpha_{1}},\bm{\alpha_{2}},...,\bm{\alpha_{s}} $线性表出, 则$ r(\bm{\beta_{1}},\bm{\beta_{2}},...,\bm{\beta_{t}})\le r(\bm{\alpha_{1}},\bm{\alpha_{2}},...,\bm{\alpha_{s}}) $ \par
+可以这么理解: 秩其实就是一种多样性, 多样的数据的集合肯定能够表示单一的数据的集合, 即如果秩越大, 则这些数据的多样性就越大. 所以$\bm{\alpha_{1}},\bm{\alpha_{2}},...,\bm{\alpha_{s}}$的秩一定大.
 \end{enumerate}
 \section{习题}
 \chapter{线性方程组}
