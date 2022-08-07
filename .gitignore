@@ -12,6 +12,8 @@
 *.cb2
 .*.lb
 .DS_Store
+*.iml
+.idea
 
 ## Intermediate documents:
 *.dvi
