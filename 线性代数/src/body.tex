@@ -664,17 +664,19 @@ a_{n1} & a_{n2} & \dots & a_{nm} & b_{n}
 \subsubsection{定义}
 设$ \bm{A} $为$ n $阶矩阵, $ \lambda $是一个数, 若存在一个非零的$ n $维向量$ \bm{\xi} $, 使得$ \bm{A}\bm{\xi}=\lambda \bm{\xi} $, 则称$ \bm{\xi} $为$ \bm{A} $的特征向量, $ \lambda $为$ \bm{A} $的特征值. 
 \par 上式可以化简成$ \left| \lambda \bm{E}-\bm{A}\right|=\bm{0} $, $ \left| \lambda \bm{E}-\bm{A}\right| $被称为特征多项式, $ \lambda \bm{E}-\bm{A} $称为特征矩阵. \par
-推导: 由于$ (\lambda \bm{E} - \bm{A}) \bm{\xi} = \bm{0} $, 且$ \bm{\xi} \neq \bm{0} $, 说明方程$ (\lambda \bm{E} - \bm{A}) \bm{\xi} = \bm{0} $有非零解, 故$ r(\lambda \bm{E} - \bm{A}) < m $, 即$ |\lambda \bm{E} - \bm{A}| = 0 $.
+推导: 由于$ (\lambda \bm{E} - \bm{A}) \bm{\xi} = \bm{0} $, 且$ \bm{\xi} \neq \bm{0} $, 说明方程$ (\lambda \bm{E} - \bm{A}) \bm{\xi} = \bm{0} $有非零解(构成特征矩阵的向量线性相关), 即$ |\lambda \bm{E} - \bm{A}| = 0 $.
 \subsubsection{性质}
 \begin{enumerate}
 \item 特征值的性质
 \begin{enumerate}
+\item 特征值的个数固定为$n$ (包括重根)
 \item $ \sum_{i=1}^{n}\lambda_{i}=\sum_{i=1}^{n}a_{ii}=tr(\bm{A}) $
 \item $ \prod_{i=1}^{n}\lambda_{i}=\left| \bm{A}\right| $
 \end{enumerate}
 \item 特征向量的性质
 \begin{enumerate}
-\item $ k $重特征值$ \Lambda $至多只有$ k $个线性无关的向量
+\item 特征向量的数量$\le n$
+\item $ k $重特征值$ \lambda $至多只有$ k $个线性无关的特征向量
 \item 若$ \bm{\xi_1} $, $ \bm{\xi_2} $是$ \bm{A} $的属于不同特征值的特征的特征向量, 则$ \bm{\xi_1}, \bm{\xi_2} $线性无关
 \item 若$ \bm{\xi_1}, \bm{\xi_2} $是$ \bm{A} $的属于同一特征值$ \lambda $的特征向量, 则$ k_1\bm{\xi_1} + k_1\bm{\xi_2} $仍然是$ \bm{A} $的属于特征值$ \lambda $的特征向量
 \end{enumerate}
@@ -709,17 +711,35 @@ a_{n1} & a_{n2} & \dots & a_{nm} & b_{n}
 \lambda_1 &  &  &  \\
 & \lambda_2 &  &  \\
 &  & \ddots &  \\
-&  &  & \lambda_n 
+&  &  & \lambda_n
 \end{bmatrix}
 \]
 \subsubsection{条件}
+如果说$\bm{A}$可以相似对角化, 即$\bm{P}^{-1}\bm{A}\bm{P}=\bm{\Lambda}$, 其中$\bm{P}$可逆, 我们可以将等式两边左乘$\bm{P}$, 得到:
+\begin{equation*}
+\bm{A}_{n\times n}[\bm{\xi_{1}},\bm{\xi_{2}},...,\bm{\xi_{n}}]_{n \times n}=[\bm{\xi_{1}},\bm{\xi_{2}},...,\bm{\xi_{n}}]_{n\times n}
+\begin{bmatrix}
+\lambda_1 &  &  &  \\
+& \lambda_2 &  &  \\
+&  & \ddots &  \\
+&  &  & \lambda_n
+\end{bmatrix}_{n\times n}
+\end{equation*}
+即:
+\begin{equation*}
+[\bm{A}\bm{\xi_{1}},\bm{A}\bm{\xi_{2}},...,\bm{A}\bm{\xi_{n}}]=[\lambda_{1}\bm{\xi_{1}},\lambda_{2}\bm{\xi_{2}},...,\lambda_{n}\bm{\xi_{n}}]
+\end{equation*}
+也即:
+\begin{equation*}
+\bm{A}\bm{\xi_{i}}=\lambda_{i}\bm{\xi_{i}}, i=1,2,...,n
+\end{equation*}
 \begin{enumerate}
-\item $ n $阶矩阵$ \bm{A} $可以相似对角化$ \Leftrightarrow $$ \bm{A} $有$ n $个线性无关的特征向量($ \left| \bm{P}\right| = 0$)
-\item $ n $阶矩阵$ \bm{A} $可以相似对角化$ \Leftrightarrow $$ \bm{A} $对应于每个$ k_i $重特征值都有$ k_i $个线性无关的特征向量($ n $重特征值对应的解空间是$ n $维)
-\item $ n $阶矩阵$ \bm{A} $有$ n $个不同特征值$ \Rightarrow $$ \bm{A} $可以相似对角化(由特征向量的性质3可以推出)
-\item $ n $阶矩阵$ \bm{A} $为实对称矩阵$ \Rightarrow $$ \bm{A} $可以相似对角化
+\item $ n $阶矩阵$ \bm{A} $可以相似对角化$ \Leftrightarrow $ $ \bm{A} $有$ n $个线性无关的特征向量($ \left| \bm{P}\right| \neq 0$)\par 解释: 由于$\bm{P}$可逆, 故$\bm{\xi_{1}},\bm{\xi_{2}},...,\bm{\xi_{n}}$线性无关, 且上述过程可逆
+\item $ n $阶矩阵$ \bm{A} $可以相似对角化$ \Leftrightarrow $ $ n $重特征值对应的解空间是$ n $维($ \bm{A} $对应于每个$ k_i $重特征值都有$ k_i $个线性无关的特征向量)\par 解释: $k_{i}$重特征值至多有$k_{i}$个线性无关的特征向量
+\item $ n $阶矩阵$ \bm{A} $有$ n $个不同特征值$ \Rightarrow $ $ \bm{A} $可以相似对角化 \par 解释: 每个特征值至少有一个特征向量
+\item $ n $阶矩阵$ \bm{A} $为实对称矩阵$ \Rightarrow $ $ \bm{A} $可以相似对角化
 \end{enumerate}\par
-上述总共两个充要条件, 两个充分条件.
+上述总共两个充要条件, 两个充分条件. \par 总结: 一个萝卜一个坑, 八重萝卜八个坑. 一个特征值一个特征向量, 八重特征值八个特征向量.
 \subsection{实对称矩阵}
 \subsubsection{定义}
 若$ \bm{A}^T = \bm{A} $, 则$ \bm{A} $为是对称矩阵, 如果在此基础上$ \bm{A} $的元素都是实数, 则$ \bm{A} $是实对称矩阵.
