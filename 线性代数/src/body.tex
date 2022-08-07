@@ -669,13 +669,14 @@ a_{n1} & a_{n2} & \dots & a_{nm} & b_{n}
 \begin{enumerate}
 \item 特征值的性质
 \begin{enumerate}
-\item 特征值的个数固定为$n$ (包括重根)
+\item 特征值的个数为$n$ (包括重根)
 \item $ \sum_{i=1}^{n}\lambda_{i}=\sum_{i=1}^{n}a_{ii}=tr(\bm{A}) $
 \item $ \prod_{i=1}^{n}\lambda_{i}=\left| \bm{A}\right| $
 \end{enumerate}
 \item 特征向量的性质
 \begin{enumerate}
-\item 特征向量的数量$\le n$
+\item 线性无关的特征向量的数量$\le n$
+\item 每个不同的特征值至少有一个特征向量
 \item $ k $重特征值$ \lambda $至多只有$ k $个线性无关的特征向量
 \item 若$ \bm{\xi_1} $, $ \bm{\xi_2} $是$ \bm{A} $的属于不同特征值的特征的特征向量, 则$ \bm{\xi_1}, \bm{\xi_2} $线性无关
 \item 若$ \bm{\xi_1}, \bm{\xi_2} $是$ \bm{A} $的属于同一特征值$ \lambda $的特征向量, 则$ k_1\bm{\xi_1} + k_1\bm{\xi_2} $仍然是$ \bm{A} $的属于特征值$ \lambda $的特征向量
@@ -739,14 +740,21 @@ a_{n1} & a_{n2} & \dots & a_{nm} & b_{n}
 \item $ n $阶矩阵$ \bm{A} $有$ n $个不同特征值$ \Rightarrow $ $ \bm{A} $可以相似对角化 \par 解释: 每个特征值至少有一个特征向量
 \item $ n $阶矩阵$ \bm{A} $为实对称矩阵$ \Rightarrow $ $ \bm{A} $可以相似对角化
 \end{enumerate}\par
-上述总共两个充要条件, 两个充分条件. \par 总结: 一个萝卜一个坑, 八重萝卜八个坑. 一个特征值一个特征向量, 八重特征值八个特征向量.
+上述总共两个充要条件, 两个充分条件. \par 总结: 一个萝卜一个坑, 八重萝卜八个坑. 一个特征值一个特征向量, 八重特征值八个线性无关的特征向量.
 \subsection{实对称矩阵}
 \subsubsection{定义}
 若$ \bm{A}^T = \bm{A} $, 则$ \bm{A} $为是对称矩阵, 如果在此基础上$ \bm{A} $的元素都是实数, 则$ \bm{A} $是实对称矩阵.
 \subsubsection{性质}
 \begin{enumerate}\label{ref:实对称矩阵}
 \item 实对称矩阵$ \bm{A} $的属于不同特征值的特征向量相互正交
-\item 实对称矩阵$ \bm{A} $必相似于对角矩阵, 必有可逆矩阵$ \bm{P}=\left[ \bm{\xi_{1}}, \bm{\xi_{2}},... ,\bm{\xi_{n}}\right] $, 使得$ \bm{P}^{-1}\bm{A}\bm{P}=\bm{\Lambda} $. 且存在正交矩阵$ \bm{Q} $, 使得$ \bm{Q}^{-1}\bm{A}\bm{Q}=\bm{Q}^{T}\bm{A}\bm{Q}=\bm{\Lambda}$,  
+\item 实对称矩阵$ \bm{A} $必相似于对角矩阵, 必有可逆矩阵$ \bm{P}=\left[ \bm{\xi_{1}}, \bm{\xi_{2}},... ,\bm{\xi_{n}}\right] $, 使得$ \bm{P}^{-1}\bm{A}\bm{P}=\bm{\Lambda} $. 且存在正交矩阵$ \bm{Q} $, 使得$ \bm{Q}^{-1}\bm{A}\bm{Q}=\bm{Q}^{T}\bm{A}\bm{Q}=\bm{\Lambda}$
+\[ \bm{P}=\left[\bm{\xi_1}, \bm{\xi_2},... \bm{\xi_n}\right], \bm{\Lambda} =\begin{bmatrix}
+\lambda_1 &  &  &  \\
+& \lambda_2 &  &  \\
+&  & \ddots &  \\
+&  &  & \lambda_n
+\end{bmatrix}
+\]
 \end{enumerate}
 \section{习题}
 \subsection{特征值和特征向量}

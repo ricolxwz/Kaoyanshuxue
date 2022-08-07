@@ -69,11 +69,66 @@ r([\bm{\beta_{1}},\bm{\beta_{2}},...\bm{\beta_{t}}])\le r([\bm{\alpha_{1}},\bm{\
 \item $r(\bm{A})=m\Rightarrow$满秩$\Rightarrow |\bm{A}|\neq 0 \Rightarrow$线性无关$\Rightarrow$唯一零解
 \item $r(\bm{A})=r<m\Rightarrow$不满秩$\Rightarrow |\bm{A}=0\Rightarrow$线性相关$\Rightarrow$有非零解, 且有$m-r$个线性无关解(也可以换一种解释: 由于$r(\bm{A})=r<m\Rightarrow$独立方程组的个数为$r$, 由于$r<m$, 所以有非零解
 \end{enumerate}
-\end{enumerate}
-\item 非齐次线性方程组:
 \begin{enumerate}
 \item $r(\bm{A})\neq r([\bm{A},\bm{b}])\Rightarrow$无解
 \item $r(\bm{A})=r([\bm{A},\bm{b}])=m\Rightarrow$唯一解
 \item $r(\bm{A})=r([\bm{A},\bm{b}])=r<m\Rightarrow$无穷解
 \end{enumerate}
+\end{enumerate}
+\end{enumerate}
+\chapter{特征值和特征向量}
+\begin{enumerate}
+\item 特征值的性质:
+\begin{enumerate}
+\item 特征值的数量为$n$ (包括重根)
+\item $\sum_{i=1}^{n}\lambda_{i}=tr(\bm{A})$
+\item $\prod_{i=1}^{n}\lambda_{i}=|\bm{A}|$
+\end{enumerate}
+\item 特征向量的性质:
+\begin{enumerate}
+\item 线性无关的特征向量的数量$\le n$
+\item 每个特征值至少有一个特征向量
+\item $k$重特征值至多有$k$个线性无关的特征向量
+\item 若$\bm{\xi_{1}},\bm{\xi_{2}}$是属于不同特征值$\lambda_{1},\lambda_{2}$的特征向量, 则$\bm{\xi_{1}},\bm{\xi_{2}}$线性无关
+\item 若$\bm{\xi_{1}},\bm{\xi_{2}}$是属于同一特征值$\lambda$的特征向量, 则$k_{1}\bm{\xi_{1}}+k_{2}\bm{\xi_{2}}$仍然是特征值$\lambda$的特征向量
+\end{enumerate}
+\item 矩阵相似的性质(假设$\bm{A}\sim \bm{B}$)
+\begin{enumerate}
+\item 反身性, 对称性, 传递性
+\item 相等
+\begin{enumerate}
+\item $r(\bm{A})=r(\bm{B})$
+\item $|\bm{A}|=|\bm{B}|$
+\item 特征值相等
+\item 特征多项式相等
+\end{enumerate}
+\item 函数(注意是相似不是相等)
+\begin{enumerate}
+\item $f(\bm{A})\sim f(\bm{B})$
+\item $\bm{A^{T}}\sim \bm{B^{T}}$
+\item 若$\bm{A}$为可逆矩阵, $\bm{A^{-1}}\sim \bm{B^{-1}}$
+\item 若$\bm{A}$为可逆矩阵, $\bm{A^{*}}\sim \bm{B^{*}}$
+\end{enumerate}
+\end{enumerate}
+\item 相似对角矩阵的条件
+\begin{enumerate}
+\item 充要条件
+\begin{enumerate}
+\item 矩阵$\bm{A}$有$n$个线性无关的特征向量
+\item $n$维特征值对应$n$维解空间
+\end{enumerate}
+\item 充分条件
+\begin{enumerate}
+\item 矩阵$\bm{A}$有$n$个不同的特征值
+\item 矩阵$\bm{A}$为实对称矩阵
+\end{enumerate}
+\end{enumerate}
+\item 实对称矩阵的性质
+\begin{enumerate}
+\item 若$\bm{\xi_{1}},\bm{\xi_{2}}$是属于不同特征值$\lambda_{1},\lambda_{2}$的特征向量, 则$\bm{\xi_{1}},\bm{\xi_{2}}$正交
+\item 实对称矩阵一定相似于对角阵
+\item 存在可逆矩阵$\bm{P}$, 使$\bm{P}\bm{A}\bm{P^{-1}}=\bm{\Lambda}$
+\item 存在正交矩阵$\bm{Q}$, 使$\bm{Q^{-1}}\bm{A}\bm{Q}=\bm{Q^{T}}\bm{A}\bm{Q}=\bm{\Lambda}$
+\end{enumerate}
+其中, $\bm{\Lambda}$和$\bm{P}$的定义和对角矩阵里面的$\bm{\Lambda}$和$\bm{P}$相同
 \end{enumerate}
