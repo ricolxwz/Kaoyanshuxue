@@ -811,20 +811,30 @@ $ f(x) $为多项式, 若矩阵$ \bm{A} $满足$ f(\bm{A})=\bm{0}\Rightarrow f(\
 \section{基础知识}
 \subsection{二次型}
 \subsubsection{定义}
-$ n $元变量$ x_{1}, x_{2},... ,x_{n} $的二次齐次多项式称为$ n $元二次型, 简称二次型.\par
-二次型可以表示为$ \sum_{i=1}^{n}\sum_{j=1}^{n}a_{ij}x_{i}x_{j} $, 由此可以得出二次型的矩阵表达式, 令:
+$ n $元变量$ x_{1}, x_{2},... ,x_{n} $的二次齐次多项式称为$ n $元二次型, 简称二次型.二次型有两种常见表达形式:
+\begin{enumerate}
+\item 代数形式
+\begin{equation*}
+\begin{aligned}
+f(x) = a_{11}x_{1}^{2}+a_{12}x_{1}x_{2}+a_{13}x_{1}x_{3}...+a_{1n}x_{1}x_{n} & \\
++a_{22}x_{2}^{2}+a_{23}x_{2}x_{3}+...+a_{2n}x_{2}x_{n} & \\
++\dots & \\
++a_{nn}x_{n}^{2} & \\
+\end{aligned}
+\end{equation*}
+\item 矩阵形式
 \begin{equation*}
 \bm{A}=\begin{bmatrix}
 a_{11} & a_{12} & \dots & a_{1n} \\
 a_{21} & a_{22} & \dots & a_{2n} \\
 \vdots & \vdots &  & \vdots \\
-a_{n1} & a_{n2} & \dots & a_{nn} 
+a_{n1} & a_{n2} & \dots & a_{nn}
 \end{bmatrix},
 \bm{x}=\begin{bmatrix}
 x_1 \\
 x_2 \\
 \vdots \\
-x_n 
+x_n
 \end{bmatrix}
 \end{equation*}\par
 则二次型可以表示为:
@@ -832,6 +842,7 @@ x_n
 f(\bm{x})=\bm{x}^{T}\bm{A}\bm{x}
 \end{equation*}\par
 必须强调的是, 这里的$ \bm{A} $是一个对称矩阵.
+\end{enumerate}
 \subsection{线性变换}
 对于$ n $元二次型$ f(x_{1}, x_{2},... ,x_{n}) $, 若令
 \begin{equation*}
@@ -860,9 +871,9 @@ y_2 \\
 \vdots \\
 y_n 
 \end{bmatrix}$\par \vspace{1em}
-则上式可以写为$ \bm{x}=\bm{C}\bm{y} $. 上式成为从$ y_{1}, y_{2},... ,y_{n} $到$ x_{1}, x_{2},... ,x_{n} $的线性变换. 如果$ \bm{C} $可逆, 则称为可逆线性变换.\par
+则上式可以写为$ \bm{x}=\bm{C}\bm{y} $. 上式称为从$ y_{1}, y_{2},... ,y_{n} $到$ x_{1}, x_{2},... ,x_{n} $的线性变换. 如果$ \bm{C} $可逆, 则称为可逆线性变换.\par
 如果$ f(\bm{x})=\bm{x}^{T}\bm{A}\bm{x} $, 令$ \bm{x}=\bm{C}\bm{y} $, 则有$ f(\bm{x})=(\bm{C}\bm{y})^{T}\bm{A}(\bm{C}\bm{y})=\bm{y}^{T}(\bm{C}^{T}\bm{A}\bm{C})\bm{y}. $\par
-记$ \bm{B}=\bm{C}^{T}\bm{A}\bm{C} $, 则有$ f(\bm{x})=\bm{y}^{T}\bm{B}\bm{y})=g(\bm{y}) $. 至此我们通过线性变换得到了一个新的二次型.
+记$ \bm{B}=\bm{C}^{T}\bm{A}\bm{C} $, 则有$ f(\bm{x})=\bm{y}^{T}\bm{B}\bm{y}=g(\bm{y}) $. 至此我们通过线性变换得到了一个新的二次型$g(\bm{y})=\bm{y}^{T}\bm{B}\bm{y}$.
 \subsection{矩阵合同}
 \subsubsection{定义}
 设$ \bm{A}, \bm{B} $为$ n $阶矩阵, 若存在可逆矩阵$ \bm{C} $, 使得:
@@ -876,6 +887,8 @@ y_n
 \item 反身性: $ \bm{A}\simeq \bm{A} $
 \item 对称性: $ \bm{A}\simeq \bm{B}\Rightarrow \bm{B}\simeq \bm{A} $
 \item 传递性: $ \bm{A}\simeq \bm{B}, \bm{B}\simeq \bm{C}\Rightarrow \bm{A}\simeq \bm{C} $
+\item 秩相等: 若$\bm{A}\simeq \bm{B}$, 则$r(\bm{A})=r(\bm{B})$ (可逆线性变化不改变二次型的秩)
+\item 和对称矩阵合同的矩阵一定是对称矩阵
 \end{enumerate}
 \subsection{标准形/规范形}
 \subsubsection{定义}
@@ -883,7 +896,7 @@ y_n
 \begin{equation*}
 d_{1}x_{1}^{2}+d_{2}x_{2}^{2}+... +d_{n}x_{n}^{2}
 \end{equation*}\par
-的二次型称为标准形.\par
+的二次型称为标准形(合同标准形).\par
 若标准形中, 系数$ d_{i} $仅为$ 1, -1, 0 $的二次型称为规范形.
 \subsubsection{求法}
 我们的目标是使得$ \bm{B} $矩阵是一个对角矩阵, 即只有主对角线有元素, 才可以得到标准型. 有两种方法:
@@ -936,12 +949,24 @@ $ n $元二次型$ f(x_{1}, x_{2},... ,x_{n})=\bm{x}^{T}\bm{A}\bm{x} $, 若对�
 \begin{enumerate}
 \item 充要条件: \par $ \begin{aligned}
 n\text{元二次型正定} & \Leftrightarrow \text{对于任意}\bm{x}\neq \bm{0}, \text{有}\bm{x}^{T}\bm{A}\bm{x}>0 \\
-& \Leftrightarrow f\text{的正惯性指数} p=n\text{(所有的系数全正)} \\
+& \Leftrightarrow f\text{的正惯性指数} p=n\text{(所有的系数全正, 即对角线元素全正)} \\
 & \Leftrightarrow \text{存在可逆矩阵} \bm{D}, \text{使} \bm{A}=\bm{D}^{T}\bm{D} \\
 & \Leftrightarrow \bm{A}\simeq \bm{E} \\
 & \Leftrightarrow \bm{A}\text{的特征值} \lambda_{i}>0(i=1, 2,... ,n) \\
 & \Leftrightarrow \bm{A}\text{的全部顺序主子式均大于0(左上角行列式)}
-\end{aligned} $
+\end{aligned} $ \par
+顺序主子式: \par
+设$\bm{A}=(a_{ij})_{n\times n}$, 则:
+\begin{equation*}
+|\bm{A}_{k}|=
+\begin{bmatrix}
+a_{11} & a_{12} & \dots & a_{1k} \\
+a_{21} & a_{22} & \dots & a_{2k} \\
+\vdots & \vdots & \ddots & \vdots \\
+a_{k1} & a_{k2} & \dots & a_{kk} \\
+\end{bmatrix}
+\end{equation*} \par
+称为$n$阶矩阵$\bm{A}$的$k$阶顺序(或左上角)主子式, 当$k$取$1,2,...,n$时, 就得到$\bm{A}$的$n$个顺序主子式.
 \item 必要条件: \par $ \begin{aligned}
 n\text{元二次型正定} & \Leftarrow a_{ii}>0(i=1, 2,... ,n) \\
 & \Leftarrow \left|\bm{A}\right|>0 

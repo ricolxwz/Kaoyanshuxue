@@ -34,7 +34,7 @@ a_{n1} & a_{n2} & \dots & a_{nn}
 \end{enumerate}
 \item 与解线性方程组有关的定理(两个):
 \begin{enumerate}
-\item $\Rightarrow$: 如果向量组$\bm{{\alpha_{1}}},\bm{{\alpha_{2}}},...,\bm{{\alpha_{n}}}$线性无关, 而向量组$\bm{{\alpha_{1}}},\bm{{\alpha_{2}}},...,\bm{{\alpha_{n}},\bm{\beta}}$线性相关, 则$\bm{\beta}$能由向量组$\bm{{\alpha_{1}}},\bm{{\alpha_{2}}},...,\bm{{\alpha_{n}}}$线性表示
+\item $\Rightarrow$: 如果向量组$\bm{{\alpha_{1}}},\bm{{\alpha_{2}}},...,\bm{{\alpha_{n}}}$线性无关, 而向量组$\bm{{\alpha_{1}}},\bm{{\alpha_{2}}},...,\bm{{\alpha_{n}},\bm{\beta}}$线性相关, 则$\bm{\beta}$能由向量组$\bm{{\alpha_{1}}},\bm{{\alpha_{2}}},...,\bm{{\alpha_{n}}}$线性表示, 且表示方法唯一
 \item $\Leftarrow$: 如果$\bm{\beta}$能由向量组$\bm{{\alpha_{1}}},\bm{{\alpha_{2}}},...,\bm{{\alpha_{n}}}$线性表示, 则非齐次线性方程组$\bm{A}\bm{x}=\bm{\beta}$有解, 且$r([\bm{{\alpha_{1}}},\bm{{\alpha_{2}}},...,\bm{{\alpha_{n}}}])=r([\bm{{\alpha_{1}}},\bm{{\alpha_{2}}},...,\bm{{\alpha_{n}}},\bm{\beta}])$
 \end{enumerate}
 \item 整体性和局部性(两个):
@@ -131,4 +131,134 @@ r([\bm{\beta_{1}},\bm{\beta_{2}},...\bm{\beta_{t}}])\le r([\bm{\alpha_{1}},\bm{\
 \item 存在正交矩阵$\bm{Q}$, 使$\bm{Q^{-1}}\bm{A}\bm{Q}=\bm{Q^{T}}\bm{A}\bm{Q}=\bm{\Lambda}$
 \end{enumerate}
 其中, $\bm{\Lambda}$和$\bm{P}$的定义和对角矩阵里面的$\bm{\Lambda}$和$\bm{P}$相同
+\end{enumerate}
+\chapter{二次型}
+\begin{enumerate}
+\item 二次型
+\begin{enumerate}
+\item 代数表达形式
+\begin{equation*}
+\begin{aligned}
+f(x) = a_{11}x_{1}^{2}+a_{12}x_{1}x_{2}+a_{13}x_{1}x_{3}...+a_{1n}x_{1}x_{n} & \\
++a_{22}x_{2}^{2}+a_{23}x_{2}x_{3}+...+a_{2n}x_{2}x_{n} & \\
++\dots & \\
++a_{nn}x_{n}^{2} & \\
+\end{aligned}
+\end{equation*}
+\item 矩阵表达形式
+\begin{equation*}
+f(\bm{x})=\bm{x}^{T}\bm{A}\bm{x},
+\bm{A}=\begin{bmatrix}
+a_{11} & a_{12} & \dots & a_{1n} \\
+a_{21} & a_{22} & \dots & a_{2n} \\
+\vdots & \vdots &  & \vdots \\
+a_{n1} & a_{n2} & \dots & a_{nn}
+\end{bmatrix},
+\bm{x}=
+\begin{bmatrix}
+x_{1} \\
+x_{2} \\
+\vdots \\
+x_{n} \\
+\end{bmatrix}
+\end{equation*}
+\end{enumerate}
+\item 合同
+\begin{enumerate}
+\item (可逆)线性变换 \par
+对于$ n $元二次型$ f(x_{1}, x_{2},... ,x_{n}) $, 若令
+\begin{equation*}
+\left\{
+\begin{aligned}
+& x_{1} = c_{11}y_{1}+c_{12}y_{2}+\dots +c_{1n}y_{n}, \\
+& x_{2} = c_{21}y_{1}+c_{22}y_{2}+\dots +c_{2n}y_{n}, \\
+& \dots \\
+& x_{n} = c_{n1}y_{1}+c_{n2}y_{2}+\dots +c_{nn}y_{n},
+\end{aligned}
+\right.
+\end{equation*}\par
+记$ \bm{x}=\begin{bmatrix}
+x_1 \\
+x_2 \\
+\vdots \\
+x_n
+\end{bmatrix}, \bm{C}=\begin{bmatrix}
+c_{11} & c_{12} & \dots & c_{1n} \\
+c_{21} & c_{22} & \dots & c_{2n} \\
+\vdots & \vdots &  & \vdots \\
+c_{n1} & c_{n2} & \dots & c_{nn}
+\end{bmatrix}, \bm{y}=\begin{bmatrix}
+y_1 \\
+y_2 \\
+\vdots \\
+y_n
+\end{bmatrix}$\par \vspace{1em}
+则上式可以写为$ \bm{x}=\bm{C}\bm{y} $. 上式称为从$ y_{1}, y_{2},... ,y_{n} $到$ x_{1}, x_{2},... ,x_{n} $的线性变换. 如果$ \bm{C} $可逆, 则称为可逆线性变换.\par
+\item 合同 \par
+我们可以把上式$\bm{x}=\bm{C}\bm{y}$代入到$f(\bm{x})=\bm{x}^{T}\bm{A}\bm{x}$, 令$\bm{B}=\bm{C}^{T}\bm{A}\bm{C}$, 可以得到$f(\bm{y}=\bm{y}^{T}\bm{B}\bm{y})$. 其中$\bm{A}$与$\bm{B}$合同, 记为$\bm{A}\simeq \bm{B}$\ (与相似不同的是这里是转置而不是取逆) \par
+合同的几个性质:
+\begin{enumerate}
+\item 反身性, 对称性, 传递性
+\item 可逆线性变化不改变矩阵的秩
+\item 与对称矩阵合同的矩阵一定也是对称矩阵
+\end{enumerate}
+\end{enumerate}
+\item 标准形和规范形 \par
+标准形是二次型中非二次项的系数全为$0$, 规范形是在标准形的基础上规定二次型的系数都为$1$, $0$或者$-1$.\par
+化为标准形有两种方法:
+\begin{enumerate}
+\item 配方法
+\begin{equation*}
+\bm{x}=\bm{C}\bm{y}, \bm{C}^{T}\bm{A}\bm{C}=\bm{\Lambda}
+\end{equation*}\par
+其中, $\bm{\Lambda}$的形式为:
+\begin{equation*}
+\bm{\Lambda}=\begin{bmatrix}
+d_1 &  &  &  \\
+& d_2 &  &  \\
+&  & \ddots &  \\
+&  &  & d_n
+\end{bmatrix}
+\end{equation*}\par
+注意, 这里不一定是特征值, 不是你以为的$\bm{\Lambda}$.
+\item 利用实对称矩阵的性质 \par
+由于实对称矩阵一定存在一个正交矩阵$\bm{Q}$, 使得$\bm{Q}^{T}\bm{A}\bm{Q}=\bm{Q}^{-1}\bm{A}\bm{Q}=\bm{\Lambda}$, 故:
+\begin{equation*}
+\bm{x}=\bm{Q}\bm{y}, \bm{Q}^{T}\bm{A}\bm{Q}=\bm{\Lambda}
+\end{equation*}
+其中, $\bm{\Lambda}$的形式为:
+\begin{equation*}
+\bm{\Lambda}=\begin{bmatrix}
+\lambda_1 &  &  &  \\
+& \lambda_2 &  &  \\
+&  & \ddots &  \\
+&  &  & \lambda_n
+\end{bmatrix}
+\end{equation*}\par
+可以将上述标准形进一步操作得到规范形.
+\end{enumerate}
+\item 惯性定理 \par
+将二次型合同标准化后得到的标准形中, 正数项的个数设为$p$, 负数项的个数设为$q$, 有如下性质:
+\begin{enumerate}
+\item $r(\bm{A})=p+q$
+\item 两个矩阵合同的条件是具有相同的惯性指数
+\end{enumerate}
+\item 正定二次型 \par
+对于任一$\bm{x}\neq \bm{0}$, 有$\bm{x}^{T}\bm{A}\bm{x}>0$, 称$f$为正定二次型, $\bm{A}$为正定矩阵.
+\begin{enumerate}
+\item 充要条件:
+\begin{enumerate}
+\item 对于任一$\bm{x}\neq \bm{0}$, 有$\bm{x}^{T}\bm{A}\bm{x}>0$
+\item 存在可逆矩阵$\bm{D}$, 使$\bm{A}=\bm{D}^{T}\bm{D}$
+\item $f$的正惯性指数为$n$
+\item $\bm{A}\simeq \bm{E}$
+\item $\bm{A}$的特征值$\lambda_{i}>0$
+\item $\bm{A}$的顺序主子式都$>0$
+\end{enumerate}
+\item 必要条件
+\begin{enumerate}
+\item $|\bm{A}|>0$
+\item $a_{ii}>0$
+\end{enumerate}
+\end{enumerate}
 \end{enumerate}
