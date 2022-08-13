@@ -28,8 +28,52 @@ a_{n1}	&a_{n2}  &\dots  &a_{nn}
 \end{enumerate}
 \subsubsection{重要行列式}
 \begin{enumerate}
-\item 主对角线行列式(上/下三角形行列式): $ |\bm{A}|=\prod_{i=1}^{n}a_{ii} $
-\item 副对角线行列式: $ |\bm{A}|=(-1)^{\frac{n(n-1)}{2}}a_{1n}a_{2,n-1}...a_{n1} $
+\item 主对角线行列式(上/下三角形行列式)
+\begin{equation*}
+\begin{vmatrix}
+a_{11} & a_{12} & \dots & a_{1n} \\
+0 & a_{22} & \dots & a_{2n} \\
+\vdots & \vdots & & \vdots \\
+0 & 0 & \dots & a_{nn}
+\end{vmatrix}=
+\begin{vmatrix}
+a_{11} & 0 & \dots & 0 \\
+a_{21} & a_{22} & \dots & 0 \\
+\vdots & \vdots & & \vdots \\
+a_{n1} & a_{n2} & \dots & a_{nn}
+\end{vmatrix}=
+\begin{vmatrix}
+a_{11} & 0 & \dots & 0 \\
+0 & a_{22} & \dots & 0 \\
+\vdots & \vdots & & \vdots \\
+0 & 0 & \dots & a_{nn}
+\end{vmatrix}=
+\prod_{i=1}^{n}a_{ii}
+\end{equation*}
+\item 副对角线行列式
+\begin{equation*}
+\begin{aligned}
+& \begin{vmatrix}
+a_{11} & \dots & a_{1,n-1} & a_{1n} \\
+a_{21} & \dots & a_{2,n-1} & 0 \\
+\vdots & & \vdots & \vdots \\
+a_{n1} & \dots & 0 & 0
+\end{vmatrix}=
+\begin{vmatrix}
+0 & \dots & 0 & a_{1n} \\
+0 & \dots & a_{2,n-1} & a_{2n} \\
+\vdots & & \vdots & \vdots \\
+a_{n1} & \dots & a_{n,n-1} & a_{nn}
+\end{vmatrix}=
+\begin{vmatrix}
+0 & \dots & 0 & a_{1n} \\
+0 & \dots & a_{2,n-1} & 0 \\
+\vdots & & \vdots & \vdots \\
+a_{n1} & \dots & 0 & 0
+\end{vmatrix}\\ & =
+(-1)^{\frac{n(n-1)}{2}}a_{1n}a_{2,n-1}\dots a_{n1}
+\end{aligned}
+\end{equation*}
 \item 拉普拉斯展开式
 \subitem $ \bm{A} $为$ m $阶方阵, $ \bm{B} $为$ n $阶方阵
 \subitem 主对角线:
