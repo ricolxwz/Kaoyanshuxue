@@ -78,12 +78,14 @@ a_{n1} & \dots & 0 & 0
 \subitem $ \bm{A} $为$ m $阶方阵, $ \bm{B} $为$ n $阶方阵
 \subitem 主对角线:
 $ \begin{vmatrix}
-  \bm{A} & \bm{0} \\
-  \bm{0} & \bm{B}
-\end{vmatrix} = \begin{vmatrix}
-                \bm{A} & \bm{C} \\
-                \bm{0} & \bm{B}
-\end{vmatrix} = \begin{vmatrix}
+\bm{A} & \bm{0} \\
+\bm{0} & \bm{B}
+\end{vmatrix} =
+\begin{vmatrix}
+\bm{A} & \bm{C} \\
+\bm{0} & \bm{B}
+\end{vmatrix} =
+\begin{vmatrix}
                 \bm{A} & \bm{0} \\
                 \bm{C} & \bm{B}
 \end{vmatrix} = |\bm{A}||\bm{B}|$
@@ -485,7 +487,7 @@ a_{3}
 b_{1} & b_{2} & b_{3}
 \end{bmatrix}
 \end{equation*}
-\item 计算$ \bm{A}^{2},\bm{A}^{3} $等, 归纳法
+\item 计算$ \bm{A}^{2},\bm{A}^{3} $等, 往往会得到幂零矩阵$ \bm{A} $($ \bm{A}^{n}=\bm{0}(n\ge r) $)
 \item $ \bm{A}^{n}=(\bm{B}+\bm{C})^{n}$, 2项展开
 \item 转化成对角矩阵
 \begin{equation*}
@@ -500,6 +502,17 @@ a_{11}^{n} & & & \\
 & a_{22}^{n} & & \\
 & & \ddots & \\
 & & & a_{nm}^{n}
+\end{bmatrix}
+\end{equation*}
+\item 分块矩阵
+\begin{equation*}
+\begin{bmatrix}
+\bm{A} & \bm{0} \\
+\bm{0} & \bm{B} 
+\end{bmatrix}^{n}=
+\begin{bmatrix}
+\bm{A}^{n} & \bm{0} \\
+\bm{0} & \bm{B}^{n}
 \end{bmatrix}
 \end{equation*}
 \end{enumerate}
