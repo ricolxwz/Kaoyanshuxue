@@ -86,19 +86,21 @@ $ \begin{vmatrix}
 \bm{0} & \bm{B}
 \end{vmatrix} =
 \begin{vmatrix}
-                \bm{A} & \bm{0} \\
-                \bm{C} & \bm{B}
+\bm{A} & \bm{0} \\
+\bm{C} & \bm{B}
 \end{vmatrix} = |\bm{A}||\bm{B}|$
-\subitem 副对角线:
-$ \begin{vmatrix}
-  \bm{0} & \bm{A} \\
-  \bm{B} & \bm{0}
-\end{vmatrix} = \begin{vmatrix}
-                \bm{C} & \bm{A} \\
-                \bm{B} & \bm{0}
-\end{vmatrix} = \begin{vmatrix}
-                \bm{0} & \bm{A} \\
-                \bm{B} & \bm{C}
+\subitem 副对角线:$
+\begin{vmatrix}
+\bm{0} & \bm{A} \\
+\bm{B} & \bm{0}
+\end{vmatrix} =
+\begin{vmatrix}
+\bm{C} & \bm{A} \\
+\bm{B} & \bm{0}
+\end{vmatrix} =
+\begin{vmatrix}
+\bm{0} & \bm{A} \\
+\bm{B} & \bm{C}
 \end{vmatrix} = (-1)^{mn}|\bm{A}||\bm{B}|$
 \item 范特蒙德行列式
 \begin{equation*}
@@ -124,11 +126,11 @@ x_{1}^{n-1} & x_{2}^{n-1} & \dots & x_{n}^{n-1}
 \begin{enumerate}
 \item 阶数不高, 直接展开
 \item 阶数高, 用递推(尤其适用于一横形行列式)\par
-\paragraph{例题} 一横形行列式
-$\begin{bmatrix}
- 1-x & x & 0 \\
- -1 & 1-x & x \\
- 0 & -1 & 1-x
+\paragraph{例题} 一横形行列式$
+\begin{bmatrix}
+1-x & x & 0 \\
+-1 & 1-x & x \\
+0 & -1 & 1-x
 \end{bmatrix}$=(\qquad)
 \paragraph{解} 将其按第行展开, 得到一个相似的行列式, 可以得到一个递推公式.
 \end{enumerate}
@@ -202,14 +204,6 @@ $, 则$A_{31}+A_{32}+A_{33}+M_{34}=
 1 & 1 & 1 & 1
 \end{bmatrix}
 $
-\section{总结}
-\subsection{重点}
-\begin{enumerate}
-\item 一横形行列式的计算
-\item 行(列)和相等行列式的计算
-\item 余子式和代数余子式的计算
-\item 结合特征方程
-\end{enumerate}
 \chapter{矩阵}
 \section{基础知识}
 \subsection{矩阵}
@@ -223,11 +217,12 @@ $
 \item 加法: 同型矩阵对应元素相加
 \item 数乘矩阵(重要, 与行列式不同)\par
 \begin{equation*}
-k\bm{A} = \bm{A}k = k \begin{bmatrix}
-                      a_{11}	& a_{12}  & \dots & a_{1n} \\
-                      a_{21}	& a_{22} & \dots & a_{2n} \\
-                      \vdots	& \vdots & \ddots & \vdots \\
-                      a_{m1}	& a_{m2} & \dots & a_{mn}
+k\bm{A} = \bm{A}k = k
+\begin{bmatrix}
+a_{11}	& a_{12}  & \dots & a_{1n} \\
+a_{21}	& a_{22} & \dots & a_{2n} \\
+\vdots	& \vdots & \ddots & \vdots \\
+a_{m1}	& a_{m2} & \dots & a_{mn}
 \end{bmatrix} =
 \begin{bmatrix}
 ka_{11}	& ka_{12}  & \dots & ka_{1n} \\
@@ -315,9 +310,9 @@ c_{ij}=\sum_{k=1}^{s}a_{ik}b_{kj}=a_{i1}b_{1j}+a_{i2}b_{2j}+...+a_{is}b_{sj}(i=1
 \end{bmatrix}
 \end{equation*}
 \item 数乘
-\begin{equation*}
-k\begin{bmatrix}
- \bm{A} & \bm{B} \\ \bm{C} & \bm{D}
+\begin{equation*} k
+\begin{bmatrix}
+\bm{A} & \bm{B} \\ \bm{C} & \bm{D}
 \end{bmatrix} =
 \begin{bmatrix}
 k\bm{A} & k\bm{B} \\ k\bm{C} & k\bm{D}
@@ -414,10 +409,11 @@ $ r(\bm{A})=r(\bm{PA})=r(\bm{AQ})=r(\bm{PAQ}) $
 \item 数乘: $ r(k\bm{A})=r(\bm{A}) $
 \item $ r(\bm{A}\bm{B})\le \text{min}\{r(\bm{A}),r(\bm{B})\} $
 \item $ r(\bm{A}+\bm{B})\le r(\bm{A})+r(\bm{B}) $
-\item $ r(\bm{A}^{*})=\left\{\begin{aligned}
-                             & n\quad r(\bm{A})=n \\
-                             & 1\quad r(\bm{A})=n-1 \\
-                             & 0\quad r(\bm{A})<n-1
+\item $ r(\bm{A}^{*})=\left\{
+\begin{aligned}
+& n\quad r(\bm{A})=n \\
+& 1\quad r(\bm{A})=n-1 \\
+& 0\quad r(\bm{A})<n-1
 \end{aligned}\right.$ 其中$ \bm{A} $为$ n $阶方阵
 \end{enumerate}
 \subsection{常见运算汇总}
@@ -607,11 +603,12 @@ k_{1}\bm{\alpha_{1}}+k_{2}\bm{\alpha_{2}}+...+k_{m}\bm{\alpha_{m}}=\bm{0}
 \end{equation*}
 或者矩阵形式:
 \begin{equation*}
-\bm{A}\bm{x}=\begin{bmatrix}
-             a_{11} & a_{12} & \dots & a_{1m} \\
-             a_{21} & a_{22} & \dots & a_{2m} \\
-             \vdots & \vdots & \ddots & \vdots \\
-             a_{n1} & a_{n2} & \dots & a_{nm}
+\bm{A}\bm{x}=
+\begin{bmatrix}
+a_{11} & a_{12} & \dots & a_{1m} \\
+a_{21} & a_{22} & \dots & a_{2m} \\
+\vdots & \vdots & \ddots & \vdots \\
+a_{n1} & a_{n2} & \dots & a_{nm}
 \end{bmatrix}
 \begin{bmatrix}
 x_{1} \\
@@ -628,23 +625,26 @@ x_{m}
 \end{equation*}
 或者向量形式:
 \begin{equation*}
-\bm{A}\bm{x}=x_{1}\begin{bmatrix}
-                  a_{11} \\
-                  a_{21} \\
-                  \vdots \\
-                  a_{n1}
+\bm{A}\bm{x}=x_{1}
+\begin{bmatrix}
+a_{11} \\
+a_{21} \\
+\vdots \\
+a_{n1}
 \end{bmatrix}+
-x_{2}\begin{bmatrix}
-     a_{12} \\
-     a_{22} \\
-     \vdots \\
-     a_{n2}
+x_{2}
+\begin{bmatrix}
+a_{12} \\
+a_{22} \\
+\vdots \\
+a_{n2}
 \end{bmatrix}+...+
-x_{m}\begin{bmatrix}
-     a_{1m} \\
-     a_{2m} \\
-     \vdots \\
-     a_{nm}
+x_{m}
+\begin{bmatrix}
+a_{1m} \\
+a_{2m} \\
+\vdots \\
+a_{nm}
 \end{bmatrix}=
 \begin{bmatrix}
 0 \\
@@ -655,11 +655,12 @@ x_{m}\begin{bmatrix}
 \end{equation*}
 或者线性方程组形式:
 \begin{equation*}
-\left\{\begin{aligned}
-       & x_{1}a_{11}+x_{2}a_{12}+...+x_{m}a_{1m}=0 \\
-       & x_{1}a_{21}+x_{2}a_{22}+...+x_{m}a_{2m}=0 \\
-       & \dots \\
-       & x_{1}a_{n1}+x_{2}a_{n2}+...+x_{m}a_{nm}=0
+\left\{
+\begin{aligned}
+& x_{1}a_{11}+x_{2}a_{12}+...+x_{m}a_{1m}=0 \\
+& x_{1}a_{21}+x_{2}a_{22}+...+x_{m}a_{2m}=0 \\
+& \dots \\
+& x_{1}a_{n1}+x_{2}a_{n2}+...+x_{m}a_{nm}=0
 \end{aligned}
 \right.
 \end{equation*}
@@ -718,21 +719,23 @@ x_{m}\begin{bmatrix}
 \subsection{齐次线性方程组}
 设有一齐次线性方程组:
 \begin{equation*}
-\left\{\begin{aligned}
-       & x_{1}a_{11}+x_{2}a_{12}+...+x_{m}a_{1m}=0 \\
-       & x_{1}a_{21}+x_{2}a_{22}+...+x_{m}a_{2m}=0 \\
-       & \dots \\
-       & x_{1}a_{n1}+x_{2}a_{n2}+...+x_{m}a_{nm}=0
+\left\{
+\begin{aligned}
+& x_{1}a_{11}+x_{2}a_{12}+...+x_{m}a_{1m}=0 \\
+& x_{1}a_{21}+x_{2}a_{22}+...+x_{m}a_{2m}=0 \\
+& \dots \\
+& x_{1}a_{n1}+x_{2}a_{n2}+...+x_{m}a_{nm}=0
 \end{aligned}
 \right.
 \end{equation*}\par
 其矩阵形式为:
 \begin{equation*}
-\bm{A}\bm{x}=\begin{bmatrix}
-             a_{11} & a_{12} & \dots & a_{1m} \\
-             a_{21} & a_{22} & \dots & a_{2m} \\
-             \vdots & \vdots & \ddots & \vdots \\
-             a_{n1} & a_{n2} & \dots & a_{nm}
+\bm{A}\bm{x}=
+\begin{bmatrix}
+a_{11} & a_{12} & \dots & a_{1m} \\
+a_{21} & a_{22} & \dots & a_{2m} \\
+\vdots & \vdots & \ddots & \vdots \\
+a_{n1} & a_{n2} & \dots & a_{nm}
 \end{bmatrix}
 \begin{bmatrix}
 x_{1} \\
@@ -791,21 +794,23 @@ x_{m}
 \subsection{非齐次线性方程组}
 设有一非齐次线性方程组:
 \begin{equation*}
-\left\{\begin{aligned}
-       & x_{1}a_{11}+x_{2}a_{12}+...+x_{m}a_{1m}=b_{1} \\
-       & x_{1}a_{21}+x_{2}a_{22}+...+x_{m}a_{2m}=b_{2} \\
-       & \dots \\
-       & x_{1}a_{n1}+x_{2}a_{n2}+...+x_{m}a_{nm}=b_{n}
+\left\{
+\begin{aligned}
+& x_{1}a_{11}+x_{2}a_{12}+...+x_{m}a_{1m}=b_{1} \\
+& x_{1}a_{21}+x_{2}a_{22}+...+x_{m}a_{2m}=b_{2} \\
+& \dots \\
+& x_{1}a_{n1}+x_{2}a_{n2}+...+x_{m}a_{nm}=b_{n}
 \end{aligned}
 \right.
 \end{equation*}\par
 其矩阵形式为:
 \begin{equation*}
-\bm{A}\bm{x}=\begin{bmatrix}
-             a_{11} & a_{12} & \dots & a_{1m} \\
-             a_{21} & a_{22} & \dots & a_{2m} \\
-             \vdots & \vdots & \ddots & \vdots \\
-             a_{n1} & a_{n2} & \dots & a_{nm}
+\bm{A}\bm{x}=
+\begin{bmatrix}
+a_{11} & a_{12} & \dots & a_{1m} \\
+a_{21} & a_{22} & \dots & a_{2m} \\
+\vdots & \vdots & \ddots & \vdots \\
+a_{n1} & a_{n2} & \dots & a_{nm}
 \end{bmatrix}
 \begin{bmatrix}
 x_{1} \\
@@ -822,11 +827,12 @@ b_{n}
 \end{equation*}\par
 特殊的有矩阵$ \bm{A} $的增广矩阵:
 \begin{equation*}
-[\bm{A},\bm{b}]=\begin{bmatrix}
-                a_{11} & a_{12} & \dots & a_{1m} & b_{1} \\
-                a_{21} & a_{22} & \dots & a_{2m} & b_{2} \\
-                \vdots & \vdots & \ddots & \vdots & \vdots \\
-                a_{n1} & a_{n2} & \dots & a_{nm} & b_{n}
+[\bm{A},\bm{b}]=
+\begin{bmatrix}
+a_{11} & a_{12} & \dots & a_{1m} & b_{1} \\
+a_{21} & a_{22} & \dots & a_{2m} & b_{2} \\
+\vdots & \vdots & \ddots & \vdots & \vdots \\
+a_{n1} & a_{n2} & \dots & a_{nm} & b_{n}
 \end{bmatrix}
 \end{equation*}
 \subsubsection{有解的条件}
@@ -877,32 +883,36 @@ b_{n}
 设$ \bm{A} $和$ \bm{B} $为两个$ n $阶方阵, 若存在$ n $阶可逆矩阵$ \bm{P} $, 使得$ \bm{P}^{-1}\bm{A}\bm{P}=\bm{B} $成立, 则称$ \bm{A} $相似于$ \bm{B} $, 记成$ \bm{A}\sim \bm{B} $.
 \subsubsection{性质}
 \begin{enumerate}
-\item \begin{itemize}
-      \item 反身性: $ \bm{A}\sim \bm{A} $
-      \item 对称性: $ \bm{A}\sim \bm{B}\Rightarrow \bm{B}\sim \bm{A} $
-      \item 传递性: $ \bm{A}\sim \bm{B}, \bm{B}\sim \bm{C}\Rightarrow \bm{A}\sim \bm{C} $
+\item
+\begin{itemize}
+\item 反身性: $ \bm{A}\sim \bm{A} $
+\item 对称性: $ \bm{A}\sim \bm{B}\Rightarrow \bm{B}\sim \bm{A} $
+\item 传递性: $ \bm{A}\sim \bm{B}, \bm{B}\sim \bm{C}\Rightarrow \bm{A}\sim \bm{C} $
 \end{itemize}
-\item 若$ \bm{A}\sim \bm{B} $, 则有\begin{itemize}
-                                \item $ r(\bm{A})=r(\bm{B}) $
-                                \item $ \left|\bm{A}\right|=\left|\bm{B}\right| $
-                                \item $ \bm{A}, \bm{B} $具有相同的特征值
-                                \item $ \bm{A}, \bm{B} $特征多项式的值相同
+\item 若$ \bm{A}\sim \bm{B} $, 则有
+\begin{itemize}
+\item $ r(\bm{A})=r(\bm{B}) $
+\item $ \left|\bm{A}\right|=\left|\bm{B}\right| $
+\item $ \bm{A}, \bm{B} $具有相同的特征值
+\item $ \bm{A}, \bm{B} $特征多项式的值相同
 \end{itemize}
-\item 若$ \bm{A}\sim \bm{B} $, 则有\begin{itemize}
-                                \item $ f(\bm{A})\sim f(\bm{B}) $
-                                \item $ \bm{A}^{T}\sim \bm{B}^{T} $
-                                \item $ \bm{A} $可逆, $ \bm{A}^{*}\sim \bm{B}^{*} $
-                                \item $ \bm{A} $可逆, $ \bm{A}^{-1}\sim \bm{B}^{-1} $
+\item 若$ \bm{A}\sim \bm{B} $, 则有
+\begin{itemize}
+\item $ f(\bm{A})\sim f(\bm{B}) $
+\item $ \bm{A}^{T}\sim \bm{B}^{T} $
+\item $ \bm{A} $可逆, $ \bm{A}^{*}\sim \bm{B}^{*} $
+\item $ \bm{A} $可逆, $ \bm{A}^{-1}\sim \bm{B}^{-1} $
 \end{itemize}
 \end{enumerate}
 \subsection{矩阵的相似对角化}
 \subsubsection{定义}
 设$ n $阶矩阵$ \bm{A} $, 存在$ n $阶可逆矩阵$ \bm{P} $, 使得$ \bm{P}^{-1}\bm{A}\bm{P}=\bm{\Lambda} $, 则$ \bm{A}\sim \bm{\Lambda} $, $ \bm{\Lambda} $是$ \bm{A} $的相似标准形.\par
-\[ \bm{P}=\left[\bm{\xi_1}, \bm{\xi_2},... \bm{\xi_n}\right], \bm{\Lambda} =\begin{bmatrix}
-                                                                            \lambda_1 &  &  &  \\
-                                                                            & \lambda_2 &  &  \\
-                                                                            &  & \ddots &  \\
-                                                                            &  &  & \lambda_n
+\[ \bm{P}=\left[\bm{\xi_1}, \bm{\xi_2},... \bm{\xi_n}\right], \bm{\Lambda} =
+\begin{bmatrix}
+\lambda_1 &  &  &  \\
+& \lambda_2 &  &  \\
+&  & \ddots &  \\
+&  &  & \lambda_n
 \end{bmatrix}
 \]
 \subsubsection{条件}
@@ -938,11 +948,12 @@ b_{n}
 \begin{enumerate}\label{ref:实对称矩阵}
 \item 实对称矩阵$ \bm{A} $的属于不同特征值的特征向量相互正交
 \item 实对称矩阵$ \bm{A} $必相似于对角矩阵, 必有可逆矩阵$ \bm{P}=\left[ \bm{\xi_{1}}, \bm{\xi_{2}},... ,\bm{\xi_{n}}\right] $, 使得$ \bm{P}^{-1}\bm{A}\bm{P}=\bm{\Lambda} $. 且存在正交矩阵$ \bm{Q} $, 使得$ \bm{Q}^{-1}\bm{A}\bm{Q}=\bm{Q}^{T}\bm{A}\bm{Q}=\bm{\Lambda}$
-\[ \bm{P}=\left[\bm{\xi_1}, \bm{\xi_2},... \bm{\xi_n}\right], \bm{\Lambda} =\begin{bmatrix}
-                                                                            \lambda_1 &  &  &  \\
-                                                                            & \lambda_2 &  &  \\
-                                                                            &  & \ddots &  \\
-                                                                            &  &  & \lambda_n
+\[ \bm{P}=\left[\bm{\xi_1}, \bm{\xi_2},... \bm{\xi_n}\right], \bm{\Lambda} =
+\begin{bmatrix}
+\lambda_1 &  &  &  \\
+& \lambda_2 &  &  \\
+&  & \ddots &  \\
+&  &  & \lambda_n
 \end{bmatrix}
 \]
 \end{enumerate}
@@ -1014,17 +1025,19 @@ f(x) = a_{11}x_{1}^{2}+a_{12}x_{1}x_{2}+a_{13}x_{1}x_{3}...+a_{1n}x_{1}x_{n} & \
 \end{equation*}
 \item 矩阵形式
 \begin{equation*}
-\bm{A}=\begin{bmatrix}
-       a_{11} & a_{12} & \dots & a_{1n} \\
-       a_{21} & a_{22} & \dots & a_{2n} \\
-       \vdots & \vdots &  & \vdots \\
-       a_{n1} & a_{n2} & \dots & a_{nn}
+\bm{A}=
+\begin{bmatrix}
+a_{11} & a_{12} & \dots & a_{1n} \\
+a_{21} & a_{22} & \dots & a_{2n} \\
+\vdots & \vdots &  & \vdots \\
+a_{n1} & a_{n2} & \dots & a_{nn}
 \end{bmatrix},
-\bm{x}=\begin{bmatrix}
-       x_1 \\
-       x_2 \\
-       \vdots \\
-       x_n
+\bm{x}=
+\begin{bmatrix}
+x_1 \\
+x_2 \\
+\vdots \\
+x_n
 \end{bmatrix}
 \end{equation*}\par
 则二次型可以表示为:
@@ -1045,21 +1058,24 @@ f(\bm{x})=\bm{x}^{T}\bm{A}\bm{x}
 \end{aligned}
 \right.
 \end{equation*}\par
-记$ \bm{x}=\begin{bmatrix}
-          x_1 \\
-          x_2 \\
-          \vdots \\
-          x_n
-\end{bmatrix}, \bm{C}=\begin{bmatrix}
-                      c_{11} & c_{12} & \dots & c_{1n} \\
-                      c_{21} & c_{22} & \dots & c_{2n} \\
-                      \vdots & \vdots &  & \vdots \\
-                      c_{n1} & c_{n2} & \dots & c_{nn}
-\end{bmatrix}, \bm{y}=\begin{bmatrix}
-                      y_1 \\
-                      y_2 \\
-                      \vdots \\
-                      y_n
+记$ \bm{x}=
+\begin{bmatrix}
+x_1 \\
+x_2 \\
+\vdots \\
+x_n
+\end{bmatrix}, \bm{C}=
+\begin{bmatrix}
+c_{11} & c_{12} & \dots & c_{1n} \\
+c_{21} & c_{22} & \dots & c_{2n} \\
+\vdots & \vdots &  & \vdots \\
+c_{n1} & c_{n2} & \dots & c_{nn}
+\end{bmatrix}, \bm{y}=
+\begin{bmatrix}
+y_1 \\
+y_2 \\
+\vdots \\
+y_n
 \end{bmatrix}$\par \vspace{1em}
 则上式可以写为$ \bm{x}=\bm{C}\bm{y} $. 上式称为从$ y_{1}, y_{2},... ,y_{n} $到$ x_{1}, x_{2},... ,x_{n} $的线性变换. 如果$ \bm{C} $可逆, 则称为可逆线性变换.\par
 如果$ f(\bm{x})=\bm{x}^{T}\bm{A}\bm{x} $, 令$ \bm{x}=\bm{C}\bm{y} $, 则有$ f(\bm{x})=(\bm{C}\bm{y})^{T}\bm{A}(\bm{C}\bm{y})=\bm{y}^{T}(\bm{C}^{T}\bm{A}\bm{C})\bm{y}. $\par
@@ -1093,34 +1109,37 @@ d_{1}x_{1}^{2}+d_{2}x_{2}^{2}+... +d_{n}x_{n}^{2}
 \begin{enumerate}
 \item 任何二次型可以通过配方法(作可逆线性变换)化为标准形和规范形, 它求得的对角矩阵(标准形)形式如下(不一定是特征值$ \lambda $):
 \begin{equation*}
-\bm{\Lambda}=\begin{bmatrix}
-             d_1 &  &  &  \\
-             & d_2 &  &  \\
-             &  & \ddots &  \\
-             &  &  & d_n
+\bm{\Lambda}=
+\begin{bmatrix}
+d_1 &  &  &  \\
+& d_2 &  &  \\
+&  & \ddots &  \\
+&  &  & d_n
 \end{bmatrix}
 \end{equation*}\par
 此外, 它还可以转化成规范形:
 \begin{equation*}
-\bm{\Lambda}=\begin{bmatrix}
-             1 &  &  &  &  &  &  &  &  \\
-             & \ddots &  &  &  &  &  &  &  \\
-             &  & 1 &  &  &  &  &  &  \\
-             &  &  & -1 &  &  &  &  &  \\
-             &  &  &  & \ddots &  &  &  &  \\
-             &  &  &  &  & -1 &  &  &  \\
-             &  &  &  &  &  & 0 &  &  \\
-             &  &  &  &  &  &  & \ddots &  \\
-             &  &  &  &  &  &  &  & 0
+\bm{\Lambda}=
+\begin{bmatrix}
+1 &  &  &  &  &  &  &  &  \\
+& \ddots &  &  &  &  &  &  &  \\
+&  & 1 &  &  &  &  &  &  \\
+&  &  & -1 &  &  &  &  &  \\
+&  &  &  & \ddots &  &  &  &  \\
+&  &  &  &  & -1 &  &  &  \\
+&  &  &  &  &  & 0 &  &  \\
+&  &  &  &  &  &  & \ddots &  \\
+&  &  &  &  &  &  &  & 0
 \end{bmatrix}
 \end{equation*}
 \item 任何二次型可以通过正交变换化成标准形(见\ref{ref:求标准形}), 它求得的对角矩阵(标准形)形式如下(特征值不一定是$ 0, 1, -1 $):
 \begin{equation*}
-\bm{\Lambda}=\begin{bmatrix}
-             \lambda_1 &  &  &  \\
-             & \lambda_2 &  &  \\
-             &  & \ddots &  \\
-             &  &  & \lambda_n
+\bm{\Lambda}=
+\begin{bmatrix}
+\lambda_1 &  &  &  \\
+& \lambda_2 &  &  \\
+&  & \ddots &  \\
+&  &  & \lambda_n
 \end{bmatrix}
 \end{equation*}
 \end{enumerate}
@@ -1137,13 +1156,14 @@ d_{1}x_{1}^{2}+d_{2}x_{2}^{2}+... +d_{n}x_{n}^{2}
 $ n $元二次型$ f(x_{1}, x_{2},... ,x_{n})=\bm{x}^{T}\bm{A}\bm{x} $, 若对于任意的$ \bm{x}=[x_{1},x_{2},... ,x_{n}]^{T}\neq \bm{0} $均有二次型大于0, 即$ \bm{x}^{T}\bm{A}\bm{x}>0 $, 则称$ f $为正定二次型, $ \bm{A} $为正定矩阵.
 \subsubsection{条件}
 \begin{enumerate}
-\item 充要条件: \par $ \begin{aligned}
-                   n\text{元二次型正定} & \Leftrightarrow \text{对于任意}\bm{x}\neq \bm{0}, \text{有}\bm{x}^{T}\bm{A}\bm{x}>0 \\
-                   & \Leftrightarrow f\text{的正惯性指数} p=n\text{(所有的系数全正, 即对角线元素全正)} \\
-                   & \Leftrightarrow \text{存在可逆矩阵} \bm{D}, \text{使} \bm{A}=\bm{D}^{T}\bm{D} \\
-                   & \Leftrightarrow \bm{A}\simeq \bm{E} \\
-                   & \Leftrightarrow \bm{A}\text{的特征值} \lambda_{i}>0(i=1, 2,... ,n) \\
-                   & \Leftrightarrow \bm{A}\text{的全部顺序主子式均大于0(左上角行列式)}
+\item 充要条件: \par $
+\begin{aligned}
+n\text{元二次型正定} & \Leftrightarrow \text{对于任意}\bm{x}\neq \bm{0}, \text{有}\bm{x}^{T}\bm{A}\bm{x}>0 \\
+& \Leftrightarrow f\text{的正惯性指数} p=n\text{(所有的系数全正, 即对角线元素全正)} \\
+& \Leftrightarrow \text{存在可逆矩阵} \bm{D}, \text{使} \bm{A}=\bm{D}^{T}\bm{D} \\
+& \Leftrightarrow \bm{A}\simeq \bm{E} \\
+& \Leftrightarrow \bm{A}\text{的特征值} \lambda_{i}>0(i=1, 2,... ,n) \\
+& \Leftrightarrow \bm{A}\text{的全部顺序主子式均大于0(左上角行列式)}
 \end{aligned} $ \par
 顺序主子式: \par
 设$\bm{A}=(a_{ij})_{n\times n}$, 则:
@@ -1157,9 +1177,10 @@ a_{k1} & a_{k2} & \dots & a_{kk} \\
 \end{bmatrix}
 \end{equation*} \par
 称为$n$阶矩阵$\bm{A}$的$k$阶顺序(或左上角)主子式, 当$k$取$1,2,...,n$时, 就得到$\bm{A}$的$n$个顺序主子式.
-\item 必要条件: \par $ \begin{aligned}
-                   n\text{元二次型正定} & \Leftarrow a_{ii}>0(i=1, 2,... ,n) \\
-                   & \Leftarrow \left|\bm{A}\right|>0
+\item 必要条件: \par $
+\begin{aligned}
+n\text{元二次型正定} & \Leftarrow a_{ii}>0(i=1, 2,... ,n) \\
+& \Leftarrow \left|\bm{A}\right|>0
 \end{aligned} $
 \end{enumerate}
 \section{习题}
