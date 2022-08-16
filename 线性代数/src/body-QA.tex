@@ -1,0 +1,64 @@
+\chapter{QA}
+\section{行列式}
+\subsection{行列式的计算}
+\subsubsection{具体型行列式}
+\begin{itemize}
+\item 一横型行列式 \label{一横型行列式}
+\paragraph{例题} 一横形行列式$
+\begin{bmatrix}
+1-x & x & 0 \\
+-1 & 1-x & x \\
+0 & -1 & 1-x
+\end{bmatrix}$=(\qquad)
+\paragraph{解} 将其按第行展开, 得到一个相似的行列式, 可以得到一个递推公式.
+\end{itemize}
+\subsubsection{抽象型行列式}
+\begin{itemize}
+\item 目标行列式和矩阵的相互转换 \label{目标行列式和矩阵的相互转换}
+\paragraph{例题} 设$\bm{\alpha_{1}},\bm{\alpha_{2}},...,\bm{\alpha_{n}}$是$n$维向量, $\bm{A}=[\bm{\alpha_{1}},\bm{\alpha_{2}},...,\bm{\alpha_{n}}],\bm{B}=[\bm{\alpha_{n}},\bm{\alpha_{1}},\bm{\alpha_{2}},...,\bm{\alpha_{n-1}}]$. 若$|\bm{A}|=1$, 则$|\bm{A}-\bm{B}|=(\quad)$\par
+\item 与特征方程相结合 \label{与特征方程相结合}
+\paragraph{例题} 设$\bm{A}$是$ 3 $阶方阵, 满足$ |3 \bm{A}+2 \bm{E}|=0, |\bm{A} - \bm{E}|=0, |3 \bm{E}-2 \bm{A}|=0 $, 则$ |\bm{A}|=(\qquad) $
+\paragraph{解} 特征方程$ |\lambda \bm{E}-\bm{A}|=0 $, 可以根据上面的几个等式求出矩阵$ \bm{A} $的特征值, 根据特征值的性质可以知道矩阵的季和矩阵对应行列式的值
+\end{itemize}
+\subsection{余子式和代数余子式的线性组合的计算}\label{余子式和代数余子式的线性组合的计算}
+\vspace{1em}
+\paragraph{例题} 设$\bm{|A|}=
+\begin{bmatrix}
+2 & -1 & 2 & 3 \\
+0 & -1 & -1 & 0 \\
+2 & 3 & 4 & 5 \\
+1 & 1 & 1 & 1
+\end{bmatrix}
+$, 则$A_{31}+A_{32}+A_{33}+M_{34}=
+\begin{bmatrix}
+2 & -1 & 2 & 3 \\
+0 & -1 & -1 & 0 \\
+1 & 1 & 1 & -1 \\
+1 & 1 & 1 & 1
+\end{bmatrix}
+$
+\section{矩阵}
+\subsection{矩阵的基本运算}
+\subsubsection{矩阵相乘时要注意矩阵的左右位置}\label{矩阵相乘时要注意矩阵的左右位置}
+\paragraph{例题 1}~设$ \bm{E} $是$ n $阶单位矩阵, $ \bm{E}+\bm{A} $是$ n $阶可逆矩阵, 则下列关系式中不成立的是:
+\begin{tasks}[label-offset={0.8em},label-format={\bfseries}](1)
+\task $ (\bm{E}-\bm{A})(\bm{E}+\bm{A})^{2}=(\bm{E}+\bm{A})^{2}(\bm{E}-\bm{A}) $
+\task $ (\bm{E}-\bm{A})(\bm{E}+\bm{A})^{T}=(\bm{E}+\bm{A})^{T}(\bm{E}-\bm{A}) $
+\task $ (\bm{E}-\bm{A})(\bm{E}+\bm{A})^{-1}=(\bm{E}+\bm{A})^{-1}(\bm{E}-\bm{A}) $
+\task $ (\bm{E}-\bm{A})(\bm{E}+\bm{A})^{*}=(\bm{E}+\bm{A})^{*}(\bm{E}-\bm{A}) $
+\end{tasks} \par
+\paragraph{解}~{} \noindent 题目中已经提示了$ \bm{E}+\bm{A} $是$ n $阶可逆矩阵, 所以下列成立:
+\begin{equation*}
+\begin{aligned}
+& (\bm{E}+\bm{A})^{-1}(\bm{E}+\bm{A})=(\bm{E}+\bm{A})(\bm{E}+\bm{A})^{-1}\bm{E} \\
+& (\bm{E}+\bm{A})^{*}(\bm{E}+\bm{A})=(\bm{E}+\bm{A})(\bm{E}+\bm{A})^{*}=|\bm{E}+\bm{A}|\bm{E}
+\end{aligned}
+\end{equation*}\par
+可以将题目中的$ \bm{E}-\bm{A} $拆成$ 2\bm{E}-(\bm{E}+\bm{A}) $, 以$ b) $为例: 左式=$ (2 \bm{E}-(\bm{E}+\bm{A}))(\bm{E}+\bm{A})^{T}=2(\bm{E}+\bm{A})^{T}\bm{E}-(\bm{E}+\bm{A})(\bm{E}+\bm{A})^{T}$, 由于$ (\bm{E}+\bm{A})(\bm{E}+\bm{A})^{T}\neq (\bm{E}+\bm{A})(\bm{E}+\bm{A}) $, 故左式$ \neq $右式, 选$ b) $.
+\paragraph{例题 2}~{已知$ \bm{E}_{32}(1)\bm{A}\bm{B}\bm{E}_{13}(-3)=
+\begin{bmatrix}
+1 & 0 & 0 \\
+0 & -1 & 0 \\
+0 & 1 & 2
+\end{bmatrix}$, 求$ \bm{A}\bm{B} $}
+\paragraph{解}~{注意只能左乘$ [\bm{E}_{32}(1)]^{-1} $, 右乘$ [\bm{E}_{13}(-3)]^{-1} $}

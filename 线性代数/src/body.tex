@@ -122,17 +122,10 @@ x_{1}^{n-1} & x_{2}^{n-1} & \dots & x_{n}^{n-1}
 \begin{enumerate}
 \item 直接展开: 适用于含$ 0 $较多的行(列)
 \item 爪型: 斜爪消平爪
-\item 异爪型
+\item 异爪型:
 \begin{enumerate}
 \item 阶数不高, 直接展开
-\item 阶数高, 用递推(尤其适用于一横形行列式)\par
-\paragraph{例题} 一横形行列式$
-\begin{bmatrix}
-1-x & x & 0 \\
--1 & 1-x & x \\
-0 & -1 & 1-x
-\end{bmatrix}$=(\qquad)
-\paragraph{解} 将其按第行展开, 得到一个相似的行列式, 可以得到一个递推公式.
+\item 阶数高, 用递推(尤其适用于\hyperref[一横型行列式]{一横型行列式})\par
 \end{enumerate}
 \item 行(列)和相等: 三种方法
 \begin{enumerate}
@@ -164,13 +157,10 @@ a_{1} & a_{2} & \dots & a_{n}-b
 \end{enumerate}
 \subsubsection{抽象型行列式}
 \begin{enumerate}
-\item 目标行列式和矩阵的相互转换: $|\bm{A}\bm{B}|=|\bm{A}||\bm{B}|$
-\paragraph{例题} 设$\bm{\alpha_{1}},\bm{\alpha_{2}},...,\bm{\alpha_{n}}$是$n$维向量, $\bm{A}=[\bm{\alpha_{1}},\bm{\alpha_{2}},...,\bm{\alpha_{n}}],\bm{B}=[\bm{\alpha_{n}},\bm{\alpha_{1}},\bm{\alpha_{2}},...,\bm{\alpha_{n-1}}]$. 若$|\bm{A}|=1$, 则$|\bm{A}-\bm{B}|=(\quad)$\par
-\item 与特征方程相结合
-\paragraph{例题} 设$\bm{A}$是$ 3 $阶方阵, 满足$ |3 \bm{A}+2 \bm{E}|=0, |\bm{A} - \bm{E}|=0, |3 \bm{E}-2 \bm{A}|=0 $, 则$ |\bm{A}|=(\qquad) $
-\paragraph{解} 特征方程$ |\lambda \bm{E}-\bm{A}|=0 $, 可以根据上面的几个等式求出矩阵$ \bm{A} $的特征值, 根据特征值的性质可以知道矩阵的季和矩阵对应行列式的值
+\item \hyperref[目标行列式和矩阵的相互转换]{目标行列式和矩阵的相互转换}: $|\bm{A}\bm{B}|=|\bm{A}||\bm{B}|$
+\item \hyperref[与特征方程相结合]{与特征方程相结合}
 \end{enumerate}
-\subsection{余子式和代数余子式的线性组合的计算}
+\subsection{\hyperref[余子式和代数余子式的线性组合的计算]{余子式和代数余子式的线性组合的计算}}
 根据行列式的展开定义, 有:
 \begin{equation*}
 a_{i1}A_{i1}+a_{i2}A_{i2}+...+a_{in}A_{in}=
@@ -188,22 +178,7 @@ k_{1}A_{i1}+k_{2}A_{i2}+...+k_{i1}A_{in}=
 k_{i1} & k_{i2} & \dots & \dots & k_{in} \\
 &  & \dots &  & \\
 \end{bmatrix}
-\end{equation*}\par
-\paragraph{例题} 设$\bm{|A|}=
-\begin{bmatrix}
-2 & -1 & 2 & 3 \\
-0 & -1 & -1 & 0 \\
-2 & 3 & 4 & 5 \\
-1 & 1 & 1 & 1
-\end{bmatrix}
-$, 则$A_{31}+A_{32}+A_{33}+M_{34}=
-\begin{bmatrix}
-2 & -1 & 2 & 3 \\
-0 & -1 & -1 & 0 \\
-1 & 1 & 1 & -1 \\
-1 & 1 & 1 & 1
-\end{bmatrix}
-$
+\end{equation*}
 \chapter{矩阵}
 \section{基础知识}
 \subsection{矩阵}
@@ -439,32 +414,10 @@ $ r(\bm{A})=r(\bm{PA})=r(\bm{AQ})=r(\bm{PAQ}) $
 \subitem $ (\bm{A}^{T})^{*}=(\bm{A}^{*})^{T} $
 \end{enumerate}
 \section{习题}
-\subsection{矩阵的基本运算}
-\subsubsection{矩阵相乘时要注意矩阵的左右位置}
-\paragraph{例题 1}~设$ \bm{E} $是$ n $阶单位矩阵, $ \bm{E}+\bm{A} $是$ n $阶可逆矩阵, 则下列关系式中不成立的是:
-\begin{tasks}[label-offset={0.8em},label-format={\bfseries}](1)
-\task $ (\bm{E}-\bm{A})(\bm{E}+\bm{A})^{2}=(\bm{E}+\bm{A})^{2}(\bm{E}-\bm{A}) $
-\task $ (\bm{E}-\bm{A})(\bm{E}+\bm{A})^{T}=(\bm{E}+\bm{A})^{T}(\bm{E}-\bm{A}) $
-\task $ (\bm{E}-\bm{A})(\bm{E}+\bm{A})^{-1}=(\bm{E}+\bm{A})^{-1}(\bm{E}-\bm{A}) $
-\task $ (\bm{E}-\bm{A})(\bm{E}+\bm{A})^{*}=(\bm{E}+\bm{A})^{*}(\bm{E}-\bm{A}) $
-\end{tasks} \par
-\paragraph{解}~{} \noindent 题目中已经提示了$ \bm{E}+\bm{A} $是$ n $阶可逆矩阵, 所以下列成立:
-\begin{equation*}
-\begin{aligned}
-& (\bm{E}+\bm{A})^{-1}(\bm{E}+\bm{A})=(\bm{E}+\bm{A})(\bm{E}+\bm{A})^{-1}\bm{E} \\
-& (\bm{E}+\bm{A})^{*}(\bm{E}+\bm{A})=(\bm{E}+\bm{A})(\bm{E}+\bm{A})^{*}=|\bm{E}+\bm{A}|\bm{E} 
-\end{aligned}
-\end{equation*}\par 
-可以将题目中的$ \bm{E}-\bm{A} $拆成$ 2\bm{E}-(\bm{E}+\bm{A}) $, 以$ b) $为例: 左式=$ (2 \bm{E}-(\bm{E}+\bm{A}))(\bm{E}+\bm{A})^{T}=2(\bm{E}+\bm{A})^{T}\bm{E}-(\bm{E}+\bm{A})(\bm{E}+\bm{A})^{T}$, 由于$ (\bm{E}+\bm{A})(\bm{E}+\bm{A})^{T}\neq (\bm{E}+\bm{A})(\bm{E}+\bm{A}) $, 故左式$ \neq $右式, 选$ b) $.
-\paragraph{例题 2}~{已知$ \bm{E}_{32}(1)\bm{A}\bm{B}\bm{E}_{13}(-3)=
-\begin{bmatrix}
-1 & 0 & 0 \\
-0 & -1 & 0 \\
-0 & 1 & 2
-\end{bmatrix}$, 求$ \bm{A}\bm{B} $}
-\paragraph{解}~{注意只能左乘$ [\bm{E}_{32}(1)]^{-1} $, 右乘$ [\bm{E}_{13}(-3)]^{-1} $}
+\subsection{普通矩阵的运算}
+\subsubsection{\hyperref[矩阵相乘时要注意矩阵的左右位置]{矩阵相乘时要注意矩阵的左右位置}}
+常见的位置变换有: $ \bm{A}\bm{A}^{*}=\bm{A}^{*}\bm{A}=|\bm{A}|\bm{E} $, $ \bm{A}\bm{E}=\bm{E}\bm{A}=\bm{A} $, $ \bm{A}\bm{B}=\bm{B}\bm{A}=\bm{E} $($ \bm{A} $可逆, $ \bm{B} $为$ \bm{A} $的逆矩阵), $ \bm{A}\bm{A}^{T}=\bm{A}^{T}\bm{A}=\bm{E} $($ \bm{A} $为正交矩阵).
 \subsubsection{$ \bm{A}^{n} $的计算}
-一般有三种方法:
 \begin{enumerate}
 \item $ \bm{A} $为方阵, $ r(\bm{A})=1 $, 可以将矩阵拆开:
 \begin{equation*}
@@ -583,6 +536,28 @@ a_{n1} & & &
 \end{bmatrix}
 \end{equation*}
 \end{enumerate}
+\subsection{伴随矩阵的计算}
+通常结合伴随矩阵的五个公式考:
+\begin{enumerate}
+\item $ (k \bm{A})^{*}=k^{n-1}\bm{A}^{*} $
+\item $ \bm{A}\bm{A}^{*}=\bm{A}^{*}\bm{A}=|\bm{A}|\bm{E} $
+\item $ |\bm{A}^{*}|=|\bm{A}|^{n-1} $
+\item $ (\bm{A}^{*})^{*}=|\bm{A}|^{n-2}\bm{A} $
+\item $ \bm{A}^{-1}=\frac{\bm{A}^{*}}{|\bm{A}|} $
+\item $ r(\bm{A}^{*})=\left\{
+\begin{aligned}
+& n\quad r(\bm{A})=n \\
+& 1\quad r(\bm{A})=n-1 \\
+& 0\quad r(\bm{A})<n-1
+\end{aligned}\right.$ 其中$ \bm{A} $为$ n $阶方阵
+\end{enumerate}\par
+题目中会给你一个等式, 按照上面的公式化简之后会得到一个较简单的等式.
+\subsection{初等变换和初等矩阵}
+这里会考的是左行右列定理和三种行/列初等变换, 以及要清楚$ \bm{E}_{31}(k) $的含义是第$ 3 $列的$ k $倍加到第$ 1 $列, 或者是第$ 1 $行的$ k $倍加到第$ 3 $行(注意行和列的区别).
+\subsection{矩阵方程}
+含有未知数的方程被称为矩阵方程, 方程中会含有伴随矩阵, 逆矩阵, 转置矩阵等各种类型的矩阵, 要学会把其中的一部分消掉化简.
+\subsection{矩阵的秩和等价矩阵}
+这里要注意等价的含义: 两个矩阵的秩相等, 或者说存在两个可逆矩阵$ \bm{P}, \bm{Q} $, 使得$ \bm{P}\bm{A}\bm{Q}=\bm{B} $成立.
 \chapter{向量组}
 \section{基础知识}
 \subsection{向量}
