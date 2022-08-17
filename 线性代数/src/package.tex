@@ -1,35 +1,45 @@
 \PassOptionsToPackage{AutoFakeBold}{xeCJK}
 \PassOptionsToPackage{quiet}{fontspec}
+% 中文环境
 \usepackage[UTF8]{ctex}
+% 合并单元格
 \usepackage{multirow}
+% 设置单元格格式
 \usepackage{makecell}
+% 表格
 \usepackage{tabularx}
 \newcolumntype{Z}{>{\centering\let\newline\\\arraybackslash\hspace{0pt}}X}
+% 首行缩进
 \usepackage{indentfirst}
 \setlength{\parindent}{2em}
+% 表格格式
 \usepackage{floatrow}
 \floatsetup[table]{font={large, tt}}
+% \bm{}
 \usepackage{bm}
+% 浮动体
 \usepackage{float}
+% 矩阵
 \usepackage{array}
+% 三线表格
 \usepackage{threeparttable}
+% 数学包
 \usepackage{amsmath}
+% 图片
 \usepackage{graphicx}
+% 自定义颜色
 \usepackage{xcolor}
+% 带圈的数字
 \usepackage{pifont}
+% 超链接
 \usepackage{hyperref}
 \hypersetup{hypertex=true,
 colorlinks=true,
 linkcolor=blue,
 anchorcolor=blue,
 citecolor=blue}
+% tikz
 \usepackage{tikz}
-\usepackage{pgfplots}
-\usepackage{tcolorbox}
-\usepackage{subcaption}
-\pgfplotsset{compat=newest}
-\DeclareMathOperator{\arccot}{arccot}
-\usepackage{scalerel}
 \usetikzlibrary{external}
 \tikzset{
 external/system call={
@@ -37,6 +47,34 @@ xelatex \tikzexternalcheckshellescape
 -halt-on-error -interaction=batchmode --shell-escape
 -jobname "\image" "\texsource"}}
 \tikzexternalize[prefix=tikz/]
+% 绘制函数
+\usepackage{pgfplots}
+\pgfplotsset{compat=newest}
+% 框
+\usepackage{tcolorbox}
+% 格式化图表标题
+\usepackage{subcaption}
+% 自定义数学公式
+\DeclareMathOperator{\arccot}{arccot}
+% 大括号
+\usepackage{scalerel}
+% 页面设置
 \usepackage{geometry}
 \geometry{scale=0.7}
+% 代码
+\usepackage{listings}
+\lstset{
+basicstyle=\ttfamily,
+keywordstyle=\bfseries,
+commentstyle=\rmfamily\itshape,
+stringstyle=\ttfamily,
+flexiblecolumns,
+numbers=left,
+showspaces=false,
+numberstyle=\zihao{-5}\ttfamily,
+showstringspaces=false,
+captionpos=t,
+frame=lrtb,
+}
+% 选择题
 \usepackage{tasks}
