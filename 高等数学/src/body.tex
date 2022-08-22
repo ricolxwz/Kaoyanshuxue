@@ -600,14 +600,37 @@ scale=2,
 \item $ \frac{1}{1+x}<\ln (1+\frac{1}{x})<\frac{1}{x}(x>0) $
 \end{enumerate}
 \chapter{数列极限}
-\section{数列极限的定义}
+\section{基础知识}
+\subsection{数列极限的定义}
 设$ \{x_{n}\} $为一数列, 若存在常数$ a $, 对于任意的$ \epsilon >0 $, 总存在正整数$ N $, 使得当$ n>N $的时候, $ |x_{n}-a|<\epsilon $恒成立, 则称数$ a $是数列$ \{x_{n}\} $的极限, 或者称数列$ \{x_{n}\} $收敛于$ a $, 记为
 \begin{equation*}
 \lim_{n\rightarrow \infty} x_{n} = a\ or\ x_{n}\rightarrow a(n\rightarrow \infty).
 \end{equation*}
-\section{收敛数列的性质}
+\subsection{收敛数列的性质}
 \begin{enumerate}
-\item 唯一性: 给出数列$ \{x_{n}\} $, 若$ \lim\limits_{n\rightarrow \infty}x_{n}=a $, 则$ a $是唯一的
-\item 有界性: 若数列$ \{x_{n}\} $极限存在, 则有界
-\item 保号性: 设数列
+\item 唯一性: 若数列存在极限, 则极限是唯一的
+\item 有界性: 若数列存在极限, 则数列有界
+\item 保号性
+\begin{enumerate}
+\item 脱帽: 设有数列$ \{x_{n}\} $, 若$ \lim\limits_{n\rightarrow \infty}x_{n}=a>0(\text{或}<0)\Rightarrow $ 存在正整数$ N $, 当$ n>N $时, 有$ x_{n}>0(\text{或}x_{n}<0) $
+\item 戴帽: 设有数列$ \{x_{n}\} $, 若存在正整数$ N $, 当$ n>N $时, 有$ x_{n}\ge 0 $, 且数列存在极限$ \Rightarrow \lim\limits_{n\rightarrow \infty}x_{n}=a\ge 0 $
 \end{enumerate}
+\end{enumerate}
+\subsection{极限运算规则}
+设$ \lim\limits_{n\rightarrow \infty}x_{n}=a, \lim\limits_{n\rightarrow \infty}y_{n}=b $, 则
+\begin{enumerate}
+\item $ \lim\limits_{n\rightarrow \infty}(x_{n}\pm y_{n})=a\pm b $
+\item $ \lim\limits_{n\rightarrow \infty}x_{n}y_{n}=ab $
+\item 若$ b\neq 0, y_{n}\neq 0 \Rightarrow \lim\limits_{n\rightarrow \infty}\frac{x_{n}}{y_{n}}=\frac{a}{b}$
+\end{enumerate}
+\subsection{夹逼准则}
+如果数列$ \{x_{n}\}, \{y_{n}\} $及$ \{z_{n}\} $满足条件:
+\begin{enumerate}
+\item $ y_{n}\le x_{n}\le z_{n}(n=1,2,3...) $
+\item $ \lim\limits_{n\rightarrow \infty}y_{n}=a, \lim\limits_{n\rightarrow \infty}z_{n}=a $
+\end{enumerate}\par
+则数列$ \{x_{n}\} $的极限存在, 且$ \lim\limits_{n\rightarrow \infty}x_{n}=a $.
+\subsection{单调有界准则}
+单调有界数列必有极限.
+\section{习题}
+\chapter{函数极限}
