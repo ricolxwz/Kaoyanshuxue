@@ -607,7 +607,7 @@ scale=2,
 \end{equation*}
 \subsection{收敛数列的性质}
 \begin{enumerate}
-\item 唯一性: 若数列存在极限, 则极限是唯一的
+\item 唯一性: 若数列存在极限, 则极限唯一
 \item 有界性: 若数列存在极限, 则数列有界
 \item 保号性
 \begin{enumerate}
@@ -623,9 +623,8 @@ scale=2,
 \item 若$ b\neq 0, y_{n}\neq 0 \Rightarrow \lim\limits_{n\rightarrow \infty}\frac{x_{n}}{y_{n}}=\frac{a}{b}$
 \end{enumerate}
 \subsection{夹逼准则}
-如果数列$ \{x_{n}\}, \{y_{n}\} $及$ \{z_{n}\} $满足条件:
+若数列$ \{x_{n}\}, \{y_{n}\} $及$ \{z_{n}\} $满足条件:
 \begin{enumerate}
-<<<<<<< Updated upstream
 \item $ y_{n}\le x_{n}\le z_{n}(n=1,2,3...) $
 \item $ \lim\limits_{n\rightarrow \infty}y_{n}=a, \lim\limits_{n\rightarrow \infty}z_{n}=a $
 \end{enumerate}\par
@@ -634,10 +633,62 @@ scale=2,
 单调有界数列必有极限.
 \section{习题}
 \chapter{函数极限}
-=======
-\item 唯一性: 给出数列$ \{x_{n}\} $, 若$ \lim\limits_{n\rightarrow \infty}x_{n}=a $, 则$ a $是唯一的
-\item 有界性: 若数列$ \{x_{n}\} $极限存在, 则有界
-\item 保号性: 设数列
+\section{基础知识}
+\subsection{邻域}
+\subsubsection{一维}
+\begin{enumerate}
+\item 邻域: 点$ x_{0} $的邻域为数轴上以$ x_{0} $为中心的任何开区间, 记作$ U(x_{0}) $
+\item $ \delta $邻域: 点$ x_{0} $的$ \delta $邻域为$ (x_{0}-\delta,x_{0}+\delta) $, 记作$ U(x_{0},\delta) $
+\item 去心$ \delta $邻域: 点$ x_{0} $的去心$ \delta $邻域为$ (x_{0}-\delta,x_{0})\cup (x_{0},x_{0}+\delta) $, 记作$ \mathring{U}(x_{0},\delta) $
+\item 左右$ \delta $邻域
+\begin{enumerate}
+\item 左邻域: 点$ x_{0} $的左邻域为$ (x_{0}-\delta,x_{0}) $, 记作$ U^{+}(x_{0},\delta) $
+\item 右邻域: 点$ x_{0} $的右邻域为$ (x_{0},x_{0}+\delta) $, 记作$ U^{-}(x_{0},\delta) $
 \end{enumerate}
-\chapter{函数极限与连续性}
->>>>>>> Stashed changes
+\end{enumerate}
+\subsubsection{二维}
+\begin{enumerate}
+\item $ \delta $邻域: 与点$ P_{0}(x_{0},y_{0}) $的距离小于$ \delta $的点$ P(x,y) $的全体, 称为点$ P_{0} $的$ \delta $邻域, 记作$ U(P_{0},\delta) $
+\item 去心$ \delta $邻域: 与点$ P_{0}(x_{0},y_{0}) $的距离小于$ \delta $但不等于0的点$ P(x,y) $的全体, 称为点$ P_{0} $的去心$ \delta $邻域, 记作$ \mathring{U}(P_{0},\delta) $
+\end{enumerate}
+\subsection{函数极限的定义}
+设函数$ f(x) $在某点$ x_{0} $的某一去心邻域内有定义. 若存在常数$ A $, 对于任意给定的$ \epsilon >0 $, 总存在正数$ \delta $, 使得当$ 0<|x-x_{0}|<\delta $时, 满足$ |f(x)-A|<\epsilon $, 则$ A $就叫作函数$ f(x) $当$ x\rightarrow x_{0} $时的极限, 记为
+\begin{equation*}
+\lim\limits_{x\rightarrow \infty} f(x)=A\ or \ f(x)\rightarrow A\ (x\rightarrow x_{0})
+\end{equation*}\par
+用$ \epsilon -X $语言表示为: $ \lim\limits_{x\rightarrow \infty}f(x)=A\Leftrightarrow \forall \epsilon >0, \exists X>0 $, 当$ |x|>X $时, 有$ |f(x)-A|<\epsilon $
+\subsubsection{单侧极限}
+\begin{enumerate}
+\item 左极限: $ \lim\limits_{x\rightarrow x_{0}^{-}}f(x)=A\ or\ f(x_{0}^{-})=A $
+\item 右极限: $ \lim\limits_{x\rightarrow x_{0}^{+}}f(x)=A\ or\ f(x_{0}^{+})=A $
+\end{enumerate}
+\subsubsection{充要条件}
+\begin{enumerate}
+\item $ \lim\limits_{x\rightarrow x_{0}}f(x)=A\Leftrightarrow \lim\limits_{x\rightarrow x_{0}^{-}}f(x)=\lim\limits_{x\rightarrow x_{0}^{+}}f(x)=A $
+\item $ \lim\limits_{x\rightarrow x_{0}}f(x)=A\Leftrightarrow f(x)=A+\alpha(x), \lim\limits_{x\rightarrow x_{0}}\alpha(x)=0 $
+\end{enumerate}
+\subsection{函数极限的性质}
+\begin{enumerate}
+\item 唯一性: 若函数存在极限, 则极限唯一
+\item 局部有界性: 若函数存在极限, 则函数在某一区间内有界
+\item 局部保号性
+\begin{enumerate}
+\item 脱帽: 设有函数$ f(x) $, 若$ \lim\limits_{x\rightarrow x_{0}}f(x)=A>0(\text{或}A<0) \Rightarrow $ 存在常数$ \delta $, 当$ 0<|x-x_{0}|<\delta $时, 有$ f(x)>0(\text{或}f(x)<0) $
+\item 戴帽: 设有函数$ f(x) $, 若存在常数$ \delta $, 当$ 0<|x-x_{0}|<\delta $时, 有$ f(x)\ge 0(\text{或}f(x)\le 0) \Rightarrow \lim\limits_{x\rightarrow x_{0}}f(x)=A\ge 0(\text{或}\le 0) $
+\end{enumerate}
+\end{enumerate}
+\subsection{极限运算法则}
+设$ \lim\limits_{x\rightarrow x_{0}}f(x)=A, \lim\limits_{x\rightarrow x_{0}}g(x)=B $, 则
+\begin{enumerate}
+\item $ \lim\limits_{x\rightarrow x_{0}}[kf(x)\pm lg(x)]=k \lim\limits_{x\rightarrow x_{0}}f(x)\pm l \lim\limits_{x\rightarrow x_{0}}g(x)=kA\pm lB $, 其中$ k,l $为常数
+\item $ \lim\limits_{x\rightarrow x_{0}}[f(x)\cdot g(x)]=\lim\limits_{x\rightarrow x_{0}}f(x)\cdot \lim\limits_{x\rightarrow x_{0}}g(x)=A\cdot B $
+\item $ \lim\limits_{x\rightarrow x_{0}}\frac{f(x)}{g(x)}=\frac{\lim\limits_{x\rightarrow x_{0}}f(x)}{\lim\limits_{x\rightarrow x_{0}}g(x)}=\frac{A}{B}(B\neq 0) $
+\item $ \lim\limits_{x\rightarrow x_{0}}[f(x)]^{n}=[\lim\limits_{x\rightarrow x_{0}}f(x)]^{n} $, $ n $为正整数
+\end{enumerate}
+\subsection{夹逼准则}
+若函数$ f(x), g(x) $及$ h(x) $满足条件:
+\begin{enumerate}
+\item $ g(x)\le f(x)\le h(x) $
+\item $ \lim\limits_{x\rightarrow x_{0}}g(x)=A, \lim\limits_{x\rightarrow x_{0}}h(x)=A $
+\end{enumerate}\par
+则函数$ f(x) $极限存在, 且$ \lim\limits_{x\rightarrow x_{0}}f(x)=A $.
