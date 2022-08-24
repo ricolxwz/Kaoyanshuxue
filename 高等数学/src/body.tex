@@ -692,3 +692,48 @@ scale=2,
 \item $ \lim\limits_{x\rightarrow x_{0}}g(x)=A, \lim\limits_{x\rightarrow x_{0}}h(x)=A $
 \end{enumerate}\par
 则函数$ f(x) $极限存在, 且$ \lim\limits_{x\rightarrow x_{0}}f(x)=A $.
+\subsection{洛必达法则}
+\begin{enumerate}
+\item $ \frac{0}{0} $: $ \lim\limits_{x\rightarrow a}\frac{f(x)}{F(x)}=\lim\limits_{x\rightarrow a}\frac{f'(x)}{F'(x)} $(或$ \lim\limits_{x\rightarrow \infty}\frac{f(x)}{F(x)}=\lim\limits_{x\rightarrow \infty}\frac{f'(x)}{F'(x)} $), 需要以下条件:
+\begin{enumerate}
+\item 若$ x\rightarrow a(\text{或}x\rightarrow \infty) $时, 函数$ f(x) $及$ F(x) $都趋近于$ 0 $
+\item 且$ f'(x) $及$ F'(x) $在点$ a $的去心邻域内(或当$ |x|>X $时, $ X $为充分大的正数)存在, 且$ F'(x)\neq 0 $
+\item $ \lim\limits_{x\rightarrow a}\frac{f'(x)}{F'(x)} $(或$ \lim\limits_{x\rightarrow \infty}\frac{f'(x)}{F'(x)} $)存在或者无穷大
+\end{enumerate}
+\item $ \frac{\infty}{\infty} $: $ \lim\limits_{x\rightarrow a}\frac{f(x)}{F(x)}=\lim\limits_{x\rightarrow a}\frac{f'(x)}{F'(x)} $(或$ \lim\limits_{x\rightarrow \infty}\frac{f(x)}{F(x)}=\lim\limits_{x\rightarrow \infty}\frac{f'(x)}{F'(x)} $), 需要以下条件:
+\begin{enumerate}
+\item 若$ x\rightarrow a(\text{或}x\rightarrow \infty) $时, 函数$ f(x) $及$ F(x) $都趋近于$ \infty $
+\item 且$ f'(x) $及$ F'(x) $在点$ a $的去心邻域内(或当$ |x|>X $时, $ X $为充分大的正数)存在, 且$ F'(x)\neq 0 $
+\item $ \lim\limits_{x\rightarrow a}\frac{f'(x)}{F'(x)} $(或$ \lim\limits_{x\rightarrow \infty}\frac{f'(x)}{F'(x)} $)存在或者无穷大
+\end{enumerate}
+\end{enumerate}
+\begin{tcolorbox}
+对于$ \lim\limits_{x\rightarrow a}\frac{f(x)}{F(x)}=\lim\limits_{x\rightarrow a}\frac{f'(x)}{F'(x)} $, 右存在, 则左存在; 但左存在, 并不意味着右存在
+\end{tcolorbox}
+\subsection{泰勒公式}
+\subsubsection{泰勒公式表}
+\begin{multicols}{2}
+\begin{itemize}
+\item $ \sin x=x-\frac{x^{3}}{3!}+o(x^{3}) $
+\item $ e^{x}=1+x+\frac{x^{2}}{2!}+\frac{x^{3}}{3!}+o(x^{3}) $
+\item $ \arcsin x=x+\frac{x^{3}}{3!}+o(x^{3}) $
+\item $ \tan x=x+\frac{x^{3}}{3}+o(x^{3}) $
+\item $ \cos x=1-\frac{x^{2}}{2!}+\frac{x^{4}}{4!}+o(x^{4}) $
+\item $ ln(1+x)=x-\frac{x^{2}}{2}+\frac{x^{3}}{3}+o(x^{3}) $
+\item $ \arctan x=x-\frac{x^{3}}{3}+o(x^{3}) $
+\item $ (1+x)^{\alpha}=1+\alpha x+\frac{\alpha (\alpha -1)}{2!}x^{2}+\frac{\alpha (\alpha -1)(\alpha -2)}{3!}x^{3}+o(x^{3}) $
+\end{itemize}
+\end{multicols}
+\subsubsection{用泰勒公式求极限}
+\begin{enumerate}
+\item $ \frac{A}{B} $: 适用于``上下同阶''的原则
+\end{enumerate}
+
+
+
+
+
+
+
+
+
