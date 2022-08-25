@@ -790,7 +790,7 @@ scale=2,
 \begin{equation*}
 f'(x_{0})=\lim\limits_{\Delta x\rightarrow 0}\frac{\Delta y}{\Delta x}=\lim\limits_{\Delta x\rightarrow 0}\frac{f(x_{0}+\Delta x)-f(x_{0})}{\Delta x}=\lim\limits_{x\rightarrow x_{0}}\frac{f(x)-f(x_{0})}{x-x_{0}}=\left.\dv{y}{x}\right|_{x=x_{0}}
 \end{equation*}\par 
-$ f(x) $在$ x_{0} $处可导$ \Leftrightarrow f(x)$在$ x_{0} $处导数存在$ \Leftrightarrow f'(x_{0})=A $
+$ f(x) $在$ x_{0} $处可导$ \Leftrightarrow f(x)$在$ x_{0} $处导数存在$ \Leftrightarrow f'(x_{0})=A \Leftrightarrow f(x) $在$ x_{0} $处可微.
 \subsubsection{单侧导数}
 \begin{enumerate}
 \item 左导数: $ f'_{-}(x_{0})=\lim\limits_{\Delta x\rightarrow 0^{-}}\frac{f(x_{0}+\Delta x)-f(x_{0})}{\Delta x} $
@@ -798,7 +798,25 @@ $ f(x) $在$ x_{0} $处可导$ \Leftrightarrow f(x)$在$ x_{0} $处导数存在$
 \end{enumerate}
 \subsubsection{充要条件}
 函数$ f(x) $在点$ x_{0} $可导的充要条件是左导数$ f'_{-}(x_{0}) $和右导数$ f'_{+}(x_{0}) $存在且相等.
-
-
-
+\subsection{微分的定义}
+设函数$ f(x) $在点$ x_{0} $的某邻域内有定义, 且$ x_{0}+\Delta x $在该邻域内, 函数的增量$ \Delta y $有:
+\begin{equation*}
+\Delta y=A\Delta x+o(\Delta x)
+\end{equation*}\par
+其中, $ o(\Delta x) $是在$ \Delta \rightarrow 0 $时比$ \Delta $更高阶的无穷小, 则称$ f(x) $在点$ x_{0} $处可微, 并称$ A\Delta x $为$ f(x) $在点$ x_{0} $处的微分.
+\subsection{导数和微分的计算}
+\subsubsection{四则运算}
+若以下函数可导, 则:
+\begin{enumerate}
+\item 和/差的导数
+\begin{enumerate}
+\item $ [u(x)\pm v(x)]'=[u'(x)+v'(x)] $
+\item $ \mathrm{d}[u(x)\pm v(x)]=\mathrm{d}[u(x)]\pm \mathrm{d}[v(x)] $
+\end{enumerate}
+\item 积的导数
+\begin{enumerate}
+\item $ [u(x)v(x)]'=u'(x)v(x)+u(x)v'(x) $
+\item $ \mathrm{d}[u(x)v(x)]=\mathrm{d}[u(x)]v(x)+\mathrm{d}[v(x)]u(x) $
+\end{enumerate}
+\end{enumerate}
 
