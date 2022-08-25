@@ -663,6 +663,7 @@ scale=2,
 \item 右极限: $ \lim\limits_{x\rightarrow x_{0}^{+}}f(x)=A\ or\ f(x_{0}^{+})=A $
 \end{enumerate}
 \subsubsection{充要条件}
+函数$ f(x) $在点$ x_{0} $处有极限的充要条件分别有:
 \begin{enumerate}
 \item $ \lim\limits_{x\rightarrow x_{0}}f(x)=A\Leftrightarrow \lim\limits_{x\rightarrow x_{0}^{-}}f(x)=\lim\limits_{x\rightarrow x_{0}^{+}}f(x)=A $
 \item $ \lim\limits_{x\rightarrow x_{0}}f(x)=A\Leftrightarrow f(x)=A+\alpha(x), \lim\limits_{x\rightarrow x_{0}}\alpha(x)=0 $
@@ -765,7 +766,38 @@ scale=2,
 \item $ 1-\cos x\sim \frac{1}{2}x^{2} $
 \end{itemize}
 \end{multicols}
-
+\chapter{函数的连续和间断}
+\section{基础知识}
+\subsection{连续的定义}
+设函数$ f(x) $在点$ x_{0} $的某一邻域内有定义, 且有$ \lim\limits_{x\rightarrow x_{0}}f(x)=f(x_{0}) $, 则称函数$ f(x) $在点$ x_{0} $处连续.
+\subsection{间断点的定义}
+\begin{enumerate}
+\item 第一类间断点
+\begin{enumerate}
+\item 可去间断点: $ \lim\limits_{x\rightarrow x_{0}}f(x)=A\neq f(x_{0}) $
+\item 跳跃间断点: $ \lim\limits_{x\rightarrow x_{0}^{-}}f(x) \neq \lim\limits_{x\rightarrow x_{0}^{+}}f(x) $
+\end{enumerate}
+\item 第二类间断点
+\begin{enumerate}
+\item 无穷间断点: $ \lim\limits_{x\rightarrow x_{0}}f(x)=\infty $
+\item 振荡间断点: $ \lim\limits_{x\rightarrow x_{0}}f(x) $振荡不存在
+\end{enumerate}
+\end{enumerate}
+\chapter{一元函数微分学}
+\section{基础知识}
+\subsection{导数的定义}
+导数是函数增量$ \Delta y $与自变量增量$ \Delta x $在$ \Delta x \rightarrow 0 $的时候的比值, 即:
+\begin{equation*}
+f'(x_{0})=\lim\limits_{\Delta x\rightarrow 0}\frac{\Delta y}{\Delta x}=\lim\limits_{\Delta x\rightarrow 0}\frac{f(x_{0}+\Delta x)-f(x_{0})}{\Delta x}=\lim\limits_{x\rightarrow x_{0}}\frac{f(x)-f(x_{0})}{x-x_{0}}=\left.\dv{y}{x}\right|_{x=x_{0}}
+\end{equation*}\par 
+$ f(x) $在$ x_{0} $处可导$ \Leftrightarrow f(x)$在$ x_{0} $处导数存在$ \Leftrightarrow f'(x_{0})=A $
+\subsubsection{单侧导数}
+\begin{enumerate}
+\item 左导数: $ f'_{-}(x_{0})=\lim\limits_{\Delta x\rightarrow 0^{-}}\frac{f(x_{0}+\Delta x)-f(x_{0})}{\Delta x} $
+\item 右导数: $ f'_{+}(x_{0})=\lim\limits_{\Delta x\rightarrow 0^{+}}\frac{f(x_{0}+\Delta x)-f(x_{0})}{\Delta x} $
+\end{enumerate}
+\subsubsection{充要条件}
+函数$ f(x) $在点$ x_{0} $可导的充要条件是左导数$ f'_{-}(x_{0}) $和右导数$ f'_{+}(x_{0}) $存在且相等.
 
 
 
