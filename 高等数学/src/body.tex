@@ -726,12 +726,45 @@ scale=2,
 \end{multicols}
 \subsubsection{用泰勒公式求极限}
 \begin{enumerate}
-\item $ \frac{A}{B} $: 适用于``上下同阶''的原则
+\item $ \frac{A}{B} $: 适用于``上下同阶''的原则 \par
+如果分母(或者分子)是$ x $的$ k $此幂, 则应该把分子(或分母)展开到$ x $的$ k $次幂.
+\item $ A-B $: 适用于幂次最低原则 \par
+将$ A, B $分别展开到它们的系数不相等的$ x $的最低次幂为止.
 \end{enumerate}
-
-
-
-
+\subsection{无穷小比阶}
+\subsubsection{无穷小定义}
+如果当$ x\rightarrow x_{0}(\text{或}x\rightarrow \infty) $函数$ f(x) $的极限为零$ \Rightarrow  $函数$ f(x) $为当$ x \rightarrow x_{0}(\text{或}x \rightarrow \infty ) $时的无穷小.
+\subsubsection{无穷小的比阶}
+\begin{enumerate}
+\item 高阶无穷小: $ \lim\limits \frac{\alpha(x)}{\beta(x)}=0 $, $ \alpha(x) $是$ \beta(x) $的高阶无穷小, 记作$ \alpha(x)=o(\beta(x)) $
+\item 低阶无穷小: $ \lim\limits \frac{\alpha(x)}{\beta(x)}=\infty $, $ \alpha(x) $是$ \beta(x) $的低阶无穷小
+\item 同阶无穷小: $ \lim\limits \frac{\alpha(x)}{\beta(x)}=c(\neq 0) $, $ \alpha(x) $是$ \beta(x) $的同阶无穷小
+\item 等价无穷小: $ \lim\limits \frac{\alpha(x)}{\beta(x)}=1 $, $ \alpha(x) $是$ \beta(x) $的等阶无穷小
+\item $ k $阶无穷小: $ \lim\limits \frac{\alpha(x)}{[\beta(x)]^{k}}=c\neq 0, k>0 $, $ \alpha(x) $是$ \beta(x) $的$ k $阶无穷小
+\end{enumerate}
+\begin{tcolorbox}
+并不是任意两个无穷小都可以进行比阶的, 如: 当$ x \rightarrow 0 $的时候, $ \lim\limits_{x\rightarrow 0}\frac{x\sin \frac{1}{x}}{x^{2}}=\lim\limits_{x\rightarrow 0}\frac{1}{x}\sin \frac{1}{x} $不存在
+\end{tcolorbox}
+\subsubsection{无穷小的运算规则}
+\begin{enumerate}
+\item 有限个无穷小的和(差)是无穷小
+\item 有限个无穷小的乘积还是无穷小
+\item 有界函数和无穷小的乘积还是无穷小
+\end{enumerate}
+\subsubsection{等价无穷小表}
+\begin{multicols}{2}
+\begin{itemize}
+\item $ \sin x\sim x $
+\item $ \arcsin x\sim x $
+\item $ \ln (1+x)\sim x $
+\item $ \alpha^{x}-1\sim x\ln a $
+\item $ \tan x\sim x $
+\item $ \arctan x\sim x $
+\item $ e^{x}-1\sim x $
+\item $ (1+x)^{\alpha}-1\sim \alpha x $
+\item $ 1-\cos x\sim \frac{1}{2}x^{2} $
+\end{itemize}
+\end{multicols}
 
 
 
