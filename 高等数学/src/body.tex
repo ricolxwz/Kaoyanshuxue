@@ -818,5 +818,52 @@ $ f(x) $在$ x_{0} $处可导$ \Leftrightarrow f(x)$在$ x_{0} $处导数存在$
 \item $ [u(x)v(x)]'=u'(x)v(x)+u(x)v'(x) $
 \item $ \mathrm{d}[u(x)v(x)]=\mathrm{d}[u(x)]v(x)+\mathrm{d}[v(x)]u(x) $
 \end{enumerate}
+\item 商的导数
+\begin{enumerate}
+\item $ [\frac{u(x)}{v(x)}]'=\frac{u'(x)v(x)-u(x)v'(x)}{[v(x)]^{2}}, v(x)\neq 0 $
+\item $ \mathrm{d}[\frac{u(x)}{v(x)}]=\frac{v(x)\mathrm{d}u(x)-u(x)\mathrm{d}v(x)}{[v(x)]^{2}}, v(x)\neq 0 $
 \end{enumerate}
+\end{enumerate}
+\subsubsection{分段函数的导数}
+设函数$ f(x)=\scaleleftright[6pt]{\biggl\{}{
+\begin{aligned}
+& f_{1}(x), x\ge x_{0} \\
+& f_{2}(x), x< x_{0}
+\end{aligned} }{.} $
+则$ f'_{+}(x_{0})=\lim\limits_{x\rightarrow x_{0}^{+}}\frac{f_{1}(x)-f(x_{0})}{x-x_{0}}, f'_{-}(x_{0})=\lim\limits_{x\rightarrow x_{0}^{-}}\frac{f_{2}(x)-f(x_{0})}{x-x_{0}} $, 根据$ f'_{+}(x_{0})\xrightarrow{?}f'_{-}(x_{0}) $来判定$ f'(x_{0}) $
+\subsubsection{复合函数的导数}
+设$ u=g(x) $在点$ x $处可导, $ y=f(u) $在点 $ u=g(x) $可导, 则
+\begin{equation*}
+\begin{aligned}
+& {f[g(x)]}'=f'[g(x)]g'(x) \\
+& \mathrm{d}{f[g(x)]}=f'[g(x)]g'(x)\mathrm{d}x
+\end{aligned}
+\end{equation*}
+\begin{tcolorbox}
+微分形式的不变性: 无论$ u $是中间变量还是自变量, $ \mathrm{d}y=f'(x)\mathrm{d}u $都成立.
+\end{tcolorbox}
+\subsubsection{反函数的导数}
+设$ y=f(x) $可导, 且$ f'(x)\neq 0 $, 则存在反函数$ x=\varphi(y) $, 且$ \frac{\mathrm{d}x}{\mathrm{d}y}=\frac{1}{\frac{\mathrm{d}y}{\mathrm{d}x}} $, 即$ \varphi'(y)=\frac{1}{f'(x)} $
+\subsubsection{参数方程的导数}
+设函数$ f(x) $由参数方程$ f(x)=\scaleleftright[6pt]{\biggl\{}{
+\begin{aligned}
+& x=\varphi (t) \\
+& y=\psi (t)
+\end{aligned}
+}{.} $确定, 其中$ t $是参数, 且$ \varphi(t), \psi(t) $均对$ t $可导, $ \varphi'(t)\neq 0 $, 则
+\begin{equation*}
+\dv{y}{x}=\frac{\mathrm{d}y/\mathrm{d}t}{\mathrm{d}x/\mathrm{d}t}=\frac{\psi'(t)}{\varphi'(t)}
+\end{equation*}
+\subsubsection{隐函数的导数}
+设函数$ y=f(x) $是由方程$ F(x,y)=0 $确定的可导函数, 则
+\begin{enumerate}
+\item 方程$ F(x,y)=0 $两边对自变量$ x $进行求导, 将$ y $看作中间变量, 得到一个关于$ y' $的方程
+\item 解该方程便可求出$ y' $
+\end{enumerate}
+
+
+
+
+
+
 
