@@ -854,14 +854,40 @@ $ f(x) $在$ x_{0} $处可导$ \Leftrightarrow f(x)$在$ x_{0} $处导数存在$
 \begin{equation*}
 \dv{y}{x}=\frac{\mathrm{d}y/\mathrm{d}t}{\mathrm{d}x/\mathrm{d}t}=\frac{\psi'(t)}{\varphi'(t)}
 \end{equation*}
-\subsubsection{隐函数的导数}
+\subsubsection{隐函数求导法}
 设函数$ y=f(x) $是由方程$ F(x,y)=0 $确定的可导函数, 则
 \begin{enumerate}
 \item 方程$ F(x,y)=0 $两边对自变量$ x $进行求导, 将$ y $看作中间变量, 得到一个关于$ y' $的方程
 \item 解该方程便可求出$ y' $
 \end{enumerate}
-
-
+\subsubsection{对数求导法}
+对于多项相乘, 相除, 开方, 乘方的式子, 一般先取对数再求导. 设$ y=f(x)(f(x)>0) $
+\begin{enumerate}
+\item 等式两边取对数, 得$ \ln y=\ln f(x) $
+\item 两边对自变量$ x $求导, 将$ y $看作中间变量, 得到一个关于$ y' $的方程
+\item 解该方程便可求出$ y' $
+\end{enumerate}
+\subsubsection{幂指函数求导法}
+对于$ u(x)^{v(x)}(u(x)>0,v(x)\text{不恒为}1) $, 可以将上式先化成指数函数:
+\begin{equation*}
+u(x)^{v(x)}=e^{v(x)\ln u(x)}
+\end{equation*}\par 
+然后, 对上式进行求导,
+\begin{equation*}
+[u(x)^{v(x)}]'=[e^{v(x)\ln u(x)}]'=u(x)^{v(x)}[v'(x)\ln u(x)+v(x)\frac{u'(x)}{u(x)}]
+\end{equation*}
+\subsubsection{高阶导数}
+求高阶导数主要有三种方法:
+\begin{enumerate}
+\item 归纳法 \par 逐次求导, 探索规律, 得出通式.
+\item 莱布尼茨公式 \par 设$ u(x),v(x) $均$ n $阶可导, 则:
+\begin{equation*}
+\begin{aligned}
+& (u\pm v)^{(n)}=u^{(n)}\pm v^{(n)} \\
+& 
+\end{aligned}
+\end{equation*}
+\end{enumerate}
 
 
 
