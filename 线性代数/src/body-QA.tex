@@ -62,3 +62,26 @@ $
 0 & 1 & 2
 \end{bmatrix}$, 求$ \bm{A}\bm{B} $}
 \paragraph{解}~{注意只能左乘$ [\bm{E}_{32}(1)]^{-1} $, 右乘$ [\bm{E}_{13}(-3)]^{-1} $}
+\section{向量}
+\subsection{极大线性无关组及向量组秩的求法}
+\paragraph{例题1}~{已知$ \bm{\alpha}_{1}, \bm{\alpha}_{2}, \bm{\alpha}_{3} $线性相关, 若$ \bm{\alpha}_{1}-3 \bm{\alpha_{3}}, a \bm{\alpha_{1}}+\bm{\alpha_{2}}+2 \bm{\alpha_{3}}, 2 \bm{\alpha_{1}}+3 \bm{\alpha_{2}}+\bm{\alpha_{3}} $亦线性无关, 则$ a $的取值} \label{初等变换不会改变矩阵的秩}
+\paragraph{解}~{$ \bm{\alpha}_{1}-3 \bm{\alpha_{3}}, a \bm{\alpha_{1}}+\bm{\alpha_{2}}+2 \bm{\alpha_{3}}, 2 \bm{\alpha_{1}}+3 \bm{\alpha_{2}}+\bm{\alpha_{3}} $可以拆分成两个矩阵: 
+\begin{equation*}
+\begin{bmatrix}
+\bm{\alpha}_{1} & \bm{\alpha}_{2} & \bm{\alpha}_{3}
+\end{bmatrix}\times
+\begin{bmatrix}
+1 & a & 2 \\
+0 & 1 & 3 \\
+-3 & 2 & 1
+\end{bmatrix}
+\end{equation*}\par
+由于$ \bm{\alpha}_{1}, \bm{\alpha}_{2}, \bm{\alpha}_{3} $线性无关, 根据一个矩阵乘以可逆矩阵之后其线性相关性不变, 可以得到这个矩阵是可逆的:
+\begin{equation*}
+\begin{bmatrix}
+1 & a & 2 \\
+0 & 1 & 3 \\
+-3 & 2 & 1
+\end{bmatrix}
+\end{equation*}\par
+故上述矩阵的行列式为$ 0 $, 进而求出$ a $的值为$ \frac{1}{9} $.

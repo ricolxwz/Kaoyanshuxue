@@ -699,7 +699,7 @@ a_{nm}
 \end{enumerate}\par 
 如果遇到证明线性相关性或者线性无关性, 可以转化成$ \bm{A}\bm{x}=\bm{0} $或者$ \bm{A}\bm{x}=\bm{\beta} $解的问题.
 \subsection{极大线性无关组及向量组秩的求法}
-
+这类问题用到最多的定理: \hyperref[初等变换不会改变矩阵的秩]{初等变换不会改变矩阵的秩}, 或者说一个矩阵乘以可逆矩阵不会改变其线性相关性(可逆矩阵也是由初等矩阵经过初等变换形成的). \par \vspace{.5em}求极大线性无关组的方法是通过高斯消元法得到行阶梯型矩阵. 再找到阶梯列, 该列对应的向量组成的就是极大线性无关组(实际上也是用到了``初等变换不会改变对应列的线性相关性'').
 \chapter{线性方程组}
 \section{基础知识}
 \subsection{齐次线性方程组}
@@ -739,7 +739,8 @@ x_{m}
 \subsubsection{有解的条件}
 由上矩阵可以得到, 未知数的个数为$ m $, 方程的个数为$ n $.
 \begin{enumerate}
-\item 若$ m>n $, 则必有非零解
+\item 若$ m>n $, 则必有非零解 \par
+说明: 由于行秩$ = $列秩, 故系数矩阵$ \bm{A} $的秩$ r(\bm{A})\le n $, 即$ r(\bm{A})<m $
 \item 若$ m=n $, 用秩判断:
 \begin{enumerate}
 \item 若$ r(\bm{A})=m $(向量组线性无关, $ |\bm{A}|\neq 0 $), 则仅有零解 \par
@@ -748,7 +749,8 @@ x_{m}
 说明: 由于行秩=列秩, 所以列秩为$ r $, 说明独立方程组个数为$ r $.
 \end{enumerate}
 \item 若$ m<n $,
-\end{enumerate}
+\end{enumerate}\par 
+注: 如果方程$ \bm{A}\bm{x}=\bm{0} $有无穷解, 则$ r(\bm{A})<m $, 对应上述$ 1,2(b $两种情况.
 \subsubsection{解的性质}
 若$ \bm{A}\bm{\xi_{1}}=\bm{0} $, $ \bm{A}\bm{\xi_{2}}=\bm{0} $, 则$ k_{1}\bm{\xi_{1}}+k_{2}\bm{\xi_{2}}=0 $, 其中$ k_{1},k_{2} $为任意常数.
 \subsubsection{基础解系和解的结构}

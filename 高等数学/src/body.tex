@@ -783,7 +783,7 @@ scale=2,
 \item 振荡间断点: $ \lim\limits_{x\rightarrow x_{0}}f(x) $振荡不存在
 \end{enumerate}
 \end{enumerate}
-\chapter{一元函数微分学}
+\chapter{一元函数微分学(代数)}
 \section{基础知识}
 \subsection{导数的定义}
 导数是函数增量$ \Delta y $与自变量增量$ \Delta x $在$ \Delta x \rightarrow 0 $的时候的比值, 即:
@@ -884,11 +884,39 @@ u(x)^{v(x)}=e^{v(x)\ln u(x)}
 \begin{equation*}
 \begin{aligned}
 & (u\pm v)^{(n)}=u^{(n)}\pm v^{(n)} \\
-& 
+& (uv)^{(n)}=u^{(n)}v+\mathrm{C}_{n}^{1}u^{(n-1)}v'+\mathrm{C}_{n}^{2}u^{(n-2)}v''+\dots+\mathrm{C}_{n}^{k}u^{(n-k)}v^{(k)}+\dots+\mathrm{C}_{n}^{n-1}u'v^{(n-1)}+uv^{(n)}
 \end{aligned}
-\end{equation*}
+\end{equation*}\par
+一般见到两个函数的乘积要求导, 直接用莱布尼茨公式即可.
+\item 泰勒公式
 \end{enumerate}
-
+\subsubsection{变限积分求导公式}
+设$ F(x)=\int_{\varphi_{1}(x)}^{\varphi_{2}(x)}f(t)\mathrm{d}t $, 其中$ f(x) $在$ [a,b] $上连续, 可导函数$ \varphi_{1}(x) $和$ \varphi_{2}(x) $的值域在$ [a,b] $上, 则在函数$ \varphi_{1}(x) $和$ \varphi_{2}(x) $的公共定义域上, 有:
+\begin{equation*}
+F'(x)=\dv{}{x}\left[\int_{\varphi_{1}(x)}^{\varphi_{2}(x)}f(t)\mathrm{d}t\right]=f[\varphi_{2}(x)]\varphi'_{2}(x)-f[\varphi_{1}(x)]\varphi'_{1}(x)
+\end{equation*}
+\subsubsection{基本求导公式}
+\begin{multicols}{2}
+\begin{itemize}
+\item $ (x_{\alpha})'=\alpha x^{\alpha-1} $($ \alpha $为常数)
+\item $ (e^{x})'=e^{x} $
+\item $ (\ln |x|)'=\frac{1}{x} $
+\item $ (\log_{a}x)'=\frac{1}{x\ln a}(a>0,a\neq 1) $
+\item $ (\sin x)'=\cos x $
+\item $ (\cos x)'=-\sin x $
+\item $ (\tan x)'=\sec^{2}x $
+\item $ (\cot x)'=-\csc^{2}x $
+\item $ (\sec x)'=\sec x\tan x $
+\item $ (\csc x)'=-\csc x\cot x $
+\item $ (\arcsin x)'=\frac{1}{\sqrt{1-x^{2}}} $
+\item $ (\arccos x)'=-\frac{1}{\sqrt{1-x^{2}}} $
+\item $ (\arctan x)'=\frac{1}{1+x^{2}} $
+\item $ (\arccot x)'=-\frac{1}{1+x^{2}} $
+\item $ [\ln(x+\sqrt{x^{2}+1})]'=\frac{1}{\sqrt{x^{2}+1}} $
+\item $ [\ln (x+\sqrt{x^{2}-1})]'=\frac{1}{\sqrt{x^{2}-1}} $
+\end{itemize}
+\end{multicols}
+\chapter{一元函数微分学(几何)}
 
 
 
