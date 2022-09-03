@@ -917,7 +917,85 @@ F'(x)=\dv{}{x}\left[\int_{\varphi_{1}(x)}^{\varphi_{2}(x)}f(t)\mathrm{d}t\right]
 \end{itemize}
 \end{multicols}
 \chapter{一元函数微分学(几何)}
-
-
-
+该章的内容可以概括为``三点两性一线''.
+\section{基础知识}
+\subsection{三点}
+\subsubsection{一点: 极值点}
+若存在$ x_{0} $的某个邻域, 使得在该邻域内任意一点$ x $, 均有:
+\begin{equation*}
+f(x)\le f(x_{0})(\text{或}f(x)\ge f(x_{0}))
+\end{equation*}\par
+成立, 则称$ x_{0} $为$ f(x) $的极大值点(或极小值点), $ f(x_{0}) $为$ f(x) $的极大值(或极小值).\par \vspace{.5em}
+\noindent {\kaishu 极值点的必要条件}:\par \vspace{.5em}
+$ f(x) $在$ I $上单调$ \Rightarrow $设$ f(x) $在$ x=x_{0} $处可导, 则$ f'(x_{0})=0 $.\par \vspace{.5em}
+\noindent {\kaishu 极值点的充分条件}:
+\begin{enumerate}
+\item 根据一阶导数判断: $ f(x) $在$ x=x_{0} $的某邻域内一阶可导
+\subitem 左邻域内$ f'(x)<0 $, 右邻域内$ f'(x)>0\Rightarrow x_{0} $为极小值点
+\subitem 左邻域内$ f'(x)>0 $, 右邻域内$ f'(x)<0\Rightarrow x_{0} $为极大值点
+\item 根据二阶导数判断: $ f(x) $在$ x=x_{0} $的某邻域内二阶可导, 且$ f'(x_{0})=0, f''(x_{0})\neq 0 $
+\subitem $ f''(x_{0})>0\Rightarrow x_{0} $为极小值点
+\subitem $ f''(x_{0})<0\Rightarrow x_{0} $为极大值点
+\item 根据$ n $阶导数判断: $ f(x) $在$ x=x_{0} $的某邻域内$ n $阶可导, 且$ f^{(m)}(x_{0})=0(m=1,2,...,n-1), f^{(n)}(x_{0})\neq 0\ (n\ge 2) $
+\subitem 当$ n $为偶数且$ f^{(n)}(x_{0})>0\Rightarrow x_{0} $为极小值点
+\subitem 当$ n $为偶数且$ f^{(n)}(x_{0})<0\Rightarrow x_{0} $为极大值点
+\end{enumerate}
+\subsubsection{二点: 最值点}
+设$ x_{0} $为$ f(x) $定义域内一点, 若对于$ f(x) $的定义域内任意一点$ x $, 均有:
+\begin{equation*}
+f(x)\le f(x_{0})(\text{或}f(x)\ge f(x_{0}))
+\end{equation*}\par
+成立, 则称$ f(x_{0}) $为$ f(x) $的最大值(或最小值).\par \vspace{.5em}
+\noindent {\kaishu 求闭区间$ [a,b] $上的最值点}
+\begin{enumerate}
+\item 求出$ f(x) $在$ (a,b) $内的可疑点: 驻点和不可导点, 求出这些可疑点处的函数值
+\item 求出端点的函数值
+\item 比较上述所有求得的函数值, 其中最大值对应的点就是最大值点, 最小值对应的点就是最小值点
+\end{enumerate}
+\noindent {\kaishu 求开区间$ (a,b) $上的最值点}
+\begin{enumerate}
+\item 求出$ f(x) $在$ (a,b) $内的可疑点: 驻点和不可导点, 求出这些可疑点处的函数值
+\item 求出两端的单侧极限, 若$ a,b $为有限常数, 则求$ \lim\limits_{x\rightarrow a^{+}}f(x) $与$ \lim\limits_{x\rightarrow b^{-}}f(x) $
+\item 比较上述所有求得的函数值, 确定最大值点最小值点(可能没有)
+\end{enumerate}
+\subsubsection{三点: 拐点}
+连续曲线的凹弧和凸弧的分界点成为该曲线的拐点.\par \vspace{.5em}
+\noindent {\kaishu 拐点的必要条件}: \par \vspace{.5em}
+$ x_{0} $为拐点$ \Rightarrow $设$ f(x) $在$ x=x_{0} $处二阶可导, 则$ f''(x_{0})=0 $ \par \vspace{.5em}
+\noindent {\kaishu 拐点的充要条件}:
+\begin{enumerate}
+\item 根据二阶导数判断: $ f(x) $在$ x=x_{0} $的某邻域内二阶可导, 该点左/右邻域内$ f''(x) $变号$ \Rightarrow x_{0}$为拐点
+\item 根据三阶导数判断: $ f(x) $在$ x=x_{0} $的某邻域内三阶可导, 且$ f''(x_{0})=0, f'''(x_{0})\neq 0 $$ \Rightarrow x_{0}$为拐点
+\item 根据$ n $阶导数判断: $ f(x) $在$ x=x_{0} $的某邻域内$ n $阶可导, 且$ f^{(m)}(x_{0})=0(m=2,...,n-1), f^{(n)}(x_{0})\neq 0\  $($ n $为奇数) $ \Rightarrow x_{0}$为拐点
+\end{enumerate}
+\subsection{两性}
+\subsubsection{一性: 单调性}
+若$ y=f(x) $在区间$ I $上有$ f'(x)>0 $, 则$ y=f(x) $在$ I $上严格单调增加; 若$ y=f(x) $在区间$ I $上有$ f'(x)<0 $, 则$ y=f(x) $在$ I $上单调减小.
+\subsubsection{二性: 凹凸性}
+设函数$ f(x) $在区间$ I $上连续, 如果对于$ I $上不同的两点$ x_{1}, x_{2} $, 恒有:
+\begin{equation*}
+f(\frac{x_{1}+x_{2}}{2})<\frac{f(x_{1})+f(x_{2})}{2}
+\end{equation*}\par
+则称$ y=f(x) $在$ I $上的图形是凹的(或凹弧). 如果恒有:
+\begin{equation*}
+f(\frac{x_{1}+x_{2}}{2})>\frac{f(x_{1})+f(x_{2})}{2}
+\end{equation*}\par
+则称$ y=f(x) $在$ I $上的图形是凸的(或凸弧). \par \vspace{.5em}
+\noindent {\kaishu 判别凹凸性} \par \vspace{.5em}
+设函数$ f(x) $在$ I $上二阶可导, 则:
+\begin{enumerate}
+\item 若在$ I $上$ f''(x)>0\Rightarrow f(x) $在$ I $上的图形是凹的
+\item 若在$ I $上$ f''(x)<0\Rightarrow f(x) $在$ I $上的图形是凸的
+\end{enumerate}
+\subsection{一线}
+\subsubsection{一线: 渐近线}
+\noindent {\kaishu 铅锤渐近线}\par \vspace{.5em}
+若$ \lim\limits_{x\rightarrow x_{0}^{+}}f(x)=\infty $(或$ \lim\limits_{x\rightarrow x_{0}^{-}}f(x)=\infty $)$ \Rightarrow x=x_{0} $为一条铅锤渐近线.\par \vspace{.5em}
+\noindent {\kaishu 水平渐近线}\par \vspace{.5em}
+若$ \lim\limits_{x\rightarrow +\infty}f(x)=y_{1}\Rightarrow y=y_{1} $为一条水平渐近线; \par 若$ \lim\limits_{x\rightarrow -\infty}f(x)=y_{2}\Rightarrow y=y_{2} $为一条水平渐近线;\par
+若$ \lim\limits_{x\rightarrow +\infty}f(x)=\lim\limits_{x\rightarrow -\infty}f(x)=y_{0}\Rightarrow y=y_{0} $为一条水平渐近线;\par \vspace{.5em}
+\noindent {\kaishu 斜渐近线}\par \vspace{.5em}
+若$ \lim\limits_{x\rightarrow +\infty}\frac{f(x)}{x}=a_{1}, \lim\limits_{x\rightarrow +\infty}[f(x)-a_{1}x]=b_{1}\Rightarrow $ $ y=a_{1}x+b_{1} $是曲线$ y=f(x) $的一条斜渐近线. \par
+若$ \lim\limits_{x\rightarrow -\infty}\frac{f(x)}{x}=a_{2}, \lim\limits_{x\rightarrow -\infty}[f(x)-a_{2}x]=b_{2}\Rightarrow $ $ y=a_{2}x+b_{2} $是曲线$ y=f(x) $的一条斜渐近线. \par
+若$ \lim\limits_{x\rightarrow +\infty}\frac{f(x)}{x}=\lim\limits_{x\rightarrow -\infty}=a, \lim\limits_{x\rightarrow +\infty}[f(x)-ax]=\lim\limits_{x\rightarrow -\infty}=b\Rightarrow $ $ y=ax+b $是曲线$ y=f(x) $的一条斜渐近线. \par
 
