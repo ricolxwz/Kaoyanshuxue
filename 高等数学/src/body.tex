@@ -998,4 +998,51 @@ f(\frac{x_{1}+x_{2}}{2})>\frac{f(x_{1})+f(x_{2})}{2}
 若$ \lim\limits_{x\rightarrow +\infty}\frac{f(x)}{x}=a_{1}, \lim\limits_{x\rightarrow +\infty}[f(x)-a_{1}x]=b_{1}\Rightarrow $ $ y=a_{1}x+b_{1} $是曲线$ y=f(x) $的一条斜渐近线. \par
 若$ \lim\limits_{x\rightarrow -\infty}\frac{f(x)}{x}=a_{2}, \lim\limits_{x\rightarrow -\infty}[f(x)-a_{2}x]=b_{2}\Rightarrow $ $ y=a_{2}x+b_{2} $是曲线$ y=f(x) $的一条斜渐近线. \par
 若$ \lim\limits_{x\rightarrow +\infty}\frac{f(x)}{x}=\lim\limits_{x\rightarrow -\infty}=a, \lim\limits_{x\rightarrow +\infty}[f(x)-ax]=\lim\limits_{x\rightarrow -\infty}=b\Rightarrow $ $ y=ax+b $是曲线$ y=f(x) $的一条斜渐近线. \par
-
+\section{习题}
+\chapter{中值定理}
+这一章要掌握十大定理.
+\section{基础知识}
+\subsection{有界与最值定理}
+$ m\le f(x)\le M $, 其中, $ m,M $分别为$ f(x) $在$ [a,b] $上的最小值和最大值.
+\subsection{介值定理}
+当$ m\le \mu\le M $时, 存在$ \xi\in [a,b] $, 使得$ f(\xi)=\mu $.
+\subsection{平均值定理}
+当$ a<x_{1}<x_{2}<\dots<x_{n}<b $的时候, 在$ [x_{1},x_{2}] $内至少存在一点$ \xi $, 使得
+\begin{equation*}
+f(\xi)=\frac{f(x_{1})+f(x_{2})+\dots+f(x_{n})}{n}
+\end{equation*}
+\subsection{零点定理}
+当$ f(a)\cdot f(b)<0 $时, 存在$\xi\in (a,b) $, 使得$ f(\xi)=0 $.
+\subsection{费马定理}
+设$ f(x) $满足在点$ x_{0} $处\ding{172}可导\ding{173}取极值, 则$ f'(x_{0})=0 $.
+\subsection{罗尔定理}
+设$ f(x) $满足\ding{172}在$ [a,b] $上连续\ding{173}在$ (a,b) $内可导\ding{174}$ f(a)=f(b) $, 则存在$ \xi\in(a,b) $, 使得$ f'(\xi)=0 $.
+\subsection{拉格朗日中值定理}
+设$ f(x) $满足\ding{172}在$ [a,b] $上连续\ding{173}在$ (a,b) $内可导, 则存在$ \xi\in(a,b) $, 使得$ f(b)-f(a)=f'(\xi)(b-a) $或$ f'(\xi)=\frac{f(b)-f(a)}{b-a} $.
+\subsection{柯西中值定理}
+设$ f(x) $满足\ding{172}在$ [a,b] $上连续\ding{173}在$ (a,b) $内可导\ding{174}$ g'(x)\neq 0 $, 则存在$ \xi\in(a,b) $, 使得$ \frac{f(b)-f(a)}{g(b)-g(a)}=\frac{f'(\xi)}{g'(\xi)} $.
+\subsection{泰勒公式}
+\subsubsection{带拉格朗日余项的泰勒公式}
+设$ f(x) $在点$ x_{0} $的某个邻域内$ n+1 $阶的导数存在, 则对该邻域内的任意点$ x $, 有:
+\begin{equation*}
+f(x)=f(x_{0})+f'(x_{0})(x-x_{0})+\dots+\frac{1}{n!}f^{(n)}(x_{0})(x-x_{0})^{n}+\frac{f^{(n+1)}(\xi)}{(n+1)!}(x-x_{0})^{n+1}
+\end{equation*}\par 
+其中$ \xi $介于$ x,x_{0} $ 之间.
+\subsubsection{带佩亚诺余项的泰勒公式}
+设$ f(x) $在点$ x_{0} $处$ n $阶可导, 则存在$ x_{0} $的一个邻域, 对于该邻域内的任意点$ x $, 有:
+\begin{equation*}
+f(x)=f(x_{0})+f'(x_{0})(x-x_{0})+\frac{1}{2!}f''(x_{0})(x-x_{0})^{2}+\dots+\frac{1}{n!}f^{(n)}(x_{0})(x-x_{0})^{n}+o((x-x_{0})^{n})
+\end{equation*}
+\begin{tcolorbox}
+当$ x_{0}=0 $时的泰勒公式成为麦克劳林公式.
+\begin{enumerate}
+\item $ f(x)=f(0)+f'(0)x+\frac{f''(0)}{2!}x^{2}+\dots+\frac{f^{(n)}(0)}{n!}x^{n}+\frac{f^{(n+1)}(\xi)}{(n+1)!}x^{n+1} $, 其中$ \xi $介于$ 0 $和$ x $之间
+\item $ f(x)=f(0)+f'(0)x+\frac{f''(0)}{2!}x^{2}+\dots+\frac{f^{(n)}(0)}{n!}x^{n}+o(x^{n}) $
+\end{enumerate}
+\end{tcolorbox}
+\subsection{积分中值定理}
+设$ f(x) $在$ [a,b] $上连续, 则存在$ \xi\in[a,b] $, 使得:
+\begin{equation*}
+\int_{a}^{b}f(x)\mathrm{d}x=f(\xi)(b-a)
+\end{equation*}
+\section{习题}
