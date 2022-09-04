@@ -736,7 +736,7 @@ x_{m}
 0
 \end{bmatrix}
 \end{equation*}
-\subsubsection{有解的条件}
+\subsubsection{有解的条件}\label{齐次方程组有解的条件}
 由上矩阵可以得到, 未知数的个数为$ m $, 方程的个数为$ n $.
 \begin{enumerate}
 \item 若$ m>n $, 则必有非零解 \par
@@ -765,7 +765,7 @@ x_{m}
 \item 通解\par
 设$ \bm{\xi_{1}},\bm{\xi_{2}},...,\bm{\xi_{m-r}} $是方程$ \bm{A}\bm{x}=\bm{0} $的基础解系, 则$ k_{1}\bm{\xi_{1}}+k_{2}\bm{\xi_{2}}+...+k_{m-r}\bm{\xi_{m-r}} $是其通解.
 \end{enumerate}
-\subsubsection{求解方法}
+\subsubsection{求解方法}\label{齐次线性方程组求解方法}
 \begin{enumerate}
 \item $ \bm{A}\xrightarrow{\text{初等行变换}}\bm{B} $, 其中$ \bm{B} $为行阶梯形矩阵, $ r(\bm{A})=r $\par
 高斯消元法: \par
@@ -823,7 +823,7 @@ a_{21} & a_{22} & \dots & a_{2m} & b_{2} \\
 a_{n1} & a_{n2} & \dots & a_{nm} & b_{n}
 \end{bmatrix}
 \end{equation*}
-\subsubsection{有解的条件}
+\subsubsection{有解的条件}\label{非齐次方程组有解的条件}
 \begin{enumerate}
 \item 若$ r(\bm{A})\neq r([\bm{A},\bm{b}]) $($ \bm{b} $不能由$ \bm{\alpha_{1}},\bm{\alpha_{2}},...,\bm{\alpha_{m}} $线性表出), 方程组无解 \par
 实际上, $ r([\bm{A},\bm{b}]) = r(\bm{A}) + 1 $.
@@ -831,17 +831,52 @@ a_{n1} & a_{n2} & \dots & a_{nm} & b_{n}
 \item 若$ r(\bm{A})=r([\bm{A},\bm{b}])=r<m $, 方程组有无穷多解
 \end{enumerate}
 \subsubsection{解的性质}
-设$ \bm{\eta_{1}},\bm{\eta_{2}},\bm{\eta} $是非齐次线性方程组$ \bm{A}\bm{x}=\bm{b} $的解, $ \bm{\xi} $是对应齐次线性方程组$ \bm{A}\bm{x}=\bm{0} $的解, 则:
+设$ \bm{\eta_{1}},\bm{\eta_{2}},\bm{\eta} $是非齐次线性方程组$ \bm{A}\bm{x}=\bm{b} $的解, $ \bm{\xi} $是对应齐次线性方程组$ \bm{A}\bm{x}=\bm{0} $的解, 则: \label{特殊解相减}
 \begin{enumerate}
 \item $ \bm{\eta_{1}}-\bm{\eta_{2}} $是$ \bm{A}\bm{x}=\bm{0} $的解
 \item $ k\bm{\xi}+\bm{\eta} $是$ \bm{A}\bm{x}=\bm{b} $的解
 \end{enumerate}
-\subsubsection{求解方法}
+\subsubsection{求解方法}\label{非齐次线性方程组求解方法}
 \begin{enumerate}
 \item 写出$ \bm{A}\bm{x}=\bm{b} $的导出方程组$ \bm{A}\bm{x}=\bm{0} $, 并求出其通解$ k_{1}\bm{\xi_{1}}+k_{2}\bm{\xi_{2}}+...+k_{m-r}\bm{\xi_{m-r}} $
 \item 求出$ \bm{A}\bm{x}=\bm{b} $的一个特解$ \bm{\eta} $
 \item $ \bm{A}\bm{x}=\bm{b} $的通解为$ k_{1}\bm{\xi_{1}}+k_{2}\bm{\xi_{2}}+...+k_{m-r}\bm{\xi_{m-r}}+\bm{\eta} $
 \end{enumerate}
+\section{习题}
+\subsection{具体型线性方程组}
+\subsubsection{齐次线性方程组}
+\hyperref[齐次线性方程组求解方法]{齐次线性方程组求解方法}已经在前面提及.\par  这里要强调的是要特别重视$ m-r $解空间中线性无关向量的个数, 题目中可能会给你线性无关向量的个数, 反而求系数矩阵的秩. 其次, 如果求得$ m-r=1 $的话, 令自由变量的值为$ 1 $, 这样就保证了线性无关性.
+\subsubsection{非齐次线性方程组}
+\hyperref[非齐次线性方程组求解方法]{非齐次线性方程组求解方法}已经在前面提及.\par  这里要特别注意的是在求齐次线性方程组通解的时候, 要注意有多少的线性无关的解($ m-r $), 这个可以通过非齐次线性方程组的两个\hyperref[特殊解相减]{特殊解相减}获得. 其次, 非齐次线性方程组的特殊解只要一个就可以了.
+\subsection{抽象型线性方程组}
+\subsubsection{方程组有解的条件和解的判别}
+\hyperref[齐次方程组有解的条件]{齐次方程组有解的条件}和\hyperref[非齐次方程组有解的条件]{非齐次方程组有解的条件}已经在前面提及, 请背熟.\par
+这里要特别强调齐次方程组下有无穷解的情况包括$ 1,2b) $两种情况.
+\subsubsection{解的结构}
+齐次方程组解的结构是$ k_{1}\bm{\xi_{1}}+...+k_{m-r}\bm{\xi_{m-r}}. $ \par
+非齐次方程组解的结构是$ k_{1}\bm{\xi_{1}}+...+k_{m-r}\bm{\xi_{m-r}}+\bm{\eta} $, 其中$ \bm{\eta} $为特解.
+\subsubsection{方程组$ \bm{A}\bm{x}=\bm{0} $的基础解系的讨论}
+基础解系其实就是几个线性无关的解的集合, 这个问题核心是线性无关解的个数$ m-r $.
+\subsubsection{线性方程组系数矩阵列向量和解的关系}
+主要是理解一种思想: ``方程组的解是描述列向量组中各向量之间数量关系的系数''.
+\subsection{两个方程组的公共解}
+齐次线性方程组$ \bm{A}_{m\times n}\bm{x}=\bm{0} $和$ \bm{B}_{m\times n}\bm{0}=\bm{0} $的公共解是满足方程$ 
+\begin{bmatrix}
+\bm{A} \\
+\bm{B}
+\end{bmatrix}\bm{x}=\bm{0}
+$
+的解.
+\subsection{同解方程组}
+若两个方程组$ \bm{A}_{n\times m}\bm{x}=\bm{0} $和$ \bm{B}_{s\times m}\bm{x}=\bm{0} $有完全相同的解, 则称它们为同解方程组.
+\begin{equation*}
+\bm{A}\bm{x}=\bm{0}, \bm{B}\bm{x}=\bm{0}\ \text{为同解方程组}\Leftrightarrow r(\bm{A})=r(\bm{B})=r\left(
+\begin{bmatrix}
+\bm{A} \\
+\bm{B}
+\end{bmatrix}
+\right)
+\end{equation*}
 \chapter{特征值和特征向量}
 \section{基础知识}
 \subsection{特征值和特征向量}
@@ -946,13 +981,15 @@ a_{n1} & a_{n2} & \dots & a_{nm} & b_{n}
 \]
 \end{enumerate}
 \section{习题}
-\subsection{特征值和特征向量}
-\subsubsection{求具体型矩阵的特征值和特征向量}
+\subsection{具体型矩阵的特征值和特征向量}
+求解具体性矩阵的特征值和特征向量的方法很固定:
 \begin{enumerate}
-\item 用特征方程$ \left|\lambda \bm{E}-\bm{A}\right|=0 $求出$ \lambda $, 可以使用试根法对$ \lambda $的高次方程进行求解
-\item 用求得的$ \lambda $解齐次线性方程组$ (\lambda \bm{E}-\bm{A})\bm{\xi}=\bm{0} $, 求出特征向量
-\end{enumerate}
-\subsubsection{求解抽象型矩阵的特征值和特征向量}
+\item $ |\lambda \bm{E}-\bm{A}|=0 $求出特征值
+\item 将特征值回代到$ (\lambda \bm{E}-\bm{A})\bm{\xi}=\bm{0} $中, 运用\hyperref[齐次方程组求解方法]{齐次方程组求解方法}求出$ \bm{\xi} $
+\end{enumerate}\par
+特别注意, 求解出的$ \bm{\xi} $是\textbf{一个解空间}, 而不是基础解系, 即应该求出齐次方程组的通解. 如果题目中要求的是线性无关的特征向量的话, 求得基础解系即可. \par 其次, 在求特征值的时候, 如果行列式的值的次数特别高的话, 建议用试根法先求出一个特殊的根, 再用多项式除法求出另外的根.
+\subsection{抽象型矩阵的特征值和特征向量}
+牢记这个表格:
 \begin{table}[H]
 \centering
 \begin{tabular}{|c|ccccccc|}
@@ -963,39 +1000,7 @@ a_{n1} & a_{n2} & \dots & a_{nm} & b_{n}
 \hline
 \end{tabular}
 \end{table}\par
-$ f(x) $为多项式, 若矩阵$ \bm{A} $满足$ f(\bm{A})=\bm{0}\Rightarrow f(\lambda)=0 $.
-\subsection{实对称矩阵}
-\subsubsection{求正交矩阵Q}
-\begin{enumerate}
-\item 求$ \bm{A} $的$ \lambda $与$ \bm{\xi} $
-\item $ \bm{\xi_1}, \bm{\xi_{2}},... ,\bm{\xi_{n}} $施密特正交化, 单位化至$ \bm{\eta_{1}}, \bm{\eta_{2}},... ,\bm{\eta_{n}} $
-\item 令$ Q=(\bm{\eta_1}, \bm{\eta_2},... ,\bm{\eta_{n}}) $
-\end{enumerate}
-\par 不同的特征值$ \lambda_{i} $对应的特征矩阵$ \bm{\xi_{i}} $之间是正交的.
-\par 施密特正交化:$ \beta_{1}=\alpha_{1},
-\beta_{2}=\alpha_{2}-\frac{(\alpha_{2}, \beta_{1})}{(\beta_{1}, \beta_{1})}\beta_{1} $.
-\par 单位化: $ \eta_{1}=\frac{\beta_{1}}{||\beta_{1}||} $.
-\paragraph{总结}
-\begin{enumerate}
-\item 普通矩阵$ \bm{A} $
-\begin{enumerate}
-\item $ \lambda_{1}\neq \lambda_{2}\Rightarrow \xi_{1}, \xi_{2}$无关
-\item $ \lambda_{1}= \lambda_{2}\Rightarrow \xi_{1}, \xi_{2}$
-\begin{enumerate}
-\item $\xi_{1}, \xi_{2}$无关
-\item $\xi_{1}, \xi_{2}$相关
-\end{enumerate}
-\end{enumerate}
-\item 实对称矩阵$ \bm{A} $
-\begin{enumerate}
-\item $ \lambda_{1}\neq \lambda_{2}\Rightarrow \xi_{1}\perp \xi_{2}$\quad $\xi_{1}, \xi_{2}$无关
-\item $ \lambda_{1}= \lambda_{2}\Rightarrow$
-\begin{enumerate}
-\item $\xi_{1}\perp \xi_{2}$\quad $\xi_{1}, \xi_{2}$无关
-\item $\xi_{1}$不垂直于$\xi_{2}$\quad $\xi_{1}, \xi_{2}$无关
-\end{enumerate}
-\end{enumerate}
-\end{enumerate}
+特征值可以做简单的运算, 如
 \chapter{二次型}
 \section{基础知识}
 \subsection{二次型}
