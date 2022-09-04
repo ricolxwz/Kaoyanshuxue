@@ -1056,6 +1056,18 @@ f(x)=f(x_{0})+f'(x_{0})(x-x_{0})+\frac{1}{2!}f''(x_{0})(x-x_{0})^{2}+\dots+\frac
 \subsubsection{罗尔原话}
 若$ f^{(n)}(x)=0 $至多有$ k $个根, 则$ f(x)=0 $至多有$ k+n $个根.
 \subsubsection{实系数奇次方程至少有一个实根}
-\subsection{微分不等式}
-\subsubsection{用函数的性态证明不等式}
-
+\subsection{用函数性态证明不等式}
+\begin{enumerate}
+\item 若有$ f'(x)\ge 0, a<x<b $, 则有$ f(a)\le f(x)\le f(b) $
+\item 若有$ f''(x)\le 0, a<x<b $, 则有$ f'(x)\le f'(x)\le f'(b) $
+\subitem 当$ f'(a)>0 $时, $ f'(x)>0\Rightarrow f(x) $单调增加
+\subitem 当$ f'(b)<0 $时, $ f'(x)<0\Rightarrow f(x) $单调减小
+\item 设$ f(x) $在$ I $内连续, 且有唯一的极值点$ x_{0} $, 则
+\subitem 当$ x_{0} $为极大值点时, $ f(x_{0})\ge f(x) $
+\subitem 当$ x_{0} $为极小值点时, $ f(x_{0})\le f(x) $
+\item 若有$ f''(x)\ge 0, a<x<b, f(a)=f(b)=0 $, 则有$ f(x)<0 $
+\subsubsection{用常数变量化证明不等式}
+如果欲证的不等式中都是常数, 则可以将其中一个或者几个常数变量化, 再利用上面所述的导数工具证明.
+\subsubsection{用中值定理证明不等式}
+主要用拉格朗日中值定理或者是泰勒公式.
+\end{enumerate}
