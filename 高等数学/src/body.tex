@@ -604,7 +604,14 @@ scale=2,
 设$ \{x_{n}\} $为一数列, 若存在常数$ a $, 对于任意的$ \epsilon >0 $, 总存在正整数$ N $, 使得当$ n>N $的时候, $ |x_{n}-a|<\epsilon $恒成立, 则称数$ a $是数列$ \{x_{n}\} $的极限, 或者称数列$ \{x_{n}\} $收敛于$ a $, 记为
 \begin{equation*}
 \lim_{n\rightarrow \infty} x_{n} = a\ or\ x_{n}\rightarrow a(n\rightarrow \infty).
-\end{equation*}
+\end{equation*}\par
+\begin{tcolorbox}
+\begin{enumerate}
+\item 至多有$ N $个项会落在$ (a-\epsilon,a+\epsilon) $之外
+\item 数列极限的存在性和大小和前$ N $项无关
+\item 子数列和父数列的极限相同, 即$ \lim\limits_{n \rightarrow \infty}x_{n}=\lim\limits_{k \rightarrow \infty}x_{2k-1}=\lim\limits_{k \rightarrow \infty}x_{2k+1}=a $
+\end{enumerate}
+\end{tcolorbox}
 \subsection{收敛数列的性质}
 \begin{enumerate}
 \item 唯一性: 若数列存在极限, 则极限唯一
@@ -652,11 +659,15 @@ scale=2,
 \item 去心$ \delta $邻域: 与点$ P_{0}(x_{0},y_{0}) $的距离小于$ \delta $但不等于0的点$ P(x,y) $的全体, 称为点$ P_{0} $的去心$ \delta $邻域, 记作$ \mathring{U}(P_{0},\delta) $
 \end{enumerate}
 \subsection{函数极限的定义}
-设函数$ f(x) $在某点$ x_{0} $的某一去心邻域内有定义. 若存在常数$ A $, 对于任意给定的$ \epsilon >0 $, 总存在正数$ \delta $, 使得当$ 0<|x-x_{0}|<\delta $时, 满足$ |f(x)-A|<\epsilon $, 则$ A $就叫作函数$ f(x) $当$ x\rightarrow x_{0} $时的极限, 记为
-\begin{equation*}
-\lim\limits_{x\rightarrow \infty} f(x)=A\ or \ f(x)\rightarrow A\ (x\rightarrow x_{0})
-\end{equation*}\par
-用$ \epsilon -X $语言表示为: $ \lim\limits_{x\rightarrow \infty}f(x)=A\Leftrightarrow \forall \epsilon >0, \exists X>0 $, 当$ |x|>X $时, 有$ |f(x)-A|<\epsilon $
+设函数$ f(x) $在某点$ x_{0} $的某一去心邻域内有定义.
+\begin{enumerate}
+\item 自变量趋近于无穷大
+\subitem $ \lim\limits_{x\rightarrow \infty}f(x)=A\Leftrightarrow \forall \epsilon >0, \exists X>0 $, 当$ |x|>X $时, 有$ |f(x)-A|<\epsilon $
+\subitem $ \lim\limits_{x\rightarrow +\infty}f(x)=A\Leftrightarrow \forall \epsilon >0, \exists X>0 $, 当$ x>X $时, 有$ |f(x)-A|<\epsilon $
+\subitem $ \lim\limits_{x\rightarrow -\infty}f(x)=A\Leftrightarrow \forall \epsilon >0, \exists X>0 $, 当$ x<-X $时, 有$ |f(x)-A|<\epsilon $
+\item 自变量趋近于有限值
+\subitem $ \lim\limits_{x\rightarrow x_{0}}f(x)=A\Leftrightarrow \forall \epsilon >0, \exists \xi>0 $, 当$ 0<|x-x_{0}|<\xi $时, 有$ |f(x)-A|<\epsilon $
+\end{enumerate}
 \subsubsection{单侧极限}
 \begin{enumerate}
 \item 左极限: $ \lim\limits_{x\rightarrow x_{0}^{-}}f(x)=A\ or\ f(x_{0}^{-})=A $
@@ -668,7 +679,7 @@ scale=2,
 \item $ \lim\limits_{x\rightarrow x_{0}}f(x)=A\Leftrightarrow \lim\limits_{x\rightarrow x_{0}^{-}}f(x)=\lim\limits_{x\rightarrow x_{0}^{+}}f(x)=A $
 \item $ \lim\limits_{x\rightarrow x_{0}}f(x)=A\Leftrightarrow f(x)=A+\alpha(x), \lim\limits_{x\rightarrow x_{0}}\alpha(x)=0 $
 \end{enumerate}
-\subsection{函数极限的性质}
+\subsection{收敛函数的性质}
 \begin{enumerate}
 \item 唯一性: 若函数存在极限, 则极限唯一
 \item 局部有界性: 若函数存在极限, 则函数在某一区间内有界
@@ -678,6 +689,13 @@ scale=2,
 \item 戴帽: 设有函数$ f(x) $, 若存在常数$ \delta $, 当$ 0<|x-x_{0}|<\delta $时, 有$ f(x)\ge 0(\text{或}f(x)\le 0) \Rightarrow \lim\limits_{x\rightarrow x_{0}}f(x)=A\ge 0(\text{或}\le 0) $
 \end{enumerate}
 \end{enumerate}
+\begin{tcolorbox}
+由局部保号性可以得到局部保序性: 设$ \lim\limits_{x \rightarrow x_{0}}f(x)=A, \lim\limits_{x \rightarrow x_{0}}g(x)=B $
+\begin{enumerate}
+\item 脱帽: 若$ A>B\Rightarrow \exists \delta>0 $, 当$ 0<|x-x_{0}|<\delta $时, 有$ f(x)>g(x) $.
+\item 戴帽: 若$ \exists \delta>0 $, 当$ 0<|x-x_{0}|<\delta $时, 有$ f(x)\ge g(x)\Rightarrow A\ge B $
+\end{enumerate}
+\end{tcolorbox}
 \subsection{极限运算法则}
 设$ \lim\limits_{x\rightarrow x_{0}}f(x)=A, \lim\limits_{x\rightarrow x_{0}}g(x)=B $, 则
 \begin{enumerate}
@@ -693,6 +711,8 @@ scale=2,
 \item $ \lim\limits_{x\rightarrow x_{0}}g(x)=A, \lim\limits_{x\rightarrow x_{0}}h(x)=A $
 \end{enumerate}\par
 则函数$ f(x) $极限存在, 且$ \lim\limits_{x\rightarrow x_{0}}f(x)=A $.
+\subsection{单调有界准则}
+单调有界函数必有极限.
 \subsection{洛必达法则}
 \begin{enumerate}
 \item $ \frac{0}{0} $: $ \lim\limits_{x\rightarrow a}\frac{f(x)}{F(x)}=\lim\limits_{x\rightarrow a}\frac{f'(x)}{F'(x)} $(或$ \lim\limits_{x\rightarrow \infty}\frac{f(x)}{F(x)}=\lim\limits_{x\rightarrow \infty}\frac{f'(x)}{F'(x)} $), 需要以下条件:
@@ -732,7 +752,7 @@ scale=2,
 \item $ A-B $: 适用于幂次最低原则 \par
 将$ A, B $分别展开到它们的系数不相等的$ x $的最低次幂为止.
 \end{enumerate}
-\subsection{无穷小比阶}
+\subsection{无穷小}
 \subsubsection{无穷小定义}
 如果当$ x\rightarrow x_{0}(\text{或}x\rightarrow \infty) $函数$ f(x) $的极限为零$ \Rightarrow  $函数$ f(x) $为当$ x \rightarrow x_{0}(\text{或}x \rightarrow \infty ) $时的无穷小.
 \subsubsection{无穷小的比阶}
@@ -772,12 +792,12 @@ scale=2,
 设函数$ f(x) $在点$ x_{0} $的某一邻域内有定义, 且有$ \lim\limits_{x\rightarrow x_{0}}f(x)=f(x_{0}) $, 则称函数$ f(x) $在点$ x_{0} $处连续.
 \subsection{间断点的定义}
 \begin{enumerate}
-\item 第一类间断点
+\item 第一类间断点: 左导数和右导数都存在
 \begin{enumerate}
-\item 可去间断点: $ \lim\limits_{x\rightarrow x_{0}}f(x)=A\neq f(x_{0}) $
-\item 跳跃间断点: $ \lim\limits_{x\rightarrow x_{0}^{-}}f(x) \neq \lim\limits_{x\rightarrow x_{0}^{+}}f(x) $
+\item 可去间断点(左导数$ = $右导数): $ \lim\limits_{x\rightarrow x_{0}}f(x)=A\neq f(x_{0}) $
+\item 跳跃间断点(左导数$ \neq $右导数): $ \lim\limits_{x\rightarrow x_{0}^{-}}f(x) \neq \lim\limits_{x\rightarrow x_{0}^{+}}f(x) $
 \end{enumerate}
-\item 第二类间断点
+\item 第二类间断点: 左导数和右导数至少有一个不存在
 \begin{enumerate}
 \item 无穷间断点: $ \lim\limits_{x\rightarrow x_{0}}f(x)=\infty $
 \item 振荡间断点: $ \lim\limits_{x\rightarrow x_{0}}f(x) $振荡不存在
@@ -1083,19 +1103,3 @@ f(x)=f(x_{0})+f'(x_{0})(x-x_{0})+\frac{1}{2!}f''(x_{0})(x-x_{0})^{2}+\dots+\frac
 \item 连续函数$ f(x) $必有原函数$ f(x) $
 \item 含有第一类间断点和无穷间断点的函数$ f(x) $包含该间断点的区间必没有原函数$ F(x) $.
 \end{enumerate}
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
