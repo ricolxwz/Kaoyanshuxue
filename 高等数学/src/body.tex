@@ -710,7 +710,7 @@ scale=2,
 \item $ \lim\limits_{x\rightarrow x_{0}}[f(x)]^{n}=[\lim\limits_{x\rightarrow x_{0}}f(x)]^{n} $, $ n $为正整数
 \end{enumerate}\par
 \textbf{特特特别要注意的是: $ \lim\limits_{x \rightarrow x_{0}}f(x), \lim\limits_{x \rightarrow x_{0}}g(x) $必须存在.}(\textbf{经常会围绕这个出题})
-\subsection{夹逼准则}
+\subsection{夹逼准则}\label{夹逼定理}
 若函数$ f(x), g(x) $及$ h(x) $满足条件:
 \begin{enumerate}
 \item $ g(x)\le f(x)\le h(x) $
@@ -719,7 +719,7 @@ scale=2,
 则函数$ f(x) $极限存在, 且$ \lim\limits_{x\rightarrow x_{0}}f(x)=A $.
 \subsection{单调有界准则}
 单调有界函数必有极限.
-\subsection{洛必达法则}
+\subsection{洛必达法则}\label{洛必达法则}
 \begin{enumerate}
 \item $ \frac{0}{0} $: $ \lim\limits_{x\rightarrow a}\frac{f(x)}{F(x)}=\lim\limits_{x\rightarrow a}\frac{f'(x)}{F'(x)} $(或$ \lim\limits_{x\rightarrow \infty}\frac{f(x)}{F(x)}=\lim\limits_{x\rightarrow \infty}\frac{f'(x)}{F'(x)} $), 需要以下条件:
 \begin{enumerate}
@@ -843,13 +843,88 @@ $ \lim\limits f(x), \lim\limits g(x) $中一个存在, 另一个不存在 $ \Rig
 \end{itemize}
 \end{multicols}
 \subsubsection{等价无穷小}
+{\kaishu 常用的等价无穷小}\vspace{-1em}
+\begin{multicols}{2}
+\begin{itemize}
+\item $ \sin x\sim x $
+\item $ \tan x\sim x $
+\item $ \arcsin x\sim x $
+\item $ \arctan x\sim x $
+\item $ \ln(1+x)\sim x $
+\item $ e^{x}-1\sim x $
+\item $ (1+x)^{\alpha}-1\sim \alpha x $
+\item $ \alpha^{x}-1\sim x\ln \alpha $
+\end{itemize}
+\end{multicols}
+{\kaishu 等价无穷小替换的原则}\par \vspace{.5em}
+设$ f(x)\sim \alpha, g(x)\sim \beta $
+\begin{enumerate}
+\item 乘除关系可以直接替换
+\item 加减关系需要满足:
+\subitem $ \lim\limits \frac{\alpha}{\beta}=A\neq 1\Rightarrow f(x)-g(x)\sim \alpha-\beta $
+\subitem $ \lim\limits \frac{\alpha}{\beta}=A\neq -1\Rightarrow f(x)+g(x)\sim \alpha+\beta $
+\end{enumerate}
 \subsubsection{泰勒公式}
+{\kaishu 常用的泰勒公式}\vspace{-1em}
+\begin{multicols}{2}
+\begin{itemize}
+\item $ \sin x=x-\frac{x^{3}}{3!}+o(x^{3}) $
+\item $ \tan x=x+\frac{x^{3}}{3!}+o(x^{3}) $
+\item $ \cos x=1-\frac{x^{2}}{2!}+o(x^{2}) $
+\item $ \arcsin x=x+\frac{x^{3}}{3!}+o(x^{3}) $
+\item $ \arctan x=x-\frac{x^{3}}{3!}+o(x^{3}) $
+\item $ e^{x}-1=x+\frac{x^{2}}{2!}+\frac{x^{3}}{3!}+o(x^{3}) $
+\item $ \ln(1+x)=x-\frac{x^{2}}{2!}+\frac{x^{3}}{3!}+o(x^{3}) $
+\item $ (1+x)^{\alpha}-1=\alpha x+\frac{\alpha(\alpha-1)}{2!}x^{2}+\frac{\alpha(\alpha-1)(\alpha-2)}{3!}x^{3}+o(x^{3}) $
+\end{itemize}
+\end{multicols}\par
+要注意到, 泰勒公式其实和无穷小有很大的相通性.
 \subsubsection{洛必达法则}
+\hyperref[洛必达法则]{洛必达法则}在前面已经介绍过, 不再赘述. 七种不定式几乎都可以用洛必达做.
 \subsubsection{单调有界准则}
+单调有界准则常常用于求数列的极限, 步骤是:
+\begin{enumerate}
+\item 证明数列有界
+\item 证明数列单调
+\item 当$ n\rightarrow \infty $时, $ x_{n}=x_{n+1}=x_{n-1} $, 将关系式中的$ x_{n}, x_{n-1}, x_{n+1} $全部换成$ a $, 求解$ a $就是极限
+\end{enumerate}
 \subsubsection{夹逼定理}
+\hyperref[夹逼定理]{夹逼定理}在前面已经介绍过, 不再赘述. 常常会用到放缩法.
 \subsubsection{定积分的含义}
+\begin{equation*}
+\int_{0}^{1}f(x)\mathrm{d}x=\lim\limits_{n \rightarrow \infty}\frac{1}{n}\sum_{k=1}^{n}f(\frac{k}{n})
+\end{equation*}\par
+其核心是提取公因子$ \frac{1}{n} $, 然后将其余部分化为$ \sum_{k=1}^{n}f(\frac{k}{n}) $.
 \subsection{七种不定式的计算}
 七种不定式中, 最基础的是$ \frac{0}{0}, \frac{\infty}{\infty} $. 其次是$ \infty-\infty, 0\cdot\infty $, 其中后者可以细分为$ 0^{0}, 1^{\infty}, \infty^{0} $.
+\subsubsection{$ \frac{0}{0} $型}
+三种方法:
+\begin{enumerate}
+\item 等价无穷小替换
+\item 泰勒公式替换
+\item 洛必达法则
+\end{enumerate}
+\subsubsection{$ \frac{\infty}{\infty} $型}
+两种方法:
+\begin{enumerate}
+\item 洛必达法则
+\item 分母分子同处以最高阶的无穷大
+\end{enumerate}
+\subsubsection{$ \infty-\infty $型}
+两种方法:
+\begin{enumerate}
+\item 分式差: 将其化为$ \frac{\infty}{\infty} $
+\item 根式差: 将根式有理化
+\end{enumerate}
+\subsubsection{$ 0\cdot \infty $型}
+直接化为$ \frac{0}{0} $型或者$ \frac{\infty}{\infty} $型.
+\subsubsection{$ 1^{\infty} $型}
+如果想慢慢算, 可以用$ exp $做, 如果不想算, 直接用公式:
+\begin{equation*}
+\text{若}\lim\limits \alpha(x)=0, \lim\limits \beta(x)=\infty, \lim\limits \alpha(x)\beta(x)=A \text{则}\lim\limits (1+\alpha(x))^{\beta(x)}=e^{A}
+\end{equation*}
+\subsubsection{$ \infty^{0}, 0^{0} $型}
+可以转为为$ exp $形式.
 \chapter{函数的连续和间断}
 \section{基础知识}
 \subsection{连续的定义}
