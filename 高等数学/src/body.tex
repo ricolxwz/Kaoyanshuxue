@@ -792,6 +792,64 @@ scale=2,
 \item $ 1-\cos x\sim \frac{1}{2}x^{2} $
 \end{itemize}
 \end{multicols}
+\section{习题}
+\subsection{求解极限}
+\subsubsection{极限的基本运算}
+这里用到的是极限的四个运算法则:
+\begin{enumerate}
+\item $ \lim\limits (f(x)\pm g(x))=\lim\limits f(x)\pm \lim\limits g(x) $
+\item $ \lim\limits (f(x)\cdot g(x))=\lim\limits f(x)\cdot \lim\limits g(x) $
+\item $ \lim\limits \frac{f(x)}{g(x)}=\frac{\lim\limits f(x)}{\lim\limits g(x)} $, $ g(x)\neq 0, \lim\limits g(x)\neq 0 $
+\item $ (\lim\limits f(x))^{n}={\lim\limits}^{n}f(x) $
+\end{enumerate}\par
+\begin{tcolorbox}
+要特别注意的是:\par
+$ \lim\limits f(x), \lim\limits g(x) $中两个都不存在 $ \Rightarrow\lim\limits f(x)\pm \lim\limits g(x) $可能存在.\par
+$ \lim\limits f(x), \lim\limits g(x) $中一个存在, 另一个不存在 $ \Rightarrow \lim\limits f(x)\pm g(x) $一定不存在.
+\end{tcolorbox}
+\subsubsection{基本极限}
+要牢记以下的基本极限:
+\begin{multicols}{2}
+\begin{itemize}
+\item $ \lim\limits_{x \rightarrow 0}(1+x)^{\frac{1}{x}}=e $
+\item $ \lim\limits_{x \rightarrow \infty}\sqrt[x]{x}=1 $
+\item $ \lim\limits_{x \rightarrow 0}\frac{\sin x}{x}=1 $
+\item $ \lim\limits_{x \rightarrow 0}\frac{\alpha^{x}-1}{x}=\ln \alpha $($ \alpha>1 $)
+\item $ \lim\limits_{x \rightarrow 0}\frac{a_{m}x^{m}+a_{m-1}x^{m-1}+...+a_{0}}{b_{n}x^{n}+b_{n-1}x^{n-1}+...+b_{0}}=
+\scaleleftright[6pt]{\biggl\{}{
+\begin{aligned}
+& \frac{a_{m}}{b_{n}},\ m=n \\
+& 0,\ m>n \\
+& \infty,\ m<n
+\end{aligned}
+}{.} $
+\item $ \lim\limits_{n \rightarrow \infty}x^{n}=
+\scaleleftright[6pt]{\biggl\{}{
+\begin{aligned}
+& 0,\ |x|<1 \\
+& \infty,\ |x|>1 \\
+& 1,\ x=1 \\
+& \text{不存在},\ x=-1
+\end{aligned}
+}{.} $
+\item $ \lim\limits_{n \rightarrow \infty}e^{nx}=
+\scaleleftright[6pt]{\biggl\{}{
+\begin{aligned}
+& 0,\ x<0 \\
+& +\infty,\ x>0 \\
+& 1,\ x=0
+\end{aligned}
+}{.} $
+\end{itemize}
+\end{multicols}
+\subsubsection{等价无穷小}
+\subsubsection{泰勒公式}
+\subsubsection{洛必达法则}
+\subsubsection{单调有界准则}
+\subsubsection{夹逼定理}
+\subsubsection{定积分的含义}
+\subsection{七种不定式的计算}
+七种不定式中, 最基础的是$ \frac{0}{0}, \frac{\infty}{\infty} $. 其次是$ \infty-\infty, 0\cdot\infty $, 其中后者可以细分为$ 0^{0}, 1^{\infty}, \infty^{0} $.
 \chapter{函数的连续和间断}
 \section{基础知识}
 \subsection{连续的定义}
