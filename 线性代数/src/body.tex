@@ -13,7 +13,7 @@ a_{21}	&a_{22}  &\dots  &a_{2n}  \\
 a_{n1}	&a_{n2}  &\dots  &a_{nn}
 \end{vmatrix}  = \sum_{j_{1},j_{2}...j_{n}}(-1)^{r(j_{1}j_{2}...j_{n})}a_{1j_{1}}a_{2j_{2}}...a_{nj_{n}}
 \end{equation*}\par
-总共有$ n! $个项.
+总共有$ n! $个项, 当为偶排列的时候, 逆序数为正; 当为奇排列的时候, 逆序数为负.
 \item 展开定义\par 代数余子式: $ \bm{A}_{ij}=(-1)^{i+j}\bm{M}_{ij} $\par 按第$ i $行展开: $ a_{i1}\bm{A}_{i1}+a_{i2}\bm{A}_{i2}+...+a_{in}\bm{A}_{in} $\par 注意, 行列式的某行(列)元素分别乘另一行(列)的元素的代数余子式后再求和为$ 0 $
 \end{enumerate}
 \subsubsection{性质}
@@ -829,7 +829,8 @@ a_{n1} & a_{n2} & \dots & a_{nm} & b_{n}
 实际上, $ r([\bm{A},\bm{b}]) = r(\bm{A}) + 1 $.
 \item 若$ r(\bm{A})=r([\bm{A},\bm{b}])=m $($ \bm{\alpha_{1}},\bm{\alpha_{2}},...,\bm{\alpha_{m}} $线性无关, $ \bm{\alpha_{1}},\bm{\alpha_{2}},...,\bm{\alpha_{m}},\bm{b} $线性相关), 方程组有唯一解\ref{ref:判别相关性}
 \item 若$ r(\bm{A})=r([\bm{A},\bm{b}])=r<m $, 方程组有无穷多解
-\end{enumerate}
+\end{enumerate}\par
+第二种情况下, 如果方程有$ m $个未知数$ m $个方程, 则可以使用克拉默法则.
 \subsubsection{解的性质}
 设$ \bm{\eta_{1}},\bm{\eta_{2}},\bm{\eta} $是非齐次线性方程组$ \bm{A}\bm{x}=\bm{b} $的解, $ \bm{\xi} $是对应齐次线性方程组$ \bm{A}\bm{x}=\bm{0} $的解, 则: \label{特殊解相减}
 \begin{enumerate}
@@ -918,6 +919,7 @@ $
 \item $ \left|\bm{A}\right|=\left|\bm{B}\right| $
 \item $ \bm{A}, \bm{B} $具有相同的特征值
 \item $ \bm{A}, \bm{B} $特征多项式的值相同
+\item $ |\bm{A}+k\bm{E}|=|\bm{B}+k\bm{E}| $
 \end{itemize}
 \item 若$ \bm{A}\sim \bm{B} $, 则有
 \begin{itemize}

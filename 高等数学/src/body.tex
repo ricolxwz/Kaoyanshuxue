@@ -598,6 +598,21 @@ scale=2,
 \item $ x-1\ge \ln x(x>0) $
 \item $ \frac{1}{1+x}<\ln (1+\frac{1}{x})<\frac{1}{x}(x>0) $
 \end{enumerate}
+\section{习题}
+\subsection{复合函数}
+复合函数会结合分段函数或者是其定义域考, 注意这里的定义域是$ x $的范围不是括号里面表达式的范围. 如: $ f(x+1) $的定义域为$ [0,1] $, 则$ x\in [0,1], x+1\in [1,2] $.
+\subsection{函数的性态}
+这里常考的是有界. 要清楚有界的三个充分条件:
+\begin{enumerate}
+\item 函数在$ [a,b] $内连续, 则有界
+\item 函数在$ (a,b) $内连续, 且函数在$ a $点处的右极限存在, 在$ b $点处的左极限存在(特别是这个, 经常考证明极限是否存在, $ a $或者$ b $其中一个是$ \infty $也成立)
+\item $ f'(x) $在$ I $上连续, 则$ f(x) $在$ I $上连续
+\end{enumerate}\par
+此外, (局部)保号性也是经常考的, 要清楚脱帽和戴帽规则, 说白了:
+\begin{enumerate}
+\item 脱帽: $ \lim\limits_{x \rightarrow x_{0}}f(x)>0\Rightarrow \exists \xi>0, \text{当}x\in \mathring{U}(x_{0}, \xi)\text{时}, \text{有}f(x)>0 $
+\item 戴帽: $ \exists \xi>0, \text{当}x\in \mathring{U}(x_{0}, \xi)\text{时}, f(x)\ge 0\Rightarrow \lim\limits_{x \rightarrow x_{0}}f(x)\ge 0 $
+\end{enumerate}
 \chapter{数列极限}
 \section{基础知识}
 \subsection{数列极限的定义}
@@ -610,6 +625,7 @@ scale=2,
 \item 至多有$ N $个项会落在$ (a-\epsilon,a+\epsilon) $之外
 \item 数列极限的存在性和大小和前$ N $项无关
 \item 子数列和父数列的极限相同, 即$ \lim\limits_{n \rightarrow \infty}x_{n}=\lim\limits_{k \rightarrow \infty}x_{2k-1}=\lim\limits_{k \rightarrow \infty}x_{2k+1}=a $
+\item 若$ \lim\limits_{n \rightarrow \infty}a_{n}=a\Rightarrow \lim\limits_{n \rightarrow \infty}|a_{n}|=|a| $
 \end{enumerate}
 \end{tcolorbox}
 \subsection{收敛数列的性质}
@@ -628,8 +644,8 @@ scale=2,
 \item $ \lim\limits_{n\rightarrow \infty}(x_{n}\pm y_{n})=a\pm b $
 \item $ \lim\limits_{n\rightarrow \infty}x_{n}y_{n}=ab $
 \item 若$ b\neq 0, y_{n}\neq 0 \Rightarrow \lim\limits_{n\rightarrow \infty}\frac{x_{n}}{y_{n}}=\frac{a}{b}$
-\end{enumerate}
-\textbf{特特特别要注意的是: $ \lim\limits_{n \rightarrow \infty}x_{n}, \lim\limits_{x \rightarrow \infty}y_{n} $必须存在.}(\textbf{经常会围绕这个出题})
+\end{enumerate}\par
+注意, 当$ \lim\limits f(x), \lim\limits g(x) $其中一个存在, 另一个不存在的时候, 上述左边的极限一定不存在. 当$ \lim\limits f(x), \lim\limits g(x) $两个都不存在的时候, 左边的极限不一定不存在.
 \subsection{夹逼准则}
 若数列$ \{x_{n}\}, \{y_{n}\} $及$ \{z_{n}\} $满足条件:
 \begin{enumerate}
@@ -640,6 +656,23 @@ scale=2,
 \subsection{单调有界准则}
 单调有界数列必有极限.
 \section{习题}
+\subsection{求解数列极限}
+\subsubsection{不定式}
+与求函数不定式极限的方法完全相同, 但是对数列极限不能直接用洛必达法则, 必须先转化为函数, 再用洛必达法则.
+\subsection{$ n $项和的数列极限}
+常用二种方法:
+\begin{enumerate}
+\item 夹逼定理
+\item 转化为$ 0-1 $上的定积分
+\end{enumerate}
+\subsection{$ n $项连乘的数列极限}
+常用两种方法:
+\begin{enumerate}
+\item 夹逼原理
+\item 取对数化为$ n $项和
+\end{enumerate}
+\subsection{递推关系定义的数列}
+用单调有界准则做, 具体见\hyperref[单调有界准则算极限]{单调有界准则算极限}.
 \chapter{函数极限}
 \section{基础知识}
 \subsection{邻域}
@@ -709,7 +742,7 @@ scale=2,
 \item $ \lim\limits_{x\rightarrow x_{0}}\frac{f(x)}{g(x)}=\frac{\lim\limits_{x\rightarrow x_{0}}f(x)}{\lim\limits_{x\rightarrow x_{0}}g(x)}=\frac{A}{B}(B\neq 0) $
 \item $ \lim\limits_{x\rightarrow x_{0}}[f(x)]^{n}=[\lim\limits_{x\rightarrow x_{0}}f(x)]^{n} $, $ n $为正整数
 \end{enumerate}\par
-\textbf{特特特别要注意的是: $ \lim\limits_{x \rightarrow x_{0}}f(x), \lim\limits_{x \rightarrow x_{0}}g(x) $必须存在.}(\textbf{经常会围绕这个出题})
+注意, 当$ \lim\limits f(x), \lim\limits g(x) $其中一个存在, 另一个不存在的时候, 上述左边的极限一定不存在. 当$ \lim\limits f(x), \lim\limits g(x) $两个都不存在的时候, 左边的极限不一定不存在.
 \subsection{夹逼准则}\label{夹逼定理}
 若函数$ f(x), g(x) $及$ h(x) $满足条件:
 \begin{enumerate}
@@ -777,6 +810,12 @@ scale=2,
 \item 有限个无穷小的和(差)是无穷小
 \item 有限个无穷小的乘积还是无穷小
 \item 有界函数和无穷小的乘积还是无穷小
+\item 无穷小的运算 \par 
+\begin{enumerate}
+\item $ o(x^{m})\pm o(x^{n})=o(x^{min\{m,n}\}) $
+\item $ o(x^{m})\cdot o(x^{n})=o(x^{m+n}), x^{m}\cdot o(x^{n})=o(x^{m+n}) $
+\item $ o(x^{m})=o(kx^{m})=k\cdot o(x^{m}) $
+\end{enumerate}
 \end{enumerate}
 \subsubsection{等价无穷小表}
 \begin{multicols}{2}
@@ -793,7 +832,11 @@ scale=2,
 \end{itemize}
 \end{multicols}
 \section{习题}
+\subsection{极限的概念/性质/存在准则}
+首先记住一条结论: $ \lim\limits_{n \rightarrow \infty}a_{n}=a\Rightarrow \lim\limits_{n \rightarrow \infty}|a_{n}|=|a| $.\par
+这里常考的是直接举反例, 或者是结合极限运算的前提考察.
 \subsection{求解极限}
+首先, 要明确一点的是, 如果极限中的某一部分可以直接求出来的话, 是可以用结果替代掉的.
 \subsubsection{极限的基本运算}
 这里用到的是极限的四个运算法则:
 \begin{enumerate}
@@ -863,7 +906,8 @@ $ \lim\limits f(x), \lim\limits g(x) $中一个存在, 另一个不存在 $ \Rig
 \item 加减关系需要满足:
 \subitem $ \lim\limits \frac{\alpha}{\beta}=A\neq 1\Rightarrow f(x)-g(x)\sim \alpha-\beta $
 \subitem $ \lim\limits \frac{\alpha}{\beta}=A\neq -1\Rightarrow f(x)+g(x)\sim \alpha+\beta $
-\end{enumerate}
+\end{enumerate}\par
+\textbf{加减关系的条件换一句话说就是: 替换后加减的结果不能为$ 0 $}.
 \subsubsection{泰勒公式}
 {\kaishu 常用的泰勒公式}\vspace{-1em}
 \begin{multicols}{2}
@@ -881,13 +925,14 @@ $ \lim\limits f(x), \lim\limits g(x) $中一个存在, 另一个不存在 $ \Rig
 要注意到, 泰勒公式其实和无穷小有很大的相通性.
 \subsubsection{洛必达法则}
 \hyperref[洛必达法则]{洛必达法则}在前面已经介绍过, 不再赘述. 七种不定式几乎都可以用洛必达做.
-\subsubsection{单调有界准则}
+\subsubsection{单调有界准则}\label{单调有界准则算极限}
 单调有界准则常常用于求数列的极限, 步骤是:
 \begin{enumerate}
 \item 证明数列有界
 \item 证明数列单调
 \item 当$ n\rightarrow \infty $时, $ x_{n}=x_{n+1}=x_{n-1} $, 将关系式中的$ x_{n}, x_{n-1}, x_{n+1} $全部换成$ a $, 求解$ a $就是极限
-\end{enumerate}
+\end{enumerate}\par
+注意先后顺序, 先证明有界, 再证明单调.
 \subsubsection{夹逼定理}
 \hyperref[夹逼定理]{夹逼定理}在前面已经介绍过, 不再赘述. 常常会用到放缩法.
 \subsubsection{定积分的含义}
@@ -895,13 +940,13 @@ $ \lim\limits f(x), \lim\limits g(x) $中一个存在, 另一个不存在 $ \Rig
 \int_{0}^{1}f(x)\mathrm{d}x=\lim\limits_{n \rightarrow \infty}\frac{1}{n}\sum_{k=1}^{n}f(\frac{k}{n})
 \end{equation*}\par
 其核心是提取公因子$ \frac{1}{n} $, 然后将其余部分化为$ \sum_{k=1}^{n}f(\frac{k}{n}) $.
-\subsection{七种不定式的计算}
+\subsection{求解函数极限(七种不定式的计算)}
 七种不定式中, 最基础的是$ \frac{0}{0}, \frac{\infty}{\infty} $. 其次是$ \infty-\infty, 0\cdot\infty $, 其中后者可以细分为$ 0^{0}, 1^{\infty}, \infty^{0} $.
 \subsubsection{$ \frac{0}{0} $型}
 三种方法:
 \begin{enumerate}
-\item 等价无穷小替换
-\item 泰勒公式替换
+\item 等价无穷小替换: 要注意加减时候等价无穷小替换的规则(结果不能为$ 0 $)
+\item 泰勒公式替换: 无穷小的阶数一定要和分母的阶数保持一致
 \item 洛必达法则
 \end{enumerate}
 \subsubsection{$ \frac{\infty}{\infty} $型}
@@ -911,10 +956,11 @@ $ \lim\limits f(x), \lim\limits g(x) $中一个存在, 另一个不存在 $ \Rig
 \item 分母分子同处以最高阶的无穷大
 \end{enumerate}
 \subsubsection{$ \infty-\infty $型}
-两种方法:
+三种方法:
 \begin{enumerate}
 \item 分式差: 将其化为$ \frac{\infty}{\infty} $
 \item 根式差: 将根式有理化
+\item 提取无穷因子: 将无穷因子作为一个整体做变量代换
 \end{enumerate}
 \subsubsection{$ 0\cdot \infty $型}
 直接化为$ \frac{0}{0} $型或者$ \frac{\infty}{\infty} $型.
@@ -929,6 +975,16 @@ $ \lim\limits f(x), \lim\limits g(x) $中一个存在, 另一个不存在 $ \Rig
 \section{基础知识}
 \subsection{连续的定义}
 设函数$ f(x) $在点$ x_{0} $的某一邻域内有定义, 且有$ \lim\limits_{x\rightarrow x_{0}}f(x)=f(x_{0}) $, 则称函数$ f(x) $在点$ x_{0} $处连续.
+\subsubsection{左连续和右连续}
+\begin{enumerate}
+\item 左连续: $ \lim\limits_{x \rightarrow x_{0}^{-}}f(x)=f(x_{0}) $
+\item 右连续: $ \lim\limits_{x \rightarrow x_{0}^{+}}f(x)=f(x_{0}) $
+\end{enumerate}
+\subsubsection{充要条件}
+极限存在(左极限=右极限)且等于函数在这个点的函数值:
+\begin{equation*}
+\lim\limits_{x \rightarrow x_{0}^{-}}f(x)=\lim\limits_{x \rightarrow x_{0}^{+}}f(x)=f(x_{0})
+\end{equation*}
 \subsection{间断点的定义}
 \begin{enumerate}
 \item 第一类间断点: 左导数和右导数都存在
@@ -941,6 +997,14 @@ $ \lim\limits f(x), \lim\limits g(x) $中一个存在, 另一个不存在 $ \Rig
 \item 无穷间断点: $ \lim\limits_{x\rightarrow x_{0}}f(x)=\infty $
 \item 振荡间断点: $ \lim\limits_{x\rightarrow x_{0}}f(x) $振荡不存在
 \end{enumerate}
+\end{enumerate}
+\section{习题}
+\subsection{求间断点}
+求间断点的步骤:
+\begin{enumerate}
+\item 找间断点: 无定义点, 绝对值函数分界点, 分段函数分段点
+\item 求找到点的左极限和右极限和函数在该点的值
+\item 判定间断点的类型
 \end{enumerate}
 \chapter{一元函数微分学(代数)}
 \section{基础知识}
