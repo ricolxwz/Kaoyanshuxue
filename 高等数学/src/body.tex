@@ -1228,6 +1228,36 @@ f(\frac{x_{1}+x_{2}}{2})>\frac{f(x_{1})+f(x_{2})}{2}
 若$ \lim\limits_{x\rightarrow -\infty}\frac{f(x)}{x}=a_{2}, \lim\limits_{x\rightarrow -\infty}[f(x)-a_{2}x]=b_{2}\Rightarrow $ $ y=a_{2}x+b_{2} $是曲线$ y=f(x) $的一条斜渐近线. \par
 若$ \lim\limits_{x\rightarrow +\infty}\frac{f(x)}{x}=\lim\limits_{x\rightarrow -\infty}=a, \lim\limits_{x\rightarrow +\infty}[f(x)-ax]=\lim\limits_{x\rightarrow -\infty}=b\Rightarrow $ $ y=ax+b $是曲线$ y=f(x) $的一条斜渐近线. \par
 \section{习题}
+\subsection{利用导数的定义求极限}
+这里要用到导数的定义:
+\begin{equation*}
+f'(x_{0})=\lim\limits_{\Delta x \rightarrow 0} \frac{f(x_{0}+\Delta x)-f(x_{0})}{\Delta x}=\lim\limits_{x \rightarrow x_{0}} \frac{f(x)-f(x_{0})}{x-x_{0}}
+\end{equation*}\par
+特别是包含$ \Delta x $的导数定义式, 题目中常常不会给出复合上面结构的分式, 我们要求出$ \Delta x $, 凑成上面的结构, 最后, 通过极限的运算法则解答题目.
+\subsection{利用导数的定义求导数}
+\subsection{判别可导性}
+这里要掌握的是几种常见的函数形式的可导性判别:
+\begin{enumerate}
+\item $ |f(x)| $的可导性:
+\begin{enumerate}
+\item 若$ f(x) $在$ x_{0} $处可导:
+\subitem $ f(x_{0})\neq 0 \Rightarrow |f(x)| $在$ x_{0} $处可导
+\subitem $ f(x_{0})=0, f'(x_{0})\neq 0 \Rightarrow |f(x)| $在$ x_{0} $处不可导
+\subitem $ f(x_{0})=0, f'(x_{0})=0 \Rightarrow |f(x)| $在$ x_{0} $处可导, $ |f'(x_{0})|=0 $
+\item 若$ f(x) $在$ x_{0} $处连续, $ f(x_{0})\neq 0 $
+\subitem $ f(x) $在$ x_{0} $处可导$ \Leftrightarrow |f(x)| $在$ x_{0} $处可导
+\end{enumerate}
+\item $ f(x)\cdot g(x) $的可导性: \par 若$ f(x) $在$ x_{0} $处可导, $ g(x) $在$ x_{0} $处连续不可导, 则
+\subitem $ f(x)\cdot g(x) $在$ x_{0} $处可导$ \Leftrightarrow f(x_{0})=0 $
+\item $ (x-x_{0})^{k}|x-x_{0}| $的可导性:
+\begin{enumerate}
+\item $ k=0 \Rightarrow |x-x_{0}| $在$ x_{0} $不可导
+\item $ k=1 \Rightarrow (x-x_{0})|x-x_{0}| $在$ x_{0} $一阶不可导, 二阶可导
+\item $ k=n \Rightarrow (x-x_{0})^{n}|x-x_{0}| $在$ x_{0} $$ n $阶可导, $ n+1 $阶不可导
+\end{enumerate}
+\item $ f(x)|x-a| $的可导性: 若$ f(x) $在$ x=a $连续
+\subitem $ f(a)=0\Leftrightarrow f(x)|x-a| $在$ a $可导
+\end{enumerate}
 \chapter{中值定理}
 这一章要掌握十大定理.
 \section{基础知识}
