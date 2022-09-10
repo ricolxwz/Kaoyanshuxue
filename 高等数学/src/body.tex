@@ -1150,7 +1150,7 @@ f(x)\le f(x_{0})(\text{或}f(x)\ge f(x_{0}))
 \end{equation*}\par
 成立, 则称$ x_{0} $为$ f(x) $的极大值点(或极小值点), $ f(x_{0}) $为$ f(x) $的极大值(或极小值).\par \vspace{.5em}
 \noindent {\kaishu 极值点的必要条件}:\par \vspace{.5em}
-$ f(x) $在$ I $上单调$ \Rightarrow $设$ f(x) $在$ x=x_{0} $处可导, 则$ f'(x_{0})=0 $.\par \vspace{.5em}
+$ x_{0} $为极值点$ \Rightarrow $设$ f(x) $在$ x=x_{0} $处可导, 则$ f'(x_{0})=0 $.\par \vspace{.5em}
 \noindent {\kaishu 极值点的充分条件}:
 \begin{enumerate}
 \item 根据一阶导数判断: $ f(x) $在$ x=x_{0} $的某邻域内一阶可导
@@ -1163,6 +1163,12 @@ $ f(x) $在$ I $上单调$ \Rightarrow $设$ f(x) $在$ x=x_{0} $处可导, 则$
 \subitem 当$ n $为偶数且$ f^{(n)}(x_{0})>0\Rightarrow x_{0} $为极小值点
 \subitem 当$ n $为偶数且$ f^{(n)}(x_{0})<0\Rightarrow x_{0} $为极大值点
 \end{enumerate}
+\begin{tcolorbox}
+\begin{enumerate}
+\item 对于定义域为$ [a,b] $的函数, 极值点只能在$ (a,b) $上, 定义域的两端点不可能是极值点(根据极值的定义)
+\item 对于定义域为$ [a,b] $的函数, 如果函数的最大值(最小值)在$ (a,b) $上取得, 则函数在该点一定取得极大值(极小值)
+\end{enumerate}
+\end{tcolorbox}
 \subsubsection{二点: 最值点}
 设$ x_{0} $为$ f(x) $定义域内一点, 若对于$ f(x) $的定义域内任意一点$ x $, 均有:
 \begin{equation*}
@@ -1185,7 +1191,7 @@ f(x)\le f(x_{0})(\text{或}f(x)\ge f(x_{0}))
 连续曲线的凹弧和凸弧的分界点成为该曲线的拐点.\par \vspace{.5em}
 \noindent {\kaishu 拐点的必要条件}: \par \vspace{.5em}
 $ x_{0} $为拐点$ \Rightarrow $设$ f(x) $在$ x=x_{0} $处二阶可导, 则$ f''(x_{0})=0 $ \par \vspace{.5em}
-\noindent {\kaishu 拐点的充要条件}:
+\noindent {\kaishu 拐点的充分条件}:
 \begin{enumerate}
 \item 根据二阶导数判断: $ f(x) $在$ x=x_{0} $的某邻域内二阶可导, 该点左/右邻域内$ f''(x) $变号$ \Rightarrow x_{0}$为拐点
 \item 根据三阶导数判断: $ f(x) $在$ x=x_{0} $的某邻域内三阶可导, 且$ f''(x_{0})=0, f'''(x_{0})\neq 0 $$ \Rightarrow x_{0}$为拐点
