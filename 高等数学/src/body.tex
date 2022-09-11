@@ -794,7 +794,7 @@ scale=2,
 \subsection{无穷小}
 \subsubsection{无穷小定义}
 如果当$ x\rightarrow x_{0}(\text{或}x\rightarrow \infty) $函数$ f(x) $的极限为零$ \Rightarrow  $函数$ f(x) $为当$ x \rightarrow x_{0}(\text{或}x \rightarrow \infty ) $时的无穷小.
-\subsubsection{无穷小的比阶}
+\subsubsection{无穷小的比阶}\label{无穷小的比阶}
 \begin{enumerate}
 \item 高阶无穷小: $ \lim\limits \frac{\alpha(x)}{\beta(x)}=0 $, $ \alpha(x) $是$ \beta(x) $的高阶无穷小, 记作$ \alpha(x)=o(\beta(x)) $
 \item 低阶无穷小: $ \lim\limits \frac{\alpha(x)}{\beta(x)}=\infty $, $ \alpha(x) $是$ \beta(x) $的低阶无穷小
@@ -971,6 +971,17 @@ $ \lim\limits f(x), \lim\limits g(x) $中一个存在, 另一个不存在 $ \Rig
 \end{equation*}
 \subsubsection{$ \infty^{0}, 0^{0} $型}
 可以转为为$ exp $形式.
+\subsection{根据极限求参数}
+已知函数(数列)极限求参数, 也是极限的计算. 可以利用等价无穷小的代换和性质, 求极限的方法结合已知条件进行求解. 常用的结论:
+\begin{equation*}
+\begin{aligned}
+& \lim\limits \frac{\alpha(x)}{\beta(x)}=A, 若 \lim\limits \beta(x)=0\Rightarrow \lim\limits \alpha(x)=0 \\
+& \lim\limits \frac{\alpha(x)}{\beta(x)}=A\neq 0, 若 \lim\limits \alpha(x)=0\Rightarrow \lim\limits \beta(x)=0
+\end{aligned}
+\end{equation*}
+\subsection{根据极限求导数}
+\subsection{无穷小的比阶确定参数}
+见\hyperref[无穷小的比阶]{无穷小的比阶}, 重点注意的是$ k $阶无穷小的定义.
 \chapter{函数的连续和间断}
 \section{基础知识}
 \subsection{连续的定义}
@@ -1027,7 +1038,7 @@ $ f(x) $在$ x_{0} $处可导$ \Leftrightarrow f(x)$在$ x_{0} $处导数存在$
 \Delta y=A\Delta x+o(\Delta x)
 \end{equation*}\par
 其中, $ o(\Delta x) $是在$ \Delta \rightarrow 0 $时比$ \Delta $更高阶的无穷小, 则称$ f(x) $在点$ x_{0} $处可微, 并称$ A\Delta x $为$ f(x) $在点$ x_{0} $处的微分.
-\subsection{导数和微分的计算}
+\subsection{导数和微分的计算}\label{求导的方法}
 \subsubsection{四则运算}
 若以下函数可导, 则:
 \begin{enumerate}
@@ -1099,6 +1110,16 @@ u(x)^{v(x)}=e^{v(x)\ln u(x)}
 \begin{equation*}
 [u(x)^{v(x)}]'=[e^{v(x)\ln u(x)}]'=u(x)^{v(x)}[v'(x)\ln u(x)+v(x)\frac{u'(x)}{u(x)}]
 \end{equation*}
+\subsubsection{极坐标求导法}
+设有一极坐标方程为$ r=r(\theta) $, 将该方程转化为参数方程:
+\begin{equation*}
+\scaleleftright[6pt]{\biggl\{}{
+\begin{aligned}
+& x=r(\theta)\cos \theta \\
+& y=r(\theta)\sin \theta
+\end{aligned} }{.}
+\end{equation*}
+然后, 再用参数方程求导法进行求导.
 \subsubsection{高阶导数}
 求高阶导数主要有三种方法:
 \begin{enumerate}
@@ -1139,6 +1160,73 @@ F'(x)=\dv{}{x}\left[\int_{\varphi_{1}(x)}^{\varphi_{2}(x)}f(t)\mathrm{d}t\right]
 \item $ [\ln (x+\sqrt{x^{2}-1})]'=\frac{1}{\sqrt{x^{2}-1}} $
 \end{itemize}
 \end{multicols}
+\section{习题}
+\subsection{利用导数的定义求极限}
+这里要用到导数的定义:
+\begin{equation*}
+f'(x_{0})=\lim\limits_{\Delta x \rightarrow 0} \frac{f(x_{0}+\Delta x)-f(x_{0})}{\Delta x}=\lim\limits_{x \rightarrow x_{0}} \frac{f(x)-f(x_{0})}{x-x_{0}}
+\end{equation*}\par
+特别是包含$ \Delta x $的导数定义式, 题目中常常不会给出复合上面结构的分式, 我们要求出$ \Delta x $, 凑成上面的结构, 最后, 通过极限的运算法则解答题目.\par
+\textbf{还需要特别特别注意的是在分子中$ \Delta x $前面必须是正号, 即形式不可改变.}
+\subsection{利用导数的定义求导数}
+利用导数的定义, 常常会用来求:
+\begin{enumerate}
+\item 分段函数在分界点处的导数(常考)
+\item 绝对值函数在分段点处的导数
+\item 连乘函数的导数
+\item 抽象函数的导数
+\item ``不能直接代入求导''的函数的导数
+\end{enumerate}\par
+证明分段函数分界点导数存在的方法: 求分界点的左导数和右导数, 若两个相等, 则导数存在, 若不相等, 导数不存在.
+\subsection{判别可导性(难点)}
+这里要掌握的是几种常见的函数形式的可导性判别:
+\begin{enumerate}
+\item $ |f(x)| $的可导性:
+\begin{enumerate}
+\item 若$ f(x) $在$ x_{0} $处可导:
+\subitem $ f(x_{0})\neq 0 \Rightarrow |f(x)| $在$ x_{0} $处可导
+\subitem $ f(x_{0})=0, f'(x_{0})\neq 0 \Rightarrow |f(x)| $在$ x_{0} $处不可导
+\subitem $ f(x_{0})=0, f'(x_{0})=0 \Rightarrow |f(x)| $在$ x_{0} $处可导, $ |f'(x_{0})|=0 $
+\item 若$ f(x) $在$ x_{0} $处连续, $ f(x_{0})\neq 0 $
+\subitem $ f(x) $在$ x_{0} $处可导$ \Leftrightarrow |f(x)| $在$ x_{0} $处可导
+\end{enumerate}
+\item $ f(x)\cdot g(x) $的可导性: \par 若$ f(x) $在$ x_{0} $处可导, $ g(x) $在$ x_{0} $处连续不可导, 则
+\subitem $ f(x)\cdot g(x) $在$ x_{0} $处可导$ \Leftrightarrow f(x_{0})=0 $
+\item $ (x-x_{0})^{k}|x-x_{0}| $的可导性:
+\begin{enumerate}
+\item $ k=0 \Rightarrow |x-x_{0}| $在$ x_{0} $不可导
+\item $ k=1 \Rightarrow (x-x_{0})|x-x_{0}| $在$ x_{0} $一阶不可导, 二阶可导
+\item $ k=n \Rightarrow (x-x_{0})^{n}|x-x_{0}| $在$ x_{0} $$ n $阶可导, $ n+1 $阶不可导
+\end{enumerate}
+\item $ f(x)|x-a| $的可导性: 若$ f(x) $在$ x=a $连续
+\subitem $ f(a)=0\Leftrightarrow f(x)|x-a| $在$ a $可导
+\end{enumerate}
+\subsection{求导}
+这里考察的是\hyperref[求导的方法]{求导的方法}, 已经在上述展开, 不再赘述.\par
+特别要注意的是复合函数的求导, 可能会结合分段函数的求导来考. 
+\subsection{$ n $阶导数的计算}
+\begin{enumerate}
+\item 常见的公式:
+\begin{enumerate}
+\item $ (a^{x})^{(n)}=a^{x}(\ln a)^{n} $
+\item $ (e^{x})^{(n)}=e^{x} $
+\item $ (\sin x)^{(n)}=\sin (x+n\cdot \frac{\pi}{2}) $
+\item $ (\cos x)^{(n)}=\cos (x+n\cdot \frac{\pi}{2}) $
+\item $ (\ln x)^{(n)}=(-1)^{n-1}\frac{(n-1)!}{x^{n}}(x>0) $
+\item $ [\ln (x+1)]^{(n)}=(-1)^{n-1}\frac{(n-1)!}{(x+1)^{n}}(x>-1) $
+\end{enumerate}
+\item 莱布尼茨公式:
+\begin{equation*}
+(u\pm v)^{(n)}=u^{(n)}\pm v^{(n)}\quad (u\cdot v)^{(n)}=\mathrm{C}_{n}^{0}u^{(0)}v^{(n)}+\mathrm{C}_{n}^{1}u^{(1)}v^{(n-1)}+\dots+\mathrm{C}_{n}^{n}u^{(n)}v^{(0)}
+\end{equation*}
+\item 递推法
+\item 泰勒公式的系数
+\end{enumerate}
+\subsection{导数的几何应用}
+{\kaishu 求切线方程} \par \vspace{.5em}
+曲线$ y=f(x) $在点$ (x_{0}, y_{0}) $处的切线的斜率存在, 则其切线方程为$ y-y_{0}=f'(x_{0})(x-x_{0}) $ \par \vspace{.5em}
+{\kaishu 求法线方程} \par \vspace{.5em}
+曲线$ y=f(x) $在点$ (x_{0}, y_{0}) $处的切线斜率存在, 且$ f'(x_{0})\neq 0 $, 则其法线方程为$ y-y_{0}=-\frac{1}{f'(x_{0})}(x-x_{0}) $ \par \vspace{.5em}
 \chapter{一元函数微分学(几何)}
 该章的内容可以概括为``三点两性一线''.
 \section{基础知识}
@@ -1228,36 +1316,6 @@ f(\frac{x_{1}+x_{2}}{2})>\frac{f(x_{1})+f(x_{2})}{2}
 若$ \lim\limits_{x\rightarrow -\infty}\frac{f(x)}{x}=a_{2}, \lim\limits_{x\rightarrow -\infty}[f(x)-a_{2}x]=b_{2}\Rightarrow $ $ y=a_{2}x+b_{2} $是曲线$ y=f(x) $的一条斜渐近线. \par
 若$ \lim\limits_{x\rightarrow +\infty}\frac{f(x)}{x}=\lim\limits_{x\rightarrow -\infty}=a, \lim\limits_{x\rightarrow +\infty}[f(x)-ax]=\lim\limits_{x\rightarrow -\infty}=b\Rightarrow $ $ y=ax+b $是曲线$ y=f(x) $的一条斜渐近线. \par
 \section{习题}
-\subsection{利用导数的定义求极限}
-这里要用到导数的定义:
-\begin{equation*}
-f'(x_{0})=\lim\limits_{\Delta x \rightarrow 0} \frac{f(x_{0}+\Delta x)-f(x_{0})}{\Delta x}=\lim\limits_{x \rightarrow x_{0}} \frac{f(x)-f(x_{0})}{x-x_{0}}
-\end{equation*}\par
-特别是包含$ \Delta x $的导数定义式, 题目中常常不会给出复合上面结构的分式, 我们要求出$ \Delta x $, 凑成上面的结构, 最后, 通过极限的运算法则解答题目.
-\subsection{利用导数的定义求导数}
-\subsection{判别可导性}
-这里要掌握的是几种常见的函数形式的可导性判别:
-\begin{enumerate}
-\item $ |f(x)| $的可导性:
-\begin{enumerate}
-\item 若$ f(x) $在$ x_{0} $处可导:
-\subitem $ f(x_{0})\neq 0 \Rightarrow |f(x)| $在$ x_{0} $处可导
-\subitem $ f(x_{0})=0, f'(x_{0})\neq 0 \Rightarrow |f(x)| $在$ x_{0} $处不可导
-\subitem $ f(x_{0})=0, f'(x_{0})=0 \Rightarrow |f(x)| $在$ x_{0} $处可导, $ |f'(x_{0})|=0 $
-\item 若$ f(x) $在$ x_{0} $处连续, $ f(x_{0})\neq 0 $
-\subitem $ f(x) $在$ x_{0} $处可导$ \Leftrightarrow |f(x)| $在$ x_{0} $处可导
-\end{enumerate}
-\item $ f(x)\cdot g(x) $的可导性: \par 若$ f(x) $在$ x_{0} $处可导, $ g(x) $在$ x_{0} $处连续不可导, 则
-\subitem $ f(x)\cdot g(x) $在$ x_{0} $处可导$ \Leftrightarrow f(x_{0})=0 $
-\item $ (x-x_{0})^{k}|x-x_{0}| $的可导性:
-\begin{enumerate}
-\item $ k=0 \Rightarrow |x-x_{0}| $在$ x_{0} $不可导
-\item $ k=1 \Rightarrow (x-x_{0})|x-x_{0}| $在$ x_{0} $一阶不可导, 二阶可导
-\item $ k=n \Rightarrow (x-x_{0})^{n}|x-x_{0}| $在$ x_{0} $$ n $阶可导, $ n+1 $阶不可导
-\end{enumerate}
-\item $ f(x)|x-a| $的可导性: 若$ f(x) $在$ x=a $连续
-\subitem $ f(a)=0\Leftrightarrow f(x)|x-a| $在$ a $可导
-\end{enumerate}
 \chapter{中值定理}
 这一章要掌握十大定理.
 \section{基础知识}
