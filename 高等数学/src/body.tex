@@ -1173,7 +1173,7 @@ f'(x_{0})=\lim\limits_{\Delta x \rightarrow 0} \frac{f(x_{0}+\Delta x)-f(x_{0})}
 \begin{enumerate}
 \item 分段函数在分界点处的导数(常考)
 \item 绝对值函数在分段点处的导数
-\item 连乘函数的导数
+\item 连乘函数的导数(特别注意, 连乘导数有时候要当做抽象函数做)
 \item 抽象函数的导数
 \item ``不能直接代入求导''的函数的导数
 \end{enumerate}\par
@@ -1315,6 +1315,26 @@ f(\frac{x_{1}+x_{2}}{2})>\frac{f(x_{1})+f(x_{2})}{2}
 若$ \lim\limits_{x\rightarrow +\infty}\frac{f(x)}{x}=a_{1}, \lim\limits_{x\rightarrow +\infty}[f(x)-a_{1}x]=b_{1}\Rightarrow $ $ y=a_{1}x+b_{1} $是曲线$ y=f(x) $的一条斜渐近线. \par
 若$ \lim\limits_{x\rightarrow -\infty}\frac{f(x)}{x}=a_{2}, \lim\limits_{x\rightarrow -\infty}[f(x)-a_{2}x]=b_{2}\Rightarrow $ $ y=a_{2}x+b_{2} $是曲线$ y=f(x) $的一条斜渐近线. \par
 若$ \lim\limits_{x\rightarrow +\infty}\frac{f(x)}{x}=\lim\limits_{x\rightarrow -\infty}=a, \lim\limits_{x\rightarrow +\infty}[f(x)-ax]=\lim\limits_{x\rightarrow -\infty}=b\Rightarrow $ $ y=ax+b $是曲线$ y=f(x) $的一条斜渐近线. \par
+\subsection{曲率}
+\subsubsection{曲率的计算}
+{\kaishu 曲线由直角坐标方程$ y=f(x) $给出}
+\begin{equation*}
+K=\frac{|y''|}{(1+y'^{2})^{\frac{3}{2}}}
+\end{equation*}\par \vspace{.5em}
+{\kaishu 曲线由参数方程\ }$
+\scaleleftright[6pt]{\biggl\{}{
+\begin{aligned}
+& x=\varphi(t) \\
+& y=\psi(t)
+\end{aligned} }{.} $ {\kaishu 给出}
+\begin{equation*}
+K=\frac{|\psi''\varphi'-\psi'\varphi''|}{(\varphi'^{2}+\psi'^{2})^{\frac{3}{2}}}
+\end{equation*}\par
+建议是先计算出$ \frac{\mathrm{d}y}{\mathrm{d}x}, \frac{\mathrm{d}^{2}y}{\mathrm{d}x^{2}} $, 然后代入直角坐标下的曲率计算方程, 因为参数方程下的曲率计算方程比较容易出错.
+\subsubsection{曲率和曲率半径的关系}
+\begin{equation*}
+\text{曲率半径}R=\frac{1}{K}
+\end{equation*}
 \section{习题}
 \chapter{中值定理}
 这一章要掌握十大定理.
@@ -1389,14 +1409,51 @@ f(x)=f(x_{0})+f'(x_{0})(x-x_{0})+\frac{1}{2!}f''(x_{0})(x-x_{0})^{2}+\dots+\frac
 主要用拉格朗日中值定理或者是泰勒公式.
 \end{enumerate}
 \section{习题}
-\chapter{一元函数积分学(代数)}
+\chapter{一元函数积分学: 不定积分}
 \section{基础知识}
 \subsection{概念}
+\subsubsection{原函数}
+如果在区间$ I' $上$ F'(x)=f(x) $或者$ \mathrm{d}F(x)=f(x)\mathrm{d}x $处处成立, 则称$ F(x) $为$ f(x) $在区间$ I $上的原函数.
+\begin{tcolorbox}
+如果$ F(x) $是$ f(x) $的一个原函数, 那么$ F(x)+C $都是$ f(x) $的原函数, 且是$ f(x) $的所有原函数.
+\end{tcolorbox}
 \subsubsection{不定积分}
-{\kaishu 原函数和不定积分}\vspace{.5em}\par
-设函数$ f(x) $定义在某区间$ I $上, 若存在可导函数$ F(x) $, 对于该区间上的任意一点都有$ F'(x)=f(x) $成立, 则称$ F(x) $是$ f(x) $在区间$ I $上的一个原函数, 称$ \int f(x)\mathrm{d}x=F(x)+C $为$ f(x) $在区间$ I $上的不定积分.\vspace{.5em}\par
-{\kaishu 原函数存在定理}\par
+在区间$ I $上, 函数$ f(x) $带有任意常数的原函数称为$ f(x) $在区间$ I $上的不定积分, 记为$ \displaystyle \int_{}\hspace{.2em} f(x)\mathrm{d}x $ \par 如果$ F(x) $是$ f(x) $在区间$ I $上的一个原函数, 那么$ F(x)+C $就是$ f(x) $的不定积分. 即:
+\begin{equation*}
+\displaystyle\int_{}\hspace{.2em} f(x)\mathrm{d}x =F(x)+C
+\end{equation*}
+\subsubsection{存在性}
 \begin{enumerate}
-\item 连续函数$ f(x) $必有原函数$ f(x) $
-\item 含有第一类间断点和无穷间断点的函数$ f(x) $包含该间断点的区间必没有原函数$ F(x) $.
+\item 若$ f(x) $在区间$ I $上连续, 则$ f(x) $在区间$ I $上必有原函数
+\item 若$ f(x) $在区间$ I $上有第一类间断点, 则$ f(x)
+ $在区间$ I $上没有原函数
 \end{enumerate}
+\subsection{运算规则}
+\begin{enumerate}
+\item $ (\displaystyle\int_{}\hspace{.2em} f(x)\mathrm{d}x)'=f(x), \mathrm{d}\hspace{-.35em}\displaystyle\int_{}\hspace{.2em} f(x)\mathrm{d}x=f(x)\mathrm{d}x $
+\item $ \displaystyle\int_{}\hspace{.2em} f'(x)\mathrm{d}x=f(x)+C, \displaystyle\int_{}\hspace{.2em} \mathrm{d}f(x)=f(x)+C $
+\item $ \displaystyle\int_{}\hspace{.2em} kf(x)\mathrm{d}x=k\hspace{-.35em}\displaystyle\int_{}\hspace{.2em} f(x)\mathrm{d}x $
+\item $ \displaystyle\int_{}\hspace{.5em} [f(x)\pm g(x)]\mathrm{d}x=\displaystyle\int_{}\hspace{.2em} f(x)\mathrm{d}x\pm \displaystyle\int_{}\hspace{.2em} g(x)\mathrm{d}x $
+\end{enumerate}
+\subsection{积分表}
+\begin{multicols}{2}
+\begin{itemize}
+\item $ \displaystyle\int_{}\hspace{.2em} x^{a}\mathrm{d}x=\frac{1}{a+1}x^{a+1}+C(a\neq -1) $
+\item $ \displaystyle\int_{}\hspace{.2em} \frac{1}{x}\mathrm{d}x=\ln |x|+C $
+\item $ \displaystyle\int_{}\hspace{.2em} a^{x}\mathrm{d}x=\frac{a^{x}}{\ln a}+C(a>0, a\neq 1) $
+\item $ \displaystyle\int_{}\hspace{.2em}e^{x}\mathrm{d}x=e^{x}+C $
+\item $ \displaystyle\int_{}\hspace{.2em}\sin x \mathrm{d}x=-\cos x+C $
+\item $ \displaystyle\int_{}\hspace{.2em}\cos x \mathrm{d}x=\sin x+C $
+\item $ \displaystyle\int_{}\hspace{.2em}\sec^{2}x \mathrm{d}x=\tan x+C $
+\item $ \displaystyle\int_{}\hspace{.2em}\csc^{2}x \mathrm{d}x=-\cot x+C $
+\item $ \displaystyle\int_{}\hspace{.2em}\sec x\tan x \mathrm{d}x=\sec x+C $
+\item $ \displaystyle\int_{}\hspace{.2em}\csc x\cot x \mathrm{d}x=-\csc x+C $
+\item $ \displaystyle\int_{}\hspace{.2em}\sec x \mathrm{d}x=\ln |\sec x+\tan x|+C $
+\item $ \displaystyle\int_{}\hspace{.2em}\csc x \mathrm{d}x=-\ln|\csc x+\cot x|+C $
+\item $ \displaystyle\int_{}\hspace{.2em}\frac{\mathrm{d}x}{a^{2}+x^{2}}=\frac{1}{a}\arctan \frac{x}{a}+C $
+\item $ \displaystyle\int_{}\hspace{.2em}\frac{\mathrm{d}x}{a^{2}-x^{2}}=\frac{1}{2a}\ln |\frac{a+x}{a-x}|+C $
+\item $ \displaystyle\int_{}\hspace{.2em}\frac{\mathrm{d}x}{\sqrt{a^{2}-x^{2}}}=\arcsin \frac{x}{a}+C $
+\item $ \displaystyle\int_{}\hspace{.2em}\frac{\mathrm{d}x}{\sqrt{x^{2}+a^{2}}}=\ln|x+\sqrt{x^{2}+a^{2}}|+C $
+\item $ \displaystyle\int_{}\hspace{.2em}\frac{\mathrm{d}x}{\sqrt{x^{2}-a^{2}}}=\ln|x+\sqrt{x^{2}-a^{2}}|+C $
+\end{itemize}
+\end{multicols}
