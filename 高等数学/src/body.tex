@@ -1411,7 +1411,7 @@ f(x)=f(x_{0})+f'(x_{0})(x-x_{0})+\frac{1}{2!}f''(x_{0})(x-x_{0})^{2}+\dots+\frac
 \section{习题}
 \chapter{一元函数积分学: 不定积分}
 \section{基础知识}
-\subsection{概念}
+\subsection{原函数和不定积分的定义}
 \subsubsection{原函数}
 如果在区间$ I' $上$ F'(x)=f(x) $或者$ \mathrm{d}F(x)=f(x)\mathrm{d}x $处处成立, 则称$ F(x) $为$ f(x) $在区间$ I $上的原函数.
 \begin{tcolorbox}
@@ -1428,7 +1428,7 @@ f(x)=f(x_{0})+f'(x_{0})(x-x_{0})+\frac{1}{2!}f''(x_{0})(x-x_{0})^{2}+\dots+\frac
 \item 若$ f(x) $在区间$ I $上有第一类间断点, 则$ f(x)
  $在区间$ I $上没有原函数
 \end{enumerate}
-\subsection{运算规则}
+\subsection{不定积分运算规则}
 \begin{enumerate}
 \item $ (\displaystyle\int_{}\hspace{.2em} f(x)\mathrm{d}x)'=f(x), \mathrm{d}\hspace{-.35em}\displaystyle\int_{}\hspace{.2em} f(x)\mathrm{d}x=f(x)\mathrm{d}x $
 \item $ \displaystyle\int_{}\hspace{.2em} f'(x)\mathrm{d}x=f(x)+C, \displaystyle\int_{}\hspace{.2em} \mathrm{d}f(x)=f(x)+C $
@@ -1457,3 +1457,72 @@ f(x)=f(x_{0})+f'(x_{0})(x-x_{0})+\frac{1}{2!}f''(x_{0})(x-x_{0})^{2}+\dots+\frac
 \item $ \displaystyle\int_{}\hspace{.2em}\frac{\mathrm{d}x}{\sqrt{x^{2}-a^{2}}}=\ln|x+\sqrt{x^{2}-a^{2}}|+C $
 \end{itemize}
 \end{multicols}
+\subsection{积分方法}
+\subsubsection{第一类换元法(凑微分法)}
+若$ \displaystyle\int_{}\hspace{.2em}f(u)\mathrm{d}u=F(u)+C $, 且$ \varphi(x) $可导, 则:
+\begin{equation*}
+\displaystyle\int_{}\hspace{.2em}f(\varphi(x))\varphi'(x)\mathrm{d}x=\displaystyle\int_{}\hspace{.2em}f(\varphi(x))\mathrm{d}\varphi(x)=F(\varphi(x))+C
+\end{equation*}
+\subsubsection{第二类换元法}
+设函数$ x=\varphi(t) $可导, 且$ \varphi'(t)\neq 0 $, 又设$ \displaystyle\int_{}\hspace{.2em}f(\varphi(t))\varphi'(t)\mathrm{d}t=F(t)+C $, 则:
+\begin{equation*}
+\displaystyle\int_{}\hspace{.2em}f(x)\mathrm{d}x=\displaystyle\int_{}\hspace{.2em}f(\varphi(t))\varphi'(t)\mathrm{d}t=F(\varphi^{-1}(x))+C
+\end{equation*}
+\begin{tcolorbox}
+三种常用的变量代换:
+\begin{enumerate}
+\item 被积函数中含有$ \sqrt{a^{2}}-x^{2} $时, 令$ x=a\sin t $, 或者是$ x=a\cos t $
+\item 被积函数中含有$ \sqrt{a^{2}+x^{2}} $时, 令$ x=a\tan t $
+\item 被积函数中含有$ \sqrt{x^{2}-a^{2}} $时, 令$ x=a\sec t $
+\end{enumerate}
+\end{tcolorbox}
+\subsubsection{分部积分法}
+设$ u(x) $, $ v(x) $有连续一阶导数, 则:
+\begin{equation*}
+\displaystyle\int_{}\hspace{.2em}u \mathrm{d}v=uv-\displaystyle\int_{}\hspace{.2em}v \mathrm{d}u
+\end{equation*}
+\begin{tcolorbox}
+\begin{enumerate}
+\item 分部积分法常常用于被积函数为两类不同函数相乘时的不定积分
+\item 积分的难易程度: 若函数积分后会简单些则取作$ v $, 若函数微分后会简单些则取作$ u $, 难易程度为$ \ln x, \arcsin x, \arctan x<P_{n}(x)<e^{kx}, \sin ax, \cos ax $, 越往左边越适合作为$ u $.
+\begin{enumerate}
+\item 被积函数是$ P_{n}(x)e^{kx}, P_{n}(x)\sin ax, P_{n}(x)\cos ax $等形式的时候, 一般来说选取$ u=P_{n}(x) $
+\item 被积函数是$ e^{ax}\sin bx, e^{ax}\cos bx $等形式的时候, 一般来说选取两因子中的任意一个
+\item 被积函数是$ P_{n}\ln x, P_{n}(x)\arcsin x, P_{n}(x)\arctan x $等形式的时候, 一般来说选取$ u=\ln x, u=\arcsin x, u=\arctan x $
+\end{enumerate}
+\end{enumerate}
+\end{tcolorbox}
+\subsection{常见的积分}
+\subsubsection{有理函数积分}
+\begin{equation*}
+\displaystyle\int_{}\hspace{.2em}R(x)\mathrm{d}x
+\end{equation*}\par
+\begin{enumerate}
+\item 一般方法: 部分分式法
+\item 特殊方法: 加项减项拆项或者凑微分降幂
+\end{enumerate}
+\subsubsection{三角有理式积分}
+\begin{equation*}
+\displaystyle\int_{}\hspace{.2em}R(\sin x, \cos x)\mathrm{d}x
+\end{equation*}\par
+\begin{enumerate}
+\item 一般方法: 万能代换 \par
+令$ \tan \frac{x}{2}=t $
+\begin{equation*}
+\displaystyle\int_{}\hspace{.2em}R(\sin x, \cos x)\mathrm{d}x=\displaystyle\int_{}\hspace{.2em}R(\frac{2t}{1+t^{2}}, \frac{1-t^{2}}{1+t^{2}})\frac{2}{1+t^{2}}\mathrm{d}t
+\end{equation*}
+\item 特殊方法: 三角变形, 换元, 分部
+\end{enumerate}
+\begin{tcolorbox}
+几种常见的换元法:
+\begin{enumerate}
+\item 若$ R(-\sin x, \cos x)=-R(\sin x, \cos x) $, 则令$ u=\cos x $, 即凑$ \mathrm{d}\cos x $
+\item 若$ R(\sin x, -\cos x)=-R(\sin x, \cos x) $, 则令$ u=\sin x $, 即凑$ \mathrm{d}\sin x $
+\item 若$ R(-\sin x, -\cos x)=-R(\sin x, \cos x) $, 则令$ u=\tan x $, 即凑$ \mathrm{d}\tan x $
+\end{enumerate}
+\end{tcolorbox}
+\subsubsection{无理函数积分}
+\begin{equation*}
+\displaystyle\int_{}\hspace{.2em}R(x, \sqrt[n]{\frac{ax+b}{cx+d}})\ \mathrm{d}x
+\end{equation*}\par
+令$ \sqrt[n]{\frac{ax+b}{cx+d}}=t $, 将其化为有理函数积分进行计算.
