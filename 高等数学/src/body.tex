@@ -1421,7 +1421,8 @@ f(x)=f(x_{0})+f'(x_{0})(x-x_{0})+\frac{1}{2!}f''(x_{0})(x-x_{0})^{2}+\dots+\frac
 在区间$ I $上, 函数$ f(x) $带有任意常数的原函数称为$ f(x) $在区间$ I $上的不定积分, 记为$ \displaystyle \int_{}\hspace{.2em} f(x)\mathrm{d}x $ \par 如果$ F(x) $是$ f(x) $在区间$ I $上的一个原函数, 那么$ F(x)+C $就是$ f(x) $的不定积分. 即:
 \begin{equation*}
 \displaystyle\int_{}\hspace{.2em} f(x)\mathrm{d}x =F(x)+C
-\end{equation*}
+\end{equation*}\par
+直白的说, 不定积分就是一簇原函数.
 \subsubsection{存在性}
 \begin{enumerate}
 \item 若$ f(x) $在区间$ I $上连续, 则$ f(x) $在区间$ I $上必有原函数
@@ -1434,7 +1435,8 @@ f(x)=f(x_{0})+f'(x_{0})(x-x_{0})+\frac{1}{2!}f''(x_{0})(x-x_{0})^{2}+\dots+\frac
 \item $ \displaystyle\int_{}\hspace{.2em} f'(x)\mathrm{d}x=f(x)+C, \displaystyle\int_{}\hspace{.2em} \mathrm{d}f(x)=f(x)+C $
 \item $ \displaystyle\int_{}\hspace{.2em} kf(x)\mathrm{d}x=k\hspace{-.35em}\displaystyle\int_{}\hspace{.2em} f(x)\mathrm{d}x $
 \item $ \displaystyle\int_{}\hspace{.5em} [f(x)\pm g(x)]\mathrm{d}x=\displaystyle\int_{}\hspace{.2em} f(x)\mathrm{d}x\pm \displaystyle\int_{}\hspace{.2em} g(x)\mathrm{d}x $
-\end{enumerate}
+\end{enumerate}\par
+如果先求导再积分, 则有$ C $, 如果先积分再求导, 则无$ C $.
 \subsection{积分表}
 \begin{multicols}{2}
 \begin{itemize}
@@ -1471,8 +1473,8 @@ f(x)=f(x_{0})+f'(x_{0})(x-x_{0})+\frac{1}{2!}f''(x_{0})(x-x_{0})^{2}+\dots+\frac
 \begin{tcolorbox}
 三种常用的变量代换:
 \begin{enumerate}
-\item 被积函数中含有$ \sqrt{a^{2}}-x^{2} $时, 令$ x=a\sin t $, 或者是$ x=a\cos t $
-\item 被积函数中含有$ \sqrt{a^{2}+x^{2}} $时, 令$ x=a\tan t $
+\item 被积函数中含有$ \sqrt{a^{2}-x^{2}} $时, 令$ x=a\sin t $, 或者是$ x=a\cos t $
+\item 被积函数中含有$ \sqrt{x^{2}+a^{2}} $时, 令$ x=a\tan t $
 \item 被积函数中含有$ \sqrt{x^{2}-a^{2}} $时, 令$ x=a\sec t $
 \end{enumerate}
 \end{tcolorbox}
@@ -1526,3 +1528,100 @@ f(x)=f(x_{0})+f'(x_{0})(x-x_{0})+\frac{1}{2!}f''(x_{0})(x-x_{0})^{2}+\dots+\frac
 \displaystyle\int_{}\hspace{.2em}R(x, \sqrt[n]{\frac{ax+b}{cx+d}})\ \mathrm{d}x
 \end{equation*}\par
 令$ \sqrt[n]{\frac{ax+b}{cx+d}}=t $, 将其化为有理函数积分进行计算.
+\chapter{定积分}
+\section{基础知识}
+\subsection{定积分的定义}
+\subsubsection{定积分的代数定义}
+设函数$ f(x) $在区间$ [a,b] $上有定义, 在区间$ [a,b] $内任意插入$ n-1 $个分点$ a=x_{0}<x_{1}<x_{2}<...<x_{n-1}<x_{n}=b $. 从而将区间$ [a,b] $分成$ n $个小区间$ [x_{i-1},x_{i}], i=1,2,...,n $. \par  在$ [x_{i-1},x_{i}] $上任取一点$ \xi_{i} $, 作和式$ \sum\limits^{n}_{i=1}f(\xi_{i})\Delta x_{i} $(长方形的长). \par 记$ \Delta x_{i}=x_{i}-x_{i-1} $表示第$ i $个小区间的长度.(长方形的宽) 用$ \lambda=\mathrm{max}\{\Delta x_{1}, \Delta x_{2},..,\Delta x_{n}\} $表示最长的小区间.
+\begin{equation*}
+\displaystyle\int_{a}^{b}f(x)\mathrm{d}x=\lim\limits_{\lambda\rightarrow 0}\sum_{i=1}^{n}f(\xi_{i})\Delta x_{i}
+\end{equation*}\par 上式就是$ f(x) $在$ [a,b] $上的定积分.
+\begin{tcolorbox}
+\begin{enumerate}
+\item 定积分只是一个数值, 和积分变量无关, 和被积函数无关, 即:
+\begin{equation*}
+\displaystyle\int_{a}^{b}f(x)\mathrm{d}x=\displaystyle\int_{a}^{b}f(t)\mathrm{d}t
+\end{equation*}
+\item 若我们不采取想上面随便取点的方法, 采取$ n $等份的方法, 则可以将$ [0,1] $的定积分可以表示为:
+\begin{equation*}
+\displaystyle\int_{0}^{1}f(x)\mathrm{d}x=\lim\limits_{n\rightarrow\infty}\frac{1}{n}\sum_{i=1}^{n}f(\frac{i}{n})
+\end{equation*}\par 这个式子可用于求极限(特别是数列).
+\end{enumerate}
+\end{tcolorbox}
+\subsubsection{定积分的几何定义}
+$ \displaystyle\int_{a}^{b}f(x)\mathrm{d}x $在几何上表示$ y=f(x), x=a, x=b $及$ x $轴所围成的$ x $轴上方的面积减去下方图形的面积所得之差.
+\subsubsection{可积性}
+\noindent {\kaishu 必要条件}\par \vspace{.5em}
+若$ \displaystyle\int_{a}^{b}\hspace{.2em}f(x)\mathrm{d}x $存在, 则$ f(x) $在$ [a,b] $上有界.\par \vspace{.5em}
+\noindent {\kaishu 充分条件}
+\begin{enumerate}
+\item 若$ f(x) $在$ [a,b] $上连续, 则可积
+\item 若$ f(x) $在$ [a,b] $上有界, 且只有有限个间断点, 则可积
+\item 若$ f(x) $在$ [a,b] $上只有有限个第一类间断点, 则可积
+\end{enumerate}
+\subsubsection{定积分的计算}
+\begin{enumerate}
+\item 牛顿-莱布尼茨公式 \par 如果函数$ F(x) $是连续函数$ f(x) $在区间$ [a,b] $上的一个原函数, 则:
+\begin{equation*}
+\displaystyle\int_{a}^{b}\hspace{.2em}f(x)\mathrm{d}x=F(b)-F(a)
+\end{equation*}
+\item 第二换元积分法 \par 设$ f(x) $在区间$ [a,b] $上连续, 函数$ x=\varphi(t) $满足以下条件:
+\begin{enumerate}
+\item $ \varphi(\alpha)=a, \varphi(\beta)=b $
+\item $ \varphi(t) $在$ [\alpha,\beta] $(或$ [\beta,\alpha] $)上具有连续导数, 且其值域$ R_{\varphi}=[a,b] $, 则:
+\begin{equation*}
+\displaystyle\int_{a}^{b}\hspace{.2em}f(x)\mathrm{d}x=\displaystyle\int_{\alpha}^{\beta}\hspace{.2em}f(\varphi(t))\varphi'(t)\mathrm{d}t
+\end{equation*}
+\end{enumerate}
+\item 分部积分法 \par 设函数$ u(x) $和$ v(x) $在$ [a,b] $上有连续的一阶导数, 则:
+\begin{equation*}
+\displaystyle\int_{a}^{b}\hspace{.2em}u \mathrm{d}v=uv\left|_{a}^{b}\right.-\displaystyle\int_{a}^{b}\hspace{.2em}v \mathrm{d}u
+\end{equation*}
+\item 利用奇函数和周期性
+\begin{enumerate}
+\item 设$ f(x) $为$ [-a,a] $上的连续函数($ a>0 $), 则
+\begin{equation*}
+\displaystyle\int_{-a}^{a}\hspace{.2em}f(x)\mathrm{d}x=
+\scaleleftright[6pt]{\biggl\{}{
+\begin{aligned}
+& 0, f(x)\text{为奇函数} \\
+& 2 \displaystyle\int_{0}^{a}\hspace{.2em}f(x)\mathrm{d}x, f(x)\text{为偶函数}
+\end{aligned} }{.}
+\end{equation*}
+\item 设$ f(x) $是以$ T $为周期的连续函数, 则对任给数$ a $, 总有:
+\begin{equation*}
+\displaystyle\int_{a}^{a+T}\hspace{.2em}f(x)\mathrm{d}x=\displaystyle\int_{0}^{T}\hspace{.2em}f(x)\mathrm{d}x
+\end{equation*}
+\end{enumerate}
+\item 点火公式 \par
+$ \displaystyle\int_{0}^{\frac{\pi}{2}}\hspace{.2em}\sin^{n}x \mathrm{d}x=\displaystyle\int_{0}^{\frac{\pi}{2}}\hspace{.2em}\cos^{n}x \mathrm{d}x=
+\scaleleftright[6pt]{\biggl\{}{
+\begin{aligned}
+& \frac{n-1}{n}\cdot \frac{n-3}{n-2}\cdot ...\cdot \frac{1}{2}\cdot \frac{\pi}{2}, n\text{为偶数} \\
+& \frac{n-1}{n}\cdot \frac{n-3}{n-2}\cdot ...\cdot \frac{2}{3}\cdot 1, n\text{为大于}1\text{的奇数}
+\end{aligned} }{.} $
+\end{enumerate}
+\subsection{定积分的性质}
+\subsubsection{不等式}
+\begin{enumerate}
+\item 若$ f(x)\le g(x), x\in[a,b] $, 则$ \displaystyle\int_{a}^{b}\hspace{.2em}f(x)\mathrm{d}x\le \displaystyle\int_{a}^{b}\hspace{.2em}g(x)\mathrm{d}x $
+\item 若$ f(x) $在$ [a,b] $上连续, 则$ m(b-a)\le \displaystyle\int_{a}^{b}\hspace{.2em}f(x)\mathrm{d}x\le M(b-a) $, 其中$ m,M $分别为$ f(x) $在$ [a,b] $上的最小值和最大值
+\item $ |\displaystyle\int_{a}^{b}\hspace{.2em}f(x)\mathrm{d}x|\le \displaystyle\int_{a}^{b}\hspace{.2em}|f(x)|\mathrm{d}x $
+\end{enumerate}
+\subsubsection{积分中值定理}
+\begin{enumerate}
+\item 若$ f(x) $在$ [a,b] $上连续, 则$ \displaystyle\int_{a}^{b}\hspace{.2em}f(x)\mathrm{d}x=f(\xi)(b-a), a<\xi<b $
+\item 若$ f(x), g(x) $在$ [a,b] $上连续, 且$ g(x) $不变号, 则:
+\begin{equation*}
+\displaystyle\int_{a}^{b}\hspace{.2em}f(x)g(x)\mathrm{d}x=f(\xi)\displaystyle\int_{a}^{b}\hspace{.2em}g(x)\mathrm{d}x, a\le\xi\le b
+\end{equation*}
+\end{enumerate}
+\subsection{变上限积分}
+\subsubsection{定理}
+若$ f(x) $在$ [a,b] $上连续, 则$ \displaystyle\int_{a}^{x}\hspace{.2em}f(t)\mathrm{d}t $在$ [a,b] $上可导且:
+\begin{equation*}
+(\displaystyle\int_{a}^{x}\hspace{.2em}f(t)\mathrm{d}t)'=f(x)
+\end{equation*}
+\subsubsection{变上限积分求导的三种类型}
+
+
