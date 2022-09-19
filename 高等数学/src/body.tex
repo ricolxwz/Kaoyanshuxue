@@ -1437,7 +1437,7 @@ f(x)=f(x_{0})+f'(x_{0})(x-x_{0})+\frac{1}{2!}f''(x_{0})(x-x_{0})^{2}+\dots+\frac
 \item $ \displaystyle\int_{}\hspace{.5em} [f(x)\pm g(x)]\mathrm{d}x=\displaystyle\int_{}\hspace{.2em} f(x)\mathrm{d}x\pm \displaystyle\int_{}\hspace{.2em} g(x)\mathrm{d}x $
 \end{enumerate}\par
 如果先求导再积分, 则有$ C $, 如果先积分再求导, 则无$ C $.
-\subsection{积分表}
+\subsection{不定积分表}
 \begin{multicols}{2}
 \begin{itemize}
 \item $ \displaystyle\int_{}\hspace{.2em} x^{a}\mathrm{d}x=\frac{1}{a+1}x^{a+1}+C(a\neq -1) $
@@ -1459,7 +1459,7 @@ f(x)=f(x_{0})+f'(x_{0})(x-x_{0})+\frac{1}{2!}f''(x_{0})(x-x_{0})^{2}+\dots+\frac
 \item $ \displaystyle\int_{}\hspace{.2em}\frac{\mathrm{d}x}{\sqrt{x^{2}-a^{2}}}=\ln|x+\sqrt{x^{2}-a^{2}}|+C $
 \end{itemize}
 \end{multicols}
-\subsection{积分方法}
+\subsection{求不定积分}
 \subsubsection{第一类换元法(凑微分法)}
 若$ \displaystyle\int_{}\hspace{.2em}f(u)\mathrm{d}u=F(u)+C $, 且$ \varphi(x) $可导, 则:
 \begin{equation*}
@@ -1532,7 +1532,11 @@ f(x)=f(x_{0})+f'(x_{0})(x-x_{0})+\frac{1}{2!}f''(x_{0})(x-x_{0})^{2}+\dots+\frac
 \section{基础知识}
 \subsection{定积分的定义}
 \subsubsection{定积分的代数定义}
-设函数$ f(x) $在区间$ [a,b] $上有定义, 在区间$ [a,b] $内任意插入$ n-1 $个分点$ a=x_{0}<x_{1}<x_{2}<...<x_{n-1}<x_{n}=b $. 从而将区间$ [a,b] $分成$ n $个小区间$ [x_{i-1},x_{i}], i=1,2,...,n $. \par  在$ [x_{i-1},x_{i}] $上任取一点$ \xi_{i} $, 作和式$ \sum\limits^{n}_{i=1}f(\xi_{i})\Delta x_{i} $(长方形的长). \par 记$ \Delta x_{i}=x_{i}-x_{i-1} $表示第$ i $个小区间的长度.(长方形的宽) 用$ \lambda=\mathrm{max}\{\Delta x_{1}, \Delta x_{2},..,\Delta x_{n}\} $表示最长的小区间.
+\begin{enumerate}
+\item 分段 \par 设函数$ f(x) $在区间$ [a,b] $上有定义, 在区间$ [a,b] $内任意插入$ n-1 $个分点$ a=x_{0}<x_{1}<x_{2}<...<x_{n-1}<x_{n}=b $. 从而将区间$ [a,b] $分成$ n $个小区间$ [x_{i-1},x_{i}], i=1,2,...,n $.
+\item 确定长和宽 \par 在$ [x_{i-1},x_{i}] $上任取一点$ \xi_{i} $, 则$ f(\xi_{i}) $为函数值(长方形的长). \par 记$ \Delta x_{i}=x_{i}-x_{i-1} $表示第$ i $个小区间的长度(长方形的宽). 用$ \lambda=\mathrm{max}\{\Delta x_{1}, \Delta x_{2},..,\Delta x_{n}\} $表示最长的小区间.
+\item 求和 \par  作和式$ \sum\limits^{n}_{i=1}f(\xi_{i})\Delta x_{i} $, 得到定积分$ \displaystyle\int_{a}^{b}\hspace{.2em}f(x)\mathrm{d}x $的定义:
+\end{enumerate}
 \begin{equation*}
 \displaystyle\int_{a}^{b}f(x)\mathrm{d}x=\lim\limits_{\lambda\rightarrow 0}\sum_{i=1}^{n}f(\xi_{i})\Delta x_{i}
 \end{equation*}\par 上式就是$ f(x) $在$ [a,b] $上的定积分.
@@ -1559,7 +1563,22 @@ $ \displaystyle\int_{a}^{b}f(x)\mathrm{d}x $在几何上表示$ y=f(x), x=a, x=b
 \item 若$ f(x) $在$ [a,b] $上有界, 且只有有限个间断点, 则可积
 \item 若$ f(x) $在$ [a,b] $上只有有限个第一类间断点, 则可积
 \end{enumerate}
-\subsubsection{定积分的计算}
+\subsection{定积分的性质}
+\subsubsection{不等式}
+\begin{enumerate}
+\item 若$ f(x)\le g(x), x\in[a,b] $, 则$ \displaystyle\int_{a}^{b}\hspace{.2em}f(x)\mathrm{d}x\le \displaystyle\int_{a}^{b}\hspace{.2em}g(x)\mathrm{d}x $
+\item 若$ f(x) $在$ [a,b] $上连续, 则$ m(b-a)\le \displaystyle\int_{a}^{b}\hspace{.2em}f(x)\mathrm{d}x\le M(b-a) $, 其中$ m,M $分别为$ f(x) $在$ [a,b] $上的最小值和最大值
+\item $ |\displaystyle\int_{a}^{b}\hspace{.2em}f(x)\mathrm{d}x|\le \displaystyle\int_{a}^{b}\hspace{.2em}|f(x)|\mathrm{d}x $
+\end{enumerate}
+\subsubsection{积分中值定理}
+\begin{enumerate}
+\item 若$ f(x) $在$ [a,b] $上连续, 则$ \displaystyle\int_{a}^{b}\hspace{.2em}f(x)\mathrm{d}x=f(\xi)(b-a), a<\xi<b $
+\item 若$ f(x), g(x) $在$ [a,b] $上连续, 且$ g(x) $不变号, 则:
+\begin{equation*}
+\displaystyle\int_{a}^{b}\hspace{.2em}f(x)g(x)\mathrm{d}x=f(\xi)\displaystyle\int_{a}^{b}\hspace{.2em}g(x)\mathrm{d}x, a\le\xi\le b
+\end{equation*}
+\end{enumerate}
+\subsection{求定积分}
 \begin{enumerate}
 \item 牛顿-莱布尼茨公式 \par 如果函数$ F(x) $是连续函数$ f(x) $在区间$ [a,b] $上的一个原函数, 则:
 \begin{equation*}
@@ -1601,21 +1620,6 @@ $ \displaystyle\int_{0}^{\frac{\pi}{2}}\hspace{.2em}\sin^{n}x \mathrm{d}x=\displ
 & \frac{n-1}{n}\cdot \frac{n-3}{n-2}\cdot ...\cdot \frac{2}{3}\cdot 1, n\text{为大于}1\text{的奇数}
 \end{aligned} }{.} $
 \end{enumerate}
-\subsection{定积分的性质}
-\subsubsection{不等式}
-\begin{enumerate}
-\item 若$ f(x)\le g(x), x\in[a,b] $, 则$ \displaystyle\int_{a}^{b}\hspace{.2em}f(x)\mathrm{d}x\le \displaystyle\int_{a}^{b}\hspace{.2em}g(x)\mathrm{d}x $
-\item 若$ f(x) $在$ [a,b] $上连续, 则$ m(b-a)\le \displaystyle\int_{a}^{b}\hspace{.2em}f(x)\mathrm{d}x\le M(b-a) $, 其中$ m,M $分别为$ f(x) $在$ [a,b] $上的最小值和最大值
-\item $ |\displaystyle\int_{a}^{b}\hspace{.2em}f(x)\mathrm{d}x|\le \displaystyle\int_{a}^{b}\hspace{.2em}|f(x)|\mathrm{d}x $
-\end{enumerate}
-\subsubsection{积分中值定理}
-\begin{enumerate}
-\item 若$ f(x) $在$ [a,b] $上连续, 则$ \displaystyle\int_{a}^{b}\hspace{.2em}f(x)\mathrm{d}x=f(\xi)(b-a), a<\xi<b $
-\item 若$ f(x), g(x) $在$ [a,b] $上连续, 且$ g(x) $不变号, 则:
-\begin{equation*}
-\displaystyle\int_{a}^{b}\hspace{.2em}f(x)g(x)\mathrm{d}x=f(\xi)\displaystyle\int_{a}^{b}\hspace{.2em}g(x)\mathrm{d}x, a\le\xi\le b
-\end{equation*}
-\end{enumerate}
 \subsection{变上限积分}
 \subsubsection{定理}
 若$ f(x) $在$ [a,b] $上连续, 则$ \displaystyle\int_{a}^{x}\hspace{.2em}f(t)\mathrm{d}t $在$ [a,b] $上可导且:
@@ -1623,5 +1627,76 @@ $ \displaystyle\int_{0}^{\frac{\pi}{2}}\hspace{.2em}\sin^{n}x \mathrm{d}x=\displ
 (\displaystyle\int_{a}^{x}\hspace{.2em}f(t)\mathrm{d}t)'=f(x)
 \end{equation*}
 \subsubsection{变上限积分求导的三种类型}
+\chapter{反常积分}
+\section{基础知识}
+\subsection{无穷区间的反常积分}
+\subsubsection{无穷区间$ [a,+\infty) $上的反常积分}
+设$ f(x) $为$ [a,+\infty) $上的连续函数, 则这个区间上的反常积分为:
+\begin{equation*}
+\displaystyle\int_{a}^{+\infty}\hspace{.2em}f(x)\mathrm{d}x=\lim\limits_{t \rightarrow +\infty}\displaystyle\int_{a}^{t}\hspace{.2em}f(x)\mathrm{d}x
+\end{equation*}
+\subsubsection{无穷区间$ (-\infty,a] $上的反常积分}
+设$ f(x) $为$ (-\infty,a] $上的连续函数, 则这个区间上的反常积分为:
+\begin{equation*}
+\displaystyle\int_{-\infty}^{a}\hspace{.2em}f(x)\mathrm{d}x=\lim\limits_{t \rightarrow -\infty}\displaystyle\int_{t}^{a}\hspace{.2em}f(x)\mathrm{d}x
+\end{equation*}
+\subsubsection{无穷区间$ (-\infty,+\infty) $上的反常积分}
+设$ f(x) $为$ (-\infty,+\infty) $上的连续函数, 则这个区间上的反常积分为:
+\begin{equation*}
+\displaystyle\int_{-\infty}^{+\infty}\hspace{.2em}f(x)\mathrm{d}x=\displaystyle\int_{-\infty}^{0}\hspace{.2em}f(x)\mathrm{d}x+\displaystyle\int_{0}^{+\infty}\hspace{.2em}f(x)\mathrm{d}x
+\end{equation*}
+\begin{tcolorbox}
+如果上述求极限之后的结果是不存在的话, 说明这个区间上的反常积分是发散的. 反之, 如果极限存在, 说明这个区间上的反常积分是收敛的.
+\end{tcolorbox}
+\subsection{无界函数的反常积分}
+首先明确\textbf{瑕点}的概念: 如果函数$ f(x) $在点$ a $的任一邻域内都无界, 那么点a就是函数$ f(x) $的瑕点(常常成为无界点), 无界函数的反常积分也称为瑕积分.
+\subsubsection{点$ a $为函数的瑕点}
+设函数在$ (a,b] $上连续, 点$ a $为函数的瑕点, 则这个区间上的反常积分是
+\begin{equation*}
+\displaystyle\int_{a}^{b}\hspace{.2em}f(x)\mathrm{d}x=\lim\limits_{t \rightarrow a^{+}}\displaystyle\int_{t}^{b}\hspace{.2em}f(x)\mathrm{d}x
+\end{equation*}
+\subsubsection{点$ b $为函数的瑕点}
+设函数在$ [a,b) $上连续, 点$ b $为函数的瑕点, 则这个区间上的反常积分是
+\begin{equation*}
+\displaystyle\int_{a}^{b}\hspace{.2em}f(x)\mathrm{d}x=\lim\limits_{t \rightarrow b^{-}}\displaystyle\int_{a}^{b^{-}}\hspace{.2em}f(x)\mathrm{d}x
+\end{equation*}
+\subsubsection{点$ c $为函数的瑕点}
+设函数在$ [a,b] $上除点$ c(a<c<b) $外连续, 点$ c $为函数$ f(x) $的瑕点, 则这个区间上的反常积分是
+\begin{equation*}
+\displaystyle\int_{a}^{b}\hspace{.2em}f(x)\mathrm{d}x=\displaystyle\int_{a}^{c}\hspace{.2em}f(x)\mathrm{d}x+\displaystyle\int_{c}^{b}\hspace{.2em}f(x)\mathrm{d}x
+\end{equation*}
+\subsection{判别敛散}
+反常积分一类常考的题就是判别它是否收敛. 我们通常用两种方法判断:
+\subsubsection{比较判别法}
+\noindent {\kaishu 无穷区间上的反常积分收敛发散的判别}\par \vspace{.5em}
+设$ f(x), g(x) $在$ [a,+\infty] $上连续, 且$ 0\le f(x)\le g(x) $, 则:
+\begin{enumerate}
+\item 当$ \displaystyle\int_{a}^{+\infty}\hspace{.2em}g(x)\mathrm{d}x $收敛时, $ \displaystyle\int_{a}^{+\infty}\hspace{.2em}f(x)\mathrm{d}x $收敛
+\item 当$ \displaystyle\int_{a}^{+\infty}\hspace{.2em}f(x)\mathrm{d}x $发散时, $ \displaystyle\int_{a}^{+\infty}\hspace{.2em}g(x)\mathrm{d}x $发散
+\end{enumerate}
+\noindent {\kaishu 无界函数的反常积分收敛发散的判别}\par \vspace{.5em}
+设$ f(x), g(x) $在$ (a,b] $上连续, 且$ 0\le f(x)\le g(x), x=a $为$ f(x) $和$ g(x) $的瑕点, 则:
+\begin{enumerate}
+\item 当$ \displaystyle\int_{a}^{b}\hspace{.2em}g(x)\mathrm{d}x $收敛时, $ \displaystyle\int_{a}^{b}\hspace{.2em}f(x)\mathrm{d}x $收敛
+\item 当$ \displaystyle\int_{a}^{b}\hspace{.2em}f(x)\mathrm{d}x $发散时, $ \displaystyle\int_{a}^{b}\hspace{.2em}g(x)\mathrm{d}x $发散
+\end{enumerate}
+\subsubsection{比较法的极限形式}
+\noindent {\kaishu 无穷区间上的反常积分收敛发散的判别}\par \vspace{.5em}
+设$ f(x), g(x) $在$ [a,+\infty] $上非负连续, 且$ \lim\limits_{x \rightarrow +\infty}\frac{f(x)}{g(x)}=\lambda $(有限或者无穷), 则:
+\begin{enumerate}
+\item 当$ \lambda\neq 0 $时, $ \displaystyle\int_{a}^{+\infty}\hspace{.2em}f(x)\mathrm{d}x $与$ \displaystyle\int_{a}^{+\infty}\hspace{.2em}g(x)\mathrm{d}x $同敛散
+\item 当$ \lambda= 0 $时, $ \displaystyle\int_{a}^{+\infty}\hspace{.2em}g(x)\mathrm{d}x $收敛, 则$ \displaystyle\int_{a}^{+\infty}\hspace{.2em}f(x)\mathrm{d}x $也收敛
+\end{enumerate}
+\noindent {\kaishu 无界函数的反常积分收敛发散的判别}\par \vspace{.5em}
+设$ f(x), g(x) $在$ (a,b] $上非负连续, 且$ \lim\limits_{x \rightarrow a^{+}}\frac{f(x)}{g(x)}=\lambda $(有限或者无穷), 则:
+\begin{enumerate}
+\item 当$ \lambda\neq 0 $时, $ \displaystyle\int_{a}^{b}\hspace{.2em}f(x)\mathrm{d}x $与$ \displaystyle\int_{a}^{b}\hspace{.2em}g(x)\mathrm{d}x $同敛散
+\item 当$ \lambda= 0 $时, $ \displaystyle\int_{a}^{b}\hspace{.2em}g(x)\mathrm{d}x $收敛, 则$ \displaystyle\int_{a}^{b}\hspace{.2em}f(x)\mathrm{d}x $也收敛
+\end{enumerate}
+
+
+
+
+
 
 
