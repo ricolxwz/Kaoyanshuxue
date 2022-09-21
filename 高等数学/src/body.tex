@@ -1696,6 +1696,76 @@ $ \displaystyle\int_{0}^{\frac{\pi}{2}}\hspace{.2em}\sin^{n}x \mathrm{d}x=\displ
 \item 当$ \lambda=+\infty $时, 若$ \displaystyle\int_{a}^{b}\hspace{.2em}g(x)\mathrm{d}x $发散, 则$ \displaystyle\int_{a}^{b}\hspace{.2em}f(x)\mathrm{d}x $也发散
 \end{enumerate}\par
 实际上, 这两种方法的思想都是一样的.
+\chapter{定积分的应用}
+\section{基础知识}
+\subsection{平面图形的面积}
+求平面图形的面积的通用公式是:
+\begin{equation*}
+\displaystyle\iint_{D}\hspace{.2em}1 \mathrm{d}\sigma
+\end{equation*}
+\subsubsection{直角坐标系}
+若平面域$ D $由曲线$ y=f(x), y=g(x)(f(x)\ge g(x)), x=a, x=b $所围成, 则其面积为:
+\begin{equation*}
+S=\displaystyle\iint_{D}\hspace{.2em}1 \mathrm{d}\sigma = \displaystyle\int_{a}^{b}\hspace{.2em}\mathrm{d}x \displaystyle\int_{g(x)}^{f(x)}\hspace{.2em}1 \mathrm{d}y=\displaystyle\int_{a}^{b}\hspace{.2em}[f(x)-g(x)]\mathrm{d}x
+\end{equation*}
+\subsubsection{极坐标系}
+若平面域$ D $有曲线$ r=r(\theta), \theta=\alpha, \theta=\beta(\alpha<\beta) $所围成, 则其面积为:
+\begin{equation*}
+S=\displaystyle\iint_{D}\hspace{.2em}1 \mathrm{d}\sigma=\displaystyle\int_{\alpha}^{\beta}\hspace{.2em}\mathrm{d}\theta \displaystyle\int_{0}^{r(\theta)}\hspace{.2em}r \mathrm{d}r=\displaystyle\int_{\alpha}^{\beta}\hspace{.2em}\frac{1}{2}r(\theta)^{2}\mathrm{d}\theta
+\end{equation*}
+\subsection{空间体的体积}
+求空间体体积的通用公式是:
+\begin{equation*}
+\displaystyle\iint_{D}\hspace{.2em}2\pi r(x,y)\mathrm{d}\sigma, r(x,y)\text{为到轴线的距离}
+\end{equation*}\par
+其实就是呼啦圈的体积之和.
+\subsubsection{旋转体的体积}
+先看一般情况下一个曲线绕直线$ L:ax+by+c $旋转的体积:
+\begin{equation*}
+S=\displaystyle\iint_{D}\hspace{.2em}2\pi r(x,y)\mathrm{d}\sigma, r(x,y)=\frac{|ax+by+c|}{\sqrt{a^{2}+b^{2}}}
+\end{equation*}\par
+由此, 我们可以得到更特殊的:\par \vspace{.5em}
+\noindent {\kaishu 绕$ x $轴旋转}
+\begin{equation*}
+V_{x}=\displaystyle\iint_{D}\hspace{.2em}2\pi r(x,y)\mathrm{d}\sigma=2\pi\displaystyle\int_{a}^{b}\hspace{.2em}\mathrm{d}x\displaystyle\int_{0}^{f(x)}\hspace{.2em}y \mathrm{d}y=\displaystyle\int_{a}^{b}\hspace{.2em}\pi f(x)^{2}\mathrm{d}x
+\end{equation*}
+\noindent {\kaishu 绕$ y $轴旋转}
+\begin{equation*}
+V_{y}=\displaystyle\iint_{D}\hspace{.2em}2\pi r(x,y)\mathrm{d}\sigma=2\pi\displaystyle\int_{a}^{b}\hspace{.2em}\mathrm{d}x\displaystyle\int_{0}^{f(x)}\hspace{.2em}x \mathrm{d}y=2\pi\displaystyle\int_{a}^{b}\hspace{.2em}xf(x)\mathrm{d}x
+\end{equation*}
+\subsubsection{已知横截面面积的体积}
+\begin{equation*}
+V=\displaystyle\int_{a}^{b}\hspace{.2em}S(x)\mathrm{d}x
+\end{equation*}
+\subsection{曲线弧长}
+\subsubsection{直角坐标系}
+设曲线段$ C $由直角坐标方程$ y=f(x) $给出.
+\begin{equation*}
+s=\displaystyle\int_{a}^{b}\hspace{.2em}\sqrt{1+y'
+^{2}}\mathrm{d}x
+\end{equation*}
+\subsubsection{参数方程}
+设曲线段$ C $由参数方程$
+\scaleleftright[6pt]{\biggl\{}{
+\begin{aligned}
+& x=x(t) \\
+& y=y(t)
+\end{aligned}
+}{.} $给出$ (\alpha\le t\le \beta) $
+\begin{equation*}
+s=\displaystyle\int_{\alpha}^{\beta}\hspace{.2em}\sqrt{x'^{2}+y'^{2}}\mathrm{d}t
+\end{equation*}
+\subsubsection{极坐标系}
+设曲线段$ C $由极坐标方程$ r=r(\theta)(\alpha\le \theta\le \beta) $给出
+\begin{equation*}
+s=\displaystyle\int_{\alpha}^{\beta}\hspace{.2em}\sqrt{\rho^{2}+\rho'^{2}}\mathrm{d}\theta
+\end{equation*}
+\subsection{旋转体的侧面积}
+曲线$ y=f(x)(f(x)\ge 0) $和直线$ x=a, x=b(0\le a<b) $及$ x $轴所围成区域绕$ x $轴旋转.
+\begin{equation*}
+S=2\pi\displaystyle\int_{a}^{b}\hspace{.2em}f(x)\sqrt{1+f'^{2}(x)}\mathrm{d}x
+\end{equation*}
+
 
 
 
