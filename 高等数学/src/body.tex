@@ -1797,8 +1797,106 @@ S=2\pi\displaystyle\int_{a}^{b}\hspace{.2em}f(x)\sqrt{1+f'^{2}(x)}\mathrm{d}x
 \begin{equation*}
 y=e^{-\displaystyle\int_{}\hspace{.2em}p(x)\mathrm{d}x}\left[\displaystyle\int_{}\hspace{.2em}Q(x)e^{\displaystyle\int_{}\hspace{.2em}p(x)\mathrm{d}x}\mathrm{d}x+C\right]
 \end{equation*}
-\subsection{可降解的高阶微分方程}
-\subsection{不可降解的高阶微分方程}
+\subsection{可降阶的高阶微分方程}
+\subsubsection{$ y^{(n)}=f(x) $型}
+\subsubsection{$ y''=f(x,y') $型}
+令$ y'=p $, 则$ y''=p' $, 将其转化为一阶微分方程.
+\subsubsection{$ y''=f(y,y') $型}
+令$ y'=p $, 则$ y''=\frac{\mathrm{d}p}{\mathrm{d}x}=\frac{\mathrm{d}p}{\mathrm{d}y}\cdot \frac{\mathrm{d}y}{\mathrm{d}x}=\frac{\mathrm{d}p}{\mathrm{d}y}\cdot p $, 将其转化为一阶微分方程.
+\subsection{不可降阶的高阶微分方程}
+如果无法运用降阶的方法求出解的话, 就用下面的方法, 先来看一下高阶微分方程解的结构和性质:
+\subsubsection{解的结构}
+二阶微分方程的一般表示形式为:
+\begin{equation*}
+y''+p(x)y'+q(x)y=f(x)
+\end{equation*}\par
+当$ f(x)=0 $的时候, 上述的方程称为二阶线性齐次方程, 否则称为二阶线性非齐次方程.\par 现有一个二阶齐次微分方程和一个二阶非齐次微分方程:
+\begin{equation*}
+\begin{aligned}
+& y''+p(x)y'+q(x)y=0 \quad (1) \\
+& y''+p(x)y'+q(x)y=f(x) \quad (2)
+\end{aligned}
+\end{equation*}
+\noindent {\kaishu 齐次方程的通解}\par \vspace{.5em}
+如果$ y_{1}(x),y_{2}(x) $是齐次方程$ (1) $的两个线性无关的特解, 则其通解为:
+\begin{equation*}
+y=C_{1}y_{1}(x)+C_{2}y_{2}(x)
+\end{equation*}
+\noindent {\kaishu 非齐次方程的通解}\par \vspace{.5em}
+如果$ y^{*} $是非齐次方程$ (2) $的一个特解, $ y_{1}(x),y_{2}(x) $是齐次方程$ (1) $的两个特解, 则其通解为:
+\begin{equation*}
+y=C_{1}y_{1}(x)+C_{2}(x)y_{2}(x)+y^{*}(x)
+\end{equation*}
+\subsubsection{解的性质}
+\begin{enumerate}
+\item 如果$ y_{1}^{*}(x), y_{2}^{*}(x) $是非齐次方程$ (2) $的两个特解, 则$ y(x)=y_{2}^{*}-y_{1}^{*}(x) $是齐次微分方程$ (1) $的解.
+\item 如果$ y_{1}^{*}(x),y_{2}^{*}(x) $分别是方程
+\begin{equation*}
+\begin{aligned}
+& y''+p(x)y'+q(x)y=f_{1}(x) \\
+& y''+p(x)y'+q(x)y=f_{2}(x)
+\end{aligned}
+\end{equation*}\par
+的特解, 则$ y_{1}^{*}(x)+y_{2}^{*}(x) $是方程
+\begin{equation*}
+y''+p(x)y'+q(x)y=f_{1}(x)+f_{2}(x)
+\end{equation*}\par
+的一个特解.
+\end{enumerate}
+\subsubsection{齐次线性微分方程}
+一般形式为:
+\begin{equation*}
+y''+py'+qy=0 \quad (3)
+\end{equation*}\par
+其特征方程为$ r^{2}+pr+q=0 $, 设$ r_{1}, r_{2} $为该方程的两个根.
+\begin{enumerate}
+\item 若$ r_{1}\neq r_{2} $为两个不相等的实特征根, 则方程$ (3) $的通解为:
+\begin{equation*}
+y=C_{1}e^{r_{1}x}+C_{2}e^{r_{2}x}
+\end{equation*}
+\item 若$ r_{1}=r_{2} $为二重特证根, 则方程$ (3) $的通解为:
+\begin{equation*}
+y=(C_{1}+C_{2}x)e^{r_{1}(x)}
+\end{equation*}
+\item 若$ r_{1}=\alpha+i\beta, r_{2}=\alpha-i\beta $为一对共轭复根, 则方程$ (3) $的通解为:
+\begin{equation*}
+y=e^{\alpha x}(C_{1}\cos \bata x+C_{2}\sin \beta x)
+\end{equation*}
+\end{enumerate}
+\subsubsection{非齐次线性微分方程}
+一般形式为:
+\begin{equation*}
+y''+py'+qy=f(x) \quad (4)
+\end{equation*}
+\begin{enumerate}
+\item 若$ f(x)=P_{m}(x)e^{\lambda x} $, 则方程$ (4) $的特解为:
+\begin{equation*}
+y^{*}=x^{k}e^{\lambda x}Q_{m}(x)
+\end{equation*}\par $ k $的取值如下:
+\begin{enumerate}
+\item $ \lambda $不是方程$ (3) $的特征根时, $ k=0 $
+\item $ \lambda $是方程$ (3) $的单特征根时, $ k=1 $
+\item $ \lambda $是方程$ (3) $的重特征根时, $ k=2 $
+\end{enumerate}
+\item 若$ f(x)=e^{\alhpa x}[P_{l}(x)\cos \beta x+P_{n}(x)\sin \beta x] $, 则方程$ (4) $的特解如下:
+\begin{equation*}
+y^{*}=x_{k}e^{\alpha x}[R_{m}^{(1)}\cos \beta x+R_{m}^{(2)}(x)\sin \beta x], m=\mathrm{max}\{l,n\}
+\end{equation*}\par $ k $的取值如下:
+\begin{enumerate}
+\item 当$ \alpha+i\beta $不为方程$ (3) $的特征根时, $ k=0 $
+\item 当$ \alpha+i\beta $为方程$ (3) $的单特征根时, $ k=1 $
+\end{enumerate}
+\end{enumerate}
+
+
+
+
+
+
+
+
+
+
 
 
 
