@@ -1825,7 +1825,7 @@ y=C_{1}y_{1}(x)+C_{2}y_{2}(x)
 \noindent {\kaishu 非齐次方程的通解}\par \vspace{.5em}
 如果$ y^{*} $是非齐次方程$ (2) $的一个特解, $ y_{1}(x),y_{2}(x) $是齐次方程$ (1) $的两个特解, 则其通解为:
 \begin{equation*}
-y=C_{1}y_{1}(x)+C_{2}(x)y_{2}(x)+y^{*}(x)
+y=C_{1}y_{1}(x)+C_{2}y_{2}(x)+y^{*}(x)
 \end{equation*}
 \subsubsection{解的性质}
 \begin{enumerate}
@@ -1860,7 +1860,7 @@ y=(C_{1}+C_{2}x)e^{r_{1}(x)}
 \end{equation*}
 \item 若$ r_{1}=\alpha+i\beta, r_{2}=\alpha-i\beta $为一对共轭复根, 则方程$ (3) $的通解为:
 \begin{equation*}
-y=e^{\alpha x}(C_{1}\cos \bata x+C_{2}\sin \beta x)
+y=e^{\alpha x}(C_{1}\cos \beta x+C_{2}\sin \beta x)
 \end{equation*}
 \end{enumerate}
 \subsubsection{非齐次线性微分方程}
@@ -1869,7 +1869,7 @@ y=e^{\alpha x}(C_{1}\cos \bata x+C_{2}\sin \beta x)
 y''+py'+qy=f(x) \quad (4)
 \end{equation*}
 \begin{enumerate}
-\item 若$ f(x)=P_{m}(x)e^{\lambda x} $, 则方程$ (4) $的特解为:
+\item 若$ f(x)=e^{\lambda x}P_{m}(x) $, 则方程$ (4) $的特解为:
 \begin{equation*}
 y^{*}=x^{k}e^{\lambda x}Q_{m}(x)
 \end{equation*}\par $ k $的取值如下:
@@ -1878,7 +1878,7 @@ y^{*}=x^{k}e^{\lambda x}Q_{m}(x)
 \item $ \lambda $是方程$ (3) $的单特征根时, $ k=1 $
 \item $ \lambda $是方程$ (3) $的重特征根时, $ k=2 $
 \end{enumerate}
-\item 若$ f(x)=e^{\alhpa x}[P_{l}(x)\cos \beta x+P_{n}(x)\sin \beta x] $, 则方程$ (4) $的特解如下:
+\item 若$ f(x)=e^{\alpha x}[P_{l}(x)\cos \beta x+P_{n}(x)\sin \beta x] $, 则方程$ (4) $的特解如下:
 \begin{equation*}
 y^{*}=x_{k}e^{\alpha x}[R_{m}^{(1)}\cos \beta x+R_{m}^{(2)}(x)\sin \beta x], m=\mathrm{max}\{l,n\}
 \end{equation*}\par $ k $的取值如下:
@@ -1887,7 +1887,86 @@ y^{*}=x_{k}e^{\alpha x}[R_{m}^{(1)}\cos \beta x+R_{m}^{(2)}(x)\sin \beta x], m=\
 \item 当$ \alpha+i\beta $为方程$ (3) $的单特征根时, $ k=1 $
 \end{enumerate}
 \end{enumerate}
-
+\chapter{多元函数微分学}
+\section{基础知识}
+\subsection{重极限}
+\subsubsection{定义}
+设函数$ f(x,y) $在区域$ D $上有定义, 点$ P_{0}(x_{0}, y_{0})\in D $为$ D $的聚点, 如果$ \forall \epsilon>0, \exists \delta>0 $, 当$ P(x,y)\in D $, 且$ 0<\sqrt{(x-x_{0})^{2}+(y-y_{0})^{2}}<\delta $时, 都有
+\begin{equation*}
+|f(x,y)-A|<\xi
+\end{equation*}\par
+成立, 则称常数$ A $为函数$ f(x,y) $当$ (x,y)\rightarrow (x_{0},y_{0}) $时的极限, 记为:
+\begin{equation*}
+\lim\limits_{(x,y) \rightarrow (x_{0},y_{0})}f(x,y)=A\ \mathrm{or} \lim\limits_{x \rightarrow x_{0}, y \rightarrow y_{0}}f(x,y)=A\ \mathrm{or} \lim\limits_{P \rightarrow P_{0}}f(P)=A
+\end{equation*}
+\subsubsection{充要条件}
+点$ (x,y) $在$ D $内以任意方式趋近于点$ (x_{0},y_{0}) $时, 函数$ f(x,y) $都趋近于同一确定的常数$ A $, 则极限存在, 否则该极限就不存在.
+\begin{tcolorbox}
+\begin{enumerate}
+\item 一元函数极限中的下述性质对多元函数依然成立
+\begin{enumerate}
+\item 局部有界性
+\item 保号性
+\item 有理运算
+\item 极限与无穷小的关系
+\item 夹逼性
+\end{enumerate}
+\item 证明重极限不存在的常用方法: 沿两种不同路径极限不用(通常可以取过点$ x_{0},y_{0} $的直线).
+\end{enumerate}
+\end{tcolorbox}
+\subsection{连续}
+\subsubsection{定义}
+若$ \lim\limits_{x \rightarrow x_{0}, y\rightarrow y_{0}}=f(x_{0},y_{0}) $, 则称$ f(x,y) $在点$ (x_{0},y_{0}) $处连续.
+\subsubsection{性质}
+\begin{enumerate}
+\item 连续函数的和, 差, 积, 商及复合仍然连续
+\item 基本初等函数在其定义域内连续, 初等函数在其定义域内连续
+\item 有界闭区域上连续函数的性质
+\begin{enumerate}
+\item 有界性: 若$ f(x,y) $在有界闭区域$ D $上连续, 则$ f(x,y) $在$ D $上有界
+\item 最值性: 若$ f(x,y) $在有界区域$ D $上连续, 则$ f(x,y) $在$ D $上必有最大值和最小值
+\item 介值性: 若$ f(x,y) $在有界区域$ D $上连续, 则$ f(x,y) $在$ D $上可取到介于最小值和最大值之间的任何值
+\end{enumerate}
+\end{enumerate}
+\subsection{偏导数}
+\subsubsection{代数定义}
+$ f'_{x}(x_{0},y_{0}) $是一元函数$ f(x,y_{0}) $在$ x_{0} $处的导数 \par \vspace{.5em}
+$ f'_{y}(x_{0},y_{0}) $是一元函数$ f(x_{0},y) $在$ y_{0} $处的导数.
+\begin{equation*}
+\begin{aligned}
+& f'_{x}(x_{0},y_{0})=\lim\limits_{\Delta x \rightarrow 0}\frac{f(x_{0}+\Delta x,y_{0})-f(x_{0},y_{0})}{\Delta x}=\frac{\mathrm{d}}{\mathrm{d}x}f(x,y_{0})\left|_{x=x_{0}}\right. \\
+& f'_{y}(x_{0},y_{0})=\lim\limits_{\Delta y \rightarrow 0}\frac{f(x_{0},y_{0}+\Delta y)-f(x_{0},y_{0})}{\Delta y}=\frac{\mathrm{d}}{\mathrm{d}y}f(x_{0},y)\left|_{y=y_{0}}\right.
+\end{aligned}
+\end{equation*}
+\subsubsection{几何定义}
+$ f'_{x}(x_{0},y_{0}) $表示曲线$ z=f(x,y_{0}) $在点$ (x_{0},y_{0},f(x_{0},y_{0})) $处的切线对$ x $轴的斜率.\par \vspace{.5em}
+$ f'_{y}(x_{0},y_{0}) $表示曲线$ z=f(x_{0},y) $在点$ (x_{0},y_{0},f(x_{0},y_{0})) $处的切线对$ y $轴的斜率.
+\subsubsection{高阶偏导数}
+设$ z=f(x,y) $, 则:
+\begin{equation*}
+\begin{aligned}
+& \frac{\partial^{2}z}{\partial x^{2}}=f''_{xx}(x,y)=\frac{\partial}{\partial x}(\frac{\partial z}{\partial x})\qquad \frac{\partial^{2}z}{\partial x \partial y}=f''_{xy}(x,y)=\frac{\partial }{\partial y}(\frac{\partial z}{\partial x}) \\
+& \frac{\partial^{2}z}{\partial y \partial x}=f''_{yx}(x,y)=\frac{\partial }{\partial x}(\frac{\partial z}{\partial y})\qquad \frac{\partial^{2}z}{\partial y^{2}}=f''_{yy}(x,y)=\frac{\partial }{\partial y}(\frac{\partial z}{\partial y})
+\end{aligned}
+\end{equation*}\par
+如果函数$ z=f(x,y) $的两个二阶混合偏导数$ f''_{xy}(x,y) $及$ f''_{yx}(x,y) $在区域$ D $内连续, 则在区域$ D $内恒友有:
+\begin{equation*}
+f''_{xy}(x,y)=f''_{yx}(x,y)
+\end{equation*}
+\subsection{全微分}
+\subsubsection{定义}
+若$ \Delta z=f(x_{0}+\Delta x,y_{0}+\Delta y)-f(x_{0},y_{0})=A\Delta x+B\Delta y+o(\rho) $, 则称函数$ z=f(x,y) $在点$ (x_{0},y_{0}) $可微, $ A\Delta x+B\Delta y $称为函数$ z=f(x,y) $在点$ (x_{0},y_{0}) $的全微分, 记为:
+\begin{equation*}
+\mathrm{d}z=A\Delta x+B\Delta y
+\end{equation*}
+\subsubsection{可微性}
+\noindent {\kaishu 必要条件}\par \vspace{.5em}
+$ f'_{x}(x_{0},y_{0}) $与$ f_{y}'(x_{0},y_{0}) $都存在.\par \vspace{.5em}
+\noindent {\kaishu 充分条件}\par \vspace{.5em}
+$ f'_{x}(x,y) $和$ f_{y}'(x,y) $在$ (x_{0},y_{0}) $连续.
+\subsubsection{计算}
+若$ f(x,y) $可微, 则$ \mathrm{d}z=\frac{\partial f}{\partial x}\mathrm{d}x+\frac{\partial f}{\partial y}\mathrm{d}y $
+\subsubsection{连续/可导/可微的关系}
 
 
 
