@@ -2040,10 +2040,66 @@ $ f'_{x}(x,y) $和$ f_{y}'(x,y) $在$ (x_{0},y_{0}) $连续.\par \vspace{.5em}
 f(x,y)<f(x_{0},y_{0})(\text{或}f(x,y)>f(x_{0},y_{0}))
 \end{equation*}\par
 则称$ (x_{0},y_{0}) $为$ f(x,y) $的极大值点(或极小值点); 称$ f(x_{0},y_{0}) $为$ f(x,y) $的极大值(或极小值).
-
+\subsubsection{必要条件}
+设$ z=f(x,y) $在点$ (x_{0},y_{0}) $存在偏导数. 则$ (x_{0},y_{0}) $为$ f(x,y) $的极值点$ \Rightarrow f'_{x}(x_{0},y_{0})=0, f'_{y}(x_{0},y_{0})=0 $
+\subsubsection{充分条件}
+设$ z=f(x,y) $在点$ P_{0}(x_{0},y_{0}) $的某领域内有二阶连续偏导数, 又$ f'_{x}(x_{0},y_{0}),f'_{y}(x_{0},y_{0})=0 $, 记
+\begin{equation*}
+A=f''_{xx}(x_{0},y_{0}), B=f''_{xy}(x_{0},y_{0}), C=f''_{yy}(x_{0},y_{0})
+\end{equation*}\par
+则有以下结论:
+\begin{enumerate}
+\item 若$ AC-B^{2}>0\Rightarrow (x_{0},y_{0}) $为极值点
+\begin{enumerate}
+\item 若$ A<0\Rightarrow (x_{0},y_{0}) $为极大值点
+\item 若$ A>0\Rightarrow (x_{0},y_{0}) $为极小值点
+\end{enumerate}
+\item 若$ AC-B^{2}<0\Rightarrow (x_{0},y_{0}) $不为极值点
+\item 若$ AC-B^{2}=0\Rightarrow (x_{0},y_{0}) $无法判断是不是极值点
+\end{enumerate}
 \subsection{有条件极值}
-
-
+\subsubsection{一个条件}
+求$ z=f(x,y) $在条件$ \varphi(x,y)=0 $下的条件极值的方法为:
+\begin{enumerate}
+\item 构造拉格朗日函数$ F(x,y,\lambda)=f(x,y)+\lambda \varphi(x,y) $
+\item 将$ F(x,y,\lambda) $分别对$ x,y,\lambda $求偏导数, 构造方程组:
+\begin{equation*}
+\scaleleftright[6pt]{\biggl\{}{
+\begin{aligned}
+& f'_{x}(x,y)+\lambda \varphi'_{x}(x,y)=0 \\
+& f'_{y}(x,y)+\lambda \varphi'_{y}(x,y)=0 \\
+& \varphi(x,y)=0
+\end{aligned}
+}{.}
+\end{equation*}\par
+解出$ x,y,\lambda $, 其中$ (x,y) $就是可能的极值点.
+\end{enumerate}\par
+其实就是将有条件极值转化成了拉格朗日方程下的无条件极值, 运用了极值的必要条件:偏导数全为$ 0 $
+\subsubsection{两个条件}
+求$ u=f(x,y,z) $在条件$ \varphi(x,y,z)=0, \psi(x,y,z)=0 $下的条件极值的方法为:
+\begin{enumerate}
+\item 构造拉格朗日函数$ F(x,y,z,\lambda,\mu)=f(x,y,z)+\lambda \varphi(x,y,z)+\mu \psi(x,y,z) $
+\item 将$ F(x,y,z,\lambda,\mu) $分别对$ x,y,z,\lambda,\mu $求偏导数, 构造方程组:
+\begin{equation*}
+\scaleleftright[6pt]{\biggl\{}{
+\begin{aligned}
+& f'_{x}(x,y,z)+\lambda \varphi'_{x}(x,y,z)+\mu \psi'_{x}(x,y,z)=0 \\
+& f'_{y}(x,y,z)+\lambda \varphi'_{y}(x,y,z)+\mu \psi'_{y}(x,y,z)=0 \\
+& f'_{z}(x,y,z)+\lambda \varphi'_{z}(x,y,z)+\mu \psi'_{z}(x,y,z)=0 \\
+& \varphi(x,y,z)=0 \\
+& \psi(x,y,z)=0
+\end{aligned}
+}{.}
+\end{equation*}\par
+解出$ x,y,z,\lambda,\mu $, 其中$ (x,y,z) $就是可能的极值点.
+\end{enumerate}
+\subsection{最大值和最小值}
+求连续函数$ f(x,y) $在有界闭域$ D $上的最大最小值的步骤:
+\begin{enumerate}
+\item 求$ f(x,y) $在$ D $内部可能的极值点
+\item 求$ f(x,y) $在$ D $的边界上的最大值和最小值(设立边界条件)
+\item 比较
+\end{enumerate}
 
 
 
