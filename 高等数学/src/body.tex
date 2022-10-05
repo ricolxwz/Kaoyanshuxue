@@ -829,8 +829,34 @@ scale=2,
 \item $ e^{x}-1\sim x $
 \item $ (1+x)^{\alpha}-1\sim \alpha x $
 \item $ 1-\cos x\sim \frac{1}{2}x^{2} $
-\end{itemize}
+\end{itemize}\par
 \end{multicols}
+\begin{tcolorbox}
+$ (1+x)^{\alpha}-1\sim \alpha x $这个式子可以推广为$ (1+\alpha(x))^{\beta(x)}-1\sim \alpha (x)\beta (x) $, 条件是$ \alpha(x)\rightarrow 0, \alpha(x)\beta(x)\rightarrow 0 $
+\end{tcolorbox}
+\subsubsection{变上限积分的无穷小替换}
+设$ f(x) $和$ g(x) $在$ x=0 $的某邻域内连续, 且$ \lim\limits_{x \rightarrow 0}\frac{f(x)}{g(x)}=1 $, 则:
+\begin{equation*}
+\displaystyle\int_{0}^{x}\hspace{.2em}f(t)\mathrm{d}t\sim \displaystyle\int_{0}^{x}\hspace{.2em}g(t)\mathrm{d}t
+\end{equation*}
+\subsection{无穷大}
+\subsubsection{无穷大的概念}
+若$ \lim\limits_{x \rightarrow x_{0}}f(x)=\infty $或$ \lim\limits_{x \rightarrow \infty}f(x)=\infty $, 则称$ f(x) $为$ x\rightarrow x_{0} $或$ x\rightarrow \infty $时的无穷大.
+\subsubsection{常用的一些无穷大的比较}
+\begin{enumerate}
+\item 当$ x\rightarrow +\infty $时, $ \ln^{\alpha}x<<x^{\beta}<<a^{x}\ (\alpha>0, \beta>0, a>1) $
+\item 当$ n\rightarrow \infty $时, $ \ln^{\alpha}n<<n^{\beta}<<a^{n}<<n!<<n^{n}\ (\alpha>0, \beta>0, a>1) $
+\end{enumerate}
+\subsubsection{无穷大量和无界变量的关系}
+无穷大$ \Rightarrow $无界变量.\par
+无穷大量: $ \forall M>0, \exists X, $当$ x>X $时, 恒有$ |f(x)|>M $ \par
+无界量: $ \forall M>0, \exists X, $, 使$ |f(X)|>M $
+\begin{tcolorbox}
+\textbf{无界$ \times $无界不一定是无界}:\par 令$ x_{n}=0,2,0,4,...\ y_{n}=1,0,3,0,...\ $, 但是$ \lim\limits_{x \rightarrow \infty}x_{n}\times y_{n}=0 $, 这里就用到了无界量和无穷大量的区别.\par \vspace{.5em}
+\textbf{有界量$ \times $无穷小一定是无穷小}: 根据无穷小的性质.\par \vspace{.5em}
+无穷大的定义中, 是在$ n>N $的时候, 恒有$ |x_{N}|>M $, 注意是带有绝对值的, 例如, 对于$ x_{n}=(-2)^{n} $来说, 虽然它是震荡的, 但它仍是无穷大, 而$ x_{n}=(-1)^{n} $就不是无穷大.
+\end{tcolorbox}
+\subsubsection{无穷大和无穷小的关系}
 \section{习题}
 \subsection{极限的概念/性质/存在准则}
 首先记住一条结论: $ \lim\limits_{n \rightarrow \infty}a_{n}=a\Rightarrow \lim\limits_{n \rightarrow \infty}|a_{n}|=|a| $.\par
@@ -885,6 +911,10 @@ $ \lim\limits f(x), \lim\limits g(x) $中一个存在, 另一个不存在 $ \Rig
 }{.} $
 \end{itemize}
 \end{multicols}
+\begin{tcolorbox}
+\textbf{谁是老大?}\par \vspace{1em}
+$ \lim\limits_{x \rightarrow 0}\frac{a_{m}x^{m}+a_{m-1}x^{m-1}+...+a_{0}}{b_{n}x^{n}+b_{n-1}x^{n-1}+...+b_{0}} $这个式子中的老大是最低阶的项, 其他的项可以忽略不看.\par \vspace{.5em} $ \lim\limits_{x \rightarrow \infty}\frac{a_{m}x^{m}+a_{m-1}x^{m-1}+...+a_{0}}{b_{n}x^{n}+b_{n-1}x^{n-1}+...+b_{0}} $这个式子中的老大是最高阶的项, 其他的项可以忽略不看.
+\end{tcolorbox}
 \subsubsection{等价无穷小}
 {\kaishu 常用的等价无穷小}\vspace{-1em}
 \begin{multicols}{2}
@@ -958,7 +988,7 @@ $ \lim\limits f(x), \lim\limits g(x) $中一个存在, 另一个不存在 $ \Rig
 \subsubsection{$ \infty-\infty $型}
 三种方法:
 \begin{enumerate}
-\item 分式差: 将其化为$ \frac{\infty}{\infty} $
+\item 分式差: 将其化为$ \frac{\infty}{\infty} $, 这里的分式指的是两个减数都要是分式, 如果没法直接化为分式, 可以进行变量代换, 强行化为分式
 \item 根式差: 将根式有理化
 \item 提取无穷因子: 将无穷因子作为一个整体做变量代换
 \end{enumerate}
@@ -1575,7 +1605,7 @@ $ \displaystyle\int_{a}^{b}f(x)\mathrm{d}x $在几何上表示$ y=f(x), x=a, x=b
 \item 若$ f(x) $在$ [a,b] $上连续, 则$ \displaystyle\int_{a}^{b}\hspace{.2em}f(x)\mathrm{d}x=f(\xi)(b-a), a<\xi<b $
 \item 若$ f(x), g(x) $在$ [a,b] $上连续, 且$ g(x) $不变号, 则:
 \begin{equation*}
-\displaystyle\int_{a}^{b}\hspace{.2em}f(x)g(x)\mathrm{d}x=f(\xi)\displaystyle\int_{a}^{b}\hspace{.2em}g(x)\mathrm{d}x, a\le\xi\le b
+\displaystyle\int_{a}^{b}\hspace{.2em}f(x)g(x)\mathrm{d}x=f(\xi)\displaystyle\int_{a}^{b}\hspace{.2em}g(x)\mathrm{d}x, a\le\xi\le b, (\text{条件: }\displaystyle\int_{a}^{b}\hspace{.2em}g(x)\mathrm{d}x\text{在}a\text{到}b\text{上不变号})
 \end{equation*}
 \end{enumerate}
 \subsection{求定积分}
@@ -1880,7 +1910,7 @@ y^{*}=x^{k}e^{\lambda x}Q_{m}(x)
 \end{enumerate}
 \item 若$ f(x)=e^{\alpha x}[P_{l}(x)\cos \beta x+P_{n}(x)\sin \beta x] $, 则方程$ (4) $的特解如下:
 \begin{equation*}
-y^{*}=x_{k}e^{\alpha x}[R_{m}^{(1)}\cos \beta x+R_{m}^{(2)}(x)\sin \beta x], m=\mathrm{max}\{l,n\}
+y^{*}=x_{k}e^{\alpha x}[R_{m}^{(1)}(x)\cos \beta x+R_{m}^{(2)}(x)\sin \beta x], m=\mathrm{max}\{l,n\}
 \end{equation*}\par $ k $的取值如下:
 \begin{enumerate}
 \item 当$ \alpha+i\beta $不为方程$ (3) $的特征根时, $ k=0 $
