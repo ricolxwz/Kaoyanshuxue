@@ -626,6 +626,7 @@ scale=2,
 \item 数列极限的存在性和大小和前$ N $项无关
 \item 子数列和父数列的极限相同, 即$ \lim\limits_{n \rightarrow \infty}x_{n}=\lim\limits_{k \rightarrow \infty}x_{2k-1}=\lim\limits_{k \rightarrow \infty}x_{2k+1}=a $
 \item 若$ \lim\limits_{n \rightarrow \infty}a_{n}=a\Rightarrow \lim\limits_{n \rightarrow \infty}|a_{n}|=|a| $
+\item $ \lim\limits_{n \rightarrow \infty}\sqrt[n]{a_{1}^{n}+a_{2}^{n}+...+a_{m}^{n}}=\mathrm{max}_{1\le i\le m}\{a_{i}\}, \text{其中}\ a_{i}>0 $
 \end{enumerate}
 \end{tcolorbox}
 \subsection{收敛数列的性质}
@@ -662,8 +663,8 @@ scale=2,
 \subsection{$ n $项和的数列极限}
 常用二种方法:
 \begin{enumerate}
-\item 夹逼定理
-\item 转化为$ 0-1 $上的定积分
+\item 夹逼定理: 变化部分是主体同量级, 用夹逼原理
+\item 转化为$ 0-1 $上的定积分: 变化部分是主体次量级, 用定积分定义
 \end{enumerate}
 \subsection{$ n $项连乘的数列极限}
 常用两种方法:
@@ -707,6 +708,14 @@ scale=2,
 \item 左极限: $ \lim\limits_{x\rightarrow x_{0}^{-}}f(x)=A\ or\ f(x_{0}^{-})=A $
 \item 右极限: $ \lim\limits_{x\rightarrow x_{0}^{+}}f(x)=A\ or\ f(x_{0}^{+})=A $
 \end{enumerate}
+\begin{tcolorbox}
+要分左右求极限的问题主要有三种:
+\begin{enumerate}
+\item 分段函数在分界点的极限
+\item $ e^{\infty} $的极限
+\item $ \arctan \infty $的极限
+\end{enumerate}
+\end{tcolorbox}
 \subsubsection{充要条件}
 函数$ f(x) $在点$ x_{0} $处有极限的充要条件分别有:
 \begin{enumerate}
@@ -801,9 +810,11 @@ scale=2,
 \item 同阶无穷小: $ \lim\limits \frac{\alpha(x)}{\beta(x)}=c(\neq 0) $, $ \alpha(x) $是$ \beta(x) $的同阶无穷小
 \item 等价无穷小: $ \lim\limits \frac{\alpha(x)}{\beta(x)}=1 $, $ \alpha(x) $是$ \beta(x) $的等阶无穷小
 \item $ k $阶无穷小: $ \lim\limits \frac{\alpha(x)}{[\beta(x)]^{k}}=c\neq 0, k>0 $, $ \alpha(x) $是$ \beta(x) $的$ k $阶无穷小
-\end{enumerate}
+\end{enumerate}\par
+通常我们所说的$ n $阶无穷小的含义是$ \lim\limits \frac{\alpha(x)}{x^{n}}=c\neq 0 $, 则$ \alpha(x) $就是$ n $阶无穷小.
 \begin{tcolorbox}
-并不是任意两个无穷小都可以进行比阶的, 如: 当$ x \rightarrow 0 $的时候, $ \lim\limits_{x\rightarrow 0}\frac{x\sin \frac{1}{x}}{x^{2}}=\lim\limits_{x\rightarrow 0}\frac{1}{x}\sin \frac{1}{x} $不存在
+并不是任意两个无穷小都可以进行比阶的, 如: 当$ x \rightarrow 0 $的时候, $ \lim\limits_{x\rightarrow 0}\frac{x\sin \frac{1}{x}}{x^{2}}=\lim\limits_{x\rightarrow 0}\frac{1}{x}\sin \frac{1}{x} $不存在 \par \vspace{.5em}
+\textbf{常用结论: } 若$ f(x) $在$ x=0 $的某领域内连续, 且当$ x\rightarrow 0 $时$ f(x) $是$ x $的$ m $阶无穷小, $ \varphi(x) $是$ x $的$ n $阶无穷小, 则当$ x\rightarrow 0 $时, $ F(x)=\displaystyle\int_{0}^{\varphi(x)}\hspace{.2em}f(t)\mathrm{d}t $是$ x $的$ n(m+1) $阶无穷小.(2020和2021两年第一题都可以用这个秒杀), 如$ \displaystyle\int_{\sin x}^{1-\sqrt{\cos x}}\hspace{.2em}\ln (1+t^{3})\mathrm{d}t=\displaystyle\int_{0}^{1-\sqrt{\cos x}}\hspace{.2em}\ln(1+t^{3})\mathrm{d}t-\displaystyle\int_{0}^{\sin x}\hspace{.2em}\ln(1+t^{3})\mathrm{d}t $, $ \displaystyle\int_{0}^{1-\sqrt{\cos x}}\hspace{.2em}\ln(1+t^{3})\mathrm{d}t $是$ 2\times (3+1)=8 $阶, $ \displaystyle\int_{0}^{\sin x}\hspace{.2em}\ln(1+t^{3})\mathrm{d}t $是$ 1\times(3+1)=4 $阶, 由于$ x\rightarrow 0 $, 故后者是老大, 所以$ \displaystyle\int_{\sin x}^{1-\sqrt{\cos x}}\hspace{.2em}\ln (1+t^{3})\mathrm{d}t $是$ 4 $阶.
 \end{tcolorbox}
 \subsubsection{无穷小的运算规则}
 \begin{enumerate}
@@ -829,16 +840,18 @@ scale=2,
 \item $ e^{x}-1\sim x $
 \item $ (1+x)^{\alpha}-1\sim \alpha x $
 \item $ 1-\cos x\sim \frac{1}{2}x^{2} $
-\end{itemize}\par
+\item $ 1-\cos^{\alpha} x\sim \frac{\alpha}{2}x^{2} $
+\end{itemize}
 \end{multicols}
 \begin{tcolorbox}
 $ (1+x)^{\alpha}-1\sim \alpha x $这个式子可以推广为$ (1+\alpha(x))^{\beta(x)}-1\sim \alpha (x)\beta (x) $, 条件是$ \alpha(x)\rightarrow 0, \alpha(x)\beta(x)\rightarrow 0 $
 \end{tcolorbox}
 \subsubsection{变上限积分的无穷小替换}
-设$ f(x) $和$ g(x) $在$ x=0 $的某邻域内连续, 且$ \lim\limits_{x \rightarrow 0}\frac{f(x)}{g(x)}=1 $, 则:
+设$ f(x) $和$ g(x) $在$ x=0 $的某邻域内连续, 且$ \lim\limits_{x \rightarrow 0}\frac{f(x)}{g(x)}=1, \lim\limits_{x \rightarrow 0}\varphi(x)=0 $, 则:
 \begin{equation*}
-\displaystyle\int_{0}^{x}\hspace{.2em}f(t)\mathrm{d}t\sim \displaystyle\int_{0}^{x}\hspace{.2em}g(t)\mathrm{d}t
-\end{equation*}
+\displaystyle\int_{0}^{\varphi(x)}\hspace{.2em}f(t)\mathrm{d}t\sim \displaystyle\int_{0}^{\varphi(x)}\hspace{.2em}g(t)\mathrm{d}t
+\end{equation*}\par
+注意, 这里的$ f(x) $和$ g(x) $没说都趋向于$ 0 $, 可以都趋向于同一个常数, 结果$ \lim\limits_{x \rightarrow 0}\frac{f(x)}{g(x)} $也是$ 1 $.
 \subsection{无穷大}
 \subsubsection{无穷大的概念}
 若$ \lim\limits_{x \rightarrow x_{0}}f(x)=\infty $或$ \lim\limits_{x \rightarrow \infty}f(x)=\infty $, 则称$ f(x) $为$ x\rightarrow x_{0} $或$ x\rightarrow \infty $时的无穷大.
@@ -970,6 +983,13 @@ $ \lim\limits_{x \rightarrow 0}\frac{a_{m}x^{m}+a_{m-1}x^{m-1}+...+a_{0}}{b_{n}x
 \int_{0}^{1}f(x)\mathrm{d}x=\lim\limits_{n \rightarrow \infty}\frac{1}{n}\sum_{k=1}^{n}f(\frac{k}{n})
 \end{equation*}\par
 其核心是提取公因子$ \frac{1}{n} $, 然后将其余部分化为$ \sum_{k=1}^{n}f(\frac{k}{n}) $.
+\begin{tcolorbox}
+\textbf{什么时候用定积分, 什么时候用夹逼定理}
+\begin{enumerate}
+\item 分母中非变化量和变化量同量级$ \Rightarrow $定积分定义
+\item 分母中非变化量和变化量非同量级$ \Rightarrow $夹逼定理
+\end{enumerate}
+\end{tcolorbox}
 \subsection{求解函数极限(七种不定式的计算)}
 七种不定式中, 最基础的是$ \frac{0}{0}, \frac{\infty}{\infty} $. 其次是$ \infty-\infty, 0\cdot\infty $, 其中后者可以细分为$ 0^{0}, 1^{\infty}, \infty^{0} $.
 \subsubsection{$ \frac{0}{0} $型}
@@ -993,7 +1013,7 @@ $ \lim\limits_{x \rightarrow 0}\frac{a_{m}x^{m}+a_{m-1}x^{m-1}+...+a_{0}}{b_{n}x
 \item 提取无穷因子: 将无穷因子作为一个整体做变量代换
 \end{enumerate}
 \subsubsection{$ 0\cdot \infty $型}
-直接化为$ \frac{0}{0} $型或者$ \frac{\infty}{\infty} $型.
+直接化为$ \frac{0}{0} $型或者$ \frac{\infty}{\infty} $型. 注意如果转换为$ \frac{0}{0} $之后不好求导, 可以先将$ 0\times \infty $中的$ 0 $用等价无穷小替换掉.
 \subsubsection{$ 1^{\infty} $型}
 如果想慢慢算, 可以用$ exp $做, 如果不想算, 直接用公式:
 \begin{equation*}
@@ -1001,6 +1021,13 @@ $ \lim\limits_{x \rightarrow 0}\frac{a_{m}x^{m}+a_{m-1}x^{m-1}+...+a_{0}}{b_{n}x
 \end{equation*}
 \subsubsection{$ \infty^{0}, 0^{0} $型}
 可以转为为$ exp $形式.
+\subsubsection{$ 0-0/? $型(热门题型)}
+\begin{enumerate}
+\item 泰勒公式展开至与分母同阶, 或者是同次幂项相减等于$ 0 $
+\item 分子中含有两个$ e $可以直接提取公因子, 若只含有一个$ e $, 可以将两一个化为$ e $的形式, 然后提取公因子
+\item 分子中含有$ ln $, 可以运用对数的求导法则
+\item 如果出现同一个函数的两个不同的点的函数值相减, 联想到拉格朗日中值定理
+\end{enumerate}
 \subsection{根据极限求参数}
 已知函数(数列)极限求参数, 也是极限的计算. 可以利用等价无穷小的代换和性质, 求极限的方法结合已知条件进行求解. 常用的结论:
 \begin{equation*}
@@ -1038,6 +1065,15 @@ $ \lim\limits_{x \rightarrow 0}\frac{a_{m}x^{m}+a_{m-1}x^{m-1}+...+a_{0}}{b_{n}x
 \item 无穷间断点: $ \lim\limits_{x\rightarrow x_{0}}f(x)=\infty $
 \item 振荡间断点: $ \lim\limits_{x\rightarrow x_{0}}f(x) $振荡不存在
 \end{enumerate}
+\end{enumerate}
+\subsection{连续的性质}
+\begin{enumerate}
+\item 连续函数的和, 差, 积, 商(分母不为0)及复合仍连续
+\item 基本初等函数在其定义域内连续, 初等函数在其定义区间内连续
+\item 有界性
+\item 最值性
+\item 介值性
+\item 零点定理
 \end{enumerate}
 \section{习题}
 \subsection{求间断点}
@@ -1225,7 +1261,7 @@ f'(x_{0})=\lim\limits_{\Delta x \rightarrow 0} \frac{f(x_{0}+\Delta x)-f(x_{0})}
 \item $ (x-x_{0})^{k}|x-x_{0}| $的可导性:
 \begin{enumerate}
 \item $ k=0 \Rightarrow |x-x_{0}| $在$ x_{0} $不可导
-\item $ k=1 \Rightarrow (x-x_{0})|x-x_{0}| $在$ x_{0} $一阶不可导, 二阶可导
+\item $ k=1 \Rightarrow (x-x_{0})|x-x_{0}| $在$ x_{0} $一阶可导, 二阶不可导
 \item $ k=n \Rightarrow (x-x_{0})^{n}|x-x_{0}| $在$ x_{0} $$ n $阶可导, $ n+1 $阶不可导
 \end{enumerate}
 \item $ f(x)|x-a| $的可导性: 若$ f(x) $在$ x=a $连续
@@ -1899,7 +1935,7 @@ y=e^{\alpha x}(C_{1}\cos \beta x+C_{2}\sin \beta x)
 y''+py'+qy=f(x) \quad (4)
 \end{equation*}
 \begin{enumerate}
-\item 若$ f(x)=e^{\lambda x}P_{m}(x) $, 则方程$ (4) $的特解为:
+\item 若$ f(x)=e^{\lambda x}P_{m}(x) $, 则方程$ (4) $的特解为: \textbf{注意: 是特解!!!不是通解}
 \begin{equation*}
 y^{*}=x^{k}e^{\lambda x}Q_{m}(x)
 \end{equation*}\par $ k $的取值如下:
@@ -1908,9 +1944,9 @@ y^{*}=x^{k}e^{\lambda x}Q_{m}(x)
 \item $ \lambda $是方程$ (3) $的单特征根时, $ k=1 $
 \item $ \lambda $是方程$ (3) $的重特征根时, $ k=2 $
 \end{enumerate}
-\item 若$ f(x)=e^{\alpha x}[P_{l}(x)\cos \beta x+P_{n}(x)\sin \beta x] $, 则方程$ (4) $的特解如下:
+\item 若$ f(x)=e^{\alpha x}[P_{l}(x)\cos \beta x+P_{n}(x)\sin \beta x] $, 则方程$ (4) $的特解如下:\textbf{注意: 是特解!!!不是通解}
 \begin{equation*}
-y^{*}=x_{k}e^{\alpha x}[R_{m}^{(1)}(x)\cos \beta x+R_{m}^{(2)}(x)\sin \beta x], m=\mathrm{max}\{l,n\}
+y^{*}=x^{k}e^{\alpha x}[R_{m}^{(1)}(x)\cos \beta x+R_{m}^{(2)}(x)\sin \beta x], m=\mathrm{max}\{l,n\}
 \end{equation*}\par $ k $的取值如下:
 \begin{enumerate}
 \item 当$ \alpha+i\beta $不为方程$ (3) $的特征根时, $ k=0 $
