@@ -606,7 +606,7 @@ scale=2,
 \begin{enumerate}
 \item 函数在$ [a,b] $内连续, 则有界
 \item 函数在$ (a,b) $内连续, 且函数在$ a $点处的右极限存在, 在$ b $点处的左极限存在(特别是这个, 经常考证明极限是否存在, $ a $或者$ b $其中一个是$ \infty $也成立)
-\item $ f'(x) $在$ I $上连续, 则$ f(x) $在$ I $上连续
+\item $ f'(x) $在$ I $上有界, 则$ f(x) $在$ I $上有界
 \end{enumerate}\par
 此外, (局部)保号性也是经常考的, 要清楚脱帽和戴帽规则, 说白了:
 \begin{enumerate}
@@ -1055,12 +1055,12 @@ $ \lim\limits_{x \rightarrow 0}\frac{a_{m}x^{m}+a_{m-1}x^{m-1}+...+a_{0}}{b_{n}x
 \end{equation*}
 \subsection{间断点的定义}
 \begin{enumerate}
-\item 第一类间断点: 左导数和右导数都存在
+\item 第一类间断点: 左极限和右极限都存在
 \begin{enumerate}
-\item 可去间断点(左导数$ = $右导数): $ \lim\limits_{x\rightarrow x_{0}}f(x)=A\neq f(x_{0}) $
-\item 跳跃间断点(左导数$ \neq $右导数): $ \lim\limits_{x\rightarrow x_{0}^{-}}f(x) \neq \lim\limits_{x\rightarrow x_{0}^{+}}f(x) $
+\item 可去间断点(左极限$ = $右极限$ \neq $函数值): $ \lim\limits_{x\rightarrow x_{0}}f(x)=A\neq f(x_{0}) $
+\item 跳跃间断点(左极限$ \neq $右极限): $ \lim\limits_{x\rightarrow x_{0}^{-}}f(x) \neq \lim\limits_{x\rightarrow x_{0}^{+}}f(x) $
 \end{enumerate}
-\item 第二类间断点: 左导数和右导数至少有一个不存在
+\item 第二类间断点: 左极限和右极限至少有一个不存在
 \begin{enumerate}
 \item 无穷间断点: $ \lim\limits_{x\rightarrow x_{0}}f(x)=\infty $
 \item 振荡间断点: $ \lim\limits_{x\rightarrow x_{0}}f(x) $振荡不存在
@@ -1098,12 +1098,21 @@ $ f(x) $在$ x_{0} $处可导$ \Leftrightarrow f(x)$在$ x_{0} $处导数存在$
 \end{enumerate}
 \subsubsection{充要条件}
 函数$ f(x) $在点$ x_{0} $可导的充要条件是左导数$ f'_{-}(x_{0}) $和右导数$ f'_{+}(x_{0}) $存在且相等.
+\begin{tcolorbox}
+\textbf{函数$ $ n $ $阶可导只能用到$ n-1 $次洛必达法则}:  $ n $阶可导$ \nRightarrow $ $ n $阶导数连续或是$ n $阶导数在某点的极限存在, 但是可以$ \Rightarrow $ $ n-1 $阶导数是连续的. 如果$ n $阶连续可导则可以$ \Rightarrow $ $ n $阶导数连续或是$ n $阶导数在某点的极限存在.
+\end{tcolorbox}
 \subsection{微分的定义}
 设函数$ f(x) $在点$ x_{0} $的某邻域内有定义, 且$ x_{0}+\Delta x $在该邻域内, 函数的增量$ \Delta y $有:
 \begin{equation*}
 \Delta y=A\Delta x+o(\Delta x)
 \end{equation*}\par
 其中, $ o(\Delta x) $是在$ \Delta \rightarrow 0 $时比$ \Delta $更高阶的无穷小, 则称$ f(x) $在点$ x_{0} $处可微, 并称$ A\Delta x $为$ f(x) $在点$ x_{0} $处的微分.
+\subsection{连续, 可导的关系}
+可导$ \Rightarrow $连续, 连续$ \nRightarrow $可导.
+\begin{tcolorbox}
+$ n $阶可导$ \Rightarrow 0\sim n-1 $阶导函数连续, $ \nRightarrow n $阶导函数连续(存在)\par
+由这个结论可以推出$ n $阶可导, 则洛必达法则只能用到$ n-1 $阶.
+\end{tcolorbox}
 \subsection{导数和微分的计算}\label{求导的方法}
 \subsubsection{四则运算}
 若以下函数可导, 则:
@@ -1140,10 +1149,15 @@ $ f(x) $在$ x_{0} $处可导$ \Leftrightarrow f(x)$在$ x_{0} $处导数存在$
 \end{aligned}
 \end{equation*}
 \begin{tcolorbox}
-微分形式的不变性: 无论$ u $是中间变量还是自变量, $ \mathrm{d}y=f'(x)\mathrm{d}u $都成立.
+复合函数可导性的判断:
+\begin{enumerate}
+\item 链式求导法则: 有复合函数$ f(g(x)) $, 如果$ f'(u) $和$ g'(x) $存在$ \Rightarrow f(g(x)) $可导, 且$ f(g(x))'=f'(u)g'(x) $
+\item 求出$ f(g(x)) $的表达式: 如果上述$ f'(u), g'(x) $其中有一个不存在, 则$ f(g(x))' $不一定不存在, 可以写出它的表达式来判断
+\end{enumerate}
 \end{tcolorbox}
 \subsubsection{反函数的导数}
-设$ y=f(x) $可导, 且$ f'(x)\neq 0 $, 则存在反函数$ x=\varphi(y) $, 且$ \frac{\mathrm{d}x}{\mathrm{d}y}=\frac{1}{\frac{\mathrm{d}y}{\mathrm{d}x}} $, 即$ \varphi'(y)=\frac{1}{f'(x)} $
+设$ y=f(x) $可导, 且$ f'(x)\neq 0 $, 则存在反函数$ x=\varphi(y) $, 且$ \frac{\mathrm{d}x}{\mathrm{d}y}=\frac{1}{\frac{\mathrm{d}y}{\mathrm{d}x}} $, 即$ \varphi'(y)=\frac{1}{f'(x)} $ \par
+$ \frac{\mathrm{d}^{2}x}{\mathrm{d}y^{2}}=\frac{\mathrm{d}}{\mathrm{d}y}(\frac{1}{f'(x)})=\frac{\mathrm{d}}{\mathrm{d}x}(\frac{1}{f'(x)})\cdot\frac{\mathrm{d}x}{\mathrm{d}y}=\frac{f''(x)}{f'(x)^{3}} $
 \subsubsection{参数方程的导数}
 设函数$ f(x) $由参数方程$ f(x)=\scaleleftright[6pt]{\biggl\{}{
 \begin{aligned}
@@ -1153,6 +1167,10 @@ $ f(x) $在$ x_{0} $处可导$ \Leftrightarrow f(x)$在$ x_{0} $处导数存在$
 }{.} $确定, 其中$ t $是参数, 且$ \varphi(t), \psi(t) $均对$ t $可导, $ \varphi'(t)\neq 0 $, 则
 \begin{equation*}
 \dv{y}{x}=\frac{\mathrm{d}y/\mathrm{d}t}{\mathrm{d}x/\mathrm{d}t}=\frac{\psi'(t)}{\varphi'(t)}
+\end{equation*}\par
+二阶导数为:
+\begin{equation*}
+\frac{\mathrm{d}^{2}y}{\mathrm{d}x^{2}}=\frac{\mathrm{d}}{\mathrm{d}x}(\frac{\psi'(t)}{\varphi'(t)})=\frac{\mathrm{d}}{\mathrm{d}t}(\frac{\psi'(t)}{\varphi'(t)})\cdot\frac{\mathrm{d}t}{\mathrm{d}x}=\frac{\mathrm{d}}{\mathrm{d}t}(\frac{\psi'(t)}{\varphi'(t)})\cdot\frac{1}{\varphi'(t)}=\frac{\psi''(t)\varphi'(t)-\varphi''(t)\psi'(t)}{\varphi'^{3}(t)}
 \end{equation*}
 \subsubsection{隐函数求导法}
 设函数$ y=f(x) $是由方程$ F(x,y)=0 $确定的可导函数, 则
@@ -1160,6 +1178,9 @@ $ f(x) $在$ x_{0} $处可导$ \Leftrightarrow f(x)$在$ x_{0} $处导数存在$
 \item 方程$ F(x,y)=0 $两边对自变量$ x $进行求导, 将$ y $看作中间变量, 得到一个关于$ y' $的方程
 \item 解该方程便可求出$ y' $
 \end{enumerate}
+\begin{tcolorbox}
+隐函数在求某点的导数的时候, 可以先将$ x $带入表达式, 算出$ y $, 然后每对方程求一次导, 就代入, 求出相应阶的导数, 然后继续求导, 代入求出的值.
+\end{tcolorbox}
 \subsubsection{对数求导法}
 对于多项相乘, 相除, 开方, 乘方的式子, 一般先取对数再求导. 设$ y=f(x)(f(x)>0) $
 \begin{enumerate}
@@ -1189,7 +1210,7 @@ u(x)^{v(x)}=e^{v(x)\ln u(x)}
 \subsubsection{高阶导数}
 求高阶导数主要有三种方法:
 \begin{enumerate}
-\item 归纳法 \par 逐次求导, 探索规律, 得出通式.
+\item 归纳法 \par 逐次求导, 探索规律, 得出通式. \textbf{一般很适用于求有理函数的导数, 可以将其拆分, 然后求导发现规律}
 \item 莱布尼茨公式 \par 设$ u(x),v(x) $均$ n $阶可导, 则:
 \begin{equation*}
 \begin{aligned}
@@ -1198,7 +1219,7 @@ u(x)^{v(x)}=e^{v(x)\ln u(x)}
 \end{aligned}
 \end{equation*}\par
 一般见到两个函数的乘积要求导, 直接用莱布尼茨公式即可.
-\item 泰勒公式
+\item 泰勒公式: 先写出$ f(x) $的表达式, 然后找到其中的$ n $次项, 这个项和泰勒公式中的$ n $次项$ \frac{f(0)^{(n)}}{n!}x^{n} $相等, 就可以求出$ f(0)^{(n)} $(适用于求$ 0 $点导数)
 \end{enumerate}
 \subsubsection{变限积分求导公式}
 设$ F(x)=\int_{\varphi_{1}(x)}^{\varphi_{2}(x)}f(t)\mathrm{d}t $, 其中$ f(x) $在$ [a,b] $上连续, 可导函数$ \varphi_{1}(x) $和$ \varphi_{2}(x) $的值域在$ [a,b] $上, 则在函数$ \varphi_{1}(x) $和$ \varphi_{2}(x) $的公共定义域上, 有:
@@ -1234,6 +1255,14 @@ f'(x_{0})=\lim\limits_{\Delta x \rightarrow 0} \frac{f(x_{0}+\Delta x)-f(x_{0})}
 \end{equation*}\par
 特别是包含$ \Delta x $的导数定义式, 题目中常常不会给出复合上面结构的分式, 我们要求出$ \Delta x $, 凑成上面的结构, 最后, 通过极限的运算法则解答题目.\par
 \textbf{还需要特别特别注意的是在分子中$ \Delta x $前面必须是正号, 即形式不可改变.}
+\begin{tcolorbox}
+公式$ \lim\limits_{x \rightarrow 0}\frac{f(\varphi(x))-f(0)}{\psi(x)}\lim\limits_{x \rightarrow 0}\frac{f(\varphi(x))-f(0)}{\varphi(x)}\cdot\frac{\varphi(x)}{\psi(x)} $的使用条件是:
+\begin{enumerate}
+\item $ \varphi(x) $可以趋近于$ 0^{+} $和$ 0^{-} $
+\item $ \varphi(x)\neq 0 $
+\item $ \varphi(x) $和$ \psi(x) $同阶
+\end{enumerate}
+\end{tcolorbox}
 \subsection{利用导数的定义求导数}
 利用导数的定义, 常常会用来求:
 \begin{enumerate}

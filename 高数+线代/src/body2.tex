@@ -54,10 +54,10 @@ a_{11} & 0 & \dots & 0 \\
 \begin{equation*}
 \begin{aligned}
 & \begin{vmatrix}
-  a_{11} & \dots & a_{1,n-1} & a_{1n} \\
-  a_{21} & \dots & a_{2,n-1} & 0 \\
-  \vdots & & \vdots & \vdots \\
-  a_{n1} & \dots & 0 & 0
+a_{11} & \dots & a_{1,n-1} & a_{1n} \\
+a_{21} & \dots & a_{2,n-1} & 0 \\
+\vdots & & \vdots & \vdots \\
+a_{n1} & \dots & 0 & 0
 \end{vmatrix}=
 \begin{vmatrix}
 0 & \dots & 0 & a_{1n} \\
@@ -78,8 +78,8 @@ a_{n1} & \dots & 0 & 0
 \subitem $ \bm{A} $为$ m $阶方阵, $ \bm{B} $为$ n $阶方阵
 \subitem 主对角线:
 $ \begin{vmatrix}
-  \bm{A} & \bm{0} \\
-  \bm{0} & \bm{B}
+\bm{A} & \bm{0} \\
+\bm{0} & \bm{B}
 \end{vmatrix} =
 \begin{vmatrix}
 \bm{A} & \bm{C} \\
@@ -457,7 +457,7 @@ a_{11}^{n} & & & \\
 \begin{equation*}
 \begin{bmatrix}
 \bm{A} & \bm{0} \\
-\bm{0} & \bm{B}
+\bm{0} & \bm{B} 
 \end{bmatrix}^{n}=
 \begin{bmatrix}
 \bm{A}^{n} & \bm{0} \\
@@ -524,9 +524,9 @@ a_{n1} & & &
 \end{equation*}
 \end{enumerate}
 \end{enumerate}
-\item 伴随矩阵法 \par
+\item 伴随矩阵法 \par 
 若$ |\bm{A}|\neq 0 $, 则$ \bm{A} $可逆, 且$ \bm{A}^{-1}=\frac{\bm{A}^{*}}{|\bm{A}|} $
-\item 初等矩阵法 \par
+\item 初等矩阵法 \par 
 \begin{equation*}
 \begin{bmatrix}
 \bm{A} & \bm{E}
@@ -696,7 +696,7 @@ a_{nm}
 \item 与非齐次线性方程组的解相关的判定: 建议结合第四章非齐次线性方程组的解. 若$ \bm{\alpha}_{1},...,\bm{\alpha}_{m} $无关, 且$ \bm{\alpha}_{1},...,\bm{\alpha}_{m},\bm{\beta} $相关, 则$ \bm{\beta} $可以由$ \bm{\alpha}_{1},...,\bm{\alpha}_{m} $线性表示, 且表示方法唯一. 若$ \bm{\beta} $可以由$ \bm{\alpha}_{1},...,\bm{\alpha}_{m} $线性表示, 则$ r([\bm{\alpha}_{1},...,\bm{\alpha}_{m}])=r([\bm{\alpha}_{1},...,\bm{\alpha}_{m},\bm{\beta}]) $
 \item 以少表多, 多的相关
 \item 向量个数的扩/缩和向量维度的扩/缩
-\end{enumerate}\par
+\end{enumerate}\par 
 如果遇到证明线性相关性或者线性无关性, 可以转化成$ \bm{A}\bm{x}=\bm{0} $或者$ \bm{A}\bm{x}=\bm{\beta} $解的问题.
 \subsection{极大线性无关组及向量组秩的求法}
 这类问题用到最多的定理: \hyperref[初等变换不会改变矩阵的秩]{初等变换不会改变矩阵的秩}, 或者说一个矩阵乘以可逆矩阵不会改变其线性相关性(可逆矩阵也是由初等矩阵经过初等变换形成的). \par \vspace{.5em}求极大线性无关组的方法是通过高斯消元法得到行阶梯型矩阵. 再找到阶梯列, 该列对应的向量组成的就是极大线性无关组(实际上也是用到了``初等变换不会改变对应列的线性相关性'').
@@ -749,7 +749,7 @@ x_{m}
 说明: 由于行秩=列秩, 所以列秩为$ r $, 说明独立方程组个数为$ r $.
 \end{enumerate}
 \item 若$ m<n $,
-\end{enumerate}\par
+\end{enumerate}\par 
 注: 如果方程$ \bm{A}\bm{x}=\bm{0} $有无穷解, 则$ r(\bm{A})<m $, 对应上述$ 1,2(b $两种情况.
 \subsubsection{解的性质}
 若$ \bm{A}\bm{\xi_{1}}=\bm{0} $, $ \bm{A}\bm{\xi_{2}}=\bm{0} $, 则$ k_{1}\bm{\xi_{1}}+k_{2}\bm{\xi_{2}} $是齐次线性方程组$ \bm{A}\bm{x}=\bm{0} $的解.
@@ -861,7 +861,7 @@ a_{n1} & a_{n2} & \dots & a_{nm} & b_{n}
 \subsubsection{线性方程组系数矩阵列向量和解的关系}
 主要是理解一种思想: ``方程组的解是描述列向量组中各向量之间数量关系的系数''.
 \subsection{两个方程组的公共解}
-齐次线性方程组$ \bm{A}_{m\times n}\bm{x}=\bm{0} $和$ \bm{B}_{m\times n}\bm{0}=\bm{0} $的公共解是满足方程$
+齐次线性方程组$ \bm{A}_{m\times n}\bm{x}=\bm{0} $和$ \bm{B}_{m\times n}\bm{0}=\bm{0} $的公共解是满足方程$ 
 \begin{bmatrix}
 \bm{A} \\
 \bm{B}
