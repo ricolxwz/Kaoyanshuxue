@@ -1157,7 +1157,7 @@ $ n $阶可导$ \Rightarrow 0\sim n-1 $阶导函数连续, $ \nRightarrow n $阶
 \end{tcolorbox}
 \subsubsection{反函数的导数}
 设$ y=f(x) $可导, 且$ f'(x)\neq 0 $, 则存在反函数$ x=\varphi(y) $, 且$ \frac{\mathrm{d}x}{\mathrm{d}y}=\frac{1}{\frac{\mathrm{d}y}{\mathrm{d}x}} $, 即$ \varphi'(y)=\frac{1}{f'(x)} $ \par
-$ \frac{\mathrm{d}^{2}x}{\mathrm{d}y^{2}}=\frac{\mathrm{d}}{\mathrm{d}y}(\frac{1}{f'(x)})=\frac{\mathrm{d}}{\mathrm{d}x}(\frac{1}{f'(x)})\cdot\frac{\mathrm{d}x}{\mathrm{d}y}=\frac{f''(x)}{f'(x)^{3}} $
+$ \frac{\mathrm{d}^{2}x}{\mathrm{d}y^{2}}=\frac{\mathrm{d}}{\mathrm{d}y}(\frac{1}{f'(x)})=\frac{\mathrm{d}}{\mathrm{d}x}(\frac{1}{f'(x)})\cdot\frac{\mathrm{d}x}{\mathrm{d}y}=\frac{-f''(x)}{f'(x)^{3}} $
 \subsubsection{参数方程的导数}
 设函数$ f(x) $由参数方程$ f(x)=\scaleleftright[6pt]{\biggl\{}{
 \begin{aligned}
@@ -1336,7 +1336,7 @@ f(x)\le f(x_{0})(\text{或}f(x)\ge f(x_{0}))
 $ x_{0} $为极值点$ \Rightarrow $设$ f(x) $在$ x=x_{0} $处可导, 则$ f'(x_{0})=0 $.\par \vspace{.5em}
 \noindent {\kaishu 极值点的充分条件}:
 \begin{enumerate}
-\item 根据一阶导数判断: $ f(x) $在$ x=x_{0} $的某邻域内一阶可导
+\item 根据一阶导数判断: $ f(x) $在$ x=x_{0} $的某邻域内一阶可导(\textbf{或者$ f(x) $在$ x_{0} $连续})
 \subitem 左邻域内$ f'(x)<0 $, 右邻域内$ f'(x)>0\Rightarrow x_{0} $为极小值点
 \subitem 左邻域内$ f'(x)>0 $, 右邻域内$ f'(x)<0\Rightarrow x_{0} $为极大值点
 \item 根据二阶导数判断: $ f(x) $在$ x=x_{0} $的某邻域内二阶可导, 且$ f'(x_{0})=0, f''(x_{0})\neq 0 $
@@ -1376,7 +1376,7 @@ f(x)\le f(x_{0})(\text{或}f(x)\ge f(x_{0}))
 $ x_{0} $为拐点$ \Rightarrow $设$ f(x) $在$ x=x_{0} $处二阶可导, 则$ f''(x_{0})=0 $ \par \vspace{.5em}
 \noindent {\kaishu 拐点的充分条件}:
 \begin{enumerate}
-\item 根据二阶导数判断: $ f(x) $在$ x=x_{0} $的某邻域内二阶可导, 该点左/右邻域内$ f''(x) $变号$ \Rightarrow x_{0}$为拐点
+\item 根据二阶导数判断: $ f(x) $在$ x=x_{0} $的某邻域内二阶可导(\textbf{或者$ f(x) $在$ x_{0} $处连续}), 该点左/右邻域内$ f''(x) $变号$ \Rightarrow x_{0}$为拐点
 \item 根据三阶导数判断: $ f(x) $在$ x=x_{0} $的某邻域内三阶可导, 且$ f''(x_{0})=0, f'''(x_{0})\neq 0 $$ \Rightarrow x_{0}$为拐点
 \item 根据$ n $阶导数判断: $ f(x) $在$ x=x_{0} $的某邻域内$ n $阶可导, 且$ f^{(m)}(x_{0})=0(m=2,...,n-1), f^{(n)}(x_{0})\neq 0\  $($ n $为奇数) $ \Rightarrow x_{0}$为拐点
 \end{enumerate}
@@ -1524,6 +1524,9 @@ f(x)=f(x_{0})+f'(x_{0})(x-x_{0})+\frac{1}{2!}f''(x_{0})(x-x_{0})^{2}+\dots+\frac
 \item 若$ f(x) $在区间$ I $上有第一类间断点, 则$ f(x)
  $在区间$ I $上没有原函数
 \end{enumerate}
+\begin{tcolorbox}
+$ 1 $的推导: $ f(x) $连续, 则其变上限积分$ \displaystyle\int_{a}^{x}\hspace{.2em}f(x)\mathrm{d}x $可导, 及存在, 由于变上限积分本身就是一个原函数, 而其他原函数可以通过加常数得到, 所以存在原函数
+\end{tcolorbox}
 \subsection{不定积分运算规则}
 \begin{enumerate}
 \item $ (\displaystyle\int_{}\hspace{.2em} f(x)\mathrm{d}x)'=f(x), \mathrm{d}\hspace{-.35em}\displaystyle\int_{}\hspace{.2em} f(x)\mathrm{d}x=f(x)\mathrm{d}x $
@@ -1580,7 +1583,7 @@ f(x)=f(x_{0})+f'(x_{0})(x-x_{0})+\frac{1}{2!}f''(x_{0})(x-x_{0})^{2}+\dots+\frac
 \end{equation*}
 \begin{tcolorbox}
 \begin{enumerate}
-\item 分部积分法常常用于被积函数为两类不同函数相乘时的不定积分
+\item 分部积分法常常用于被积函数为\textbf{两类不同函数相乘}时的不定积分
 \item 积分的难易程度: 若函数积分后会简单些则取作$ v $, 若函数微分后会简单些则取作$ u $, 难易程度为$ \ln x, \arcsin x, \arctan x<P_{n}(x)<e^{kx}, \sin ax, \cos ax $, 越往左边越适合作为$ u $.
 \begin{enumerate}
 \item 被积函数是$ P_{n}(x)e^{kx}, P_{n}(x)\sin ax, P_{n}(x)\cos ax $等形式的时候, 一般来说选取$ u=P_{n}(x) $
@@ -1707,13 +1710,16 @@ $ \displaystyle\int_{a}^{b}f(x)\mathrm{d}x $在几何上表示$ y=f(x), x=a, x=b
 \displaystyle\int_{a}^{a+T}\hspace{.2em}f(x)\mathrm{d}x=\displaystyle\int_{0}^{T}\hspace{.2em}f(x)\mathrm{d}x
 \end{equation*}
 \end{enumerate}
-\item 点火公式 \par
-$ \displaystyle\int_{0}^{\frac{\pi}{2}}\hspace{.2em}\sin^{n}x \mathrm{d}x=\displaystyle\int_{0}^{\frac{\pi}{2}}\hspace{.2em}\cos^{n}x \mathrm{d}x=
+\item 特殊公式 \par
+\begin{enumerate}
+\item $ \displaystyle\int_{0}^{\frac{\pi}{2}}\hspace{.2em}\sin^{n}x \mathrm{d}x=\displaystyle\int_{0}^{\frac{\pi}{2}}\hspace{.2em}\cos^{n}x \mathrm{d}x=
 \scaleleftright[6pt]{\biggl\{}{
 \begin{aligned}
 & \frac{n-1}{n}\cdot \frac{n-3}{n-2}\cdot ...\cdot \frac{1}{2}\cdot \frac{\pi}{2}, n\text{为偶数} \\
 & \frac{n-1}{n}\cdot \frac{n-3}{n-2}\cdot ...\cdot \frac{2}{3}\cdot 1, n\text{为大于}1\text{的奇数}
 \end{aligned} }{.} $
+\item $ \displaystyle\int_{0}^{\pi}\hspace{.2em}x\cdot f(\sin x)\mathrm{d}x=\frac{\pi}{2}\displaystyle\int_{0}^{\pi}\hspace{.2em}f(\sin x)\mathrm{d}x $
+\end{enumerate}
 \end{enumerate}
 \subsection{变上限积分}
 \subsubsection{定理}
@@ -1721,7 +1727,13 @@ $ \displaystyle\int_{0}^{\frac{\pi}{2}}\hspace{.2em}\sin^{n}x \mathrm{d}x=\displ
 \begin{equation*}
 (\displaystyle\int_{a}^{x}\hspace{.2em}f(t)\mathrm{d}t)'=f(x)
 \end{equation*}
+\begin{enumerate}
+\item $ f(x) $可积$ \Rightarrow \displaystyle\int_{a}^{x}\hspace{.2em}f(x)\mathrm{d}x $连续
+\item $ f(x) $连续$ \Rightarrow \displaystyle\int_{a}^{x}\hspace{.2em}f(x)\mathrm{d}x $可导
+\item $ f(x) $可导$ \Rightarrow \displaystyle\int_{a}^{x}\hspace{.2em}f(x)\mathrm{d}x $二阶可导
+\end{enumerate}
 \subsubsection{变上限积分求导的三种类型}
+
 \chapter{一元函数积分学: 反常积分}
 \section{基础知识}
 \subsection{无穷区间的反常积分}
