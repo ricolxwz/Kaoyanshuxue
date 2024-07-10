@@ -9,6 +9,10 @@
 
 **已完成线代+高数基础知识整理**
 
+### 概率论
+
+目前未转化为LaTeX, 仅有Markdown格式, 且内容基本是复制张宇概率论的, 感兴趣的小伙伴可以访问[https://ml.ricolxwz.de/%E6%A6%82%E7%8E%87/%E7%BB%AA%E8%AE%BA/](https://ml.ricolxwz.de/%E6%A6%82%E7%8E%87/%E7%BB%AA%E8%AE%BA/)或下载源文件. 后期应该会考虑加一点更深入, 更多自己的内容.
+
 ### 线性代数
 [线性代数pdf](线性代数/out/main.pdf)
 
